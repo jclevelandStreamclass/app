@@ -15,6 +15,9 @@ import { LandingComponent } from './core/views/landing/landing.component';
 import { LoginComponent } from './core/views/login/login.component';
 import { RecoverpasswordComponent } from './core/views/recoverpassword/recoverpassword.component';
 import { SignupComponent } from './core/views/signup/signup.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { CategoriesGridComponent } from './categories/categories-grid/categories-grid.component';
+import { CategoriesPageComponent } from './categories/categories-page/categories-page.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { SignupComponent } from './core/views/signup/signup.component';
     LoginComponent,
     SignupComponent,
     RecoverpasswordComponent,
+    CategoriesComponent,
+    CategoriesGridComponent,
+    CategoriesPageComponent,
   ],
   imports: [
     BrowserModule,
