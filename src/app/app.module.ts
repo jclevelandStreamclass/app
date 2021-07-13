@@ -18,6 +18,8 @@ import { SignupComponent } from './core/views/signup/signup.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoriesGridComponent } from './categories/categories-grid/categories-grid.component';
 import { CategoriesPageComponent } from './categories/categories-page/categories-page.component';
+import { SeriesComponent } from './series/series.component';
+import { SeriesCardsComponent } from './series/series-cards/series-cards.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { CategoriesPageComponent } from './categories/categories-page/categories
     CategoriesComponent,
     CategoriesGridComponent,
     CategoriesPageComponent,
+    SeriesComponent,
+    SeriesCardsComponent,
   ],
   imports: [
     BrowserModule,
