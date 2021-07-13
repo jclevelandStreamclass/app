@@ -20,6 +20,8 @@ import { CategoriesGridComponent } from './categories/categories-grid/categories
 import { CategoriesPageComponent } from './categories/categories-page/categories-page.component';
 import { SeriesComponent } from './series/series.component';
 import { SeriesCardsComponent } from './series/series-cards/series-cards.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SeriesGridLandingComponent } from './series/series-grid-landing/series-grid-landing.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { SeriesCardsComponent } from './series/series-cards/series-cards.compone
     CategoriesPageComponent,
     SeriesComponent,
     SeriesCardsComponent,
+    SeriesGridLandingComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,7 @@ import { SeriesCardsComponent } from './series/series-cards/series-cards.compone
     MatIconModule,
     MatInputModule,
     MatCheckboxModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

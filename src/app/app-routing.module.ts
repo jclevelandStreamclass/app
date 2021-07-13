@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CategoriesPageComponent } from './categories/categories-page/categories-page.component';
 import { LandingComponent } from './core/views/landing/landing.component';
 import { LoginComponent } from './core/views/login/login.component';
+import { SeriesComponent } from './series/series.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'categories',
     component: CategoriesPageComponent,
+  },
+   {
+    path: 'series',
+    component: SeriesComponent,
   },
 ];
 
