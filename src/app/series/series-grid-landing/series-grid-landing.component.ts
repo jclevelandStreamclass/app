@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Input, Component, OnInit } from '@angular/core';
+import { Serie } from '../models/serie';
 
 @Component({
   selector: 'app-series-grid-landing',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeriesGridLandingComponent implements OnInit {
 
+  @Input() series: Serie[] = [];
+  
   constructor() { }
 
   ngOnInit(): void {
