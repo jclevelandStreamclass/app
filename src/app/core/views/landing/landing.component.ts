@@ -1,21 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { Category } from 'src/app/categories/interface/category.interface';
-import { CategoriesService } from 'src/app/categories/services/categories.service';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.scss']
+  styleUrls: ['./landing.component.scss'],
 })
 export class LandingComponent implements OnInit {
-  
-  categories!: Category[];
-  constructor(private categorySvc: CategoriesService) { }
+  emailForm: FormGroup;
 
-  ngOnInit(): void {
-    this.categorySvc.getCategory().subscribe(x => {this.categories = x});
-    console.log(this.categories)
+  @Output() sendEmail = new EventEmitter<string>();
+
+  constructor(fb: FormBuilder) {
+    this.emailForm = fb.group({
+      email: [''],
+    });
   }
   
 
+  ngOnInit(): void {}
+
+  registerEmail(form: FormGroup): void {
+    if (form.valid) {
+      const userEmail = form.value.email;
+      console.log(userEmail);
+      this.sendEmail.emit(userEmail);
+    }
+  }
 }
