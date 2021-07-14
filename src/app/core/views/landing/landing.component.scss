@@ -1,12 +1,22 @@
 nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-end;
+  width: 100%;
+  height: 20vh;
+  background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626270088/poseidon/streamclass2_hp2muh.png);
+  background-size: 30%;
+  background-repeat: no-repeat;
+  p {
+    text-transform: uppercase;
+    font-size: 24px;
+    padding: 2rem;
+  }
 }
 
 .hero {
   margin-top: 5rem;
-  width: 100vw;
+  width: 100%;
   height: 80vh;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -24,38 +34,39 @@ nav {
       color: #bab9b9;
       font-size: 1rem;
       font-weight: 600;
+      &.terms-conditions {
+        font-size: 10px;
+        text-align: center;
+        margin: 0;
+      }
     }
+
     form {
+      width: 100%;
       display: flex;
+
       flex-direction: column;
-      background-color: #818181;
+
       color: #bab9b9;
 
       .mat-form-field-wrapper {
         background-color: #fff !important;
       }
     }
+    .mat-form-field-flex {
+      background-color: #818181 !important;
+    }
   }
   .register-img {
-    width: 100%;
-    height: 100%;
     background-image: url(https://estaticos-cdn.prensaiberica.es/clip/e6e270bb-51b0-447d-9ab9-ead50623c852_16-9-aspect-ratio_default_0.jpg);
-    background-size: contain;
-    background-position: center;
+    background-size: cover;
+    background-position: top;
     background-repeat: no-repeat;
-    border-radius: 19px;
+    border-radius: 16px;
+    overflow-x: hidden;
   }
 }
 
-.device-img {
-  width: 400px;
-  height: 400px;
-  background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626195030/pngaaa.com-480692_ulzwrd.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 24px;
-}
 .mat-accordion {
   background-color: #181818;
   &:hover {
@@ -75,16 +86,41 @@ nav {
 
 .mat-flat-button {
   color: #fff;
-  border: 1px solid green;
-
-  &:hover {
-    background-color: #181818;
-  }
+  padding: 1rem 2rem;
+  border-radius: 16px;
 }
 
+.mat-checkbox {
+  margin: 1rem;
+}
+.mat-checkbox-inner-container {
+  background-color: #fff;
+}
 .subscription-plan {
+  padding: 3rem 0;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
+  background-color: #181818 !important;
+  font-size: 24px;
+  font-weight: 600;
+  color: #bab9b9;
+  line-height: 3;
+  h3 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+  }
+  .device-img {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626195030/pngaaa.com-480692_ulzwrd.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 24px;
+  }
 }
 
 .faq-section {
