@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>
+        Listado de series/deportistas?
+    </h1>
+    <div class="card" *ngFor="let serie of series;">
+        <div class="card-header">
+            <p>{{serie.title}}</p>
+            <!-- <p>{{serie.photo}}</p> -->
+        </div>
+        <div class="card-content">
+            <div>
+                <p><span class="label">Descripción:</span>{{serie.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

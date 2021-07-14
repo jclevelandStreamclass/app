@@ -24,7 +24,10 @@ import { SignupComponent } from './core/views/signup/signup.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoriesGridComponent } from './categories/categories-grid/categories-grid.component';
 import { CategoriesPageComponent } from './categories/categories-page/categories-page.component';
+import { SeriesComponent } from './series/series.component';
+import { SeriesCardsComponent } from './series/series-cards/series-cards.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SeriesGridLandingComponent } from './series/series-grid-landing/series-grid-landing.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,9 @@ import { HttpClientModule } from '@angular/common/http';
     CategoriesComponent,
     CategoriesGridComponent,
     CategoriesPageComponent,
+    SeriesComponent,
+    SeriesCardsComponent,
+    SeriesGridLandingComponent,
   ],
   imports: [
     BrowserModule,
