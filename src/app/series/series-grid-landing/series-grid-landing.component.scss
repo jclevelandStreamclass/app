@@ -31,13 +31,22 @@
       width: 300px;
       height: 450px;
       border-radius: 10px;
+      margin: 0.6rem;
+      background-color: #232323;
+      color: #fff;
+
+      &:hover {
+        background: linear-gradient(rgba(255, 255, 255, 0.089), #ffffff3a);
+        cursor: pointer;
+      }
     }
 
     .mat-card-content {
       height: 100%;
       display: flex;
       justify-content: center;
-      align-items: flex-end;
+      align-items: center;
+      margin-top: 11rem;
     }
 
     .mat-card-image:first-child {

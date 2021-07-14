@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Serie } from 'src/app/series/models/serie';
+import { SeriesService } from 'src/app/series/services/series.service';
 
 @Component({
   selector: 'app-landing',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  series: Serie[] = [];
+  constructor(private serviceModel: SeriesService) { }
 
   ngOnInit(): void {
+    this.serviceModel.getSeries().subscribe(result => {
+      this.series = result;
+    })
   }
+
 
 }
