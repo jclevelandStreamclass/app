@@ -4,6 +4,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatToolbarModule} from '@angular/material/toolbar'
+import {MatCardModule} from '@angular/material/card'
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +20,7 @@ import { SignupComponent } from './core/views/signup/signup.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoriesGridComponent } from './categories/categories-grid/categories-grid.component';
 import { CategoriesPageComponent } from './categories/categories-page/categories-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import { CategoriesPageComponent } from './categories/categories-page/categories
     MatIconModule,
     MatInputModule,
     MatCheckboxModule,
+    MatToolbarModule,
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
