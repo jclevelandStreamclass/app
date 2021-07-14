@@ -22,6 +22,7 @@ import { SeriesComponent } from './series/series.component';
 import { SeriesCardsComponent } from './series/series-cards/series-cards.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SeriesGridLandingComponent } from './series/series-grid-landing/series-grid-landing.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { SeriesGridLandingComponent } from './series/series-grid-landing/series-
     MatIconModule,
     MatInputModule,
     MatCheckboxModule,
+    MatCardModule,
     HttpClientModule,
   ],
   providers: [],
