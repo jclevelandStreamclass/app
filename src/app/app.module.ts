@@ -22,6 +22,11 @@ import { SignupComponent } from './core/views/signup/signup.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoriesGridComponent } from './categories/categories-grid/categories-grid.component';
 import { CategoriesPageComponent } from './categories/categories-page/categories-page.component';
+import { SeriesComponent } from './series/series.component';
+import { SeriesCardsComponent } from './series/series-cards/series-cards.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SeriesGridLandingComponent } from './series/series-grid-landing/series-grid-landing.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -36,6 +41,9 @@ import { CategoriesPageComponent } from './categories/categories-page/categories
     CategoriesComponent,
     CategoriesGridComponent,
     CategoriesPageComponent,
+    SeriesComponent,
+    SeriesCardsComponent,
+    SeriesGridLandingComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +54,8 @@ import { CategoriesPageComponent } from './categories/categories-page/categories
     MatIconModule,
     MatInputModule,
     MatCheckboxModule,
+    MatCardModule,
+    HttpClientModule,
     MatExpansionModule,
     FormsModule,
     MatFormFieldModule,

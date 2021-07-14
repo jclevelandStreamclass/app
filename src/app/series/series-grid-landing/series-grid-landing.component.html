@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Nuevas Clases todos los meses</h1>
+
+    <div class="cards">
+        <mat-card class="example-card" *ngFor="let serie of series;">
+            <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                alt="Photo of a Shiba Inu"> -->
+            <mat-card-content>
+                <h2>
+                    {{serie.title}}
+                </h2>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <button mat-stroked-button>VER TODAS</button>
+</div>
