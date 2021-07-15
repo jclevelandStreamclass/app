@@ -71,6 +71,7 @@
       }
 
       .mat-card-content {
+        // width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
@@ -78,6 +79,11 @@
         background-size: cover;
         border-radius: 12px;
         position: relative;
+        transition: all 0.3s;
+
+        &:hover {
+          transform: scale(1.005);
+        }
 
         .gradient {
           position: absolute;
@@ -85,11 +91,15 @@
           width: 100%;
           height: 100%;
           border-radius: 12px;
-          transition: all 300ms;
+          transition: 0.3s;
 
           &:hover {
-            opacity: 12%;
-            background: linear-gradient(to bottom, #fff 100%, #fff 0%);
+            background: linear-gradient(
+              transparent 0%,
+              rgba(255, 255, 255, 0.062) 65%,
+              rgba(255, 255, 255, 0.281) 100%
+            );
+            opacity: 1;
             cursor: pointer;
           }
         }
