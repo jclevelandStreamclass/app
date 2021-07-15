@@ -49,12 +49,15 @@ nav {
 
       color: #bab9b9;
 
+      mat-label {
+        color: #fff;
+      }
       .mat-form-field-wrapper {
         background-color: #fff !important;
       }
     }
     .mat-form-field-flex {
-      background-color: #818181 !important;
+      color: red;
     }
   }
   .register-img {
