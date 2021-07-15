@@ -1,0 +1,31 @@
+@import "../../../../variables";
+header {
+  background-color: $colorBackgroundDark;
+  padding: 35px 30px;
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    li {
+      &.back {
+        font-weight: 600;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-right: 50px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .logo {
+    background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626270088/poseidon/streamclass2_hp2muh.png);
+    height: 58px;
+    width: 300px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    align-self: center;
+  }
+}
