@@ -42,11 +42,14 @@ body {
 }
 body {
   margin: 0;
-  padding: 3rem;
   font-family: "Montserrat", sans-serif !important;
-
   background-color: #181818;
   color: #fff;
+}
+
+.mat-checkbox-inner-container {
+  background-color: #fff;
+  outline: none;
 }
 
 //colores StreamClass

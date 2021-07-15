@@ -2,6 +2,8 @@ import { Serie } from 'src/app/series/models/serie';
 import { SeriesService } from 'src/app/series/services/series.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Category } from 'src/app/categories/interface/category.interface';
+import { CategoriesService } from 'src/app/categories/services/categories.service';
 
 @Component({
   selector: 'app-landing',
@@ -10,21 +12,28 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class LandingComponent implements OnInit {
   emailForm: FormGroup;
-  series: Serie[] = [];
+  categories!: Category[];
 
   @Output() sendEmail = new EventEmitter<string>();
 
-  constructor(fb: FormBuilder, private serviceModel: SeriesService) {
+  series: Serie[] = [];
+
+
+  constructor(fb: FormBuilder, private serviceModel: SeriesService, private categorySvc: CategoriesService) {
     this.emailForm = fb.group({
       email: [''],
     });
   }
+  
 
+    
   
   ngOnInit(): void {
     this.serviceModel.getSeries().subscribe(result => {
       this.series = result;
     })
+    this.categorySvc.getCategory().subscribe(x => {this.categories = x});
+    console.log(this.categories)
   }
 
   registerEmail(form: FormGroup): void {
