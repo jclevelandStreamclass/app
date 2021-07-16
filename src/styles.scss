@@ -52,6 +52,24 @@ body {
   outline: none;
 }
 
+.mat-form-field-label {
+  color: #fff;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  top: unset !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 7px 0 7px 0;
+  width: 100%;
+}
+
+.mat-form-field-flex {
+  background-color: #181818;
+  width: 100%;
+  border-radius: 5px;
+}
 .mat-form-field-appearance-fill .mat-form-field-flex {
   background-color: #818181 !important;
 }
