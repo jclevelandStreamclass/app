@@ -30,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SeriesGridLandingComponent } from './series/series-grid-landing/series-grid-landing.component';
 import { EpisodesComponent } from './episodes/episodes.component';
 import { MatTableModule } from '@angular/material/table';
+import { SeriesIntroComponent } from './series/series-cards/series-intro/series-intro.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { MatTableModule } from '@angular/material/table';
     SeriesCardsComponent,
     SeriesGridLandingComponent,
     EpisodesComponent,
+    SeriesIntroComponent,
   ],
   imports: [
     BrowserModule,

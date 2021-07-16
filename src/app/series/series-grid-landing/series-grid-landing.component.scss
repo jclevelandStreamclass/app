@@ -1,14 +1,13 @@
 .container {
-  background-color: #0d0d0d;
   color: #fff;
   height: 100vh;
   // width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   font-family: "Montserrat";
 
+  text-align: left;
   h1 {
     font-style: italic;
     font-weight: 600;
@@ -34,28 +33,46 @@
       margin: 0.6rem;
       background-color: #232323;
       color: #fff;
-
-      &:hover {
-        background: linear-gradient(rgba(255, 255, 255, 0.089), #ffffff3a);
-        cursor: pointer;
-      }
+      padding: 0;
     }
 
     .mat-card-content {
+      // width: 100%;
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 11rem;
+      background-size: cover;
+      border-radius: 12px;
+      position: relative;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: scale(1.005);
+      }
+
+      .gradient {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        transition: 0.3s;
+
+        &:hover {
+          background: linear-gradient(
+            transparent 0%,
+            rgba(255, 255, 255, 0.062) 65%,
+            rgba(255, 255, 255, 0.281) 100%
+          );
+          opacity: 1;
+          cursor: pointer;
+        }
+      }
 
       h2 {
         font-style: italic;
       }
-    }
-
-    .mat-card-image:first-child {
-      margin-top: -16px;
-      border: none;
     }
   }
 }
