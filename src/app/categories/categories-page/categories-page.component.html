@@ -1,2 +1,22 @@
 <p>categories-page works!</p>
-<!-- <app-categories></app-categories> -->
+<h1>TODAS LAS CATEGORIAS</h1>
+<div class="spamPayment">
+    <h1>Consigue todas las clases</h1>
+    <h3>4,99€ al mes, pago anual</h3>
+    <button>UNETE</button>
+</div>
+<section class="container">
+    <div class="navegator">
+        <ul>
+            <li>Todas las clases</li>
+            <li>Recien añadido</li>
+        </ul>
+    </div>
+    <div class="containerCategories">
+        <div class="categories" *ngFor="let category of categories">
+            <button mat-button color="primary">
+                <a href="">{{category.name}}</a>
+             </button>
+        </div>
+    </div>
+</section>
