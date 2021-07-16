@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { SignupModelService } from './services/signup-model.service';
 
 @Component({
@@ -10,7 +11,16 @@ import { SignupModelService } from './services/signup-model.service';
 export class SignupComponent implements OnInit {
   signUpForm: FormGroup;
   error = false;
-  constructor(fb: FormBuilder, private signUpModel: SignupModelService) {
+  userEmail: string = '';
+  constructor(
+    fb: FormBuilder,
+    private signUpModel: SignupModelService,
+    route: ActivatedRoute
+  ) {
+    route.params.subscribe((params) => {
+      this.userEmail = params.userEmail || '';
+    });
+
     this.signUpForm = fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
@@ -20,7 +30,11 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.userEmail) {
+      this.signUpForm.controls.email.setValue(this.userEmail);
+    }
+  }
 
   saveClick(form: FormGroup) {
     if (form.valid) {
