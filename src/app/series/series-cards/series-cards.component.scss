@@ -1,61 +1,125 @@
 .container {
-  background-color: #0d0d0d;
   color: #fff;
-  height: 100vh;
-  // width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  padding: 4rem 7rem;
+  text-align: left;
   font-family: "Montserrat";
 
-  h1 {
-    font-style: italic;
-    font-weight: 600;
-    font-size: 2rem;
+  .title {
+    text-align: left;
+    h1 {
+      font-family: "Bebas Neue", cursive;
+      font-size: 3.1rem;
+    }
   }
 
-  .mat-stroked-button {
-    border-color: #4caf50;
-    padding: 0.6rem 9rem;
-    border-radius: 8px;
+  .ofert {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-family: "Montserrat";
     font-weight: 500;
+    background-color: #192120;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 12px;
+
+    h2 {
+      margin-top: 18px;
+      font-weight: 500;
+    }
+
+    .right-ofert {
+      display: flex;
+      align-items: center;
+
+      h3 {
+        margin-top: 18px;
+      }
+
+      .mat-flat-button {
+        margin-left: 4rem;
+        color: #fff;
+        padding: 0.5rem 3rem;
+        border-radius: 8px;
+        background-color: #4bb26b !important;
+      }
+    }
   }
 
-  .cards {
+  .filter {
     display: flex;
+    justify-content: space-between;
     margin: 2.5rem 0 4rem;
 
-    .mat-card {
-      width: 300px;
-      height: 450px;
-      border-radius: 10px;
-      margin: 0.6rem;
-      background-color: #232323;
-      color: #fff;
+    .filter-functions {
+      font-family: "Montserrat";
+      font-weight: 500;
+    }
 
-      &:hover {
-        background: linear-gradient(rgba(255, 255, 255, 0.089), #ffffff3a);
-        cursor: pointer;
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      .mat-card {
+        width: 300px;
+        height: 450px;
+        border-radius: 10px;
+        margin: 0.6rem;
+        background-color: #232323;
+        color: #fff;
+        padding: 0;
       }
-    }
 
-    .mat-card-content {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 11rem;
+      .mat-card-content {
+        // width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        border-radius: 12px;
+        position: relative;
+        transition: all 0.3s;
 
-      h2 {
-        font-style: italic;
+        &:hover {
+          transform: scale(1.005);
+        }
+
+        .gradient {
+          position: absolute;
+          opacity: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          transition: 0.3s;
+
+          &:hover {
+            background: linear-gradient(
+              transparent 0%,
+              rgba(255, 255, 255, 0.062) 65%,
+              rgba(255, 255, 255, 0.281) 100%
+            );
+            opacity: 1;
+            cursor: pointer;
+          }
+        }
+
+        h2 {
+          font-style: italic;
+        }
       }
-    }
 
-    .mat-card-image:first-child {
-      margin-top: -16px;
-      border: none;
+      // .mat-card-image:first-child {
+      //   margin-top: -16px;
+      //   border: none;
+      // }
     }
+  }
+
+  h3 {
+    cursor: pointer;
+    font-family: "Montserrat";
+    font-weight: 500;
+    font-size: 1.2rem;
   }
 }

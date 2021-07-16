@@ -23,7 +23,10 @@ header {
       font-size: 1.2rem;
       text-decoration: none;
       color: #fff;
-      padding: 0 1rem;
+
+      &:first-child {
+        padding-right: 3rem;
+      }
     }
   }
 }
