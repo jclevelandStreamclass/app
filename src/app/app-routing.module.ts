@@ -20,16 +20,21 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
   },
+
   {
     path: 'categories',
     component: CategoriesPageComponent,
   },
-   {
+  {
     path: 'series',
     component: SeriesComponent,
   },
-    {
+  {
     path: 'signup',
+    component: SignupComponent,
+  },
+  {
+    path: 'signup/:userEmail',
     component: SignupComponent,
   },
 ];
