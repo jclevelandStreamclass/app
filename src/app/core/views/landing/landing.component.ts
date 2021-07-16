@@ -13,34 +13,38 @@ import { CategoriesService } from 'src/app/categories/services/categories.servic
 export class LandingComponent implements OnInit {
   emailForm: FormGroup;
   categories!: Category[];
+  emailInfo: string = '';
 
-  @Output() sendEmail = new EventEmitter<string>();
+  //@Output() emailInfo = new EventEmitter<string>();
 
   series: Serie[] = [];
 
-
-  constructor(fb: FormBuilder, private serviceModel: SeriesService, private categorySvc: CategoriesService) {
+  constructor(
+    fb: FormBuilder,
+    private serviceModel: SeriesService,
+    private categorySvc: CategoriesService
+  ) {
     this.emailForm = fb.group({
       email: [''],
     });
   }
-  
 
-    
-  
   ngOnInit(): void {
-    this.serviceModel.getSeries().subscribe(result => {
+    this.serviceModel.getSeries().subscribe((result) => {
       this.series = result;
-    })
-    this.categorySvc.getCategory().subscribe(x => {this.categories = x});
-    console.log(this.categories)
+    });
+    this.categorySvc.getCategory().subscribe((x) => {
+      this.categories = x;
+    });
+    console.log(this.categories);
   }
 
   registerEmail(form: FormGroup): void {
     if (form.valid) {
       const userEmail = form.value.email;
       console.log(userEmail);
-      this.sendEmail.emit(userEmail);
+      this.emailForm = userEmail;
+      //this.emailInfo.emit(userEmail);
     }
   }
 }

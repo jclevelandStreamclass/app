@@ -5,8 +5,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import {MatToolbarModule} from '@angular/material/toolbar'
-import {MatCardModule} from '@angular/material/card'
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -28,6 +28,8 @@ import { SeriesComponent } from './series/series.component';
 import { SeriesCardsComponent } from './series/series-cards/series-cards.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SeriesGridLandingComponent } from './series/series-grid-landing/series-grid-landing.component';
+import { EpisodesComponent } from './episodes/episodes.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ import { SeriesGridLandingComponent } from './series/series-grid-landing/series-
     SeriesComponent,
     SeriesCardsComponent,
     SeriesGridLandingComponent,
+    EpisodesComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +65,7 @@ import { SeriesGridLandingComponent } from './series/series-grid-landing/series-
     FormsModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
