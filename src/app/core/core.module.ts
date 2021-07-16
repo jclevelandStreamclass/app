@@ -33,6 +33,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatInputModule } from '@angular/material/input';
+import { EpisodesComponent } from '../episodes/episodes.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,7 @@ import { MatInputModule } from '@angular/material/input';
     SeriesCardsComponent,
     SeriesGridLandingComponent,
     SeriesIntroComponent,
+    EpisodesComponent,
   ],
   imports: [
     CommonModule,
@@ -69,6 +72,7 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatTableModule,
   ],
   providers: [],
   exports: [AppComponent],
