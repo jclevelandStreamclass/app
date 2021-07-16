@@ -1,16 +1,34 @@
 <div class="container">
-    <h1>
-        Listado de series/deportistas?
-    </h1>
-    <div class="card" *ngFor="let serie of series;">
-        <div class="card-header">
-            <p>{{serie.title}}</p>
-            <!-- <p>{{serie.photo}}</p> -->
+    <div class="title">
+        <h1>DEPORTISTAS</h1>
+    </div>
+
+    <div class="ofert">
+        <h2>CONSIGUE TODAS LAS CLASES</h2>
+        <div class="right-ofert">
+            <h3>4,99€ al mes, pago anual</h3>
+            <button mat-flat-button color="accent" [routerLink]="['/signup']">ÚNETE</button>
         </div>
-        <div class="card-content">
-            <div>
-                <p><span class="label">Descripción:</span>{{serie.description}}</p>
-            </div>
+    </div>
+
+    <div class="filter">
+        <div class="filter-functions">
+            <h3>Todas las clases</h3>
+            <h3>Recién añadido</h3>
+        </div>
+        <div class="cards">
+            <mat-card class="example-card" *ngFor="let serie of series;">
+
+                <mat-card-content
+                    [ngStyle]="{'background-image': 'url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1622793421/poseidon/evqjn1klh9gnq7dy7mog.jpg)'}">
+
+                    <h2>
+                        {{serie.title}}
+                    </h2>
+                    <!-- hover -->
+                    <div class="gradient"></div>
+                </mat-card-content>
+            </mat-card>
         </div>
     </div>
 </div>
