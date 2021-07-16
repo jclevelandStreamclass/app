@@ -1,32 +1,69 @@
+@import "../../../../variables";
 header {
-  padding: 2rem 3rem;
-
-  nav {
+  background-color: $colorBackgroundDark;
+  padding: 35px 30px;
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-
-    .logo {
-      width: 250px;
-      height: 60px;
-      background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626270088/poseidon/streamclass2_hp2muh.png);
-      background-size: cover;
-
-      &:hover {
+    align-items: center;
+    li {
+      &.list {
+        font-weight: 600;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-right: 50px;
         cursor: pointer;
       }
     }
-
-    a {
-      font-family: "Montserrat";
-      font-weight: 500;
-      font-size: 1.2rem;
-      text-decoration: none;
-      color: #fff;
-
-      &:first-child {
-        padding-right: 3rem;
-      }
+    menu {
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
     }
   }
+
+  .logo {
+    background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626270088/poseidon/streamclass2_hp2muh.png);
+    height: 58px;
+    width: 300px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    align-self: center;
+    cursor: pointer;
+  }
 }
+//  header {
+//   padding: 2rem 3rem;
+
+//   nav {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+
+//     .logo {
+//       width: 250px;
+//       height: 60px;
+//       background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626270088/poseidon/streamclass2_hp2muh.png);
+//       background-size: cover;
+
+//       &:hover {
+//         cursor: pointer;
+//       }
+//     }
+
+//     a {
+//       font-family: "Montserrat";
+//       font-weight: 500;
+//       font-size: 1.2rem;
+//       text-decoration: none;
+//       color: #fff;
+
+//       &:first-child {
+//         padding-right: 3rem;
+//       }
+//     }
+//   }
+// }
