@@ -28,6 +28,7 @@ import { SeriesComponent } from './series/series.component';
 import { SeriesCardsComponent } from './series/series-cards/series-cards.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SeriesGridLandingComponent } from './series/series-grid-landing/series-grid-landing.component';
+import { SeriesIntroComponent } from './series/series-cards/series-intro/series-intro.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { SeriesGridLandingComponent } from './series/series-grid-landing/series-
     SeriesComponent,
     SeriesCardsComponent,
     SeriesGridLandingComponent,
+    SeriesIntroComponent,
   ],
   imports: [
     BrowserModule,
