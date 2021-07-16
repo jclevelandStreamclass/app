@@ -4,6 +4,7 @@ import { CategoriesPageComponent } from './categories/categories-page/categories
 import { LandingComponent } from './core/views/landing/landing.component';
 import { LoginComponent } from './core/views/login/login.component';
 import { SignupComponent } from './core/views/signup/signup.component';
+import { EpisodesComponent } from './episodes/episodes.component';
 import { SeriesComponent } from './series/series.component';
 
 const routes: Routes = [
@@ -39,7 +40,7 @@ const routes: Routes = [
   },
   {
     path: 'episodes/:video',
-    component: SignupComponent,
+    component: EpisodesComponent,
   },
 ];
 
