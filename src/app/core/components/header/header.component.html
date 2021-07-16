@@ -1,13 +1,10 @@
 <header>
   <ul>
-    <li class="logo"></li>
-    <li class="back">Volver</li>
+    <li class="logo" [routerLink]="['/landing']"></li>
+    <li class="list" *ngIf="checkRoute()" [routerLink]="['/landing']">Volver</li>
+    <menu *ngIf="checkRouteLanding()">
+      <li class="list" [routerLink]="['/categories']">CATEGORÍAS</li>
+      <li class="list" [routerLink]="['/login']">INICIAR SESIÓN</li>
+    </menu>
   </ul>
-  <nav>
-    <div class="logo" [routerLink]="['/landing']"></div>
-    <div class="links">
-      <a [routerLink]="['/categories']">CATEGORÍAS</a>
-      <a [routerLink]="['/login']">INICIAR SESIÓN</a>
-    </div>
-  </nav>
 </header>
