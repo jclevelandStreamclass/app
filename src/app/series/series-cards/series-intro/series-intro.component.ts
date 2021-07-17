@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { SportsPlayer } from 'src/app/sportsplayers/models/sportsPlayer';
+import { Serie } from '../../models/serie';
+
+
 
 @Component({
   selector: 'app-series-intro',
@@ -7,7 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeriesIntroComponent implements OnInit {
 
-  constructor() { }
+  @Input() sportsPlayer: SportsPlayer[] | null = [];
+  @Input() series: Serie[] | null = [];
+
+  constructor() {
+   
+  }
+  
+  ngOnChanges(): void {
+    
+  }
 
   ngOnInit(): void {
   }
