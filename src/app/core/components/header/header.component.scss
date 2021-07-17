@@ -11,8 +11,8 @@ header {
     align-items: center;
     li {
       &.list {
-        font-weight: 600;
-        font-size: 20px;
+        font-weight: 500;
+        font-size: 1.2rem;
         text-transform: uppercase;
         margin-right: 50px;
         cursor: pointer;
@@ -27,9 +27,9 @@ header {
 
   .logo {
     background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626270088/poseidon/streamclass2_hp2muh.png);
-    height: 58px;
-    width: 300px;
-    background-size: 100%;
+    width: 250px;
+    height: 60px;
+    background-size: contain;
     background-repeat: no-repeat;
     align-self: center;
     cursor: pointer;
