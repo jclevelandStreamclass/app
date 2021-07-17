@@ -6,8 +6,9 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserModel } from 'src/app/models/user';
+import { ToastMessagesService } from '../../services/toast-messages.service';
 import { SignupModelService } from './services/signup-model.service';
 
 @Component({
@@ -24,7 +25,9 @@ export class SignupComponent implements OnInit {
   constructor(
     fb: FormBuilder,
     private signUpModel: SignupModelService,
-    route: ActivatedRoute
+    route: ActivatedRoute,
+    private router: Router,
+    private toastMessages: ToastMessagesService
   ) {
     route.params.subscribe((params) => {
       this.userEmail = params.userEmail || '';
@@ -64,9 +67,15 @@ export class SignupComponent implements OnInit {
         console.log(user);
         this.signUpForm.reset();
         this.avatar = '';
+        this.toastMessages.showSuccess(
+          `${user.name} Has sido dado de alta correctamente. Revisa tu correo y activa tu cuenta`
+        );
+        this.router.navigate(['/login']);
       });
       return;
     }
+
+    this.toastMessages.showError('Revisa los campos en rojo');
 
     this.error = true;
   }
