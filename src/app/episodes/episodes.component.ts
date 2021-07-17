@@ -22,7 +22,7 @@ export class EpisodesComponent implements OnInit {
 
   select(video: string): void {
     if (video) {
-      this.router.navigate(['login', video]);
+      this.router.navigate(['episodes', video]);
     }
   }
 }

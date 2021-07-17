@@ -37,6 +37,10 @@ const routes: Routes = [
     path: 'signup/:userEmail',
     component: SignupComponent,
   },
+  {
+    path: 'episodes/:video',
+    component: SignupComponent,
+  },
 ];
 
 @NgModule({
