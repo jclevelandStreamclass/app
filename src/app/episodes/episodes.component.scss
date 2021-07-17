@@ -1,0 +1,35 @@
+@import "../../variables";
+
+.thumbnail {
+  height: 100px;
+  width: 150px;
+  //background-color: red;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  cursor: pointer;
+
+  .time-box {
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    span {
+      font-size: 8px;
+      background-color: rgba(190, 187, 187, 0.384);
+      border-radius: 8px;
+    }
+  }
+}
+.mat-table {
+  font-family: $fontMontserrat;
+  background-color: $colorBackgroundLight;
+  .mat-cell {
+    color: $colorTextGrey;
+    padding: 0.5rem 1rem;
+    background-color: $colorBackgroundLight;
+  }
+  .mat-header-cell {
+    padding: 3rem;
+  }
+}
