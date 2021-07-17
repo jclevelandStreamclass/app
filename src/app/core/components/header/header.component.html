@@ -1,10 +1,44 @@
-<header>
+<!-- <header>
   <ul>
     <li class="logo" [routerLink]="['/landing']"></li>
     <li class="list" *ngIf="checkRoute()" [routerLink]="['/landing']">Volver</li>
+
     <menu *ngIf="checkRouteLanding()">
-      <li class="list" [routerLink]="['/categories']">CATEGORÍAS</li>
-      <li class="list" [routerLink]="['/login']">INICIAR SESIÓN</li>
+      <button mat-stroked-button (click)="openMenu()">
+        <mat-icon>reorder</mat-icon>
+      </button>
+      <div class="items">
+        <li class="list" [routerLink]="['/categories']">CATEGORÍAS</li>
+        <li class="list" [routerLink]="['/login']">INICIAR SESIÓN</li>
+      </div>
     </menu>
   </ul>
+</header> -->
+
+<header>
+  <nav class="menu" role="navigation">
+    <div class="menu__toggle">
+      <input type="checkbox" id="checkMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul class="navbar">
+        <li>
+          <a [routerLink]="['/home']" class="link-item">Home</a>
+        </li>
+        <li>
+          <a [routerLink]="['/character-list']" class="link-item">Characters</a>
+        </li>
+        <li>
+          <a [routerLink]="['/episodes']" class="link-item">Episodes</a>
+        </li>
+        <li>
+          <a [routerLink]="['/about']" class="link-item">About</a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+
+
 </header>

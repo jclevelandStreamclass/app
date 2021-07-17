@@ -1,3 +1,4 @@
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,7 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(private router: Router) {}
+  menu: boolean = false;
+  div!: HTMLDivElement;
+
+  constructor(private router: Router, private observer: BreakpointObserver) {}
 
   ngOnInit(): void {}
 
