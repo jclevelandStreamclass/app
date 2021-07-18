@@ -1,11 +1,11 @@
 <div class="intro">
-  <div class="introImg">
+  <div class="introImg" [ngStyle]="{'background-image':'url('+sportsPlayer?.photo+')'}">
     <div class="title">
       <h2>
-        <!-- {{ sportsPlayer.name }} -->
-        <strong>JORDI XAMMAR</strong>
+        {{ sportsPlayer?.name}}
+
       </h2>
-      <h3><strong>Enseña vela</strong></h3>
+      <h3>{{series.title}}</h3>
     </div>
 
     <div class="btonsIntro">
@@ -27,18 +27,16 @@
     <div class="trailer"></div>
     <div class="commandBox">
       <div class="playTrailerBtn">
-        <button
-          mat-flat-button
-          color="accent"
-          type="submit"
-          class="playTrailer forDrkBtn"
-        >
+        <button mat-flat-button color="accent" type="submit" class="playTrailer forDrkBtn">
           <span class="material-icons"> play_arrow </span> Trailer de la Clase
         </button>
       </div>
 
       <div class="lessonsArray">
         <p>Lecciones:</p>
+        <div class="classes">
+          <app-episodes [episodes]="episodes"></app-episodes>
+        </div>
 
         <!-- <mat-card class="lessonsCard" *ngFor="let serie of series">
           <span>{{ series.id }}</span>
@@ -57,10 +55,8 @@
   </div>
   <div class="textBox">
     <p class="bioSportPlayr">
-      <!-- {{sportsPlayer.bio}} -->
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi impedit
-      odit nesciunt, aut sit alias! Vero porro vitae consequatur itaque! Numquam
-      recusandae voluptatem velit amet fuga eaque, esse fugit voluptatum.
+      {{sportsPlayer?.bio}}
+
     </p>
 
     <!-- Contador de horas? -->
