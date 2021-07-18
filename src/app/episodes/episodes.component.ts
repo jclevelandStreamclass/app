@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { Episode } from './models/episode';
 import { EpisodesService } from './services/episodes.service';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
@@ -9,15 +15,24 @@ import { Router } from '@angular/router';
   templateUrl: './episodes.component.html',
   styleUrls: ['./episodes.component.scss'],
 })
-export class EpisodesComponent implements OnInit {
+export class EpisodesComponent implements OnInit, OnChanges {
   dataSource = new MatTableDataSource<Episode>([]);
   displayedColumns: string[] = ['photo', 'title'];
+  @Input() episodes: Episode[] = [];
+
   constructor(private episodeModel: EpisodesService, private router: Router) {}
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.episodes) {
+      this.dataSource.data = [...changes.episodes.currentValue];
+      console.log(this.episodes);
+    }
+  }
 
   ngOnInit(): void {
-    this.episodeModel.getAll().subscribe((episodes) => {
-      this.dataSource.data = episodes.map((x) => ({ ...x }));
-    });
+    this.dataSource.data = [...this.episodes];
+    // this.episodeModel.getAll().subscribe((episodes) => {
+    //   this.dataSource.data = episodes.map((x) => ({ ...x }));
+    //   });
   }
 
   select(video: string): void {
