@@ -25,7 +25,11 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.authService.isUserAuthenticated) {
+      this.router.navigate(['/landing']);
+    }
+  }
 
   saveClick(form: FormGroup): void {
     if (form.valid) {
