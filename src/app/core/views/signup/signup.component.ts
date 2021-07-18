@@ -63,14 +63,19 @@ export class SignupComponent implements OnInit {
     if (form.valid) {
       const user: UserModel = form.value;
       user.avatar = user.avatar.slice(12);
-      this.signUpModel.insertUser(user).subscribe(() => {
-        console.log(user);
-        this.signUpForm.reset();
-        this.avatar = '';
-        this.toastMessages.showSuccess(
-          `${user.name} Has sido dado de alta correctamente. Revisa tu correo y activa tu cuenta`
-        );
-        this.router.navigate(['/login']);
+      this.signUpModel.insertUser(user).subscribe((user) => {
+        if (user) {
+          console.log(user);
+          this.signUpForm.reset();
+          this.avatar = '';
+          this.toastMessages.showSuccess(
+            `${user.name} Has sido dado de alta correctamente. Revisa tu correo y activa tu cuenta`
+          );
+          this.router.navigate(['/login']);
+        }
+        (err: any) => {
+          console.log(err);
+        };
       });
       return;
     }

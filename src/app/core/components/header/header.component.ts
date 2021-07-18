@@ -12,10 +12,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   checkRoute(): boolean {
-    return this.router.url === '/login' || this.router.url === '/signup';
+    return this.router.url === '/login' || this.router.url.includes('/signup');
   }
 
   checkRouteLanding(): boolean {
-    return this.router.url !== '/login' && this.router.url !== '/signup';
+    return this.router.url !== '/login' && !this.router.url.includes('/signup');
   }
 }
