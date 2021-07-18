@@ -10,6 +10,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class EpisodesStreamComponent implements OnInit {
   video: string = '';
   urlVideo: SafeResourceUrl = '';
+
   constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer) {
     route.params.subscribe((params) => {
       this.video = params.video || '';
