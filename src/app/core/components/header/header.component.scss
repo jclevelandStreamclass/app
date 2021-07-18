@@ -1,68 +1,68 @@
-// @import "../../../../variables";
-// header {
-//   background-color: $colorBackgroundDark;
-//   padding: 35px 30px;
-//   ul {
-//     padding: 0;
-//     margin: 0;
-//     list-style: none;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
+@import "../../../../variables";
+header {
+  background-color: $colorBackgroundDark;
+  padding: 35px 30px;
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-//     .items {
-//       display: flex;
-//       li {
-//         &.list {
-//           font-weight: 500;
-//           font-size: 1.2rem;
-//           text-transform: uppercase;
-//           margin-right: 50px;
-//           cursor: pointer;
-//         }
-//       }
-//     }
+    .items {
+      display: flex;
+      li {
+        &.list {
+          font-weight: 500;
+          font-size: 1.2rem;
+          text-transform: uppercase;
+          margin-right: 50px;
+          cursor: pointer;
+        }
+      }
+    }
 
-//     menu {
-//       display: flex;
-//       align-items: center;
-//       justify-content: space-around;
-//       list-style: none;
+    menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      list-style: none;
 
-//       button {
-//         display: none;
-//         margin-bottom: 10px;
-//         mat-icon {
-//           width: 50px;
-//           height: 50px;
-//           font-size: 3rem;
-//         }
-//       }
-//     }
-//   }
+      button {
+        display: none;
+        margin-bottom: 10px;
+        mat-icon {
+          width: 50px;
+          height: 50px;
+          font-size: 3rem;
+        }
+      }
+    }
+  }
 
-//   .logo {
-//     background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626270088/poseidon/streamclass2_hp2muh.png);
-//     width: 250px;
-//     height: 60px;
-//     background-size: contain;
-//     background-repeat: no-repeat;
-//     align-self: center;
-//     cursor: pointer;
-//   }
-// }
+  .logo {
+    background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626270088/poseidon/streamclass2_hp2muh.png);
+    width: 250px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-self: center;
+    cursor: pointer;
+  }
+}
 
-// @media (max-width: 900px) {
-//   header {
-//     ul {
-//       .items {
-//         display: none;
-//       }
-//       menu {
-//         button {
-//           display: block;
-//         }
-//       }
-//     }
-//   }
-// }
+@media (max-width: 900px) {
+  header {
+    ul {
+      .items {
+        display: none;
+      }
+      menu {
+        button {
+          display: block;
+        }
+      }
+    }
+  }
+}
