@@ -34,10 +34,12 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  // checkea para incluir volver
   checkRoute(): boolean {
     return  this.router.url === '/login' ||  this.router.url.includes('/signup');
   }
 
+  // checkea para incluir opciones de categorías e inicio de sesión
   checkRouteLanding(): boolean {
     return !this.router.url.includes('/login') &&  !this.router.url.includes('/signup');
   }
