@@ -4,6 +4,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Category } from 'src/app/categories/interface/category.interface';
 import { CategoriesService } from 'src/app/categories/services/categories.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -15,14 +16,13 @@ export class LandingComponent implements OnInit {
   categories!: Category[];
   emailInfo: string = '';
 
-  //@Output() emailInfo = new EventEmitter<string>();
-
   series: Serie[] = [];
 
   constructor(
     fb: FormBuilder,
     private serviceModel: SeriesService,
-    private categorySvc: CategoriesService
+    private categorySvc: CategoriesService,
+    private router: Router
   ) {
     this.emailForm = fb.group({
       email: [''],
@@ -43,8 +43,7 @@ export class LandingComponent implements OnInit {
     if (form.valid) {
       const userEmail = form.value.email;
       console.log(userEmail);
-      this.emailForm = userEmail;
-      //this.emailInfo.emit(userEmail);
+      this.router.navigate(['signup/', userEmail]);
     }
   }
 }
