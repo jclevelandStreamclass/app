@@ -6,6 +6,7 @@ import { LoginComponent } from './core/views/login/login.component';
 import { SignupComponent } from './core/views/signup/signup.component';
 import { EpisodesStreamComponent } from './episodes/episodes-stream/episodes-stream.component';
 import { EpisodesComponent } from './episodes/episodes.component';
+import { SeriesIntroComponent } from './series/series-cards/series-intro/series-intro.component';
 import { SeriesComponent } from './series/series.component';
 
 const routes: Routes = [
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'episodes/:video',
     component: EpisodesStreamComponent,
+  },
+  {
+    path: 'series/:serieId',
+    component: SeriesIntroComponent,
   },
 ];
 
