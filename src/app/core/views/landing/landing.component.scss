@@ -33,8 +33,14 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      mat-label {
-        color: $colorTextGrey;
+      mat-label,
+      .mat-flat-button {
+        color: #ccc;
+        font-family: "Montserrat";
+        font-weight: 600;
+      }
+      .mat-flat-button {
+        color: #fff;
       }
     }
   }
@@ -63,21 +69,23 @@
 //SUBSCRIPTION PLAN
 
 .subscription-plan {
-  padding: 3rem 0;
+  padding: 6.5rem 0;
   width: 100%;
   //height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: $colorBackgroundLight !important;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 500;
   color: $colorTextGrey;
-  line-height: 3;
+  line-height: 2.4;
   h3 {
     color: $colorText;
     font-size: 32px;
     font-weight: 700;
     font-style: italic;
+    line-height: 2.3rem;
+    margin-bottom: 3.2rem;
   }
   .device-img {
     width: 100%;
@@ -87,6 +95,22 @@
     background-size: contain;
     background-repeat: no-repeat;
     border-radius: 24px;
+  }
+
+  .mat-stroked-button {
+    margin: 2rem 0 1rem;
+    background-color: #4caf50;
+    padding: 0.6rem 9rem;
+    border-radius: 8px;
+    color: #fff;
+    font-family: "Montserrat";
+    font-weight: 600;
+  }
+
+  .payment {
+    margin-left: 4rem;
+    font-size: 1rem;
+    font-weight: 500;
   }
 }
 
@@ -152,12 +176,19 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      mat-label {
-        color: $colorTextGrey;
+      mat-label,
+      .mat-flat-button {
+        color: #ccc;
+        font-family: "Montserrat";
+        font-weight: 600;
+      }
+      .mat-flat-button {
+        color: #fff;
       }
     }
   }
 }
+
 //large screen
 @media (max-width: 1200px) {
   .landing-padding {
@@ -204,6 +235,7 @@
     }
   }
 }
+
 //medium screen
 @media (max-width: 900px) {
   .landing-padding {

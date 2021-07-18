@@ -35,6 +35,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatInputModule } from '@angular/material/input';
 import { EpisodesComponent } from '../episodes/episodes.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -73,6 +76,9 @@ import { MatTableModule } from '@angular/material/table';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatTableModule,
+    MatMenuModule,
+    MatSidenavModule,
+        FlexLayoutModule,
   ],
   providers: [],
   exports: [AppComponent],

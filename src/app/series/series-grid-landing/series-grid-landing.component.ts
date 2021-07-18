@@ -1,4 +1,5 @@
 import { Input, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Serie } from '../models/serie';
 
 @Component({
@@ -10,9 +11,15 @@ export class SeriesGridLandingComponent implements OnInit {
 
   @Input() series: Serie[] = [];
   
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  select(category: string): void {
+    console.log(category)
+    if (category) {
+      this.router.navigate(['series', category]);
+    }
+  }
 }

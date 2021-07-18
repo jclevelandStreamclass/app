@@ -1,8 +1,11 @@
-<h1>Si quieres puedes elegir por deporte</h1>
-<section class="categoryGrid">
-  <div class="categories" *ngFor="let category of categories">
-    <button mat-button color="primary">
-       <a href="">{{category.name}}</a>
-    </button>
+<div class="container">
+  <h1>Si quieres puedes elegir por deporte</h1>
+  <section class="categoryGrid">
+    <div class="categories" *ngFor="let category of categories">
+      <button mat-button color="primary">
+        <a href="">{{category.name}}</a>
+      </button>
+    </div>
+  </section>
+  <button mat-stroked-button [routerLink]="['/categories']">CONTINUAR</button>
 </div>
-</section>

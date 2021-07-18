@@ -1,6 +1,6 @@
-import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuItem } from './interface/menu-item';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +8,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  menu: boolean = false;
-  div!: HTMLDivElement;
 
-  constructor(private router: Router, private observer: BreakpointObserver) {}
+  menuItems: MenuItem[] = [
+    {
+      label: 'CATEGORÍAS',
+      // icon: 'help',
+      showOnMobile: false,
+      showOnTablet: false,
+      showOnDesktop: true,
+      path: 'categories',
+    },
+    {
+      label: 'INICIAR SESIÓN',
+      // icon: 'login',
+      showOnMobile: false,
+      showOnTablet: false,
+      showOnDesktop: true,
+      path: 'login',
+    },
+  ];
+
+  constructor(private router: Router) {
+
+  }
 
   ngOnInit(): void {}
 
