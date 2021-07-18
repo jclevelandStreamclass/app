@@ -1,44 +1,71 @@
 <div class="intro">
   <div class="introImg">
-    <h2>
-      <!-- {{ sportsPlayer.name }} -->
-      JORDI <br />
-      XAMMAR
-    </h2>
-    <h3>Enseña vela</h3>
+    <div class="title">
+      <h2>
+        <!-- {{ sportsPlayer.name }} -->
+        <strong>JORDI XAMMAR</strong>
+      </h2>
+      <h3><strong>Enseña vela</strong></h3>
+    </div>
+
     <div class="btonsIntro">
       <div class="btnJoin">
         <button mat-flat-button color="accent" type="submit">ÚNETE</button>
         <p>4,99€ al mes, pago anual</p>
       </div>
       <div class="btnJoin">
-        <button mat-flat-button color="accent" type="submit">
+        <button mat-flat-button color="accent" type="submit" class="forDrkBtn">
           COMPRAR ESTA CLASE
         </button>
         <p>14,99€ al mes, pago único</p>
       </div>
     </div>
   </div>
-</div>
-<div class="seriesChapters">
-  <div class="trailer"></div>
-  <div class="playTrailerBtn">
-    <p>
-      <span><i class="fas fa-play"></i></span> Trailer de la Clase
+  <!-- </div> -->
+
+  <div class="lessonsBox">
+    <div class="trailer"></div>
+    <div class="commandBox">
+      <div class="playTrailerBtn">
+        <button
+          mat-flat-button
+          color="accent"
+          type="submit"
+          class="playTrailer forDrkBtn"
+        >
+          <span class="material-icons"> play_arrow </span> Trailer de la Clase
+        </button>
+      </div>
+
+      <div class="lessonsArray">
+        <p>Lecciones:</p>
+
+        <!-- <mat-card class="lessonsCard" *ngFor="let serie of series">
+          <span>{{ series.id }}</span>
+          <mat-card-content
+            [ngStyle]="{ 'background-image': ' url(' + serie.photo + ')' }"
+          >
+            <h2>
+              {{ serie.id }}
+            </h2>
+            hover
+            <div class="gradient"></div>
+          </mat-card-content>
+        </mat-card> -->
+      </div>
+    </div>
+  </div>
+  <div class="textBox">
+    <p class="bioSportPlayr">
+      <!-- {{sportsPlayer.bio}} -->
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi impedit
+      odit nesciunt, aut sit alias! Vero porro vitae consequatur itaque! Numquam
+      recusandae voluptatem velit amet fuga eaque, esse fugit voluptatum.
     </p>
-  </div>
 
-  <div class="container">
-    <p>Lecciones</p>
-    <mat-card class="lessonsCard" *ngFor="let seie of series">
-      <!-- <span>{{ series.id }}</span> -->
-    </mat-card>
+    <!-- Contador de horas? -->
+    <p class="lessonsCont">16 LECCIONES <span>|1h 36 min</span></p>
+
+    <hr />
   </div>
 </div>
-
-<p class="bioSport">
-  <!-- {{sportsPlayer.bio}} -->
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi impedit odit
-  nesciunt, aut sit alias! Vero porro vitae consequatur itaque! Numquam
-  recusandae voluptatem velit amet fuga eaque, esse fugit voluptatum.
-</p>

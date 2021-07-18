@@ -1,12 +1,117 @@
 .intro {
   color: #fff;
   font-family: "Montserrat";
-  //   .introImg {
-  //     // background-image: url(../img/banner_bg.png);
-  //     // height: 100vh;
-  //     // background-size: cover;
-  //     // background-position: top;
-  //     // background-attachment: fixed;
-  //     // background-repeat: no-repeat;
-  //   }
+  background-color: #181818;
+  .introImg {
+    background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626434708/poseidon/ludomil-sawicki-lsXbZtrVSdQ-unsplash_yx4vjj.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .title {
+      text-align: center;
+      h2 {
+        font-style: italic;
+        font-size: 4rem;
+        font-weight: 500;
+      }
+      h3 {
+        font-size: 2.3rem;
+        font-style: italic;
+        margin-top: 4rem;
+      }
+    }
+    .btonsIntro {
+      display: flex;
+      margin-top: 13rem;
+      p {
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .btnJoin {
+        align-items: center;
+        padding: 0 2.5rem;
+        button {
+          padding: 0.5rem 0;
+          color: #fff;
+          width: 15rem;
+        }
+      }
+    }
+  }
 }
+
+.lessonsBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .trailer {
+    height: 41vh;
+    width: 63%;
+    background-image: url(https://estaticos-cdn.prensaiberica.es/clip/e6e270bb-51b0-447d-9ab9-ead50623c852_16-9-aspect-ratio_default_0.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .playTrailerBtn {
+    .playTrailer {
+      font-size: 17px;
+      text-align: start;
+      padding: 1rem 1rem;
+      color: #fff;
+      width: 23rem;
+    }
+  }
+
+  .lessonsArray {
+    p {
+      padding: 2rem 0 0.5rem;
+    }
+  }
+}
+
+.bioSportPlayr {
+  font-size: 20px;
+  padding: 5rem 0 1.2rem 0;
+}
+
+.lessonsCont {
+  font-size: 13px;
+  padding-bottom: 3rem;
+  span {
+    color: #bab9b9;
+  }
+}
+
+hr {
+  color: #bab9b9;
+}
+
+.forDrkBtn {
+  background-color: #192120;
+}
+
+// Para VideoIntro Gradient
+
+// .gradient {
+//   position: absolute;
+//   opacity: 0;
+//   width: 100%;
+//   height: 100%;
+//   border-radius: 12px;
+//   transition: 0.3s;
+//   background-size: cover;
+//   background: linear-gradient(
+//     transparent 0%,
+//     rgba(255, 255, 255, 0.062) 65%,
+//     rgba(255, 255, 255, 0.062) 100%
+//   );
+//   opacity: 1;
+//   cursor: pointer;
+// }
