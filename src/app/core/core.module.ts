@@ -35,14 +35,10 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatInputModule } from '@angular/material/input';
 import { EpisodesComponent } from '../episodes/episodes.component';
 import { MatTableModule } from '@angular/material/table';
-<<<<<<< HEAD
+import { CategoriesSeriesPageComponent } from '../categories/categories-series-page/categories-series-page.component';
 import { SafePipePipe } from '../episodes/safe-pipe.pipe';
 import { EpisodesStreamComponent } from '../episodes/episodes-stream/episodes-stream.component';
-import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
-=======
-import { CategoriesSeriesPageComponent } from '../categories/categories-series-page/categories-series-page.component';
 
->>>>>>> categoriesv2
 @NgModule({
   declarations: [
     AppComponent,
