@@ -1,23 +1,26 @@
 <div class="intro">
+
   <div class="introImg" [ngStyle]="{'background-image':'url('+sportsPlayer?.photo+')'}">
-    <div class="title">
-      <h2>
-        {{ sportsPlayer?.name}}
+    <div class="overlay">
+      <div class="title">
+        <h2>
+          {{ sportsPlayer?.name}}
 
-      </h2>
-      <h3>{{series?.title}}</h3>
-    </div>
-
-    <div class="btonsIntro">
-      <div class="btnJoin">
-        <button mat-flat-button color="accent" type="submit">ÚNETE</button>
-        <p>4,99€ al mes, pago anual</p>
+        </h2>
+        <h3>{{series?.title}}</h3>
       </div>
-      <div class="btnJoin">
-        <button mat-flat-button color="accent" type="submit" class="forDrkBtn">
-          COMPRAR ESTA CLASE
-        </button>
-        <p>14,99€ al mes, pago único</p>
+
+      <div class="btnsIntro">
+        <div class="btnJoin">
+          <button mat-flat-button color="accent" type="submit">ÚNETE</button>
+          <p>4,99€ al mes, pago anual</p>
+        </div>
+        <div class="btnJoin">
+          <button mat-flat-button color="accent" type="submit" class="forDrkBtn">
+            COMPRAR ESTA CLASE
+          </button>
+          <p>14,99€ al mes, pago único</p>
+        </div>
       </div>
     </div>
   </div>
@@ -48,6 +51,8 @@
 
       <p class="lessonsCont">LECCIONES <span>|{{this.totaltime}}</span></p>
 
-      <hr />
+
     </div>
+
   </div>
+  <hr />
