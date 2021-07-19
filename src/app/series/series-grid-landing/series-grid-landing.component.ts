@@ -9,15 +9,12 @@ import { Serie } from '../models/serie';
 })
 export class SeriesGridLandingComponent implements OnInit {
   @Input() series: Serie[] = [];
-  
-  constructor(private router: Router) { }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
+  constructor(private router: Router) {}
+  ngOnInit(): void {}
 
   select(category: string): void {
-    console.log(category)
+    console.log(category);
     if (category) {
       this.router.navigate(['series', category]);
     }
