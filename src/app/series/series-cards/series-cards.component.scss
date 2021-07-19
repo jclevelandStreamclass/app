@@ -42,6 +42,7 @@
         padding: 0.5rem 3rem;
         border-radius: 8px;
         background-color: #4bb26b !important;
+        // text-align: center !important;
       }
     }
   }
@@ -121,6 +122,17 @@
 @media (max-width: 900px) {
   .container {
     padding: 3rem 6rem;
+    .ofert {
+      display: block;
+      h2 {
+        display: none;
+      }
+
+      .right-ofert {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
     .filter {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
@@ -128,6 +140,26 @@
       .filter-functions {
         display: flex;
         justify-content: space-between;
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .container {
+    padding: 3rem 3rem;
+    .ofert {
+      .right-ofert {
+        display: flex;
+        flex-direction: column-reverse;
+
+        h3 {
+          font-size: 0.9rem;
+        }
+
+        .mat-flat-button {
+          margin-left: 0;
+        }
       }
     }
   }

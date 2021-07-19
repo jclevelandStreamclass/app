@@ -1,10 +1,28 @@
-<header>
-  <ul>
-    <li class="logo" [routerLink]="['/landing']"></li>
-    <li class="list" *ngIf="checkRoute()" [routerLink]="['/landing']">Volver</li>
-    <menu *ngIf="checkRouteLanding()">
-      <li class="list" [routerLink]="['/categories']">CATEGORÍAS</li>
-      <li class="list" [routerLink]="['/login']">INICIAR SESIÓN</li>
-    </menu>
-  </ul>
-</header>
+<mat-toolbar fxLayout="row" color="primary">
+  <span class="logo" [routerLink]="['/landing']"></span>
+  <span class="list" *ngIf="checkRoute()" [routerLink]="['/landing']">VOLVER</span>
+
+  <div class="items" *ngIf="checkRouteLanding()">
+    <button mat-button *ngFor="let item of menuItems" [fxShow]="item.showOnDesktop" [fxShow.xs]="item.showOnMobile"
+      [fxShow.sm]="item.showOnTablet" [routerLink]="item.path">
+      <!-- <mat-icon class="mr">{{item.icon}}</mat-icon> -->
+      {{item.label}}
+    </button>
+    <ng-container>
+      <button mat-icon-button [matMenuTriggerFor]="dropMenu">
+        <mat-icon>reorder</mat-icon>
+      </button>
+      <mat-menu #dropMenu="matMenu">
+        <ng-container *ngFor="let item of menuItems">
+          <div [fxShow]="!item.showOnDesktop" [fxShow.sm]="!item.showOnTablet" [fxShow.xs]="!item.showOnMobile">
+            <button mat-menu-item [routerLink]="item.path">
+              <!-- <mat-icon class="mr">{{item.icon}}</mat-icon> -->
+              {{item.label}}
+            </button>
+            <mat-divider></mat-divider>
+          </div>
+        </ng-container>
+      </mat-menu>
+    </ng-container>
+  </div>
+</mat-toolbar>
