@@ -36,7 +36,6 @@ export class LandingComponent implements OnInit {
     this.categorySvc.getCategory().subscribe((x) => {
       this.categories = x;
     });
-    console.log(this.categories);
   }
 
   registerEmail(form: FormGroup): void {
