@@ -33,3 +33,57 @@
     }
   }
 }
+
+//Aux
+@media (max-width: 1080px) {
+  span.phone::before {
+    content: "\A";
+    white-space: pre;
+  }
+}
+
+//medium-screen
+@media (max-width: 900px) {
+  span.phone::before {
+    content: "\A";
+    white-space: pre;
+  }
+  span.phoneJump::before {
+    content: "\A";
+    white-space: pre;
+  }
+}
+
+//Aux
+@media (max-width: 600px) {
+  .list {
+    padding: 0 1rem !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 6rem;
+
+    .helpPhone {
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 13px;
+      width: 12rem;
+
+      .langButton {
+        margin-top: 18px;
+        height: 1.3rem;
+        span {
+          margin: 3px 0 0 8px;
+        }
+      }
+      .list {
+        margin-bottom: 13px;
+      }
+    }
+  }
+}
