@@ -84,7 +84,7 @@ import { EpisodesStreamComponent } from '../episodes/episodes-stream/episodes-st
     MatTableModule,
     MatMenuModule,
     MatSidenavModule,
-        FlexLayoutModule,
+    FlexLayoutModule,
   ],
   providers: [],
   exports: [AppComponent],
