@@ -39,3 +39,12 @@
     font-weight: 700;
   }
 }
+
+.buttonjoin {
+  text-align: center;
+  margin-bottom: 7%;
+  .mat-flat-button {
+    height: 70px;
+    width: 250px;
+  }
+}

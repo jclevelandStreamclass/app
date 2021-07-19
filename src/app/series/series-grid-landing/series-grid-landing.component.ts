@@ -5,16 +5,16 @@ import { Serie } from '../models/serie';
 @Component({
   selector: 'app-series-grid-landing',
   templateUrl: './series-grid-landing.component.html',
-  styleUrls: ['./series-grid-landing.component.scss']
+  styleUrls: ['./series-grid-landing.component.scss'],
 })
 export class SeriesGridLandingComponent implements OnInit {
-
   @Input() series: Serie[] = [];
   
   constructor(private router: Router) { }
-
   ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
+
 
   select(category: string): void {
     console.log(category)

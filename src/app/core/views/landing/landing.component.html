@@ -1,10 +1,8 @@
 <div class="landing-padding">
     <div class="hero">
         <div class="register-box">
-            <h1>¿Tienes lo que hay que tener?
-            </h1>
-            <p>Aprende de los mejores deportistas
-            </p>
+            <h1>¿Tienes lo que hay que tener?</h1>
+            <p>Aprende de los mejores deportistas</p>
             <form [formGroup]="emailForm" (ngSubmit)="registerEmail(emailForm)">
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Tu email</mat-label>
@@ -16,14 +14,15 @@
                 <mat-checkbox class="example-margin">Mantenme al tanto de nuevas clases y noticias</mat-checkbox>
             </section>
             <p class="terms-conditions">4,99€/mes (pago anual) o 14.99€ por clase</p>
-            <p class="terms-conditions">Al compartir tú email aceptas los Términos y Condiciones y la Politica de
-                Privacidad
+            <p class="terms-conditions">
+                Al compartir tú email aceptas los Términos y Condiciones y la Politica
+                de Privacidad
             </p>
         </div>
         <div class="register-img"></div>
     </div>
-    <app-series-grid-landing [series]="series"></app-series-grid-landing>
 
+    <app-series-grid-landing [series]="series"></app-series-grid-landing>
 
     <div class="subscription-plan">
         <div class="subscription-details">
@@ -38,12 +37,10 @@
             </div>
             <p class="payment">4,99€ al mes (pago anual)</p>
         </div>
-        <div class="device-img">
-        </div>
+        <div class="device-img"></div>
     </div>
 
-    <app-categories-grid [categories]='categories'></app-categories-grid>
-
+    <app-categories-grid [categories]="categories"></app-categories-grid>
 
     <!-- 
 <div class="faq-section">
@@ -86,16 +83,21 @@
 
     <div class="reminder-register-box">
         <div class="register-box">
-            <h2>accede a la experiencia de los mejores deportistas del mundo
-            </h2>
-            <p class="mini-title">Disfruta donde y cuando quieras
+            <h2>accede a la experiencia de los mejores deportistas del mundo</h2>
+            <p class="mini-title">Disfruta donde y cuando quieras</p>
+            <p>
+                ¿Quieres empezar a disfrutar de StreamClass? Escribe tu email para
+                empezar o reactivar tu cuenta.
             </p>
-            <p>¿Quieres empezar a disfrutar de StreamClass? Escribe tu email para empezar o reactivar tu cuenta.</p>
             <div class="form-box">
                 <form [formGroup]="emailForm" (ngSubmit)="registerEmail(emailForm)">
                     <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Tu email</mat-label>
-                        <input matInput placeholder="Email" formControlName="email" value="">
+                        <<<<<<< HEAD <mat-label>Tu email</mat-label>
+                            <input matInput placeholder="Email" formControlName="email" value="">
+                            =======
+                            <mat-label>Tu mail</mat-label>
+                            <input matInput placeholder="Email" formControlName="email" value="" />
+                            >>>>>>> developer
                     </mat-form-field>
                     <button mat-flat-button color="accent" type="submit">ÚNETE</button>
                 </form>

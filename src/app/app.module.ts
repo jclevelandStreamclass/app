@@ -7,7 +7,9 @@ import { AppComponent } from './core/views/app.component';
 import { HotToastModule } from '@ngneat/hot-toast';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

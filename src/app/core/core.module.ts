@@ -38,6 +38,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CategoriesSeriesPageComponent } from '../categories/categories-series-page/categories-series-page.component';
+import { SafePipePipe } from '../episodes/safe-pipe.pipe';
+import { EpisodesStreamComponent } from '../episodes/episodes-stream/episodes-stream.component';
 
 @NgModule({
   declarations: [
@@ -52,11 +55,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CategoriesComponent,
     CategoriesGridComponent,
     CategoriesPageComponent,
+    CategoriesSeriesPageComponent,
     SeriesComponent,
     SeriesCardsComponent,
     SeriesGridLandingComponent,
     SeriesIntroComponent,
     EpisodesComponent,
+    SafePipePipe,
+    EpisodesStreamComponent,
   ],
   imports: [
     CommonModule,
