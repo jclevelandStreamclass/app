@@ -2,7 +2,7 @@
   <h1>Si quieres puedes elegir por deporte</h1>
   <section class="categoryGrid">
     <div class="categories" *ngFor="let category of categories">
-      <button mat-button color="primary">
+      <button mat-button color="primary" (click)="select(category.id)">
         <a href="">{{category.name}}</a>
       </button>
     </div>
