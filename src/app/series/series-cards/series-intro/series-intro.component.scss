@@ -3,7 +3,6 @@
   font-family: "Montserrat";
   background-color: #181818;
   .introImg {
-    //background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626434708/poseidon/ludomil-sawicki-lsXbZtrVSdQ-unsplash_yx4vjj.jpg);
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -12,6 +11,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    //overlay
+
     .title {
       text-align: center;
       font-weight: 700;
@@ -50,38 +52,38 @@
     }
   }
 }
-
-.lessonsBox {
-  height: 60vh;
-  display: grid;
-  grid-template-columns: 4fr 1fr;
-  gap: 2rem;
+.episodes-container {
   padding: 3rem;
+  .lessonsBox {
+    height: 60vh;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 2rem;
 
-  .trailer {
-    height: 94%;
-    background-image: url(https://estaticos-cdn.prensaiberica.es/clip/e6e270bb-51b0-447d-9ab9-ead50623c852_16-9-aspect-ratio_default_0.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .playTrailerBtn {
-    .playTrailer {
-      font-size: 17px;
-      text-align: start;
-      padding: 1rem 1rem;
-      color: #fff;
-      width: 23rem;
+    .trailer {
+      height: 94%;
+      background-image: url(https://estaticos-cdn.prensaiberica.es/clip/e6e270bb-51b0-447d-9ab9-ead50623c852_16-9-aspect-ratio_default_0.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
-  }
+    .playTrailerBtn {
+      .playTrailer {
+        font-size: 17px;
+        text-align: start;
+        padding: 1rem 1rem;
+        color: #fff;
+        width: 23rem;
+      }
+    }
 
-  .lessonsArray {
-    p {
-      margin-bottom: 1rem;
+    .lessonsArray {
+      p {
+        margin-bottom: 1rem;
+      }
     }
   }
 }
-
 .bioSportPlayr {
   font-size: 20px;
   padding: 5rem 0 1.2rem 0;

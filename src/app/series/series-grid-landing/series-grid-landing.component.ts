@@ -13,10 +13,10 @@ export class SeriesGridLandingComponent implements OnInit {
   constructor(private router: Router) {}
   ngOnInit(): void {}
 
-  select(category: string): void {
-    console.log(category);
-    if (category) {
-      this.router.navigate(['series', category]);
+  select(serieId: string): void {
+    console.log(serieId);
+    if (serieId) {
+      this.router.navigate(['series', serieId]);
     }
   }
 }

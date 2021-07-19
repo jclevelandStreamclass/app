@@ -21,35 +21,33 @@
       </div>
     </div>
   </div>
-  <!-- </div> -->
-
-  <div class="lessonsBox">
-    <div class="trailer" [ngStyle]="{'background-image':'url('+series?.photo+')'}"></div>
-    <div class="commandBox">
-      <!-- <div class="playTrailerBtn">
+  <div class="episodes-container">
+    <div class="lessonsBox">
+      <div class="trailer" [ngStyle]="{'background-image':'url('+series?.photo+')'}"></div>
+      <div class="commandBox">
+        <!-- <div class="playTrailerBtn">
         <button mat-flat-button color="accent" type="submit" class="playTrailer forDrkBtn">
           <span class="material-icons"> play_arrow </span> Trailer de la Clase
         </button>
       </div> -->
 
-      <div class="lessonsArray">
-        <p>Lecciones:</p>
-        <div class="classes">
-          <app-episodes [episodes]="episodes"></app-episodes>
+        <div class="lessonsArray">
+          <p>Lecciones:</p>
+          <div class="classes">
+            <app-episodes [episodes]="episodes"></app-episodes>
+          </div>
         </div>
+
       </div>
 
     </div>
+    <div class="textBox">
+      <p class="bioSportPlayr">
+        {{sportsPlayer?.bio}}
+      </p>
 
+      <p class="lessonsCont">LECCIONES <span>|{{this.totaltime}}</span></p>
+
+      <hr />
+    </div>
   </div>
-  <div class="textBox">
-    <p class="bioSportPlayr">
-      {{sportsPlayer?.bio}}
-    </p>
-
-    <!-- Contador de horas? -->
-    <p class="lessonsCont">16 LECCIONES <span>|1h 36 min</span></p>
-
-    <hr />
-  </div>
-</div>
