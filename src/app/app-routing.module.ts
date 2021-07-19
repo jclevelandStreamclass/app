@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoriesPageComponent } from './categories/categories-page/categories-page.component';
 import { CategoriesSeriesPageComponent } from './categories/categories-series-page/categories-series-page.component';
+import { HomeComponent } from './core/views/home/home.component';
 import { LandingComponent } from './core/views/landing/landing.component';
 import { LoginComponent } from './core/views/login/login.component';
 import { SignupComponent } from './core/views/signup/signup.component';
@@ -53,6 +54,10 @@ const routes: Routes = [
   {
     path: 'category/series/:category',
     component: CategoriesSeriesPageComponent,
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
   },
 ];
 

@@ -14,7 +14,5 @@ export class AppComponent {
   // true === autentificado
   isLogged(): boolean {
     return this.authServiceModel.isUserAuthenticated;
-
-    
   }
 }
