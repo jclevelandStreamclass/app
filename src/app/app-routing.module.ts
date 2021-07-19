@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoriesPageComponent } from './categories/categories-page/categories-page.component';
 import { CategoriesSeriesPageComponent } from './categories/categories-series-page/categories-series-page.component';
+import { HomeComponent } from './core/views/home/home.component';
 import { LandingComponent } from './core/views/landing/landing.component';
 import { LoginComponent } from './core/views/login/login.component';
 import { SignupComponent } from './core/views/signup/signup.component';
@@ -30,10 +31,7 @@ const routes: Routes = [
     path: 'categories',
     component: CategoriesPageComponent,
   },
-  {
-    path: 'categories/:category',
-    component: CategoriesSeriesPageComponent,
-  },
+
   {
     path: 'series',
     component: SeriesComponent,
@@ -55,8 +53,12 @@ const routes: Routes = [
     component: SeriesIntroComponent,
   },
   {
-    path: 'series/:categoryId',
-    component: SeriesCardsComponent,
+    path: 'category/series/:category',
+    component: CategoriesSeriesPageComponent,
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
   },
 ];
 
