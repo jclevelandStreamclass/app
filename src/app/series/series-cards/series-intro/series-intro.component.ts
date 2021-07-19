@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { Episode } from 'src/app/episodes/models/episode';
 import { Totaltime } from 'src/app/episodes/models/totaltime';
 import { EpisodesService } from 'src/app/episodes/services/episodes.service';
@@ -23,7 +24,8 @@ export class SeriesIntroComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private seriesModel: SeriesService,
-    private episodesModel: EpisodesService
+    private episodesModel: EpisodesService,
+    private authServiceModel: AuthService
   ) {
     route.params.subscribe((params) => {
       this.serieId = params.serieId || '';
@@ -53,5 +55,9 @@ export class SeriesIntroComponent implements OnInit {
         });
       });
     }
+  }
+
+  isLogged(): boolean {
+    return this.authServiceModel.isUserAuthenticated;
   }
 }

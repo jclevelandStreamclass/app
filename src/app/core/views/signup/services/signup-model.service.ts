@@ -22,6 +22,11 @@ export class SignupModelService {
 
   insertUser(user: UserModel): Observable<UserModel | null> {
     console.log(user.avatar);
+    // ESTABLECEMOS COMO DEFAULT
+    if (user.avatar === '') {
+      user.avatar = 'https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626521265/poseidon/hanson-lu-inVnYQoO9LI-unsplash_lqq1ve.jpg';
+     }
+
     console.log();
     return this.http
       .post<UserModel>(`${this.URL}`, user, { observe: 'response' })

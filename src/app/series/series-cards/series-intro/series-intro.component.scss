@@ -1,7 +1,9 @@
+@import "../../../../variables";
+
 .intro {
-  color: #fff;
-  font-family: "Montserrat";
-  background-color: #181818;
+  color: $colorText;
+  font-family: $fontMontserrat;
+  background-color: $colorBackgroundLight;
   .introImg {
     // height: 100vh;
     // background-size: cover;
@@ -13,6 +15,8 @@
     // justify-content: center;
     width: 100%;
     height: 100vh;
+    height: 110vh;
+    background-size: cover;
     background-position: center;
     background-size: cover;
     min-height: 500px;
@@ -25,11 +29,29 @@
     position: relative;
     z-index: 1;
 
-    //overlay
+    .overlay {
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(
+        transparent 0%,
+        #18181850 85%,
+        $colorBackgroundLight 95%,
+        $colorBackgroundLight 100%
+      );
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
     .title {
+      width: 100%;
       text-align: center;
       font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
       h2 {
         font-style: italic;
@@ -37,6 +59,7 @@
         font-size: 4rem;
         font-weight: 700;
         line-height: 1.2;
+        text-align: center;
       }
       h3 {
         font-size: 2.3rem;
@@ -45,7 +68,7 @@
         font-weight: 700;
       }
     }
-    .btonsIntro {
+    .btnsIntro {
       display: flex;
       flex-wrap: wrap;
       margin-top: 13rem;
@@ -60,7 +83,7 @@
         padding: 0 2.5rem;
         button {
           padding: 0.5rem 0;
-          color: #fff;
+          color: $colorText;
           width: 15rem;
         }
       }
@@ -88,11 +111,11 @@
 // linear-gradient(to top, #181818, #181818, #a8eb1200, #00bf7200, #a8eb1200);
 
 .episodes-container {
-  padding: 3rem;
+  padding: 5rem;
   .lessonsBox {
     height: 60vh;
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 3fr 1fr;
     gap: 2rem;
 
     .trailer {
@@ -107,7 +130,7 @@
         font-size: 17px;
         text-align: start;
         padding: 1rem 1rem;
-        color: #fff;
+        color: $colorText;
         width: 23rem;
       }
     }
@@ -129,17 +152,17 @@
   font-size: 13px;
   padding-bottom: 3rem;
   span {
-    color: #bab9b9;
+    color: $colorTextGrey;
   }
 }
 
 hr {
-  color: #bab9b9;
+  border: 1px solid $colorTextGrey;
 }
 
-.forDrkBtn {
-  background-color: #192120;
-}
+// .forDrkBtn {
+//   background-color: #192120;
+// }
 
 // Para VideoIntro Gradient
 
