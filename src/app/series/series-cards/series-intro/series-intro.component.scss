@@ -3,14 +3,27 @@
   font-family: "Montserrat";
   background-color: #181818;
   .introImg {
+    // height: 100vh;
+    // background-size: cover;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    width: 100%;
     height: 100vh;
-    background-size: cover;
     background-position: center;
+    background-size: cover;
+    min-height: 500px;
+    background-image: url(https://cdn.pixabay.com/photo/2017/05/09/03/46/alberta-2297204_960_720.jpg);
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 
     //overlay
 
@@ -34,7 +47,9 @@
     }
     .btonsIntro {
       display: flex;
+      flex-wrap: wrap;
       margin-top: 13rem;
+      justify-content: center;
       p {
         font-size: 12px;
         text-align: center;
@@ -52,6 +67,26 @@
     }
   }
 }
+
+.gradientTry::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to top,
+    #181818,
+    #181818,
+    #a8eb1200,
+    #00bf7200,
+    #a8eb1200
+  );
+  z-index: -1;
+}
+// linear-gradient(to top, #181818, #181818, #a8eb1200, #00bf7200, #a8eb1200);
+
 .episodes-container {
   padding: 3rem;
   .lessonsBox {
@@ -84,6 +119,7 @@
     }
   }
 }
+
 .bioSportPlayr {
   font-size: 20px;
   padding: 5rem 0 1.2rem 0;
@@ -123,3 +159,81 @@ hr {
 //   opacity: 1;
 //   cursor: pointer;
 // }
+
+//large screen
+@media (max-width: 1200px) {
+}
+
+//medium screen
+@media (max-width: 900px) {
+  .lessonsBox {
+    height: 53vh !important;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 2rem;
+  }
+
+  .bioSportPlayr {
+    font-size: 17px;
+    padding: 3rem 0 1.2rem 0;
+  }
+}
+
+// Aux for .trailer
+@media (max-width: 780px) {
+  .lessonsBox {
+    height: 50vh !important;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 2rem;
+  }
+  .bioSportPlayr {
+    font-size: 17px;
+    padding: 1.7rem 0 1.2rem 0;
+  }
+}
+
+// Aux-2 for .trailer
+@media (max-width: 700px) {
+  .lessonsBox {
+    height: 50vh;
+    display: flex !important;
+    flex-direction: column;
+  }
+  .bioSportPlayr {
+    font-size: 17px;
+    padding: 1.7rem 0 1.2rem 0;
+  }
+}
+
+// small screen
+@media (max-width: 450px) {
+  .introImg {
+    // height: 100vh;
+    // background-size: cover;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+
+    //overlay
+
+    .title {
+      h2 {
+        font-size: 3rem;
+      }
+      .h3 {
+        font-size: 2rem;
+        margin-top: 3rem;
+      }
+    }
+  }
+
+  .bioSportPlayr {
+    text-align: justify;
+    font-size: 13px;
+    padding: 3rem 0 1.2rem 0;
+  }
+}

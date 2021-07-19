@@ -1,11 +1,13 @@
 <div class="intro">
-  <div class="introImg" [ngStyle]="{'background-image':'url('+sportsPlayer?.photo+')'}">
+  <div
+    class="introImg"
+    [ngStyle]="{ 'background-image': 'url(' + sportsPlayer?.photo + ')' }"
+  >
     <div class="title">
       <h2>
-        {{ sportsPlayer?.name}}
-
+        {{ sportsPlayer?.name }}
       </h2>
-      <h3>{{series?.title}}</h3>
+      <h3>{{ series?.title }}</h3>
     </div>
 
     <div class="btonsIntro">
@@ -20,10 +22,14 @@
         <p>14,99€ al mes, pago único</p>
       </div>
     </div>
+    <div class="gradientTry"></div>
   </div>
   <div class="episodes-container">
     <div class="lessonsBox">
-      <div class="trailer" [ngStyle]="{'background-image':'url('+series?.photo+')'}"></div>
+      <div
+        class="trailer"
+        [ngStyle]="{ 'background-image': 'url(' + series?.photo + ')' }"
+      ></div>
       <div class="commandBox">
         <!-- <div class="playTrailerBtn">
         <button mat-flat-button color="accent" type="submit" class="playTrailer forDrkBtn">
@@ -37,17 +43,18 @@
             <app-episodes [episodes]="episodes"></app-episodes>
           </div>
         </div>
-
       </div>
-
     </div>
     <div class="textBox">
       <p class="bioSportPlayr">
-        {{sportsPlayer?.bio}}
+        {{ sportsPlayer?.bio }}
       </p>
 
-      <p class="lessonsCont">LECCIONES <span>|{{this.totaltime}}</span></p>
+      <p class="lessonsCont">
+        LECCIONES <span>|{{ this.totaltime }}</span>
+      </p>
 
       <hr />
     </div>
   </div>
+</div>
