@@ -36,10 +36,11 @@ export class LoginComponent implements OnInit {
   saveClick(form: FormGroup): void {
     if (form.valid) {
       this.loginModel.login(form.value).subscribe((user) => {
-        if (user.active) {
+        if (user?.active) {
           this.authService.storeUser(user);
           this.router.navigate(['/landing']);
-        } else {
+        }
+        if (user?.active === false) {
           this.toastService.showError(
             'Tienes que activar tu cuenta, revisa tu correo electrónico'
           );
