@@ -27,9 +27,11 @@ mat-toolbar {
 
   .items {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    button {
+    .mat-button {
+      display: flex;
+      justify-content: center;
       font-weight: 500;
       font-size: 1.2rem;
       text-transform: uppercase;
@@ -48,6 +50,8 @@ mat-toolbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      cursor: pointer;
+      margin: 0 40px 0 0;
       img {
         width: 45px;
         height: 45px;
@@ -63,6 +67,28 @@ mat-toolbar {
     .items {
       .mat-icon-button {
         display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  mat-toolbar {
+    .items {
+      .mat-button {
+        margin: 0 10px 0 0;
+      }
+      .search {
+        margin: 0 10px 0 0;
+      }
+      .avatar {
+        margin: 0 5px 0 0;
+        img {
+          width: 45px;
+          height: 45px;
+          border-radius: 999px;
+          border: 5px solid #4bb26b;
+        }
       }
     }
   }

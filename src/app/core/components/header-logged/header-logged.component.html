@@ -8,8 +8,8 @@
             <mat-icon class="mr">{{item.icon}}</mat-icon>
             {{item.label}}
         </button>
-        <mat-icon class="search">search</mat-icon>
-        <div class="avatar">
+        <!-- IMPLEMENTAR RUTA EDITAR USUARIO -->
+        <div class="avatar" [routerLink]="['/edituser']">
             <img src="{{avatar}}" alt="">
         </div>
         <ng-container>
@@ -21,7 +21,7 @@
                     <div [fxShow]="!item.showOnDesktop" [fxShow.sm]="!item.showOnTablet"
                         [fxShow.xs]="!item.showOnMobile">
                         <button mat-menu-item [routerLink]="item.path">
-                            <!-- <mat-icon class="mr">{{item.icon}}</mat-icon> -->
+                            <mat-icon class="mr">{{item.icon}}</mat-icon>
                             {{item.label}}
                         </button>
                     </div>
