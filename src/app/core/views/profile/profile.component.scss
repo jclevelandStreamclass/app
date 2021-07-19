@@ -1,0 +1,48 @@
+@import "../../../../variables";
+
+.profile {
+  padding: 5rem;
+  h2 {
+    font-family: $fontAccentBebas;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  .profile-block {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    .avatar-settings {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .avatar {
+        width: 200px;
+        height: 200px;
+        background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1622793421/poseidon/evqjn1klh9gnq7dy7mog.jpg);
+        background-position: center;
+        background-size: cover;
+        border-radius: 50%;
+        border: 8px solid $colorBackgroundLight;
+        box-shadow: 0 0 0 10px $colorGreen;
+        margin-top: 1rem;
+      }
+      .mat-flat-button {
+        margin-top: 2rem;
+        color: #fff !important;
+      }
+    }
+    .profile-settings {
+      color: $colorGreen;
+      text-align: end;
+      font-weight: 600;
+      font-size: 1.2rem;
+      p {
+        padding-top: 0.5rem;
+      }
+    }
+  }
+
+  hr {
+    border: 1px solid $colorBackgroundInputLight;
+    margin: 2rem 0;
+  }
+}

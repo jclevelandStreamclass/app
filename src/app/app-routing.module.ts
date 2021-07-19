@@ -5,6 +5,7 @@ import { CategoriesSeriesPageComponent } from './categories/categories-series-pa
 import { HomeComponent } from './core/views/home/home.component';
 import { LandingComponent } from './core/views/landing/landing.component';
 import { LoginComponent } from './core/views/login/login.component';
+import { ProfileComponent } from './core/views/profile/profile.component';
 import { SignupComponent } from './core/views/signup/signup.component';
 import { EpisodesStreamComponent } from './episodes/episodes-stream/episodes-stream.component';
 import { EpisodesComponent } from './episodes/episodes.component';
@@ -59,6 +60,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
   },
 ];
 
