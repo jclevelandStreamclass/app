@@ -126,9 +126,9 @@
 </section> -->
 
 <!-- USER HEADER// LANDING -->
-<app-header></app-header>
+<app-header *ngIf="!isLogged()"></app-header>
 <!-- USER HEADER// TOKEN -->
-
+<app-header-logged *ngIf="isLogged()"></app-header-logged>
 
 <div class="main">
   <router-outlet></router-outlet>
