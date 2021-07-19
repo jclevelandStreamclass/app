@@ -5,6 +5,7 @@ export class Serie {
   photo: string;
   episodes: [];
   sportsPlayerId: string;
+  categoryId: string;
 
   constructor(item?: any) {
     this.id = item?.id ?? '';
@@ -13,5 +14,6 @@ export class Serie {
     this.photo = item?.photo ?? '';
     this.episodes = item?.episodes ?? [];
     this.sportsPlayerId = item?.sportsPlayerId ?? '';
+    this.categoryId = item?.categoryId ?? '';
   }
 }

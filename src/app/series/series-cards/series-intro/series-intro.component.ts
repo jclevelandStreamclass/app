@@ -34,11 +34,10 @@ export class SeriesIntroComponent implements OnInit {
         this.series = s;
         this.episodes = [...s.episodes];
         console.log(this.episodes);
-        this.seriesModel
-          .getSportsPlayerById(s.sportsPlayerId)
-          .subscribe((sp) => {
-            this.sportsPlayer = sp;
-            console.log(this.sportsPlayer);
+
+        this.seriesModel.getSportsPlayerById(s.sportsPlayerId).subscribe((sp) => {
+        this.sportsPlayer = sp;
+        console.log(this.sportsPlayer);
           });
       });
     }

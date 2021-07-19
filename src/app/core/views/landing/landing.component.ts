@@ -2,7 +2,7 @@ import { Serie } from 'src/app/series/models/serie';
 import { SeriesService } from 'src/app/series/services/series.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Category } from 'src/app/categories/interface/category.interface';
+import { Category } from 'src/app/categories/interface/category.model';
 import { CategoriesService } from 'src/app/categories/services/categories.service';
 import { Router } from '@angular/router';
 
@@ -35,8 +35,8 @@ export class LandingComponent implements OnInit {
     });
     this.categorySvc.getCategory().subscribe((x) => {
       this.categories = x;
+      console.log(this.categories);
     });
-    console.log(this.categories);
   }
 
   registerEmail(form: FormGroup): void {

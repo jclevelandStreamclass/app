@@ -29,10 +29,7 @@ const routes: Routes = [
     path: 'categories',
     component: CategoriesPageComponent,
   },
-  {
-    path: 'categories/:category',
-    component: CategoriesSeriesPageComponent,
-  },
+  
   {
     path: 'series',
     component: SeriesComponent,
@@ -52,6 +49,10 @@ const routes: Routes = [
   {
     path: 'series/:serieId',
     component: SeriesIntroComponent,
+  },
+  {
+    path: 'category/series/:category',
+    component: CategoriesSeriesPageComponent,
   },
 ];
 
