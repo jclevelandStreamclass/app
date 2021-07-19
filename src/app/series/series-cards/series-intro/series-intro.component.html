@@ -12,11 +12,11 @@
 
       <div class="btnsIntro">
         <div class="btnJoin">
-          <button mat-flat-button color="accent" type="submit">ÚNETE</button>
+          <button mat-flat-button color="accent" [routerLink]="['/signup']">ÚNETE</button>
           <p>4,99€ al mes, pago anual</p>
         </div>
         <div class="btnJoin">
-          <button mat-flat-button color="accent" type="submit" class="forDrkBtn">
+          <button mat-flat-button color="primary" type="button" [routerLink]="['/signup']">
             COMPRAR ESTA CLASE
           </button>
           <p>14,99€ al mes, pago único</p>
