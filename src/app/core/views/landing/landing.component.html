@@ -92,12 +92,10 @@
             <div class="form-box">
                 <form [formGroup]="emailForm" (ngSubmit)="registerEmail(emailForm)">
                     <mat-form-field class="example-full-width" appearance="fill">
-                        <<<<<<< HEAD <mat-label>Tu email</mat-label>
-                            <input matInput placeholder="Email" formControlName="email" value="">
-                            =======
-                            <mat-label>Tu mail</mat-label>
-                            <input matInput placeholder="Email" formControlName="email" value="" />
-                            >>>>>>> developer
+                        <mat-label>Tu email</mat-label>
+                        <input matInput placeholder="Email" formControlName="email" value="">
+
+
                     </mat-form-field>
                     <button mat-flat-button color="accent" type="submit">ÚNETE</button>
                 </form>
