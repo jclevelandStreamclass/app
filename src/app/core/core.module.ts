@@ -41,6 +41,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CategoriesSeriesPageComponent } from '../categories/categories-series-page/categories-series-page.component';
 import { SafePipePipe } from '../episodes/safe-pipe.pipe';
 import { EpisodesStreamComponent } from '../episodes/episodes-stream/episodes-stream.component';
+import { HeaderLoggedComponent } from './components/header-logged/header-logged.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { EpisodesStreamComponent } from '../episodes/episodes-stream/episodes-st
     EpisodesComponent,
     SafePipePipe,
     EpisodesStreamComponent,
+    HeaderLoggedComponent,
   ],
   imports: [
     CommonModule,
