@@ -58,9 +58,6 @@ export class LoginComponent implements OnInit {
             'Tienes que activar tu cuenta, revisa tu correo electrónico'
           );
         }
-        if (!user) {
-          this.toastService.showError('El usuario');
-        }
       });
       return;
     }

@@ -18,7 +18,6 @@ import { SignupModelService } from './services/signup-model.service';
 })
 export class SignupComponent implements OnInit {
   signUpForm: FormGroup;
-  error = false;
   userEmail: string = '';
   avatar!: string;
   @ViewChild('avatarElement') avatarElement!: ElementRef<HTMLParagraphElement>;
@@ -35,9 +34,20 @@ export class SignupComponent implements OnInit {
 
     this.signUpForm = fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(6),
+          Validators.maxLength(15),
+          Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/),
+        ],
+      ],
       name: ['', Validators.required],
-      phone: ['', Validators.required],
+      phone: [
+        '',
+        [Validators.required, Validators.pattern(/^\+?[0-9]{9,15}$/)],
+      ],
       avatar: [''],
     });
   }
@@ -81,7 +91,5 @@ export class SignupComponent implements OnInit {
     }
 
     this.toastMessages.showError('Revisa los campos en rojo');
-
-    this.error = true;
   }
 }
