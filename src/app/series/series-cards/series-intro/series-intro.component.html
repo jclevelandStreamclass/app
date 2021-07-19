@@ -12,7 +12,9 @@
 
       <div class="btnsIntro">
         <div class="btnJoin">
-          <button mat-flat-button color="accent" [routerLink]="['/signup']">ÚNETE</button>
+          <button mat-flat-button color="accent" *ngIf="!isLogged()" [routerLink]="['/signup']">ÚNETE</button>
+          <!-- TODO link to pasarela de pago -->
+          <button mat-flat-button color="accent" *ngIf="isLogged()" [routerLink]="['/signup']">SUSCRÍBETE</button>
           <p>4,99€ al mes, pago anual</p>
         </div>
         <div class="btnJoin">
