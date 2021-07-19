@@ -35,6 +35,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatInputModule } from '@angular/material/input';
 import { EpisodesComponent } from '../episodes/episodes.component';
 import { MatTableModule } from '@angular/material/table';
+import { CategoriesSeriesPageComponent } from '../categories/categories-series-page/categories-series-page.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { MatTableModule } from '@angular/material/table';
     CategoriesComponent,
     CategoriesGridComponent,
     CategoriesPageComponent,
+    CategoriesSeriesPageComponent,
     SeriesComponent,
     SeriesCardsComponent,
     SeriesGridLandingComponent,

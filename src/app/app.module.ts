@@ -5,11 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { AppComponent } from './core/views/app.component';
 import { HotToastModule } from '@ngneat/hot-toast';
-import { CategoriesSeriesPageComponent } from './categories/categories-series-page/categories-series-page.component';
 
 @NgModule({
   declarations: [
-    CategoriesSeriesPageComponent
+    
   ],
   imports: [
     BrowserModule,
