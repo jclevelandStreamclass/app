@@ -1,5 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { Category } from '../interface/category.interface';
+import { Category } from '../interface/category.model';
 import { CategoriesService } from '../services/categories.service';
 import { Router } from '@angular/router';
 
@@ -25,10 +25,10 @@ export class CategoriesPageComponent implements OnInit, OnChanges {
     console.log(this.categories)
   }
 
-  select(category: string): void {
-    console.log(category)
-    if (category) {
-      this.router.navigate(['categories', category]);
+  select(categoryId: string): void {
+    console.log(categoryId)
+    if (categoryId) {
+      this.router.navigate(['category/series', categoryId]);
     }
   }
 }

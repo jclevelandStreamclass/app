@@ -5,7 +5,8 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
-import { Category } from '../interface/category.interface';
+import { Router } from '@angular/router';
+import { Category } from '../interface/category.model';
 
 @Component({
   selector: 'app-categories-grid',
@@ -15,7 +16,7 @@ import { Category } from '../interface/category.interface';
 export class CategoriesGridComponent implements OnInit, OnChanges {
   @Input() categories: Category[] = [];
 
-  constructor() {}
+  constructor(private router : Router) {}
   ngOnChanges(changes: SimpleChanges): void {
     // if(changes.categories){
     //   this.categories = [...changes.categories.currentValue]
@@ -23,4 +24,11 @@ export class CategoriesGridComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {}
+
+  select(categoryId: string): void {
+    console.log(categoryId)
+    if (categoryId) {
+      this.router.navigate(['category/series', categoryId]);
+    }
+  }
 }

@@ -24,6 +24,10 @@ export class SeriesService {
       .get<Serie>(`${this.url}/series/${id}`)
       .pipe(map((x) => new Serie(x)));
   }
+  
+  getSeriesByCategoryId(id:string):Observable<Serie[]>{
+    return this.http.get<Serie[]>(`${this.url}/series/find?categoryId=${id}`)
+  }
 
   guardar(serie: Serie): Observable<Serie | null> {
     if (!serie) {
