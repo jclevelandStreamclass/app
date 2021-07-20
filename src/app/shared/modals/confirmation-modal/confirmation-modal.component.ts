@@ -31,15 +31,9 @@ export class ConfirmationModalComponent implements OnInit {
       property: [this.data?.property],
       value: ['', Validators.required],
     });
-    if (this.editUser.controls.property.value === 'password') {
-      this.editUser.controls.value.setValidators(Validators.minLength(6));
-    }
   }
 
   ngOnInit(): void {
-    if (this.editUser) {
-      console.log(this.editUser.value);
-    }
     console.log(this.data);
   }
 
@@ -51,13 +45,5 @@ export class ConfirmationModalComponent implements OnInit {
       return;
     }
     this.toastService.showError('Error al guardar');
-  }
-
-  validationError(data: ConfirmationData) {
-    if (data.property === 'password') {
-      Validators.minLength(6);
-    }
-
-    return false;
   }
 }
