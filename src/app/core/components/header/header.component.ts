@@ -8,7 +8,6 @@ import { MenuItem } from './interface/menu-item';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-
   menuItems: MenuItem[] = [
     {
       label: 'CATEGORÍAS',
@@ -28,19 +27,20 @@ export class HeaderComponent implements OnInit {
     },
   ];
 
-  constructor(private router: Router) {
-
-  }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
   // checkea para incluir volver
   checkRoute(): boolean {
-    return  this.router.url === '/login' ||  this.router.url.includes('/signup');
+    return this.router.url === '/login' || this.router.url.includes('/signup');
   }
 
   // checkea para incluir opciones de categorías e inicio de sesión
   checkRouteLanding(): boolean {
-    return !this.router.url.includes('/login') &&  !this.router.url.includes('/signup');
+    return (
+      !this.router.url.includes('/login') &&
+      !this.router.url.includes('/signup')
+    );
   }
 }

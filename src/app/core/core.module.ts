@@ -42,6 +42,7 @@ import { CategoriesSeriesPageComponent } from '../categories/categories-series-p
 import { SafePipePipe } from '../episodes/safe-pipe.pipe';
 import { EpisodesStreamComponent } from '../episodes/episodes-stream/episodes-stream.component';
 import { HeaderLoggedComponent } from './components/header-logged/header-logged.component';
+import { ProfileComponent } from './views/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { HeaderLoggedComponent } from './components/header-logged/header-logged.
     SafePipePipe,
     EpisodesStreamComponent,
     HeaderLoggedComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
