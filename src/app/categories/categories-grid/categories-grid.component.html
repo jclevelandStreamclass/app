@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Si quieres puedes elegir por deporte</h1>
   <section class="categoryGrid">
-    <div class="categories" *ngFor="let category of categories">
+    <div class="categories" *ngFor="let category of categories.slice(0,6)">
 
       <button mat-button (click)="select(category.id)" color="primary">
 
