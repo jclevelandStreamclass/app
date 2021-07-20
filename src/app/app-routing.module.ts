@@ -25,12 +25,16 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
   },
+  {
+    path: 'login/:activate',
+    component: LoginComponent,
+  },
 
   {
     path: 'categories',
     component: CategoriesPageComponent,
   },
-  
+
   {
     path: 'series',
     component: SeriesComponent,

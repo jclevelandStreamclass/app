@@ -13,6 +13,7 @@ import { UserModel } from 'src/app/models/user';
 })
 export class LoginModelService {
   private URL = 'http://localhost:3000/users/login';
+  private ACTIVATE = 'http://localhost:3000/users';
 
   constructor(
     private http: HttpClient,
@@ -47,9 +48,22 @@ export class LoginModelService {
               'Los datos introducidos no son correctos'
             );
           }
+
+          if (e.error.message === 'Not found user') {
+            this.toastMessages.showError('Usuario no encontrado');
+          }
+
           console.log(e.message);
           return of(null);
         })
       );
+  }
+
+  activateUser(id: string): Observable<null> {
+    return this.http.get<UserModel>(`${this.ACTIVATE}/activate/${id}`).pipe(
+      map((u) => {
+        return null;
+      })
+    );
   }
 }

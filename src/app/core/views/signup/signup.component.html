@@ -34,7 +34,8 @@
       <mat-form-field class="example-full-width" appearance="outline">
 
         <input matInput type="password" placeholder="Password" formControlName="password">
-        <mat-error *ngIf="error">Datos incorrectos</mat-error>
+        <mat-error *ngIf="signUpForm.controls.password">Introduce al menos una letra mayuscula y
+          un minimo de 6 caracteres</mat-error>
       </mat-form-field>
       <button mat-flat-button color="accent" type="submit">ÚNETE</button>
       <p class="member">¿Ya eres miembro? <a [routerLink]="['/login']">Inicia Sesión</a> </p>
