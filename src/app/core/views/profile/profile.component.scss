@@ -1,10 +1,17 @@
 @import "../../../../variables";
 
 .profile {
-  padding: 5rem;
+  padding: 7rem 5rem 5rem 5rem;
+  p {
+    color: $colorGreen;
+    padding-top: 0.5rem;
+    text-align: end;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
   h2 {
     font-family: $fontAccentBebas;
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 2rem;
   }
   .profile-block {
@@ -15,9 +22,8 @@
       flex-direction: column;
       align-items: center;
       .avatar {
-        width: 200px;
-        height: 200px;
-        background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1622793421/poseidon/evqjn1klh9gnq7dy7mog.jpg);
+        width: 175px;
+        height: 175px;
         background-position: center;
         background-size: cover;
         border-radius: 50%;
@@ -25,18 +31,10 @@
         box-shadow: 0 0 0 10px $colorGreen;
         margin-top: 1rem;
       }
-      .mat-flat-button {
-        margin-top: 2rem;
-        color: #fff !important;
-      }
     }
     .profile-settings {
-      color: $colorGreen;
-      text-align: end;
-      font-weight: 600;
-      font-size: 1.2rem;
-      p {
-        padding-top: 0.5rem;
+      .user-details {
+        color: $colorBackgroundInputLight;
       }
     }
   }
@@ -44,5 +42,143 @@
   hr {
     border: 1px solid $colorBackgroundInputLight;
     margin: 2rem 0;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 4fr 5fr 3fr;
+
+  .title {
+    color: $colorBackgroundInputLight;
+    font-family: $fontAccentBebas;
+    font-size: 2.5rem;
+  }
+
+  .details {
+    text-align: start;
+    .premium {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    p {
+      text-align: start;
+    }
+  }
+  span {
+    color: $colorText;
+    font-weight: 600;
+    &.red {
+      color: red;
+    }
+  }
+}
+.btn-right {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.mat-flat-button {
+  margin-top: 2rem;
+  color: $colorText !important;
+  padding: 0.5rem 2rem;
+}
+
+@media (max-width: 900px) {
+  .profile {
+    padding: 5rem 3rem 3rem 3rem;
+    p {
+      font-size: 1rem;
+    }
+    .profile-block {
+      .avatar-settings {
+        .avatar {
+          width: 150px;
+          height: 150px;
+        }
+      }
+    }
+  }
+
+  .grid {
+    .title {
+      font-size: 1.8rem;
+    }
+
+    .details {
+      .premium {
+        font-size: 1rem;
+      }
+      p {
+        text-align: start;
+      }
+    }
+  }
+  .mat-flat-button {
+    margin-top: 1rem;
+    padding: 0.2rem 1rem;
+  }
+}
+@media (max-width: 700px) {
+  .profile {
+    padding: 3rem 2rem;
+    p {
+      font-size: 1rem;
+    }
+    .profile-block {
+      .avatar-settings {
+        .avatar {
+          width: 125px;
+          height: 125px;
+        }
+      }
+    }
+  }
+
+  .grid {
+    .title {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .profile {
+    p {
+      font-size: 0.8rem;
+    }
+    .profile-block {
+      .avatar-settings {
+        .avatar {
+          width: 70px;
+          height: 70px;
+          border: 5px solid $colorBackgroundLight;
+          box-shadow: 0 0 0 5px $colorGreen;
+        }
+      }
+      .profile-settings {
+        // text-align: end;
+        // font-weight: 600;
+        // font-size: 1.2rem;
+        .user-details {
+          //color: $colorBackgroundInputLight;
+        }
+      }
+    }
+  }
+
+  .grid {
+    .title {
+      font-size: 1rem;
+    }
+    .details {
+      .premium {
+        font-size: 1rem;
+      }
+      p {
+        text-align: start;
+      }
+    }
   }
 }
