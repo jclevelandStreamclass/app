@@ -20,16 +20,6 @@ export class LoginModelService {
     private toastMessages: ToastMessagesService
   ) {}
 
-  // login(user: UserModel): Observable<UserModel | null> {
-  //   return this.http
-  //     .post<UserModel>(this.URL, user, { observe: 'response' })
-  //     .pipe(
-  //       map((u) => {
-  //         return new UserModel(u.body);
-  //       })
-  //     );
-  // }
-
   login(values: { email: string; password: string }): Observable<any> {
     console.log(values);
     return this.http
