@@ -39,9 +39,7 @@ export class ConfirmationModalComponent implements OnInit {
 
   saveClick(form: FormGroup) {
     if (form.valid) {
-      this.updateUserService.updateUser(form.value).subscribe(() => {
-        this.toastService.showSuccess(this.data.property + ' Guardado');
-      });
+      this.updateUserService.updateUser(form.value).subscribe();
       return;
     }
     this.toastService.showError('Error al guardar');

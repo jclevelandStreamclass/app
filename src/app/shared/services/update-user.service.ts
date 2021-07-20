@@ -29,14 +29,21 @@ export class UpdateUserService {
     return this.http
       .put<UserModel>(`${this.URL}/${userId}`, { [key]: values.value })
       .pipe(
-        map((user) => new UserModel(user)),
+        map((user) => {
+          new UserModel(user);
+          this.toastMessages.showSuccess(`${key} Guardado`);
+          return user;
+        }),
         catchError((e: HttpErrorResponse) => {
           if (e.status === HttpStatusCode.InternalServerError) {
             console.log(
               'Error en el servidor',
               HttpStatusCode.InternalServerError
             );
-            this.toastMessages.showError('Hubo un error en el servidor');
+            this.toastMessages.showError(
+              'Hubo un error en el servidor' +
+                HttpStatusCode.InternalServerError
+            );
           }
 
           if (e.error.message.includes('fails to match the required pattern')) {
