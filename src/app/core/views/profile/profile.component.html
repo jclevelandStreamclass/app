@@ -10,11 +10,11 @@
         </div>
 
         <div class="profile-settings">
-            <p>Cambiar correo</p>
+            <p class="cursor" (click)="editUser('email')">Cambiar correo</p>
             <p class="user-details">{{user?.email}} {{user?.name}}</p>
-            <p>Cambiar contraseña</p>
+            <p class="cursor" (click)="editUser('password')"> Cambiar contraseña</p>
             <p class="user-details">button?</p>
-            <p>Cambiar número de teléfono</p>
+            <p class="cursor" (click)="editUser('phone')"> Cambiar número de teléfono</p>
             <p class="user-details">{{user?.phone}}</p>
             <p>Verificar número de teléfono</p>
             <p class="user-details">button?</p>

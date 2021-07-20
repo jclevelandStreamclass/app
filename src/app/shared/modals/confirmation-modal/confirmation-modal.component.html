@@ -1,0 +1,23 @@
+<div class="modal" mat-dialog-title>
+  <mat-icon class="delete" mat-raised-button mat-dialog-close color="accent">clear</mat-icon>
+  <h1>
+    {{data?.title || 'Confirmación'}}
+  </h1>
+</div>
+<div mat-dialog-content>
+  <div class="login">
+    <div class="form">
+      <form id="loginForm" [formGroup]="editUser" (ngSubmit)="saveClick(editUser)">
+
+        <input matInput type="{{data.property}}" [placeholder]="data?.property!" formControlName="value">
+        <mat-error *ngIf="validationError(data)">error</mat-error>
+        <div mat-dialog-actions>
+          <button mat-raised-button mat-dialog-close color="primary">{{data?.optionNo ||"No"}}</button>
+          <button class="btn_color" type="submit" mat-raised-button [mat-dialog-close]="true"
+            color="accent">{{data?.optionYes ||
+            'Si'}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
