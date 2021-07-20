@@ -45,6 +45,7 @@ const routes: Routes = [
 
   {
     path: 'series',
+    // padre
     component: SeriesComponent,
   },
   {

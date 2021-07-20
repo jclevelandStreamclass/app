@@ -1,2 +1,2 @@
-<app-series-cards [series]="series"></app-series-cards>
-<!-- <app-series-intro [series]="series"></app-series-intro> -->
+<app-series-cards [series]="series" *ngIf="!checkRoute()"></app-series-cards>
+<app-series-grid-landing [series]="series" *ngIf="checkRoute()"></app-series-grid-landing>

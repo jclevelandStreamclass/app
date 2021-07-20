@@ -13,17 +13,14 @@ import { Category } from '../interface/category.model';
   templateUrl: './categories-grid.component.html',
   styleUrls: ['./categories-grid.component.scss'],
 })
-export class CategoriesGridComponent implements OnInit, OnChanges {
+export class CategoriesGridComponent implements OnInit {
   @Input() categories: Category[] = [];
 
   constructor(private router : Router) {}
-  ngOnChanges(changes: SimpleChanges): void {
-    // if(changes.categories){
-    //   this.categories = [...changes.categories.currentValue]
-    // }
-  }
 
-  ngOnInit(): void {}
+
+  ngOnInit(): void {
+  }
 
   select(categoryId: string): void {
     console.log(categoryId)
