@@ -1,6 +1,6 @@
 <mat-toolbar fxLayout="row" color="primary">
-    <span class="logo" [routerLink]="['/landing']"></span>
-    <span class="list" *ngIf="checkRoute()" [routerLink]="['/landing']">VOLVER</span>
+    <span class="logo" [routerLink]="['/home']"></span>
+    <!-- <span class="list" *ngIf="checkRoute()" [routerLink]="['/landing']">VOLVER</span> -->
 
     <div class="items" *ngIf="checkRouteLanding()">
         <button mat-button *ngFor="let item of menuItems" [fxShow]="item.showOnDesktop" [fxShow.xs]="item.showOnMobile"
