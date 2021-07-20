@@ -36,10 +36,6 @@ export class UpdateUserService {
         }),
         catchError((e: HttpErrorResponse) => {
           if (e.status === HttpStatusCode.InternalServerError) {
-            console.log(
-              'Error en el servidor',
-              HttpStatusCode.InternalServerError
-            );
             this.toastMessages.showError(
               'Hubo un error en el servidor' +
                 HttpStatusCode.InternalServerError
@@ -50,6 +46,10 @@ export class UpdateUserService {
             this.toastMessages.showError(
               'Introduce una contraseña con al menos una letra mayuscula y 6 caracteres'
             );
+          }
+
+          if (e.error.message.includes('must be a valid email')) {
+            this.toastMessages.showError('Introduce un email correcto');
           }
           console.log(e.message);
           return of(null);
