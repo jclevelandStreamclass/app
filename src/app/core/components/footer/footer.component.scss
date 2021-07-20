@@ -54,6 +54,34 @@
   }
 }
 
+//Aux for medium wrap
+@media (max-width: 700px) {
+  .group {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    padding: 2rem 6rem;
+    justify-content: space-around;
+    // text-align: right;
+  }
+}
+
+@media (max-width: 650px) {
+  .group {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    padding: 2rem 6rem;
+    justify-content: space-around;
+    // text-align: right;
+    font-size: 12px;
+
+    // .supportAlign {
+    //   // text-align: left;
+    // }
+  }
+}
+
 //Aux
 @media (max-width: 600px) {
   .list {
@@ -61,12 +89,13 @@
   }
 }
 
+//small-screen
 @media (max-width: 450px) {
   .group {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem 6rem;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // padding: 2rem 6rem;
 
     .helpPhone {
       display: flex;
