@@ -3,13 +3,11 @@
 .thumbnail {
   height: 70px;
   width: 100px;
-  //background-color: red;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   cursor: pointer;
-
   .time-box {
     position: absolute;
     right: 5px;
@@ -28,8 +26,21 @@
     color: $colorTextGrey;
     padding: 0.5rem 1rem;
     background-color: $colorBackgroundLight;
+    span {
+      cursor: pointer;
+      white-space: nowrap;
+    }
   }
   .mat-header-cell {
     display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .mat-cell {
+    padding: 0;
+    span {
+      white-space: wrap;
+    }
   }
 }
