@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Category } from './interface/category.model';
 import { CategoriesService } from './services/categories.service';
 
@@ -8,11 +9,16 @@ import { CategoriesService } from './services/categories.service';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
-  categories!: Category[];
-  constructor(private categorySvc: CategoriesService) { }
+  categories: Category[] = [] ;
+  
+  constructor(private categorySvc: CategoriesService, private router: Router) { }
 
   ngOnInit(): void {
     this.categorySvc.getCategory().subscribe(x => {this.categories = x});
     console.log(this.categories)
 }
+checkRoute(): boolean {
+  return this.router.url === '/landing';
+}
+
 }

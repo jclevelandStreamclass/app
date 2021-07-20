@@ -3,38 +3,43 @@
   flex-direction: row;
   justify-content: center;
   padding: 2rem 6rem;
-  .langButton {
-    border: 1px solid #ccc;
-    text-align: center;
-    padding: 0.1rem 0 0.4rem 0.2rem;
-    width: 6rem;
-    a {
-      font-size: 12px;
-      color: #bab9b9;
-      text-decoration: none;
-      span {
-        margin: 3px 0 0 18px;
-        font-size: 18px;
+  .auxBox {
+    display: flex;
+    flex-direction: row;
+
+    .langButton {
+      border: 1px solid #ccc;
+      text-align: center;
+      padding: 0.1rem 0 0.4rem 0.2rem;
+      width: 6rem;
+      a {
+        font-size: 12px;
+        color: #bab9b9;
+        text-decoration: none;
+        span {
+          margin: 3px 0 0 18px;
+          font-size: 18px;
+        }
       }
     }
-  }
-  .list {
-    padding: 0 2rem;
-    h4 {
-      color: #fff;
-    }
-    ul {
-      padding-left: 0%;
-      list-style: none;
-      a {
-        text-decoration: none;
-        color: #bab9b9;
+    .list {
+      padding: 0 2rem;
+      h4 {
+        color: #fff;
+      }
+      ul {
+        padding-left: 0%;
+        list-style: none;
+        a {
+          text-decoration: none;
+          color: #bab9b9;
+        }
       }
     }
   }
 }
 
-//Aux
+//Aux phone number p
 @media (max-width: 1080px) {
   span.phone::before {
     content: "\A";
@@ -54,36 +59,85 @@
   }
 }
 
-//Aux
+//Aux reposicionamiento
 @media (max-width: 600px) {
-  .list {
-    padding: 0 1rem !important;
-  }
-}
-
-@media (max-width: 450px) {
   .group {
+    padding: 0 1rem 2rem 1rem;
+    flex-wrap: wrap;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    padding: 1rem 0;
     justify-content: center;
-    padding: 2rem 6rem;
-
-    .helpPhone {
-      display: flex;
-      justify-content: space-evenly;
+    font-size: 12px;
+    .list {
       margin-bottom: 13px;
-      width: 12rem;
-
+      padding: 0 1rem !important;
+    }
+    .helpPhone {
+      padding: 1rem 0rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 11px;
+      width: 9rem;
+      margin-bottom: 0px;
       .langButton {
-        margin-top: 18px;
+        margin-top: 5px;
         height: 1.3rem;
         span {
           margin: 3px 0 0 8px;
         }
       }
-      .list {
-        margin-bottom: 13px;
+    }
+  }
+}
+
+//small-screen
+@media (max-width: 450px) {
+  .group {
+    padding: 1rem 0rem;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 0;
+    justify-content: center;
+    font-size: 11px;
+    .list {
+      margin-bottom: 13px;
+    }
+    .helpPhone {
+      padding: 1rem 0rem 2.5rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 11px;
+      width: 9rem;
+      margin-bottom: 0px;
+      .langButton {
+        margin-top: 5px;
+        height: 1.3rem;
+        span {
+          margin: 3px 0 0 8px;
+        }
       }
+    }
+  }
+}
+
+//Xtra-small aux
+@media (max-width: 320px) {
+  .group {
+    font-size: 10px;
+    .helpPhone {
+      text-align: center;
+      align-items: center;
+      padding: 0rem 0 2rem 0;
+      p {
+        margin-bottom: 1px;
+      }
+    }
+    .list {
+      padding: 0 0.2rem !important;
     }
   }
 }

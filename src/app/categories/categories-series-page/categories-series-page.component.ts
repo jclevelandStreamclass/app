@@ -2,8 +2,7 @@ import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Serie } from 'src/app/series/models/serie';
 import { SeriesService } from 'src/app/series/services/series.service';
-import { Category } from '../interface/category.model';
-import { CategoriesService } from '../services/categories.service';
+
 
 
 @Component({
@@ -32,7 +31,6 @@ export class CategoriesSeriesPageComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-      //this.categorySvc.getCategoryById(this.categoryId).subscribe(x=>{this.category = x})
       this.seriesModel.getSeriesByCategoryId(this.categoryId).subscribe(res=>{
         this.serie = res;
       })

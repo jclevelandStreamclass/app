@@ -1,6 +1,7 @@
 import { Input, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Serie } from '../models/serie';
+import { SeriesService } from '../services/series.service';
 
 @Component({
   selector: 'app-series-grid-landing',
@@ -10,8 +11,9 @@ import { Serie } from '../models/serie';
 export class SeriesGridLandingComponent implements OnInit {
   @Input() series: Serie[] = [];
 
-  constructor(private router: Router) {}
-  ngOnInit(): void {}
+  constructor(private router: Router, private serviceModel: SeriesService) {}
+  ngOnInit(): void {
+  }
 
   select(serieId: string): void {
     console.log(serieId);

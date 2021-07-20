@@ -13,14 +13,12 @@ import { Router } from '@angular/router';
 })
 export class LandingComponent implements OnInit {
   emailForm: FormGroup;
-  categories!: Category[];
+  categories: Category[] = [];
   emailInfo: string = '';
 
-  series: Serie[] = [];
 
   constructor(
     fb: FormBuilder,
-    private serviceModel: SeriesService,
     private categorySvc: CategoriesService,
     private router: Router
   ) {
@@ -30,13 +28,7 @@ export class LandingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.serviceModel.getSeries().subscribe((result) => {
-      this.series = result;
-    });
-    this.categorySvc.getCategory().subscribe((x) => {
-      this.categories = x;
-      console.log(this.categories);
-    });
+   
   }
 
   registerEmail(form: FormGroup): void {
