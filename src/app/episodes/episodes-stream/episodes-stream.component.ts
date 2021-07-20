@@ -15,7 +15,6 @@ export class EpisodesStreamComponent implements OnInit {
     route.params.subscribe((params) => {
       this.video = params.video || '';
     });
-    console.log(this.video);
   }
 
   ngOnInit(): void {

@@ -45,13 +45,12 @@ export class SeriesIntroComponent implements OnInit {
           .subscribe((sp) => {
             this.sportsPlayer = sp;
           });
-        console.log(this.serieId);
+
         this.episodesModel.getDuration(this.serieId).subscribe((tt) => {
           let tt2 = new Totaltime(tt[0]).total_time;
           tt2 = tt2.replace(':', 'h ');
           tt2 = tt2.substring(0, 6) + 'min ';
           this.totaltime = tt2;
-          console.log(this.totaltime);
         });
       });
     }
