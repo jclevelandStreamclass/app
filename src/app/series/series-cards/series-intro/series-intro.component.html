@@ -1,65 +1,38 @@
 <div class="intro">
-  <div
-    class="introImg"
-    [ngStyle]="{ 'background-image': 'url(' + sportsPlayer?.photo + ')' }"
-  >
-    <div class="overlay">
-      <div class="title">
-        <h2>
-          {{ sportsPlayer?.name }}
-        </h2>
-        <h3>{{ series?.title }}</h3>
-      </div>
+  <div class="introImg" [ngStyle]="{ 'background-image': 'url(' + sportsPlayer?.photo + ')' }">
 
-      <div class="btnsIntro">
-        <div class="btnJoin">
-          <button
-            mat-flat-button
-            color="accent"
-            *ngIf="!isLogged()"
-            [routerLink]="['/signup']"
-          >
-            ÚNETE
-          </button>
-          <!-- TODO link to pasarela de pago -->
-          <button
-            mat-flat-button
-            color="accent"
-            *ngIf="isLogged()"
-            [routerLink]="['/signup']"
-          >
-            SUSCRÍBETE
-          </button>
-          <p>4,99€ al mes, pago anual</p>
-        </div>
-        <div class="btnJoin">
-          <button
-            mat-flat-button
-            color="primary"
-            type="button"
-            [routerLink]="['/signup']"
-          >
-            COMPRAR ESTA CLASE
-          </button>
-          <p>14,99€ al mes, pago único</p>
-        </div>
+    <div class="title">
+      <h2>
+        {{ sportsPlayer?.name }}
+      </h2>
+      <h3>{{ series?.title }}</h3>
+    </div>
+
+    <div class="btnsIntro">
+      <div class="btnJoin">
+        <button mat-flat-button color="accent" *ngIf="!isLogged()" [routerLink]="['/signup']">
+          ÚNETE
+        </button>
+        <!-- TODO link to pasarela de pago -->
+        <button mat-flat-button color="accent" *ngIf="isLogged()" [routerLink]="['/signup']">
+          SUSCRÍBETE
+        </button>
+        <p>4,99€ al mes, pago anual</p>
+      </div>
+      <div class="btnJoin">
+        <button mat-flat-button color="primary" type="button" [routerLink]="['/signup']">
+          COMPRAR ESTA CLASE
+        </button>
+        <p>14,99€ al mes, pago único</p>
       </div>
     </div>
-    <div class="gradientTry"></div>
+
+    <div class="gradient"></div>
   </div>
   <div class="episodes-container">
     <div class="lessonsBox">
-      <div
-        class="trailer"
-        [ngStyle]="{ 'background-image': 'url(' + series?.photo + ')' }"
-      ></div>
+      <div class="trailer" [ngStyle]="{ 'background-image': 'url(' + series?.photo + ')' }"></div>
       <div class="commandBox">
-        <!-- <div class="playTrailerBtn">
-        <button mat-flat-button color="accent" type="submit" class="playTrailer forDrkBtn">
-          <span class="material-icons"> play_arrow </span> Trailer de la Clase
-        </button>
-      </div> -->
-
         <div class="lessonsArray">
           <p>Lecciones:</p>
           <div class="classes">
@@ -67,15 +40,14 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="textBox">
-      <p class="bioSportPlayr">
-        {{ sportsPlayer?.bio }}
-      </p>
-
-      <p class="lessonsCont">
-        LECCIONES <span>|{{ this.totaltime }}</span>
-      </p>
+      <div class="textBox">
+        <p class="bioSportPlayr">
+          {{ sportsPlayer?.bio }}
+        </p>
+        <p class="lessonsCont">
+          LECCIONES <span>|{{ this.totaltime }}</span>
+        </p>
+      </div>
     </div>
   </div>
   <hr />
