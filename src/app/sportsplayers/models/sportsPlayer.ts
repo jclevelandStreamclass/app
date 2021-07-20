@@ -8,8 +8,8 @@ export class SportsPlayer {
   constructor(item?: any) {
     this.id = item?.id ?? '';
     this.name = item?.name ?? '';
-    this.bio = item?.description ?? '';
-    this.job = item?.photo ?? '';
+    this.bio = item?.bio ?? '';
+    this.job = item?.job ?? '';
     this.photo = item?.photo ?? '';
   }
 }

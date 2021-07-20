@@ -26,12 +26,34 @@ mat-toolbar {
   }
 
   .items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     button {
       font-weight: 500;
       font-size: 1.2rem;
       text-transform: uppercase;
-      margin-right: 50px;
+      margin: 0 50px 0 0;
       cursor: pointer;
+    }
+
+    .search {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      margin: 0 50px 0 0;
+    }
+
+    .avatar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      img {
+        width: 45px;
+        height: 45px;
+        border-radius: 999px;
+        border: 5px solid #4bb26b;
+      }
     }
   }
 }

@@ -5,8 +5,8 @@
             <p>Aprende de los mejores deportistas</p>
             <form [formGroup]="emailForm" (ngSubmit)="registerEmail(emailForm)">
                 <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Tu mail</mat-label>
-                    <input matInput placeholder="Email" formControlName="email" value="" />
+                    <mat-label>Tu email</mat-label>
+                    <input matInput placeholder="Email" formControlName="email" value="">
                 </mat-form-field>
                 <button mat-flat-button color="accent" type="submit">ÚNETE</button>
             </form>
@@ -32,9 +32,8 @@
             <p>En Ordenador, Tablet, móvil o incluso en la TV</p>
             <p>Nuevas clases todos los meses</p>
             <div class="button-box">
-                <button mat-flat-button color="accent" [routerLink]="['/login']">
-                    ÚNETE
-                </button>
+                <button mat-stroked-button type="button" [routerLink]="['/signup']">ÚNETE</button>
+
             </div>
             <p class="payment">4,99€ al mes (pago anual)</p>
         </div>
@@ -93,8 +92,10 @@
             <div class="form-box">
                 <form [formGroup]="emailForm" (ngSubmit)="registerEmail(emailForm)">
                     <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Tu mail</mat-label>
-                        <input matInput placeholder="Email" formControlName="email" value="" />
+                        <mat-label>Tu email</mat-label>
+                        <input matInput placeholder="Email" formControlName="email" value="">
+
+
                     </mat-form-field>
                     <button mat-flat-button color="accent" type="submit">ÚNETE</button>
                 </form>

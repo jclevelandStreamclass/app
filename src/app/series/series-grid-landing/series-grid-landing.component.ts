@@ -11,10 +11,10 @@ export class SeriesGridLandingComponent implements OnInit {
   @Input() series: Serie[] = [];
 
   constructor(private router: Router) {}
-
   ngOnInit(): void {}
 
   select(serieId: string): void {
+    console.log(serieId);
     if (serieId) {
       this.router.navigate(['series', serieId]);
     }
