@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Category } from '../interface/category.model';
 import { CategoriesService } from '../services/categories.service';
 import { Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CategoriesPageComponent implements OnInit, OnChanges {
 
-  categories: Category[] = []
+  @Input() categories: Category[] = [];
   constructor(private categorySvc: CategoriesService, private router: Router) {
    }
   
