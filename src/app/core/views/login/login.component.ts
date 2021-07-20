@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.authService.isUserAuthenticated) {
-      this.router.navigate(['/landing']);
+      this.router.navigate(['/home']);
     }
 
     if (this.activate) {
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
       this.loginModel.login(form.value).subscribe((user) => {
         if (user?.active) {
           this.authService.storeUser(user);
-          this.router.navigate(['/landing']);
+          this.router.navigate(['/home']);
         }
         if (user?.active === false) {
           this.toastService.showError(
