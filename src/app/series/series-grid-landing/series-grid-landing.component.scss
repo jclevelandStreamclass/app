@@ -41,7 +41,9 @@
       border-radius: 12px;
       position: relative;
       transition: all 0.3s;
-
+      h2 {
+        padding-top: 100%;
+      }
       &:hover {
         transform: scale(1.005);
       }

@@ -17,7 +17,7 @@ export class HeaderLoggedComponent implements OnInit {
       showOnMobile: false,
       showOnTablet: false,
       showOnDesktop: true,
-      path: 'home',
+     path: 'home',
     },
     {
       label: 'MIS CLASES',
@@ -26,6 +26,7 @@ export class HeaderLoggedComponent implements OnInit {
       showOnTablet: false,
       showOnDesktop: true,
       path: 'series',
+     
    },
     {
       label: 'CATEGORÍAS',
@@ -35,6 +36,15 @@ export class HeaderLoggedComponent implements OnInit {
       showOnDesktop: true,
       path: 'categories',
    },
+     {
+      label: '',
+      icon: 'search',
+      showOnMobile: false,
+      showOnTablet: false,
+      showOnDesktop: true,
+      path: '#',
+   },
+    
   ];
 
   avatar: string | undefined = this.authServiceModel.user?.avatar;
