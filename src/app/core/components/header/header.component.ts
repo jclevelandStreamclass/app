@@ -10,7 +10,7 @@ import { MenuItem } from './interface/menu-item';
 export class HeaderComponent implements OnInit {
   menuItems: MenuItem[] = [
     {
-      label: 'CATEGORÍAS',
+      label: 'DEPORTES',
       // icon: 'help',
       showOnMobile: false,
       showOnTablet: false,
