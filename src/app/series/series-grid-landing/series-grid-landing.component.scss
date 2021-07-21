@@ -1,7 +1,9 @@
+@import "../../../variables";
+
 .container {
   color: #fff;
   width: 100%;
-  font-family: "Montserrat";
+  font-family: $fontMontserrat;
   text-align: center;
   h1 {
     font-style: italic;
@@ -10,10 +12,10 @@
   }
 
   .mat-stroked-button {
-    border-color: #4caf50;
+    border-color: $colorGreen;
     padding: 0.6rem 9rem;
     border-radius: 8px;
-    font-family: "Montserrat";
+    font-family: $fontMontserrat;
     font-weight: 500;
   }
 
