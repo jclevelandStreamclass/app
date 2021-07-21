@@ -195,7 +195,27 @@
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 850px) {
+  .container-settings {
+    div {
+      display: flex;
+      justify-content: flex-end;
+      margin: 1rem 0;
+      p {
+        text-align: left;
+        width: 340px;
+        height: 10px;
+      }
+
+      button {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
   .profile {
     p {
       font-size: 0.8rem;
@@ -226,6 +246,24 @@
       }
       p {
         text-align: right;
+      }
+    }
+  }
+
+  .container-settings {
+    div {
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem 0;
+      p {
+        text-align: left;
+        width: auto;
+        height: 10px;
+      }
+
+      button {
+        display: flex;
+        justify-content: center;
       }
     }
   }
