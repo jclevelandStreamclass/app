@@ -1,13 +1,15 @@
+@import "../../../variables";
+
 .container {
   color: #fff;
   padding: 4rem 7rem;
   text-align: left;
-  font-family: "Montserrat";
+  font-family: $fontMontserrat;
 
   .title {
     text-align: left;
     h1 {
-      font-family: "Bebas Neue", cursive;
+      font-family: $fontAccentBebas;
       font-size: 3.1rem;
     }
   }
@@ -16,7 +18,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: "Montserrat";
+    font-family: $fontMontserrat;
     font-weight: 500;
     background-color: #192120;
     padding: 2rem;
@@ -41,8 +43,7 @@
         color: #fff;
         padding: 0.5rem 3rem;
         border-radius: 8px;
-        background-color: #4bb26b !important;
-        // text-align: center !important;
+        background-color: $colorGreen;
       }
     }
   }
@@ -53,7 +54,7 @@
     margin: 2.5rem 0 4rem;
 
     .filter-functions {
-      font-family: "Montserrat";
+      font-family: $fontMontserrat;
       font-weight: 500;
     }
 
@@ -66,9 +67,9 @@
         width: 100%;
         aspect-ratio: 7 / 9;
         border-radius: 10px;
-        background-color: #232323;
         color: #fff;
         padding: 0;
+        background-color: #232323;
       }
 
       .mat-card-content {
@@ -115,7 +116,7 @@
 
   h3 {
     cursor: pointer;
-    font-family: "Montserrat";
+    font-family: $fontMontserrat;
     font-weight: 500;
     font-size: 1.2rem;
   }

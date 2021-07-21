@@ -18,7 +18,7 @@ export class EpisodesService {
       .pipe(map((episodes) => episodes.map((e) => new Episode(e))));
   }
 
-  getDuration(searchserieId: string): Observable<any> {
+  getDuration(searchserieId: string): Observable<{ total_time: string }[]> {
     return this.http.get<any[]>(
       `${this.url}/episodes/totaltime/${searchserieId}`
     );

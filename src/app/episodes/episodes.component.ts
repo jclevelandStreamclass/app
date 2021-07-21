@@ -9,6 +9,7 @@ import { Episode } from './models/episode';
 import { EpisodesService } from './services/episodes.service';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { AuthService } from '../core/services/auth.service';
 
 @Component({
   selector: 'app-episodes',
@@ -20,7 +21,7 @@ export class EpisodesComponent implements OnInit, OnChanges {
   displayedColumns: string[] = ['photo', 'title'];
   @Input() episodes: Episode[] = [];
 
-  constructor(private episodeModel: EpisodesService, private router: Router) {}
+  constructor(private episodeModel: EpisodesService, private router: Router, private authService: AuthService) {}
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.episodes) {
       this.dataSource.data = [...changes.episodes.currentValue];
@@ -32,8 +33,18 @@ export class EpisodesComponent implements OnInit, OnChanges {
   }
 
   select(video: string): void {
-    if (video) {
+    // SOLO EN CASO DE SER PREMIUM NAVEGA AL VIDEO
+    if (this.authService.hasUserRole('premium')) {
+       if (video) {
       this.router.navigate(['episodes', video]);
+    } 
+    } else {
+      // TODO
+      this.router.navigate(['landing']);
     }
+   
   }
+
+ 
+
 }

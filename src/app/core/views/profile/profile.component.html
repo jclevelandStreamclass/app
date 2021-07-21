@@ -10,14 +10,29 @@
         </div>
 
         <div class="profile-settings">
-            <p>Cambiar correo</p>
-            <p class="user-details">{{user?.email}}</p>
-            <p>Cambiar contraseña</p>
-            <p class="user-details">button?</p>
-            <p>Cambiar número de teléfono</p>
-            <p class="user-details">{{user?.phone}}</p>
-            <p>Verificar número de teléfono</p>
-            <p class="user-details">button?</p>
+            <!-- <p class="cursor" (click)="editUser('email')">Cambiar correo</p> -->
+            <div class="container-settings">
+                <div>
+                    <p class="user-details"><span class="color-span">Email:</span> {{user?.email}}</p>
+                    <button class="btnEdit" mat-flat-button color="accent" type="button"
+                        (click)="editUser('email')">Editar</button>
+                </div>
+                <div>
+                    <p class="user-details"><span class="color-span">Contraseña:</span> <span
+                            class="pass">*********</span>
+                    </p>
+                    <button class="btnEdit" mat-flat-button color="accent" type="button"
+                        (click)="editUser('password')">Editar</button>
+                </div>
+                <div>
+                    <p class="user-details"><span class="color-span">Teléfono:</span> {{user?.phone}}</p>
+                    <button class="btnEdit" mat-flat-button color="accent" type="button"
+                        (click)="editUser('phone')">Editar</button>
+                </div>
+            </div>
+
+            <!-- <p>Verificar número de teléfono</p>
+            <p class="user-details">button?</p> -->
             <hr>
             <p>Gestionar información de pago</p>
             <p>Añadir método de pago secundario</p>
@@ -30,7 +45,7 @@
     <hr>
     <div class="grid">
         <div class="title">detalle de plan</div>
-        <div class="details"><span class="premium">Premium</span></div>
+        <div><span class="premium">Premium</span></div>
         <div class="link">
             <p>Cambiar plan</p>
             <p><span class="red">Cancelar suscripción</span></p>
