@@ -33,6 +33,11 @@
       }
     }
     .profile-settings {
+      .btnEdit {
+        margin: 0;
+        padding: 0.1rem 2rem;
+      }
+      text-align: right;
       .user-details {
         color: $colorBackgroundInputLight;
       }
@@ -72,6 +77,10 @@
       color: red;
     }
   }
+}
+
+.color-span {
+  color: $colorGreen;
 }
 
 .cursor {

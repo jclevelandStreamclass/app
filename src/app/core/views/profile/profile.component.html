@@ -1,6 +1,6 @@
 <div class="profile">
 
-    <h2>CUENTA</h2>
+    <h2>{{user?.name}}</h2>
     <hr>
     <div class="profile-block">
         <div class="avatar-settings">
@@ -10,14 +10,27 @@
         </div>
 
         <div class="profile-settings">
-            <p class="cursor" (click)="editUser('email')">Cambiar correo</p>
-            <p class="user-details">{{user?.email}} {{user?.name}}</p>
-            <p class="cursor" (click)="editUser('password')"> Cambiar contraseña</p>
-            <p class="user-details">button?</p>
-            <p class="cursor" (click)="editUser('phone')"> Cambiar número de teléfono</p>
-            <p class="user-details">{{user?.phone}}</p>
-            <p>Verificar número de teléfono</p>
-            <p class="user-details">button?</p>
+            <!-- <p class="cursor" (click)="editUser('email')">Cambiar correo</p> -->
+            <div class="container-settings">
+                <div>
+                    <p class="user-details"><span class="color-span">Email:</span> {{user?.email}}</p>
+                    <button class="btnEdit" mat-flat-button color="accent" type="button"
+                        (click)="editUser('email')">Editar</button>
+                </div>
+                <div>
+                    <p class="user-details"><span class="color-span">Contraseña:</span> *********</p>
+                    <button class="btnEdit" mat-flat-button color="accent" type="button"
+                        (click)="editUser('password')">Editar</button>
+                </div>
+                <div>
+                    <p class="user-details"><span class="color-span">Número de teléfono:</span> {{user?.phone}}</p>
+                    <button class="btnEdit" mat-flat-button color="accent" type="button"
+                        (click)="editUser('phone')">Editar</button>
+                </div>
+            </div>
+
+            <!-- <p>Verificar número de teléfono</p>
+            <p class="user-details">button?</p> -->
             <hr>
             <p>Gestionar información de pago</p>
             <p>Añadir método de pago secundario</p>
