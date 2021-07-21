@@ -176,7 +176,9 @@
         // font-weight: 600;
         // font-size: 1.2rem;
         .user-details {
-          //color: $colorBackgroundInputLight;
+          padding: 0;
+          margin: 0;
+          text-align: left;
         }
       }
     }
@@ -193,6 +195,18 @@
       p {
         text-align: start;
       }
+    }
+  }
+}
+
+.container-settings {
+  div {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1rem 0;
+    p {
+      text-align: left;
+      width: 399px;
     }
   }
 }
