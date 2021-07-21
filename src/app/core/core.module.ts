@@ -44,6 +44,7 @@ import { EpisodesStreamComponent } from '../episodes/episodes-stream/episodes-st
 import { HeaderLoggedComponent } from './components/header-logged/header-logged.component';
 import { ProfileComponent } from './views/profile/profile.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
