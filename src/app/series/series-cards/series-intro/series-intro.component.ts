@@ -19,7 +19,6 @@ export class SeriesIntroComponent implements OnInit {
   episodes: Episode[] = [];
   sportsPlayer!: SportsPlayer | null;
   totaltime: string = '';
-  //TODO check !
 
   constructor(
     private route: ActivatedRoute,
