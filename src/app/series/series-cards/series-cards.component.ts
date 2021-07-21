@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Serie } from '../models/serie';
 
 @Component({
@@ -11,9 +12,15 @@ export class SeriesCardsComponent implements OnInit {
   @Input() series: Serie[] = [];
   // seriesCard: Serie[] = [];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  select(serieId: string): void {
+    console.log(serieId);
+    if (serieId) {
+      this.router.navigate(['series', serieId]);
+    }
+  }
 }
