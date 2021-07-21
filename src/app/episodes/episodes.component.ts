@@ -24,15 +24,11 @@ export class EpisodesComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.episodes) {
       this.dataSource.data = [...changes.episodes.currentValue];
-      console.log(this.episodes);
     }
   }
 
   ngOnInit(): void {
     this.dataSource.data = [...this.episodes];
-    // this.episodeModel.getAll().subscribe((episodes) => {
-    //   this.dataSource.data = episodes.map((x) => ({ ...x }));
-    //   });
   }
 
   select(video: string): void {

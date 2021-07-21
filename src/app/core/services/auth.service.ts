@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserModel } from '../../models/user';
 import { LoginModelService } from '../views/login/services/login-model.service';
 
@@ -7,7 +8,7 @@ import { LoginModelService } from '../views/login/services/login-model.service';
 })
 export class AuthService {
   private readonly APP_USER = 'tkn_streamclass';
-  constructor(private loginService: LoginModelService) {}
+  constructor(private loginService: LoginModelService, private route: Router) {}
 
   get isUserAuthenticated(): boolean {
     return !!localStorage.getItem(this.APP_USER);
@@ -38,5 +39,6 @@ export class AuthService {
 
   logOutUser(): void {
     localStorage.removeItem(this.APP_USER);
+    this.route.navigate(['/landing']);
   }
 }

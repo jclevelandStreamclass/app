@@ -9,29 +9,27 @@ import {
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 
-
 @Injectable({
-    providedIn: 'root',
-  })
+  providedIn: 'root',
+})
+export class AuthGuard implements CanActivate {
+  constructor(private authService: AuthService, private router: Router) {}
 
-  export class AuthGuard implements CanActivate {
-    constructor(private authService: AuthService, private router: Router) {}
-  
-    canActivate(
-      route: ActivatedRouteSnapshot,
-      state: RouterStateSnapshot
-    ):
-      | Observable<boolean | UrlTree>
-      | Promise<boolean | UrlTree>
-      | boolean
-      | UrlTree {
-      const roleRequired = route.data.requiredRole;
-      console.log(roleRequired);
-  
-      if (this.authService.isUserAuthenticated) {
-        return roleRequired ? this.authService.hasUserRole(roleRequired) : true;
-      }
-  
-      return this.router.createUrlTree(['login']);
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ):
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree>
+    | boolean
+    | UrlTree {
+    const roleRequired = route.data.requiredRole;
+    console.log(roleRequired);
+
+    if (this.authService.isUserAuthenticated) {
+      return roleRequired ? this.authService.hasUserRole(roleRequired) : true;
     }
+
+    return this.router.createUrlTree(['login']);
   }
+}

@@ -24,8 +24,9 @@ export class SignupModelService {
     console.log(user.avatar);
     // ESTABLECEMOS COMO DEFAULT
     if (user.avatar === '') {
-      user.avatar = 'https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626521265/poseidon/hanson-lu-inVnYQoO9LI-unsplash_lqq1ve.jpg';
-     }
+      user.avatar =
+        'https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626521265/poseidon/hanson-lu-inVnYQoO9LI-unsplash_lqq1ve.jpg';
+    }
 
     console.log();
     return this.http

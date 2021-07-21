@@ -13,6 +13,7 @@ import { EpisodesComponent } from './episodes/episodes.component';
 import { SeriesCardsComponent } from './series/series-cards/series-cards.component';
 import { SeriesIntroComponent } from './series/series-cards/series-intro/series-intro.component';
 import { SeriesComponent } from './series/series.component';
+import { ConfirmationModalComponent } from './shared/modals/confirmation-modal/confirmation-modal.component';
 
 const routes: Routes = [
   {
@@ -23,7 +24,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'landing',
@@ -79,7 +80,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

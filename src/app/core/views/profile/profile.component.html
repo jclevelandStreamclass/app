@@ -1,19 +1,38 @@
 <div class="profile">
 
-    <h2>CUENTA</h2>
+    <h2>{{user?.name}}</h2>
     <hr>
     <div class="profile-block">
         <div class="avatar-settings">
-            <div class="avatar"></div>
+            <div class="avatar" [ngStyle]="{ 'background-image': 'url(' + user?.avatar + ')' }"></div>
 
             <button mat-flat-button color="accent" type="submit">CAMBIAR</button>
         </div>
 
         <div class="profile-settings">
-            <p>Cambiar correo</p>
-            <p>Cambiar contraseña</p>
-            <p>Cambiar número de teléfono</p>
-            <p>Verificar número de teléfono</p>
+            <!-- <p class="cursor" (click)="editUser('email')">Cambiar correo</p> -->
+            <div class="container-settings">
+                <div>
+                    <p class="user-details"><span class="color-span">Email:</span> {{user?.email}}</p>
+                    <button class="btnEdit" mat-flat-button color="accent" type="button"
+                        (click)="editUser('email')">Editar</button>
+                </div>
+                <div>
+                    <p class="user-details"><span class="color-span">Contraseña:</span> <span
+                            class="pass">*********</span>
+                    </p>
+                    <button class="btnEdit" mat-flat-button color="accent" type="button"
+                        (click)="editUser('password')">Editar</button>
+                </div>
+                <div>
+                    <p class="user-details"><span class="color-span">Teléfono:</span> {{user?.phone}}</p>
+                    <button class="btnEdit" mat-flat-button color="accent" type="button"
+                        (click)="editUser('phone')">Editar</button>
+                </div>
+            </div>
+
+            <!-- <p>Verificar número de teléfono</p>
+            <p class="user-details">button?</p> -->
             <hr>
             <p>Gestionar información de pago</p>
             <p>Añadir método de pago secundario</p>
@@ -24,8 +43,30 @@
         </div>
     </div>
     <hr>
+    <div class="grid">
+        <div class="title">detalle de plan</div>
+        <div><span class="premium">Premium</span></div>
+        <div class="link">
+            <p>Cambiar plan</p>
+            <p><span class="red">Cancelar suscripción</span></p>
+        </div>
+    </div>
+    <hr>
+    <div class="grid">
+        <div class="title">configuración</div>
+        <div class="details">
+            <p>Participar</p>
+            <p>Activar un dispositivo</p>
+            <p>Administrar descargas en dispositivos</p>
+            <p>Cerrar sesión en todos los dispositivos</p>
+            <p>Descargar tus datos personales</p>
+            <p> <span class="red">Eliminar tu cuenta</span></p>
 
+        </div>
+        <div class="link btn-right"> <button mat-flat-button (click)="signout()" color="accent" type="button">Cerrar
+                Sesión</button></div>
 
+    </div>
 
 
 </div>
