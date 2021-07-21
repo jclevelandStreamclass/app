@@ -19,11 +19,9 @@ export class EpisodesStreamComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.authModelService.user?.role);
-    if (this.authModelService.hasUserRole('premium')) {
+    // console.log(this.authModelService.user?.role);
       if (this.video) {
       this.urlVideo = this.sanitizer.bypassSecurityTrustResourceUrl(this.video);
-    }
     }
     
   }
