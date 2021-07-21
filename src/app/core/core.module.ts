@@ -43,8 +43,7 @@ import { SafePipePipe } from '../episodes/safe-pipe.pipe';
 import { EpisodesStreamComponent } from '../episodes/episodes-stream/episodes-stream.component';
 import { HeaderLoggedComponent } from './components/header-logged/header-logged.component';
 import { ProfileComponent } from './views/profile/profile.component';
-
-
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,6 +89,7 @@ import { ProfileComponent } from './views/profile/profile.component';
     MatMenuModule,
     MatSidenavModule,
     FlexLayoutModule,
+    SharedModule,
   ],
   providers: [],
   exports: [AppComponent],
