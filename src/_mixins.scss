@@ -1,0 +1,30 @@
+// MIXINS
+
+// FLEX
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-justify-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-just-between-only {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+// FONT MONTSERRAT 500
+@mixin Montserrat500 {
+  font-family: $fontMontserrat;
+  font-weight: 500;
+}
