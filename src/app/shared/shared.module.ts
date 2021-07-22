@@ -8,8 +8,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ModalsService } from './modals.service';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MoviePromoComponent } from './movie-promo/movie-promo.component';
 @NgModule({
-  declarations: [ConfirmationModalComponent],
+  declarations: [ConfirmationModalComponent, MoviePromoComponent],
   imports: [
     CommonModule,
     MatIconModule,
@@ -27,6 +28,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MoviePromoComponent,
   ],
   providers: [
     // Definir el elemento de servicio, para poder hacerlo disponible a nivel global
