@@ -5,10 +5,18 @@
   width: 100%;
   font-family: $fontMontserrat;
   text-align: center;
-  h1 {
-    font-style: italic;
-    font-weight: 600;
-    font-size: 2rem;
+  .title {
+    width: 100%;
+
+    h1 {
+      font-style: italic;
+      font-weight: 600;
+      font-size: 2rem;
+    }
+  }
+  .sugerencias-title {
+    text-align: start;
+    font-family: $fontMontserrat;
   }
 
   .mat-stroked-button {

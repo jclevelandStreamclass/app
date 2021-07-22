@@ -1,8 +1,8 @@
 <div class="container">
     <div class="title">
-        <h1>Nuevas Clases todos los meses</h1>
+        <h1 *ngIf="!checkRoute()">Nuevas Clases todos los meses</h1>
     </div>
-
+    <h1 class="sugerencias-title" *ngIf="checkRoute()">Sugerencias</h1>
     <div class="filter">
         <div class="cards">
             <!-- .slice() -> indicamos el número de datos que queremos filtrar en la web -->
