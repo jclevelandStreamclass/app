@@ -8,7 +8,6 @@ import { HotToastModule } from '@ngneat/hot-toast';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [],
   imports: [
     BrowserModule,
     AppRoutingModule,
