@@ -27,7 +27,7 @@ export class HeaderLoggedComponent implements OnInit {
       path: 'series',
     },
     {
-      label: 'CATEGORÍAS',
+      label: 'DEPORTES',
       icon: '',
       showOnMobile: false,
       showOnTablet: false,

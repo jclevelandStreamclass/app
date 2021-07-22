@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { switchMap, tap } from 'rxjs/operators';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { Episode } from 'src/app/episodes/models/episode';
 import { Totaltime } from 'src/app/episodes/models/totaltime';
@@ -19,6 +21,8 @@ export class SeriesIntroComponent implements OnInit {
   episodes: Episode[] = [];
   sportsPlayer!: SportsPlayer | null;
   totaltime: string = '';
+  //TODO check !
+  viewModel$!: Observable<{ total_time: string }[]>;
 
   constructor(
     private route: ActivatedRoute,
@@ -34,25 +38,48 @@ export class SeriesIntroComponent implements OnInit {
   ngOnChanges(): void {}
 
   ngOnInit(): void {
-    if (this.serieId) {
-      this.seriesModel.getSerieById(this.serieId).subscribe((s) => {
-        this.series = s;
-        this.episodes = [...s.episodes];
-
-        this.seriesModel
-          .getSportsPlayerById(s.sportsPlayerId)
-          .subscribe((sp) => {
-            this.sportsPlayer = sp;
-          });
-
-        this.episodesModel.getDuration(this.serieId).subscribe((tt) => {
-          let tt2 = new Totaltime(tt[0]).total_time;
-          tt2 = tt2.replace(':', 'h ');
-          tt2 = tt2.substring(0, 6) + 'min ';
-          this.totaltime = tt2;
-        });
-      });
+    if (!this.serieId) {
+      // PONER UN GUARDA
+      return;
     }
+
+    // TAP --> efecto secundario -> rxjs evita tener que hacer un subscribe
+    // switchMap -> te suscribes detnro de la tubería, y lanza otro observable, mapea lo que hay dentro por otra cosa(SOLO 1 VEZ)
+    this.viewModel$ = this.seriesModel.getSerieById(this.serieId).pipe(
+      tap((serie) => {
+        this.series = serie;
+        this.episodes = [...serie.episodes];
+      }),
+      switchMap((serie) =>
+        this.seriesModel.getSportsPlayerById(serie.sportsPlayerId)
+      ),
+      tap((sportsPlayer) => (this.sportsPlayer = sportsPlayer)),
+      switchMap(() => this.episodesModel.getDuration(this.serieId)),
+      tap(([totalTime]) => {
+        let tt2 = new Totaltime(totalTime).total_time;
+        tt2 = tt2.replace(':', 'h ');
+        tt2 = tt2.substring(0, 6) + 'min ';
+        this.totaltime = tt2;
+      })
+    );
+
+    // this.seriesModel.getSerieById(this.serieId).subscribe((s) => {
+    //   this.series = s;
+    //   this.episodes = [...s.episodes];
+
+    //   this.seriesModel
+    //     .getSportsPlayerById(s.sportsPlayerId)
+    //     .subscribe((sp) => {
+    //       this.sportsPlayer = sp;
+    //     });
+
+    //   this.episodesModel.getDuration(this.serieId).subscribe((tt) => {
+    //     let tt2 = new Totaltime(tt[0]).total_time;
+    //     tt2 = tt2.replace(':', 'h ');
+    //     tt2 = tt2.substring(0, 6) + 'min ';
+    //     this.totaltime = tt2;
+    //   });
+    // });
   }
 
   isLogged(): boolean {

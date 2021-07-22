@@ -6,19 +6,20 @@ import { CategoriesService } from './services/categories.service';
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.scss']
+  styleUrls: ['./categories.component.scss'],
 })
 export class CategoriesComponent implements OnInit {
-  categories: Category[] = [] ;
-  
-  constructor(private categorySvc: CategoriesService, private router: Router) { }
+  categories: Category[] = [];
+
+  constructor(private categorySvc: CategoriesService, private router: Router) {}
 
   ngOnInit(): void {
-    this.categorySvc.getCategory().subscribe(x => {this.categories = x});
-    console.log(this.categories)
-}
-checkRoute(): boolean {
-  return this.router.url === '/landing';
-}
-
+    this.categorySvc.getCategory().subscribe((x) => {
+      this.categories = x;
+    });
+    // console.log(this.categories)
+  }
+  checkRoute(): boolean {
+    return this.router.url === '/landing';
+  }
 }
