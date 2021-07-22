@@ -81,3 +81,12 @@
     }
   }
 }
+// small screen
+@media (max-width: 450px) {
+  .container {
+    .mat-stroked-button {
+      padding: 0.6rem;
+      width: 100%;
+    }
+  }
+}

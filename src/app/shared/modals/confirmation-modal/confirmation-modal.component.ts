@@ -1,7 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { ToastMessagesService } from 'src/app/core/services/toast-messages.service';
 import { UpdateUserService } from '../../services/update-user.service';
 
@@ -23,9 +24,10 @@ export class ConfirmationModalComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: ConfirmationData,
     fb: FormBuilder,
-    route: ActivatedRoute,
+    private route: Router,
     private updateUserService: UpdateUserService,
-    private toastService: ToastMessagesService
+    private toastService: ToastMessagesService,
+    private authService: AuthService
   ) {
     this.editUser = fb.group({
       property: [this.data?.property],
@@ -39,7 +41,10 @@ export class ConfirmationModalComponent implements OnInit {
 
   saveClick(form: FormGroup) {
     if (form.valid) {
-      this.updateUserService.updateUser(form.value).subscribe();
+      this.updateUserService.updateUser(form.value).subscribe(() => {
+        this.authService.logOutUser();
+        this.route.navigate(['/login']);
+      });
       return;
     }
     this.toastService.showError('Error al guardar');

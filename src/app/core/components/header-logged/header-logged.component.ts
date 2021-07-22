@@ -38,7 +38,7 @@ export class HeaderLoggedComponent implements OnInit {
       label: '',
       icon: 'search',
       showOnMobile: false,
-      showOnTablet: false,
+      showOnTablet: true,
       showOnDesktop: true,
       path: '#',
     },
