@@ -15,6 +15,7 @@ import { SeriesIntroComponent } from './series/series-cards/series-intro/series-
 import { SeriesComponent } from './series/series.component';
 import { ConfirmationModalComponent } from './shared/modals/confirmation-modal/confirmation-modal.component';
 import { UserpaymentComponent } from './core/views/userpayment/userpayment.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 const routes: Routes = [
   {
@@ -79,9 +80,13 @@ const routes: Routes = [
     component: ProfileComponent,
   },
   {
-    path: "userPayment",
+    path: 'userPayment',
     component: UserpaymentComponent,
-  }
+  },
+  {
+    path: 'contacts',
+    component: ContactsComponent,
+  },
 ];
 
 @NgModule({
