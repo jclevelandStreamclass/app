@@ -1,4 +1,5 @@
 @import "../../../variables";
+@import "../../../mixins";
 
 .container {
   text-align: center;
@@ -23,7 +24,7 @@
       padding: 1rem 0;
       h2 {
         font-size: 1.5rem;
-        color: white;
+        color: $colorText;
         text-decoration: none;
         padding-top: 5%;
       }

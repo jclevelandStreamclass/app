@@ -1,4 +1,6 @@
 @import "../../../variables";
+@import "../../../mixins";
+
 .container {
   color: $colorText;
   padding: 4rem 7rem;
@@ -14,11 +16,8 @@
   }
 
   .ofert {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: $fontMontserrat;
-    font-weight: 500;
+    @include flex-justify-between;
+    @include Montserrat500;
     background-color: $colorBackgroundInput;
     padding: 2rem;
     margin-top: 2rem;
@@ -30,8 +29,7 @@
     }
 
     .right-ofert {
-      display: flex;
-      align-items: center;
+      @include flex-align-center;
 
       h3 {
         margin-top: 18px;
@@ -48,13 +46,11 @@
   }
 
   .filter {
-    display: flex;
-    justify-content: space-between;
+    @include flex-just-between-only;
     margin: 5rem;
 
     .filter-functions {
-      font-family: $fontMontserrat;
-      font-weight: 500;
+      @include Montserrat500;
     }
 
     .cards {
@@ -73,9 +69,7 @@
 
       .mat-card-content {
         height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-center;
         background-size: cover;
         border-radius: 12px;
         position: relative;
@@ -116,8 +110,7 @@
 
   h3 {
     cursor: pointer;
-    font-family: $fontMontserrat;
-    font-weight: 500;
+    @include Montserrat500;
     font-size: 1.2rem;
   }
 }
@@ -128,8 +121,7 @@
       display: block;
       justify-content: center;
       .filter-functions {
-        display: flex;
-        justify-content: space-between;
+        @include flex-just-between-only;
       }
       .cards {
         display: grid;
@@ -159,8 +151,7 @@
       justify-content: center;
 
       .filter-functions {
-        display: flex;
-        justify-content: space-between;
+        @include flex-just-between-only;
       }
       .cards {
         display: grid;
@@ -195,8 +186,7 @@
       justify-content: center;
 
       .filter-functions {
-        display: flex;
-        justify-content: space-between;
+        @include flex-just-between-only;
       }
       .cards {
         display: grid;

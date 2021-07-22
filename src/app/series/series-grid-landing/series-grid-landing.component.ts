@@ -16,8 +16,6 @@ import { Serie } from '../models/serie';
 })
 export class SeriesGridLandingComponent implements OnInit, OnChanges {
   @Input() series: Serie[] = [];
-  // seriesPintar: Serie[] = [];
-  // randomNumber!: number;
 
   constructor(private router: Router) {}
   ngOnInit(): void {}
@@ -25,7 +23,6 @@ export class SeriesGridLandingComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.series) {
-      //console.log(this.series.sort(this.random));
     }
   }
 
@@ -34,5 +31,9 @@ export class SeriesGridLandingComponent implements OnInit, OnChanges {
     if (serieId) {
       this.router.navigate(['series', serieId]);
     }
+  }
+
+  checkRoute(): boolean {
+    return this.router.url === '/home';
   }
 }
