@@ -1,3 +1,6 @@
+@import "../../../variables";
+@import "../../../mixins";
+
 .container {
   text-align: center;
   margin: 2rem 0 5rem;
@@ -15,13 +18,13 @@
     grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
     grid-gap: 4.5rem;
     .mat-button {
-      border: 1px solid #4caf50;
+      border: 1px solid $colorGreen;
       border-radius: 10px;
       width: 250px;
       padding: 1rem 0;
       h2 {
         font-size: 1.5rem;
-        color: white;
+        color: $colorText;
         text-decoration: none;
         padding-top: 5%;
       }
@@ -31,12 +34,12 @@
   .mat-stroked-button {
     margin-top: 5rem;
     border: none;
-    background-color: #4bb26b;
-    color: #000;
+    background-color: $colorGreen;
+    color: $colorBackgroundDark;
     width: 250px;
     padding: 1rem 0;
     border-radius: 8px;
-    font-family: "Montserrat";
+    font-family: $fontMontserrat;
     font-weight: 700;
   }
 }

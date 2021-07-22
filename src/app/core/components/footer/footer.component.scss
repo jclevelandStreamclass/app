@@ -1,20 +1,20 @@
+@import "../../../../variables";
+@import "../../../../mixins";
+
 .group {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  @include flex-center-row;
   padding: 2rem 6rem;
   .auxBox {
-    display: flex;
-    flex-direction: row;
+    @include flex-row;
 
     .langButton {
-      border: 1px solid #ccc;
+      border: 1px solid $colorTextCCC;
       text-align: center;
       padding: 0.1rem 0 0.4rem 0.2rem;
       width: 6rem;
       a {
         font-size: 12px;
-        color: #bab9b9;
+        color: $colorTextGrey;
         text-decoration: none;
         span {
           margin: 3px 0 0 18px;
@@ -25,14 +25,14 @@
     .list {
       padding: 0 2rem;
       h4 {
-        color: #fff;
+        color: $colorText;
       }
       ul {
         padding-left: 0%;
         list-style: none;
         p {
           text-decoration: none;
-          color: #bab9b9;
+          color: $colorTextGrey;
           cursor: pointer;
         }
       }
@@ -43,20 +43,17 @@
 //Aux phone number p
 @media (max-width: 1080px) {
   span.phone::before {
-    content: "\A";
-    white-space: pre;
+    @include beforePhone;
   }
 }
 
 //medium-screen
 @media (max-width: 900px) {
   span.phone::before {
-    content: "\A";
-    white-space: pre;
+    @include beforePhone;
   }
   span.phoneJump::before {
-    content: "\A";
-    white-space: pre;
+    @include beforePhone;
   }
 }
 
@@ -65,8 +62,7 @@
   .group {
     padding: 0 1rem 2rem 1rem;
     flex-wrap: wrap;
-    display: flex;
-    flex-direction: row;
+    @include flex-row;
     padding: 1rem 0;
     justify-content: center;
     font-size: 12px;
@@ -76,9 +72,7 @@
     }
     .helpPhone {
       padding: 1rem 0rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      @include flex-justify-center-column;
       font-size: 11px;
       width: 9rem;
       margin-bottom: 0px;
@@ -98,8 +92,7 @@
   .group {
     padding: 1rem 0rem;
     flex-wrap: wrap;
-    display: flex;
-    flex-direction: row;
+    @include flex-row;
     padding: 1rem 0;
     justify-content: center;
     font-size: 11px;
@@ -108,9 +101,7 @@
     }
     .helpPhone {
       padding: 1rem 0rem 2.5rem 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      @include flex-justify-center-column;
       font-size: 11px;
       width: 9rem;
       margin-bottom: 0px;

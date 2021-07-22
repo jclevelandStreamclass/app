@@ -1,24 +1,24 @@
+@import "../../../variables";
+@import "../../../mixins";
+
 .container {
-  color: #fff;
+  color: $colorText;
   padding: 4rem 7rem;
   text-align: left;
-  font-family: "Montserrat";
+  font-family: $fontMontserrat;
 
   .title {
     text-align: left;
     h1 {
-      font-family: "Bebas Neue", cursive;
+      font-family: $fontAccentBebas;
       font-size: 3.1rem;
     }
   }
 
   .ofert {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: "Montserrat";
-    font-weight: 500;
-    background-color: #192120;
+    @include flex-justify-between;
+    @include Montserrat500;
+    background-color: $colorBackgroundInput;
     padding: 2rem;
     margin-top: 2rem;
     border-radius: 12px;
@@ -29,8 +29,7 @@
     }
 
     .right-ofert {
-      display: flex;
-      align-items: center;
+      @include flex-align-center;
 
       h3 {
         margin-top: 18px;
@@ -38,22 +37,20 @@
 
       .mat-flat-button {
         margin-left: 4rem;
-        color: #fff;
+        color: $colorText;
         padding: 0.5rem 3rem;
         border-radius: 8px;
-        background-color: #4bb26b !important;
+        background-color: $colorGreen !important;
       }
     }
   }
 
   .filter {
-    display: flex;
-    justify-content: space-between;
+    @include flex-just-between-only;
     margin: 5rem;
 
     .filter-functions {
-      font-family: "Montserrat";
-      font-weight: 500;
+      @include Montserrat500;
     }
 
     .cards {
@@ -65,16 +62,14 @@
         height: 500px;
         border-radius: 10px;
         margin: 0.6rem;
-        background-color: #232323;
-        color: #fff;
+        background-color: $backgroundMatCard;
+        color: $colorText;
         padding: 0;
       }
 
       .mat-card-content {
         height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-center;
         background-size: cover;
         border-radius: 12px;
         position: relative;
@@ -115,8 +110,7 @@
 
   h3 {
     cursor: pointer;
-    font-family: "Montserrat";
-    font-weight: 500;
+    @include Montserrat500;
     font-size: 1.2rem;
   }
 }
@@ -127,8 +121,7 @@
       display: block;
       justify-content: center;
       .filter-functions {
-        display: flex;
-        justify-content: space-between;
+        @include flex-just-between-only;
       }
       .cards {
         display: grid;
@@ -158,8 +151,7 @@
       justify-content: center;
 
       .filter-functions {
-        display: flex;
-        justify-content: space-between;
+        @include flex-just-between-only;
       }
       .cards {
         display: grid;
@@ -194,8 +186,7 @@
       justify-content: center;
 
       .filter-functions {
-        display: flex;
-        justify-content: space-between;
+        @include flex-just-between-only;
       }
       .cards {
         display: grid;
