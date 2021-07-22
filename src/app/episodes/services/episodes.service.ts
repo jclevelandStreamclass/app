@@ -22,12 +22,9 @@ export class EpisodesService {
     return this.http.get<any[]>(
       `${this.url}/episodes/totaltime/${searchserieId}`
     );
-    // .pipe(
-    //   map(ar => {
-    //     ar.map((ob) => {
-    //       new Totaltime(ob);
-    //     });
-    //   })
-    // );
+  }
+
+  getEpisodeById(id: string): Observable<Episode> {
+    return this.http.get<Episode>(`${this.url}/episodes/${id}`);
   }
 }
