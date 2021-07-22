@@ -6,21 +6,20 @@ import { Serie } from 'src/app/series/models/serie';
 import { Category } from '../interface/category.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CategoriesService {
-  private apiURL= 'http://localhost:3000'
+  private apiURL = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getCategory():Observable<Category[]>{
-    return this.http.get<Category[]>(`${this.apiURL}/categories/all`).pipe(
-      map(x => x.map(s => new Category(s)))
-    );
-  }
-  getCategoryById(id: string): Observable<Category[]> {
+  getCategory(): Observable<Category[]> {
     return this.http
-      .get<Category[]>(`${this.apiURL}/categories/${id}`);
+      .get<Category[]>(`${this.apiURL}/categories/all`)
+      .pipe(map((x) => x.map((s) => new Category(s))));
+  }
+  getCategoryById(id: string): Observable<Category> {
+    return this.http.get<Category>(`${this.apiURL}/categories/${id}`);
   }
 
   getSerieById(id: string): Observable<Serie | null> {
