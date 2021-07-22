@@ -1,6 +1,7 @@
 <div class="container">
     <div class="title">
-        <h1>Deportes</h1>
+        <h1></h1>
+
     </div>
     <div class="ofert">
         <h2>CONSIGUE TODAS LAS CLASES</h2>
@@ -17,7 +18,7 @@
         </div>
         <div class="cards">
             <mat-card class="example-card" *ngFor="let item of serie">
-                <mat-card-content [ngStyle]="{'background-image': 'url('+item.photo+')'}">
+                <mat-card-content (click)="select(item.id)" [ngStyle]="{'background-image': 'url('+item.photo+')'}">
                     <h2>
                         {{item.title}}
                     </h2>
