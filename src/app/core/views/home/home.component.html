@@ -1,23 +1,17 @@
 <div class="home-container">
-    <!-- TODO dynamically injected  -->
-    <!-- <div class="featured-series" [ngStyle]="{ 'background-image': 'url(' + featuredSerie?.photo + ')' }"> -->
-    <div class="featured-series">
+    <div class="featured-series" [ngStyle]="{ 'background-image': 'url(' + featuredSerie?.photo + ')' }">
         <h4>NUEVA CLASE</h4>
-        <h1>{{featuredSerie.title}}velocidad en alta mar</h1>
-
-        <p>{{featuredSerie.description}}Jordi enseña a enfrentarse mentalmente a una carrera en contra de los elementos
-        </p>
+        <h1>{{featuredSerie?.title}}</h1>
+        <p>{{featuredSerie?.description}}</p>
         <div class="gradient"></div>
         <div class="gradient2"></div>
         <div class="button-box">
-            <button mat-flat-button class="btngrey">
+            <button mat-flat-button class="btngrey" [routerLink]="['/series', featuredSerieId]">
                 Más Información
             </button>
-
-            <button mat-flat-button color="accent">
+            <button mat-flat-button color="accent" (click)="playFirstVideo(featuredSerieId)">
                 VER AHORA
             </button>
-
         </div>
     </div>
     <div class="main-home">
