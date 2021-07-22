@@ -10,20 +10,25 @@
 
     <div class="btnsIntro">
       <div class="btnJoin">
-        <button mat-flat-button color="accent" *ngIf="!isLogged()" [routerLink]="['/signup']">
-          ÚNETE
-        </button>
-        <!-- TODO link to pasarela de pago -->
-        <ng-container *ngIf="isLogged() && !isPremium()">
+        <!-- unregistered user  -->
+        <ng-container *ngIf="!isLogged()">
           <button mat-flat-button color="accent" [routerLink]="['/signup']">
+            ÚNETE
+          </button>
+          <p>4,99€ al mes, pago anual</p>
+        </ng-container>
+        <!-- registered user not premium  -->
+        <ng-container *ngIf="isLogged() && !isPremium()">
+          <button mat-flat-button color="accent" [routerLink]="['/userPayment']">
             SUSCRÍBETE
           </button>
           <p>4,99€ al mes, pago anual</p>
         </ng-container>
       </div>
+      <!-- user not premium  -->
       <ng-container *ngIf="!isPremium()">
         <div class="btnJoin">
-          <button mat-flat-button color="primary" type="button" [routerLink]="['/signup']">
+          <button mat-flat-button color="primary" type="button" [routerLink]="['/userPayment']">
             COMPRAR ESTA CLASE
           </button>
           <p>14,99€ al mes, pago único</p>
