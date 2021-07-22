@@ -81,3 +81,10 @@
     }
   }
 }
+@media (max-width: 500px) {
+  .container {
+    .sugerencias-title {
+      text-align: unset;
+    }
+  }
+}
