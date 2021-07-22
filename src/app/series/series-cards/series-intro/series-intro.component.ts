@@ -44,7 +44,8 @@ export class SeriesIntroComponent implements OnInit {
     }
 
     // TAP --> efecto secundario -> rxjs evita tener que hacer un subscribe
-    // switchMap -> te suscribes detnro de la tubería, y lanza otro observable, mapea lo que hay dentro por otra cosa(SOLO 1 VEZ)
+    // Observable --> (SOLO 1 VEZ)
+    // switchMap -> te suscribes detnro de la tubería, y lanza otro observable, mapea lo que hay dentro por otra cosa
     this.viewModel$ = this.seriesModel.getSerieById(this.serieId).pipe(
       tap((serie) => {
         this.series = serie;

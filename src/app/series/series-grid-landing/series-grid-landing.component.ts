@@ -11,8 +11,9 @@ export class SeriesGridLandingComponent implements OnInit {
   @Input() series: Serie[] = [];
 
   constructor(private router: Router) {}
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
+
+  random = () => Math.random() - 0.5;
 
   select(serieId: string): void {
     console.log(serieId);

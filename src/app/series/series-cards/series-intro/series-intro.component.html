@@ -1,5 +1,5 @@
-<div class="intro" *ngIf="viewModel$ | async">
-  <div class="introImg" *ngIf="sportsPlayer" [style.backgroundImage]="'url(' + sportsPlayer?.photo + ')'">
+<div class="intro">
+  <div class="introImg" [ngStyle]="{ 'background-image': 'url(' + sportsPlayer?.photo + ')' }">
 
     <div class="title">
       <h2>
@@ -31,7 +31,7 @@
   </div>
   <div class="episodes-container">
     <div class="lessonsBox">
-      <div class="trailer" *ngIf="series" [style.backgroundImage]="'url(' + series?.photo + ')'"></div>
+      <div class="trailer" [ngStyle]="{ 'background-image': 'url(' + series?.photo + ')' }"></div>
       <div class="commandBox">
         <div class="lessonsArray">
           <p>Lecciones:</p>
