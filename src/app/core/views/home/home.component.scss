@@ -6,7 +6,6 @@
     background-image: url(https://www.sailingworld.com/resizer/I3ALAABetyV2CbnG0afMPvWGKGA=/1000x691/smart/arc-anglerfish-arc2-prod-bonnier.s3.amazonaws.com/public/Y47N7IZLCOOGUZ6FCP4E46LB64.jpg);
     @include bg-cover;
     position: relative;
-    height: 100vh;
     width: 100%;
     z-index: 1;
     @include flex-justify-center-column;
@@ -16,6 +15,7 @@
       font-size: 3rem;
       font-style: italic;
       font-weight: 300;
+      margin-top: 6rem;
       margin-bottom: 0.8rem;
     }
     h1 {
@@ -28,12 +28,13 @@
     }
     p {
       font-size: 1.8rem;
-      margin-bottom: 5rem;
+      margin-bottom: 7rem;
       line-height: 1;
     }
     .button-box {
-      font-family: $fontMontserrat;
+      margin-bottom: 4rem;
       .mat-flat-button {
+        font-family: $fontMontserrat;
         color: $colorText;
         letter-spacing: 1px;
         padding: 0.5rem 4rem;
@@ -58,7 +59,6 @@
     );
     background: -moz-radial-gradient(center, #ffffff00, #181818);
     background: radial-gradient(ellipse at center, #ffffff00, #181818);
-
     z-index: -1;
   }
   .gradient2::after {
@@ -73,8 +73,97 @@
     );
     z-index: -1;
   }
-
   .main-home {
     padding: 5rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .home-container {
+    .featured-series {
+      padding: 3rem;
+    }
+    h4 {
+      font-size: 2.5rem;
+    }
+    h1 {
+      font-size: 10rem;
+    }
+  }
+}
+
+//large screen
+@media (max-width: 1200px) {
+  .home-container {
+    .featured-series {
+      h4 {
+        font-size: 2rem;
+      }
+      h1 {
+        font-size: 10rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+      .button-box {
+        button {
+          padding: 0.2rem 1rem;
+        }
+      }
+    }
+  }
+}
+
+//medium screen
+@media (max-width: 900px) {
+  .home-container {
+    .featured-series {
+      h4 {
+        font-size: 1.5rem;
+      }
+      h1 {
+        font-size: 5rem;
+      }
+      p {
+        font-size: 0.8rem;
+      }
+      .button-box {
+        .mat-flat-button {
+          padding: 0.2rem 0.4rem;
+        }
+      }
+    }
+  }
+  .main-home {
+    padding: 2rem;
+  }
+}
+
+//small screen
+@media (max-width: 500px) {
+  .home-container {
+    .featured-series {
+      text-align: center;
+      h4 {
+        font-size: 1rem;
+        margin-top: 3rem;
+      }
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 0.6rem;
+      }
+      .button-box {
+        @include flex-center-column;
+        .mat-flat-button {
+          padding: 0.1rem 0.5rem;
+          margin: 0 0 1rem 0;
+        }
+      }
+    }
+    .main-home {
+      padding: 2rem;
+    }
   }
 }

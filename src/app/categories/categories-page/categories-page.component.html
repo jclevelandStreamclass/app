@@ -2,7 +2,7 @@
     <div class="title">
         <h1>Deportes</h1>
     </div>
-    <div class="ofert">
+    <div class="ofert" *ngIf="!isLogged()">
         <h2>CONSIGUE TODAS LAS CLASES</h2>
         <div class="right-ofert">
             <h3>4,99€ al mes, pago anual</h3>
@@ -17,8 +17,7 @@
         </div>
         <div class="cards">
             <mat-card class="example-card" *ngFor="let category of categories">
-                <mat-card-content (click)="select(category.id)"
-                    [ngStyle]="{'background-image': 'url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1622793421/poseidon/evqjn1klh9gnq7dy7mog.jpg)'}">
+                <mat-card-content (click)="select(category.id)" [style.backgroundImage]="'url('+category.photo+')'">
 
                     <h2>
                         {{category.name}}
