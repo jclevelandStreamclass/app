@@ -1,5 +1,5 @@
 <div class="home-container">
-    <div class="featured-series" [ngStyle]="{ 'background-image': 'url(' + featuredSerie?.photo + ')' }">
+    <div *ngIf="featuredSerie" class="featured-series" [style.backgroundImage]="'url(' + featuredSerie?.photo + ')'">
         <h4>NUEVA CLASE</h4>
         <h1>{{featuredSerie?.title}}</h1>
         <p>{{featuredSerie?.description}}</p>
