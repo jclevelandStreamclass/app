@@ -31,7 +31,7 @@ export class UpdateUserService {
       .pipe(
         map((user) => {
           new UserModel(user);
-          this.toastMessages.showSuccess(`${key} Guardado`);
+          this.toastMessages.showSuccessNoTime(`${key} Guardado`);
           return user;
         }),
         catchError((e: HttpErrorResponse) => {

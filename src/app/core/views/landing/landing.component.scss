@@ -177,19 +177,26 @@
 //laptop
 @media (max-width: 1600px) {
   .hero {
-    height: 100vh;
+    height: 100%;
   }
 }
 //large screen
-@media (max-width: 1200px) {
+@media (max-width: 1350px) {
   .landing-padding {
     padding: 5rem;
+  }
+  .reminder-register-box {
+    .register-box {
+      form {
+        width: 70%;
+      }
+    }
   }
 
   .hero {
     margin-top: 0;
     @include flex-column-reverse;
-    height: 100vh;
+    height: 100%;
 
     .register-box {
       h1 {
@@ -197,6 +204,9 @@
       }
       p {
         text-align: center;
+      }
+      form {
+        padding: 0 10rem;
       }
     }
     .register-img {
@@ -250,6 +260,10 @@
       .mat-checkbox {
         margin: 0;
       }
+
+      form {
+        padding: 0;
+      }
     }
     .register-img {
       width: 100%;
@@ -257,7 +271,7 @@
     }
   }
   .subscription-plan {
-    height: 80vh;
+    height: 100vh;
     @include flex-column-reverse;
     justify-content: center;
     font-size: 24px;
@@ -317,7 +331,15 @@
 
 @media (max-width: 768px) {
   .landing-padding {
-    padding: 1rem;
+    padding: 2rem;
+  }
+
+  .reminder-register-box {
+    .register-box {
+      form {
+        width: 100%;
+      }
+    }
   }
 }
 // small screen
@@ -348,7 +370,7 @@
   .subscription-plan {
     padding: 0;
     height: 100vh;
-
+    margin-top: 1.5rem;
     .device-img {
       align-self: center;
       width: 80%;
