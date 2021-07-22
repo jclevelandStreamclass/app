@@ -188,7 +188,12 @@
     }
   }
 }
-
+//laptop
+@media (max-width: 1600px) {
+  .hero {
+    height: 100vh;
+  }
+}
 //large screen
 @media (max-width: 1200px) {
   .landing-padding {
