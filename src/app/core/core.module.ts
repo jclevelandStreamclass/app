@@ -44,6 +44,7 @@ import { EpisodesStreamComponent } from '../episodes/episodes-stream/episodes-st
 import { HeaderLoggedComponent } from './components/header-logged/header-logged.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { SharedModule } from '../shared/shared.module';
+import { UserpaymentComponent } from './views/userpayment/userpayment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,6 +68,7 @@ import { SharedModule } from '../shared/shared.module';
     EpisodesStreamComponent,
     HeaderLoggedComponent,
     ProfileComponent,
+    UserpaymentComponent
   ],
   imports: [
     CommonModule,
