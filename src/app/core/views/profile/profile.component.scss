@@ -30,9 +30,13 @@
         box-shadow: 0 0 0 10px $colorGreen;
         margin-top: 1rem;
       }
+      .mat-flat-button {
+        font-family: $fontMontserrat;
+      }
     }
     .profile-settings {
       .btnEdit {
+        font-family: $fontMontserrat;
         margin: 0;
         padding: 0.1rem 2rem;
       }
@@ -93,6 +97,7 @@
   align-items: flex-start;
 }
 .mat-flat-button {
+  font-family: $fontMontserrat;
   margin-top: 2rem;
   color: $colorText !important;
   padding: 0.5rem 2rem;

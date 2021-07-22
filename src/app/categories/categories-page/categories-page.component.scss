@@ -36,6 +36,7 @@
       }
 
       .mat-flat-button {
+        font-family: $fontMontserrat;
         margin-left: 4rem;
         color: #fff;
         padding: 0.5rem 3rem;
@@ -102,6 +103,7 @@
         }
 
         h2 {
+          font-family: $fontMontserrat;
           font-style: italic;
         }
       }
