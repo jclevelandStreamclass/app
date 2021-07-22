@@ -14,6 +14,8 @@ import { SeriesCardsComponent } from './series/series-cards/series-cards.compone
 import { SeriesIntroComponent } from './series/series-cards/series-intro/series-intro.component';
 import { SeriesComponent } from './series/series.component';
 import { ConfirmationModalComponent } from './shared/modals/confirmation-modal/confirmation-modal.component';
+import { UserpaymentComponent } from './core/views/userpayment/userpayment.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 const routes: Routes = [
   {
@@ -76,6 +78,14 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
+  },
+  {
+    path: 'userPayment',
+    component: UserpaymentComponent,
+  },
+  {
+    path: 'contacts',
+    component: ContactsComponent,
   },
 ];
 

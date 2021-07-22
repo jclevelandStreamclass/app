@@ -27,7 +27,6 @@ export class SeriesGridLandingComponent implements OnInit, OnChanges {
   }
 
   select(serieId: string): void {
-    console.log(serieId);
     if (serieId) {
       this.router.navigate(['series', serieId]);
     }

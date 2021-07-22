@@ -25,6 +25,7 @@
       width: 250px;
 
       h2 {
+        font-family: $fontMontserrat;
         font-size: 1.5rem;
         color: $colorText;
         text-decoration: none;
@@ -56,9 +57,9 @@
 }
 
 //medium screen
-@media (max-width: 1200px) {
+@media (max-width: 1350px) {
   .container {
-    margin-top: 10rem;
+    // margin-top: 10rem;
 
     .categoryGrid {
       grid-template-columns: repeat(auto-fit, minmax(min(335px, 100%), 1fr));

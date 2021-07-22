@@ -6,9 +6,9 @@ import { CoreModule } from './core/core.module';
 import { AppComponent } from './core/views/app.component';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { SharedModule } from './shared/shared.module';
+import { ContactsComponent } from './contacts/contacts.component';
 
 @NgModule({
-  declarations: [],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -19,5 +19,8 @@ import { SharedModule } from './shared/shared.module';
   ],
   providers: [],
   bootstrap: [AppComponent],
+  declarations: [
+    ContactsComponent
+  ],
 })
 export class AppModule {}

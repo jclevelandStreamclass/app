@@ -108,14 +108,40 @@
   }
 }
 
-//FAQ SECTION
+// //FAQ SECTION
 // .faq-section {
 //   display: flex;
 //   flex-direction: column;
 //   justify-content: center;
+//   padding: 4rem 6rem;
+//   .faqTitle {
+//     text-align: center;
+//     padding: 2rem 0;
+//     font-style: italic;
+//     font-size: 2.5rem;
+//     font-weight: 700;
+//   }
+
+//   ////// FAQ
 // }
+// .mat-textwhite {
+//   // background-color: $colorBackgroundInput;
+//   font-size: 23px;
+//   .questionText {
+//     color: #fff;
+//     padding: 0.6rem 2rem;
+//   }
+
+//   //Pruebas
+//   // .mat-expansion-panel-header-title.mat-textwhite.questionText
+//   #mat-expansion-panel-header-0 {
+//     background-color: $colorBackgroundInput;
+//     box-shadow: none;
+//   }
+// }
+
 // .mat-accordion {
-//    background-color: $colorBackgroundLight;
+//   background-color: $colorBackgroundInput;
 //   &:hover {
 //     background-color: $colorBackgroundLight;
 //   }
@@ -216,7 +242,7 @@
     }
   }
   .subscription-plan {
-    height: 60vh;
+    height: 100%;
     .subscription-details {
       h3 {
         line-height: 1.5;

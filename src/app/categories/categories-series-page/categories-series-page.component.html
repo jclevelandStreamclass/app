@@ -1,9 +1,8 @@
-<div class="container">
+<div *ngIf="serie && category" class="container">
     <div class="title">
-        <h1></h1>
-
+        <h1>{{category.name}}</h1>
     </div>
-    <div class="ofert">
+    <div *ngIf="!isLogged()" class="ofert">
         <h2>CONSIGUE TODAS LAS CLASES</h2>
         <div class="right-ofert">
             <h3>4,99€ al mes, pago anual</h3>
