@@ -1,17 +1,15 @@
 @import "../../../../variables";
+@import "../../../../mixins";
 
 .home-container {
   .featured-series {
     background-image: url(https://www.sailingworld.com/resizer/I3ALAABetyV2CbnG0afMPvWGKGA=/1000x691/smart/arc-anglerfish-arc2-prod-bonnier.s3.amazonaws.com/public/Y47N7IZLCOOGUZ6FCP4E46LB64.jpg);
-    background-position: center;
-    background-size: cover;
+    @include bg-cover;
     position: relative;
     height: 100vh;
     width: 100%;
     z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include flex-justify-center-column;
     padding: 5rem;
     h4 {
       font-family: $fontMontserrat;
@@ -44,12 +42,9 @@
     }
   }
   .gradient::after {
-    position: absolute;
+    @include pos-absolute-0;
     content: "";
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
     height: 100%;
     background: transparent;
     background: -webkit-radial-gradient(
@@ -65,9 +60,7 @@
   }
   .gradient2::after {
     content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+    @include pos-absolute-0;
     width: 100%;
     height: 100%;
     background: linear-gradient(
