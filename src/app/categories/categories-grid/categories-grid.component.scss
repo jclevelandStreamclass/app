@@ -3,7 +3,8 @@
 
 .container {
   text-align: center;
-  margin: 2rem 0 5rem;
+  margin-bottom: 3rem;
+  // margin: 2rem 0 5rem;
 
   h1 {
     font-style: italic;
@@ -16,12 +17,13 @@
     text-align: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
-    grid-gap: 4.5rem;
+    gap: 5rem 0;
+    padding: 0 3rem;
     .mat-button {
       border: 1px solid $colorGreen;
       border-radius: 10px;
       width: 250px;
-      padding: 1rem 0;
+
       h2 {
         font-size: 1.5rem;
         color: $colorText;
@@ -50,5 +52,34 @@
   .mat-flat-button {
     height: 70px;
     width: 250px;
+  }
+}
+
+//medium screen
+@media (max-width: 1200px) {
+  .container {
+    margin-top: 10rem;
+
+    .categoryGrid {
+      grid-template-columns: repeat(auto-fit, minmax(min(335px, 100%), 1fr));
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .container {
+    padding: 0;
+    .categoryGrid {
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    margin: 2rem 0 5rem;
+    .categoryGrid {
+      grid-template-columns: repeat(auto-fit, minmax(min(335px, 100%), 1fr));
+    }
   }
 }

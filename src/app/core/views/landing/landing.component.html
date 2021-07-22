@@ -9,17 +9,20 @@
                     <input matInput placeholder="Email" formControlName="email" value="">
                 </mat-form-field>
                 <button mat-flat-button color="accent" type="submit">ÚNETE</button>
+                <section class="example-section">
+                    <mat-checkbox class="example-margin">Mantenme al tanto de nuevas clases y noticias</mat-checkbox>
+                </section>
             </form>
-            <section class="example-section">
-                <mat-checkbox class="example-margin">Mantenme al tanto de nuevas clases y noticias</mat-checkbox>
-            </section>
+
             <p class="terms-conditions">4,99€/mes (pago anual) o 14.99€ por clase</p>
             <p class="terms-conditions">
                 Al compartir tú email aceptas los Términos y Condiciones y la Politica
                 de Privacidad
             </p>
         </div>
-        <div class="register-img"></div>
+        <div>
+            <app-movie-promo></app-movie-promo>
+        </div>
     </div>
 
     <app-series></app-series>
@@ -85,6 +88,7 @@
         <div class="register-box">
             <h2>accede a la experiencia de los mejores deportistas del mundo</h2>
             <p class="mini-title">Disfruta donde y cuando quieras</p>
+
             <p>
                 ¿Quieres empezar a disfrutar de StreamClass? Escribe tu email para
                 empezar o reactivar tu cuenta.

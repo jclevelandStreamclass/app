@@ -81,10 +81,16 @@
     }
   }
 }
+
+// small screen
 @media (max-width: 500px) {
   .container {
     .sugerencias-title {
       text-align: unset;
+    }
+    .mat-stroked-button {
+      padding: 0.6rem;
+      width: 100%;
     }
   }
 }

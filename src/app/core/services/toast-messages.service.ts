@@ -15,6 +15,14 @@ export class ToastMessagesService {
     });
   }
 
+  showSuccessNoTime(text: string): void {
+    this.toast.success(text, {
+      position: 'top-center',
+      autoClose: true,
+      dismissible: true,
+    });
+  }
+
   showError(text: string): void {
     this.toast.error(text, {
       position: 'top-center',
