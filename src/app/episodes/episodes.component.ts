@@ -50,7 +50,7 @@ export class EpisodesComponent implements OnInit, OnChanges {
       }
     } else {
       // TODO
-      this.router.navigate(['landing']);
+      this.router.navigate(['userPayment']);
     }
   }
 }
