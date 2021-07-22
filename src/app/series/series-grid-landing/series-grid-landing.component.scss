@@ -1,7 +1,8 @@
 @import "../../../variables";
+@import "../../../mixins";
 
 .container {
-  color: #fff;
+  color: $colorText;
   width: 100%;
   font-family: $fontMontserrat;
   text-align: center;
@@ -23,8 +24,7 @@
     border-color: $colorGreen;
     padding: 0.6rem 9rem;
     border-radius: 8px;
-    font-family: $fontMontserrat;
-    font-weight: 500;
+    @include Montserrat500;
   }
 
   .cards {
@@ -36,17 +36,15 @@
       width: 100%;
       aspect-ratio: 7 / 9;
       border-radius: 10px;
-      background-color: #232323;
-      color: #fff;
+      background-color: $backgroundMatCard;
+      color: $colorText;
       padding: 0;
       margin: 4rem 0;
     }
 
     .mat-card-content {
       height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-center;
       background-size: cover;
       border-radius: 12px;
       position: relative;

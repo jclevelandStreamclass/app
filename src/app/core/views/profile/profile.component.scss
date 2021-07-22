@@ -1,4 +1,5 @@
 @import "../../../../variables";
+@import "../../../../mixins";
 
 .profile {
   padding: 7rem 5rem 5rem 5rem;
@@ -19,14 +20,11 @@
     grid-template-columns: 1fr 3fr;
     gap: 2rem;
     .avatar-settings {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include flex-align-center-column;
       .avatar {
         width: 175px;
         height: 175px;
-        background-position: center;
-        background-size: cover;
+        @include bg-cover;
         border-radius: 50%;
         border: 8px solid $colorBackgroundLight;
         box-shadow: 0 0 0 10px $colorGreen;
@@ -103,8 +101,7 @@
 // EDITS PROFILE
 .container-settings {
   div {
-    display: flex;
-    justify-content: flex-end;
+    @include flex-justify-end;
     margin: 1rem 0;
     p {
       text-align: left;
@@ -178,8 +175,7 @@
 
   .container-settings {
     div {
-      display: flex;
-      justify-content: flex-end;
+      @include flex-justify-end;
       margin: 1rem 0;
       p {
         text-align: left;
@@ -188,8 +184,7 @@
       }
 
       button {
-        display: flex;
-        justify-content: center;
+        @include flex-justify-center;
       }
     }
   }
@@ -198,8 +193,7 @@
 @media (max-width: 850px) {
   .container-settings {
     div {
-      display: flex;
-      justify-content: flex-end;
+      @include flex-justify-end;
       margin: 1rem 0;
       p {
         text-align: left;
@@ -208,8 +202,7 @@
       }
 
       button {
-        display: flex;
-        justify-content: center;
+        @include flex-justify-center;
       }
     }
   }
@@ -262,8 +255,7 @@
       }
 
       button {
-        display: flex;
-        justify-content: center;
+        @include flex-justify-center;
       }
     }
   }

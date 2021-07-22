@@ -1,11 +1,13 @@
+@import "../../../../variables";
+@import "../../../../mixins";
+
 .mr {
   margin-right: 5px;
 }
 
 mat-toolbar {
   padding: 55px 34px;
-  display: flex;
-  justify-content: space-between;
+  @include flex-just-between-only;
   .mat-icon-button {
     display: none;
     mat-icon {
@@ -19,19 +21,15 @@ mat-toolbar {
     background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626270088/poseidon/streamclass2_hp2muh.png);
     width: 250px;
     height: 60px;
-    background-size: contain;
-    background-repeat: no-repeat;
+    @include bg-contain;
     align-self: center;
     cursor: pointer;
   }
 
   .items {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center;
     .mat-button {
-      display: flex;
-      justify-content: center;
+      @include flex-justify-center;
       font-weight: 500;
       font-size: 1.2rem;
       text-transform: uppercase;
@@ -47,16 +45,14 @@ mat-toolbar {
     }
 
     .avatar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include flex-justify-between;
       cursor: pointer;
       margin: 0 40px 0 0;
       img {
         width: 45px;
         height: 45px;
         border-radius: 999px;
-        border: 5px solid #4bb26b;
+        border: 5px solid $colorGreen;
       }
     }
   }
@@ -87,7 +83,7 @@ mat-toolbar {
           width: 45px;
           height: 45px;
           border-radius: 999px;
-          border: 5px solid #4bb26b;
+          border: 5px solid $colorGreen;
         }
       }
     }

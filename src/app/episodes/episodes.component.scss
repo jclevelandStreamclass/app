@@ -1,11 +1,10 @@
 @import "../../variables";
+@import "../../mixins";
 
 .thumbnail {
   height: 70px;
   width: 100px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  @include bg-cover;
   position: relative;
   cursor: pointer;
   .time-box {
