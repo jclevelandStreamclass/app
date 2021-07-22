@@ -9,7 +9,7 @@
       <button mat-flat-button class="btngrey" [routerLink]="['/series', featuredSerieId]">
         Más Información
       </button>
-      <button mat-flat-button color="accent" (click)="playFirstVideo(featuredSerieId)">
+      <button mat-flat-button type="button" color="accent" (click)="playFirstVideo($event)">
         VER AHORA
       </button>
     </div>
