@@ -22,7 +22,7 @@
     }
     h1 {
       font-family: $fontAccentBebas;
-      font-size: 14rem;
+      font-size: 12rem;
       font-weight: 500;
       letter-spacing: 2px;
       line-height: 1;
@@ -76,5 +76,9 @@
       $colorBackgroundLight 100%
     );
     z-index: -1;
+  }
+
+  .main-home {
+    padding: 5rem;
   }
 }
