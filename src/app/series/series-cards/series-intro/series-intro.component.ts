@@ -86,4 +86,8 @@ export class SeriesIntroComponent implements OnInit {
   isLogged(): boolean {
     return this.authServiceModel.isUserAuthenticated;
   }
+
+  isPremium(): boolean {
+    return this.authServiceModel.hasUserRole('premium');
+  }
 }

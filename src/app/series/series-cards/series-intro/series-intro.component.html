@@ -1,5 +1,5 @@
-<div class="intro">
-  <div class="introImg" [ngStyle]="{ 'background-image': 'url(' + sportsPlayer?.photo + ')' }">
+<div class="intro" *ngIf="viewModel$ | async">
+  <div class="introImg" *ngIf="sportsPlayer" [style.backgroundImage]="'url(' + sportsPlayer?.photo + ')'">
 
     <div class="title">
       <h2>
@@ -14,17 +14,21 @@
           ÚNETE
         </button>
         <!-- TODO link to pasarela de pago -->
-        <button mat-flat-button color="accent" *ngIf="isLogged()" [routerLink]="['/signup']">
-          SUSCRÍBETE
-        </button>
-        <p>4,99€ al mes, pago anual</p>
+        <ng-container *ngIf="isLogged() && !isPremium()">
+          <button mat-flat-button color="accent" [routerLink]="['/signup']">
+            SUSCRÍBETE
+          </button>
+          <p>4,99€ al mes, pago anual</p>
+        </ng-container>
       </div>
-      <div class="btnJoin">
-        <button mat-flat-button color="primary" type="button" [routerLink]="['/signup']">
-          COMPRAR ESTA CLASE
-        </button>
-        <p>14,99€ al mes, pago único</p>
-      </div>
+      <ng-container *ngIf="!isPremium()">
+        <div class="btnJoin">
+          <button mat-flat-button color="primary" type="button" [routerLink]="['/signup']">
+            COMPRAR ESTA CLASE
+          </button>
+          <p>14,99€ al mes, pago único</p>
+        </div>
+      </ng-container>
     </div>
 
     <div class="gradient"></div>
@@ -33,7 +37,7 @@
 
   <div class="episodes-container">
     <div class="lessonsBox">
-      <div class="trailer" [ngStyle]="{ 'background-image': 'url(' + series?.photo + ')' }"></div>
+      <div class="trailer" *ngIf="series" [style.backgroundImage]="'url(' + series?.photo + ')'"></div>
       <div class="commandBox">
         <div class="lessonsArray">
           <p>Lecciones:</p>
