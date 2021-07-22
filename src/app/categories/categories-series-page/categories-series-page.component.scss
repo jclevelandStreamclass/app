@@ -1,13 +1,14 @@
+@import "../../../variables";
 .container {
-  color: #fff;
+  color: $colorText;
   padding: 4rem 7rem;
   text-align: left;
-  font-family: "Montserrat";
+  font-family: $fontMontserrat;
 
   .title {
     text-align: left;
     h1 {
-      font-family: "Bebas Neue", cursive;
+      font-family: $fontAccentBebas;
       font-size: 3.1rem;
     }
   }
@@ -16,9 +17,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: "Montserrat";
+    font-family: $fontMontserrat;
     font-weight: 500;
-    background-color: #192120;
+    background-color: $colorBackgroundInput;
     padding: 2rem;
     margin-top: 2rem;
     border-radius: 12px;
@@ -38,10 +39,10 @@
 
       .mat-flat-button {
         margin-left: 4rem;
-        color: #fff;
+        color: $colorText;
         padding: 0.5rem 3rem;
         border-radius: 8px;
-        background-color: #4bb26b !important;
+        background-color: $colorGreen !important;
       }
     }
   }
@@ -52,7 +53,7 @@
     margin: 5rem;
 
     .filter-functions {
-      font-family: "Montserrat";
+      font-family: $fontMontserrat;
       font-weight: 500;
     }
 
@@ -66,7 +67,7 @@
         border-radius: 10px;
         margin: 0.6rem;
         background-color: #232323;
-        color: #fff;
+        color: $colorText;
         padding: 0;
       }
 
@@ -115,7 +116,7 @@
 
   h3 {
     cursor: pointer;
-    font-family: "Montserrat";
+    font-family: $fontMontserrat;
     font-weight: 500;
     font-size: 1.2rem;
   }
