@@ -63,24 +63,6 @@ export class SeriesIntroComponent implements OnInit {
         this.totaltime = tt2;
       })
     );
-
-    // this.seriesModel.getSerieById(this.serieId).subscribe((s) => {
-    //   this.series = s;
-    //   this.episodes = [...s.episodes];
-
-    //   this.seriesModel
-    //     .getSportsPlayerById(s.sportsPlayerId)
-    //     .subscribe((sp) => {
-    //       this.sportsPlayer = sp;
-    //     });
-
-    //   this.episodesModel.getDuration(this.serieId).subscribe((tt) => {
-    //     let tt2 = new Totaltime(tt[0]).total_time;
-    //     tt2 = tt2.replace(':', 'h ');
-    //     tt2 = tt2.substring(0, 6) + 'min ';
-    //     this.totaltime = tt2;
-    //   });
-    // });
   }
 
   isLogged(): boolean {
