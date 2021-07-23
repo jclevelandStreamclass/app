@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { Serie } from '../models/serie';
 
 @Component({
@@ -10,7 +11,7 @@ import { Serie } from '../models/serie';
 export class SeriesCardsComponent implements OnInit {
   @Input() series: Serie[] = [];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authModelService: AuthService) {}
 
   ngOnInit(): void {}
 
@@ -18,5 +19,9 @@ export class SeriesCardsComponent implements OnInit {
     if (serieId) {
       this.router.navigate(['series', serieId]);
     }
+  }
+
+  isPremiumUser(): boolean {
+    return this.authModelService.hasUserRole('premium');
   }
 }

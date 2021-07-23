@@ -3,7 +3,7 @@
         <h1>DEPORTISTAS</h1>
     </div>
 
-    <div class="ofert">
+    <div class="ofert" *ngIf="!isPremiumUser()">
         <h2>CONSIGUE TODAS LAS CLASES</h2>
         <div class="right-ofert">
             <h3>4,99€ al mes, pago anual</h3>
@@ -21,7 +21,7 @@
 
                 <mat-card-content (click)="select(serie.id)"
                     [ngStyle]="{'background-image':' url(' + serie.photo + ')'}">
-
+                    <h2>{{serie.sportsPlayer}}</h2>
                     <h2>
                         {{serie.title}}
                     </h2>
