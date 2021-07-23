@@ -7,7 +7,8 @@ import { AppComponent } from './core/views/app.component';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { SharedModule } from './shared/shared.module';
 import { ContactsComponent } from './contacts/contacts.component';
-
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './core/services/auth.interceptor';
 @NgModule({
   imports: [
     BrowserModule,
@@ -17,10 +18,10 @@ import { ContactsComponent } from './contacts/contacts.component';
     SharedModule,
     HotToastModule.forRoot(),
   ],
-  providers: [],
-  bootstrap: [AppComponent],
-  declarations: [
-    ContactsComponent
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
+  bootstrap: [AppComponent],
+  declarations: [ContactsComponent],
 })
 export class AppModule {}

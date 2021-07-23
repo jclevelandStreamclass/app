@@ -54,7 +54,9 @@ export class SeriesIntroComponent implements OnInit {
       switchMap((serie) =>
         this.seriesModel.getSportsPlayerById(serie.sportsPlayerId)
       ),
-      tap((sportsPlayer) => (this.sportsPlayer = sportsPlayer)),
+      tap((sportsPlayer) => {
+        this.sportsPlayer = sportsPlayer;
+      }),
       switchMap(() => this.episodesModel.getDuration(this.serieId)),
       tap(([totalTime]) => {
         let tt2 = new Totaltime(totalTime).total_time;
