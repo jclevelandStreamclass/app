@@ -62,6 +62,7 @@ const routes: Routes = [
   {
     path: 'episodes/:video',
     component: EpisodesStreamComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'series/:serieId',
@@ -72,16 +73,14 @@ const routes: Routes = [
     component: CategoriesSeriesPageComponent,
   },
   {
-    path: 'home',
-    component: HomeComponent,
-  },
-  {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'userPayment',
     component: UserpaymentComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'contacts',
