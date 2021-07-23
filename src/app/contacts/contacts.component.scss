@@ -1,10 +1,9 @@
 @import "../../variables";
 @import "../../mixins";
 
-.profile {
+.contacts {
   padding: 7rem 5rem 5rem 5rem;
   p {
-    color: $colorGreen;
     padding-top: 0.5rem;
     text-align: end;
     font-weight: 600;
@@ -15,13 +14,13 @@
     font-size: 3.5rem;
     margin-bottom: 2rem;
   }
-  .profile-block {
+  .contacts-block {
     display: grid;
     grid-template-columns: 1fr 3fr;
     gap: 2rem;
-    .avatar-settings {
+    .radio-settings {
       @include flex-align-center-column;
-      .avatar {
+      .radio {
         background-image: url(https://blog.osculati.com/wp-content/uploads/2017/09/vhf_blog-1200x675.jpg);
         width: 364px;
         height: 250px;
@@ -31,19 +30,20 @@
         // box-shadow: 0 0 0 10px $colorGreen;
         margin-top: 1rem;
       }
-      .mat-flat-button {
-        font-family: $fontMontserrat;
-      }
     }
-    .profile-settings {
-      .btnEdit {
-        font-family: $fontMontserrat;
-        margin: 0;
-        padding: 0.1rem 2rem;
-      }
+    .contacts-settings {
+      //Just in case model
+      // .btnEdit {
+      //   font-family: $fontMontserrat;
+      //   margin: 0;
+      //   padding: 0.1rem 2rem;
+      // }
       text-align: right;
-      .user-details {
-        color: $colorBackgroundInputLight;
+      .contact-details {
+        color: #818181;
+        .color-span {
+          color: $colorGreen;
+        }
       }
     }
   }
@@ -123,14 +123,14 @@
 }
 
 @media (max-width: 900px) {
-  .profile {
+  .contacts {
     padding: 5rem 3rem 3rem 3rem;
     p {
       font-size: 1rem;
     }
-    .profile-block {
-      .avatar-settings {
-        .avatar {
+    .contacts-block {
+      .radio-settings {
+        .radio {
           width: 225px;
           height: 150px;
         }
@@ -152,20 +152,16 @@
       }
     }
   }
-  .mat-flat-button {
-    margin-top: 1rem;
-    padding: 0.2rem 1rem;
-  }
 }
 @media (max-width: 700px) {
-  .profile {
+  .contacts {
     padding: 3rem 2rem;
     p {
       font-size: 1rem;
     }
-    .profile-block {
-      .avatar-settings {
-        .avatar {
+    .contacts-block {
+      .radio-settings {
+        .radio {
           width: 125px;
           height: 125px;
         }
@@ -188,10 +184,6 @@
         width: 100%;
         height: 10px;
       }
-
-      button {
-        @include flex-justify-center;
-      }
     }
   }
 }
@@ -206,24 +198,20 @@
         width: 340px;
         height: 10px;
       }
-
-      button {
-        @include flex-justify-center;
-      }
     }
   }
 }
 
 @media (max-width: 750px) {
-  .profile {
+  .contacts {
     p {
       font-size: 0.8rem;
     }
-    .profile-block {
+    .contacts-block {
       display: grid;
       grid-template-columns: unset;
-      .avatar-settings {
-        .avatar {
+      .radio-settings {
+        .radio {
           display: none;
           //   width: 70px;
           //   height: 70px;
@@ -259,10 +247,6 @@
         text-align: left;
         width: auto;
         height: 10px;
-      }
-
-      button {
-        @include flex-justify-center;
       }
     }
   }
