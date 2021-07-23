@@ -45,6 +45,7 @@ import { HeaderLoggedComponent } from './components/header-logged/header-logged.
 import { ProfileComponent } from './views/profile/profile.component';
 import { SharedModule } from '../shared/shared.module';
 import { UserpaymentComponent } from './views/userpayment/userpayment.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +69,7 @@ import { UserpaymentComponent } from './views/userpayment/userpayment.component'
     EpisodesStreamComponent,
     HeaderLoggedComponent,
     ProfileComponent,
-    UserpaymentComponent
+    UserpaymentComponent,
   ],
   imports: [
     CommonModule,
@@ -92,6 +93,7 @@ import { UserpaymentComponent } from './views/userpayment/userpayment.component'
     MatSidenavModule,
     FlexLayoutModule,
     SharedModule,
+    MatAutocompleteModule,
   ],
   providers: [],
   exports: [AppComponent],

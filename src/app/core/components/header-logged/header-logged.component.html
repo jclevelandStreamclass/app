@@ -2,6 +2,18 @@
     <span class="logo" [routerLink]="['/home']"></span>
     <!-- <span class="list" *ngIf="checkRoute()" [routerLink]="['/landing']">VOLVER</span> -->
 
+    <mat-form-field style="width: 300px; margin: 50px auto; display: block;">
+
+        <input type="text" placeholder="" matInput [formControl]="formControl" [matAutocomplete]="auto">
+
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let item of autoFilter | async" [value]="item">
+                {{item}}
+            </mat-option>
+        </mat-autocomplete>
+
+    </mat-form-field>
+
     <div class="items" *ngIf="checkRouteLanding()">
         <button mat-button *ngFor="let item of menuItems" [fxShow]="item.showOnDesktop" [fxShow.xs]="item.showOnMobile"
             [fxShow.sm]="item.showOnTablet" [routerLink]="item.path">

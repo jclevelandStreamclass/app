@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 import { AuthService } from '../../services/auth.service';
 import { MenuItem } from './interface/menu-logged';
 
@@ -9,6 +12,14 @@ import { MenuItem } from './interface/menu-logged';
   styleUrls: ['./header-logged.component.scss'],
 })
 export class HeaderLoggedComponent implements OnInit {
+  formControl = new FormControl();
+  autoFilter!: Observable<string[]>;
+  Items: string[] = [
+    'BoJack Horseman',
+    'Stranger Things',
+    'Ozark',
+    'Big Mouth',
+  ];
   menuItems: MenuItem[] = [
     {
       label: 'INICIO',
@@ -47,7 +58,12 @@ export class HeaderLoggedComponent implements OnInit {
   avatar: string | undefined = this.authServiceModel.user?.avatar;
   constructor(private router: Router, private authServiceModel: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.autoFilter = this.formControl.valueChanges.pipe(
+      startWith(''),
+      map((value) => this.mat_filter(value))
+    );
+  }
 
   // checkea para incluir volver
   checkRoute(): boolean {
@@ -64,5 +80,12 @@ export class HeaderLoggedComponent implements OnInit {
 
   getUserAvatar(): string | undefined {
     return this.authServiceModel.user?.avatar;
+  }
+
+  private mat_filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+    return this.Items.filter(
+      (option) => option.toLowerCase().indexOf(filterValue) === 0
+    );
   }
 }
