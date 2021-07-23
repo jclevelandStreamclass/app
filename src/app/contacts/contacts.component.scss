@@ -83,6 +83,72 @@
   }
 }
 
+//////
+
+.form1 {
+  font-family: $fontMontserrat;
+  width: 28rem;
+  padding: 1.5rem 1rem 1rem 1rem;
+}
+
+.labels {
+  margin-bottom: 2rem;
+}
+
+.lb2 {
+  margin-bottom: 30px;
+}
+
+.labels input {
+  width: 12rem;
+  height: 4rem;
+  padding: 0 20px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  margin-bottom: 2rem;
+  font-size: 19px;
+  text-align: left;
+}
+
+.labels input::placeholder {
+  color: #fff;
+}
+
+.pinkForm .labels {
+  width: 25rem;
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pinkMess {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  width: 410px;
+  height: 90px;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+}
+
+textarea::placeholder {
+  font-family: $fontMontserrat;
+  color: #fff;
+}
+
+.btnEdit {
+  width: 50%;
+  font-family: $fontMontserrat;
+  margin: 0;
+  padding: 0.1rem 2rem;
+}
+
 .color-span {
   color: $colorGreen;
 }
@@ -135,6 +201,27 @@
           height: 150px;
         }
       }
+    }
+  }
+
+  .labels input {
+    width: 10rem;
+    height: 4rem;
+    padding: 0 20px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    margin-bottom: 2rem;
+    font-size: 16px;
+    text-align: left;
+  }
+  textarea {
+    width: 21rem;
+    height: 5rem;
+    font-size: 16px;
+    &::placeholder {
+      font-size: 16px;
     }
   }
 
@@ -211,15 +298,16 @@
       display: grid;
       grid-template-columns: unset;
       .radio-settings {
+        align-items: flex-start;
         .radio {
           display: none;
-          //   width: 70px;
-          //   height: 70px;
-          //   border: 5px solid $colorBackgroundLight;
-          //   box-shadow: 0 0 0 5px $colorGreen;
         }
       }
     }
+  }
+
+  .container-settings {
+    padding: 0 1rem;
   }
 
   .grid {
@@ -249,5 +337,52 @@
         height: 10px;
       }
     }
+  }
+
+  .labels input {
+    width: 30%;
+    height: 4rem;
+    padding: 0 20px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    margin-bottom: 0;
+    font-size: 12.8px;
+    text-align: left;
+  }
+  textarea {
+    width: 60%;
+    height: 5rem;
+    font-size: 12.8px;
+    &::placeholder {
+      font-size: 12.8px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .labels input {
+    width: 25%;
+    height: 4rem;
+    padding: 0 20px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    margin-bottom: 0;
+    font-size: 12.8px;
+    text-align: left;
+  }
+  textarea {
+    width: 50%;
+    height: 5rem;
+    font-size: 12.8px;
+    &::placeholder {
+      font-size: 12.8px;
+    }
+  }
+  .mat-flat-button {
+    width: 32%;
   }
 }
