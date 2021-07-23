@@ -33,6 +33,7 @@ input {
   padding: 8px;
   border: 1px solid $colorBackgroundLight;
   border-radius: 4px;
+  margin-bottom: 1rem;
   &::placeholder {
     text-transform: capitalize;
   }

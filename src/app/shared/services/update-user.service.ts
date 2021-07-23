@@ -9,6 +9,7 @@ import { catchError, map } from 'rxjs/operators';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { ToastMessagesService } from 'src/app/core/services/toast-messages.service';
 import { UserModel } from 'src/app/models/user';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +20,9 @@ export class UpdateUserService {
   constructor(
     private http: HttpClient,
     private auth: AuthService,
-    private toastMessages: ToastMessagesService
+    private toastMessages: ToastMessagesService,
+    private router: Router,
+    private authService: AuthService
   ) {}
 
   updateUser(values: { property: string; value: string }): Observable<any> {
@@ -32,6 +35,8 @@ export class UpdateUserService {
         map((user) => {
           new UserModel(user);
           this.toastMessages.showSuccessNoTime(`${key} Guardado`);
+          this.authService.logOutUser();
+          this.router.navigate(['/login']);
           return user;
         }),
         catchError((e: HttpErrorResponse) => {
