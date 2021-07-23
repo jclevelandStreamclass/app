@@ -1,0 +1,31 @@
+<div class="modal" mat-dialog-title>
+  <mat-icon class="delete" mat-raised-button mat-dialog-close color="accent">clear</mat-icon>
+  <h1>
+    {{data?.title || 'Confirmación'}}
+  </h1>
+</div>
+
+<div mat-dialog-content>
+  <div class="login">
+    <div class="form">
+      <input type="file" class="file-input" hidden onchange="console.log(event.target.files)"
+        (change)="onFileSelected($event)" #fileUpload>
+
+      <div class="file-upload">
+
+        {{fileName || "No file uploaded yet."}}
+
+        <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+          <mat-icon>attach_file</mat-icon>
+        </button>
+      </div>
+      <div mat-dialog-actions>
+        <button mat-raised-button mat-dialog-close color="primary">{{data?.optionNo ||"No"}}</button>
+        <button class="btn_color" type="button" (click)="uploadAvatar()" mat-raised-button
+          color="accent">{{data?.optionYes
+          ||
+          'Si'}}</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -71,4 +71,12 @@ export class ConfirmationModalComponent implements OnInit, OnChanges {
     }
     this.toastService.showError('Error al guardar');
   }
+
+  // saveAvatar(form: FormGroup) {
+  //   if (form.valid) {
+  //     this.updateUserService.updateAvatar(form.value).subscribe();
+  //     return;
+  //   }
+  //   this.toastService.showError('Error al guardar');
+  // }
 }
