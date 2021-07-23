@@ -33,17 +33,15 @@ export class CategoriesPageComponent implements OnInit, OnChanges {
     this.categorySvc.getCategory().subscribe((x) => {
       this.categories = x;
     });
-    console.log(this.categories);
   }
 
   select(categoryId: string): void {
-    console.log(categoryId);
     if (categoryId) {
       this.router.navigate(['category/series', categoryId]);
     }
   }
 
-  isLogged(): boolean {
-    return this.authModelService.isUserAuthenticated;
+  isPremiumUser(): boolean {
+    return this.authModelService.hasUserRole('premium');
   }
 }

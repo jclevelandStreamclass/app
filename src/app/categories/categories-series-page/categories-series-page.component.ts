@@ -43,10 +43,10 @@ export class CategoriesSeriesPageComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.seriesModel.getSeriesByCategoryId(this.categoryId).subscribe((res) => {
       this.serie = res;
+      console.log(this.serie);
     });
     this.categoryModel.getCategoryById(this.categoryId).subscribe((res) => {
       this.category = res;
-      console.log('this.category is ' + this.category.name);
     });
   }
 
@@ -57,7 +57,7 @@ export class CategoriesSeriesPageComponent implements OnInit, OnChanges {
     }
   }
 
-  isLogged(): boolean {
-    return this.authModelService.isUserAuthenticated;
+  isPremiumUser(): boolean {
+    return this.authModelService.hasUserRole('premium');
   }
 }
