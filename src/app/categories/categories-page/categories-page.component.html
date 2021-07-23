@@ -19,7 +19,7 @@
             <mat-card class="example-card" *ngFor="let category of categories">
                 <mat-card-content (click)="select(category.id)" [style.backgroundImage]="'url('+category.photo+')'">
 
-                    <h2>
+                    <h2 class="bt-title">
                         {{category.name}}
                     </h2>
                     <div class="gradient"></div>

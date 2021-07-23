@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { AuthService } from '../../services/auth.service';
 import { MenuItem } from './interface/menu-logged';
 
@@ -62,7 +64,7 @@ export class HeaderLoggedComponent implements OnInit {
     );
   }
 
-  getUserAvatar(): string | undefined {
-    return this.authServiceModel.user?.avatar;
+  getUserAvatar(): Observable<string | undefined> {
+    return this.authServiceModel.getUser$().pipe(map((user) => user?.avatar));
   }
 }

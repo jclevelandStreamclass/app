@@ -9,7 +9,7 @@
             {{item.label}}
         </button>
         <div class="avatar" [routerLink]="['/profile']">
-            <img src="{{avatar}}" alt="">
+            <img [src]="getUserAvatar() | async" alt="">
         </div>
         <ng-container>
             <button mat-icon-button [matMenuTriggerFor]="dropMenu">

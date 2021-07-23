@@ -63,7 +63,8 @@
       .btnJoin {
         align-items: center;
         padding: 0 2.5rem;
-        button {
+        .mat-flat-button {
+          font-family: $fontMontserrat;
           padding: 0.5rem 0;
           color: $colorText;
           width: 15rem;

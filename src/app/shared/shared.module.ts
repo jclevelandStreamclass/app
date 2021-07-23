@@ -9,8 +9,9 @@ import { ModalsService } from './modals.service';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MoviePromoComponent } from './movie-promo/movie-promo.component';
+import { UploadAvatarModalComponent } from './modals/upload-avatar-modal/upload-avatar-modal.component';
 @NgModule({
-  declarations: [ConfirmationModalComponent, MoviePromoComponent],
+  declarations: [ConfirmationModalComponent, MoviePromoComponent, UploadAvatarModalComponent],
   imports: [
     CommonModule,
     MatIconModule,
