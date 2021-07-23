@@ -72,12 +72,28 @@
       .mat-card-content {
         height: 100%;
         @include flex-center;
+        flex-direction: column;
         background-size: cover;
         border-radius: 12px;
         position: relative;
         transition: all 0.3s;
+        .mg-top {
+          text-align: center;
+          margin-top: 12rem;
+          font-family: $fontMontserrat;
+          font-weight: 700;
+          text-transform: uppercase;
+          font-size: 1.6rem;
+          line-height: 2.5rem;
+          padding: 0 5%;
+          font-style: italic;
+        }
+        .bt-title {
+          font-weight: 550;
+        }
         h2 {
-          padding-top: 100%;
+          text-align: center;
+          // padding-top: 100%;
         }
         &:hover {
           transform: scale(1.005);

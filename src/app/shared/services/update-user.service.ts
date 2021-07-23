@@ -61,4 +61,18 @@ export class UpdateUserService {
         })
       );
   }
+
+  updateAvatar(form: FormData): Observable<any> {
+    const userId = this.auth.user?.id;
+    return this.http.put(`${this.URL}/${userId}`, form).pipe(
+      map((user) => {
+        new UserModel(user);
+        this.toastMessages.showSuccessNoTime(`Perfil Guardado`);
+        // this.authService.storeNewAvatar();
+        // this.authService.logOutUser();
+        // this.router.navigate(['/login']);
+        return user;
+      })
+    );
+  }
 }
