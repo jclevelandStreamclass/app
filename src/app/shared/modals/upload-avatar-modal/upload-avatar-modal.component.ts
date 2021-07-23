@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { UpdateUserService } from '../../services/update-user.service';
@@ -18,12 +18,11 @@ export interface ConfirmationDataFile {
 })
 export class UploadAvatarModalComponent implements OnInit {
   fileName = '';
+  @Input() requiredFileType!: string;
+
   formData = new FormData();
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: ConfirmationDataFile,
-    private http: HttpClient,
-    private updateService: UpdateUserService,
-    private authService: AuthService,
     private dialogRef: MatDialogRef<UploadAvatarModalComponent>
   ) {}
 
@@ -41,6 +40,8 @@ export class UploadAvatarModalComponent implements OnInit {
   }
 
   uploadAvatar(): void {
-    this.dialogRef.close(this.formData);
+    if (this.fileName) {
+      this.dialogRef.close(this.formData);
+    }
   }
 }
