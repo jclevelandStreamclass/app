@@ -6,7 +6,7 @@
         <div class="avatar-settings">
             <div class="avatar" [ngStyle]="{ 'background-image': 'url(' + user?.avatar + ')' }"></div>
 
-            <button mat-flat-button color="accent" type="submit">CAMBIAR</button>
+            <button (click)="editAvatar()" mat-flat-button color="accent" type="submit">CAMBIAR</button>
         </div>
 
         <div class="profile-settings">

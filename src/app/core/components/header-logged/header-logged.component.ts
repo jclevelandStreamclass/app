@@ -80,8 +80,8 @@ export class HeaderLoggedComponent implements OnInit {
     );
   }
 
-  getUserAvatar(): string | undefined {
-    return this.authServiceModel.user?.avatar;
+  getUserAvatar(): Observable<string | undefined> {
+    return this.authServiceModel.getUser$().pipe(map((user) => user?.avatar));
   }
 
   filterSport(event: Event): void {

@@ -61,4 +61,33 @@ export class UpdateUserService {
         })
       );
   }
+
+  updateAvatar(form: FormData): Observable<any> {
+    const userId = this.auth.user?.id;
+    return this.http.put(`${this.URL}/${userId}`, form).pipe(
+      map((user) => {
+        console.log(user);
+        new UserModel(user);
+        this.toastMessages.showSuccessNoTime(`Imagen guardada`);
+        // this.authService.storeNewAvatar();
+        // this.authService.logOutUser();
+        // this.router.navigate(['/login']);
+        return user;
+      }),
+      catchError((e: HttpErrorResponse) => {
+        if (e.status === HttpStatusCode.InternalServerError) {
+          this.toastMessages.showError(
+            'Hubo un error en el servidor' + HttpStatusCode.InternalServerError
+          );
+        }
+
+        if (e.error.message.includes('Invalid image file')) {
+          this.toastMessages.showError('Introduce una imagen correcta');
+        }
+
+        console.log(e.message);
+        return of(null);
+      })
+    );
+  }
 }

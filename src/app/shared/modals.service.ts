@@ -5,6 +5,10 @@ import {
   ConfirmationData,
   ConfirmationModalComponent,
 } from './modals/confirmation-modal/confirmation-modal.component';
+import {
+  ConfirmationDataFile,
+  UploadAvatarModalComponent,
+} from './modals/upload-avatar-modal/upload-avatar-modal.component';
 
 @Injectable({
   providedIn: 'root',
@@ -15,6 +19,16 @@ export class ModalsService {
   alert(data: ConfirmationData): Observable<any> {
     return this.dialog
       .open(ConfirmationModalComponent, {
+        data,
+        width: '500px',
+        disableClose: true,
+      })
+      .afterClosed();
+  }
+
+  file(data: ConfirmationDataFile): Observable<any> {
+    return this.dialog
+      .open(UploadAvatarModalComponent, {
         data,
         width: '500px',
         disableClose: true,
