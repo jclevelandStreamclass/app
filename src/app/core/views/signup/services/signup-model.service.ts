@@ -25,7 +25,7 @@ export class SignupModelService {
     // ESTABLECEMOS COMO DEFAULT
     if (user.avatar === '') {
       user.avatar =
-        'https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626521265/poseidon/hanson-lu-inVnYQoO9LI-unsplash_lqq1ve.jpg';
+        'https://res.cloudinary.com/bermelldev/image/upload/v1627067201/folder/logoStreamClass_cyhq9o.png';
     }
 
     console.log();

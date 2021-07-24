@@ -4,6 +4,7 @@ import { UserModel } from 'src/app/models/user';
 import { ModalsService } from 'src/app/shared/modals.service';
 import { UpdateUserService } from 'src/app/shared/services/update-user.service';
 import { AuthService } from '../../services/auth.service';
+import { ToastMessagesService } from '../../services/toast-messages.service';
 
 @Component({
   selector: 'app-profile',
@@ -15,8 +16,8 @@ export class ProfileComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private modal: ModalsService,
-    private router: Router,
-    private updateUser: UpdateUserService
+    private updateUser: UpdateUserService,
+    private toastService: ToastMessagesService
   ) {}
 
   ngOnInit(): void {
@@ -38,18 +39,19 @@ export class ProfileComponent implements OnInit {
   editAvatar(): void {
     this.modal
       .file({
-        title: 'Selecione una nueva imagen',
+        title: 'Seleccione una nueva imagen',
         optionNo: 'Cancelar',
         optionYes: 'Confirmar',
         file: '',
       })
       .subscribe((file) => {
-        this.updateUser.updateAvatar(file).subscribe((user) => {
-          console.log(user);
-          console.log(user.avatar);
-          this.authService.storeNewAvatar(user);
-          this.user = user;
-        });
+        if (file) {
+          this.updateUser.updateAvatar(file).subscribe((user) => {
+            this.authService.storeNewAvatar(user);
+            this.user = user;
+          });
+          return;
+        }
       });
   }
 }
