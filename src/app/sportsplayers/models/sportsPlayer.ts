@@ -5,7 +5,7 @@ export class SportsPlayer {
   job: string;
   photo: string;
   // implementacion serie
-  serie: string;
+  series: [];
 
   constructor(item?: any) {
     this.id = item?.id ?? '';
@@ -13,6 +13,6 @@ export class SportsPlayer {
     this.bio = item?.bio ?? '';
     this.job = item?.job ?? '';
     this.photo = item?.photo ?? '';
-    this.serie = item?.serie?.title ?? '';
+    this.series = item?.series ?? '';
   }
 }

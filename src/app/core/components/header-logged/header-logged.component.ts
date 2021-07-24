@@ -3,6 +3,9 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { Serie } from 'src/app/series/models/serie';
+import { SportsPlayer } from 'src/app/sportsplayers/models/sportsPlayer';
+import { SportsplayerService } from 'src/app/sportsplayers/services/sportsplayer.service';
 import { AuthService } from '../../services/auth.service';
 import { MenuItem } from './interface/menu-logged';
 
@@ -12,14 +15,6 @@ import { MenuItem } from './interface/menu-logged';
   styleUrls: ['./header-logged.component.scss'],
 })
 export class HeaderLoggedComponent implements OnInit {
-  formControl = new FormControl();
-  autoFilter!: Observable<string[]>;
-  Items: string[] = [
-    'BoJack Horseman',
-    'Stranger Things',
-    'Ozark',
-    'Big Mouth',
-  ];
   menuItems: MenuItem[] = [
     {
       label: 'INICIO',
@@ -55,15 +50,22 @@ export class HeaderLoggedComponent implements OnInit {
     },
   ];
 
-  avatar: string | undefined = this.authServiceModel.user?.avatar;
-  constructor(private router: Router, private authServiceModel: AuthService) {}
+  formControl = new FormControl();
+  autoFilter!: Observable<any>;
+  sportsplayer!: SportsPlayer[];
+  series: Serie[] = [];
+  seriesBySportPlayerName!: string[];
+  filterSportPlayer!: string;
+  filterValue: string = '';
 
-  ngOnInit(): void {
-    this.autoFilter = this.formControl.valueChanges.pipe(
-      startWith(''),
-      map((value) => this.mat_filter(value))
-    );
-  }
+  avatar: string | undefined = this.authServiceModel.user?.avatar;
+  constructor(
+    private router: Router,
+    private authServiceModel: AuthService,
+    private sportsPlayerService: SportsplayerService
+  ) {}
+
+  ngOnInit(): void {}
 
   // checkea para incluir volver
   checkRoute(): boolean {
@@ -82,10 +84,47 @@ export class HeaderLoggedComponent implements OnInit {
     return this.authServiceModel.user?.avatar;
   }
 
+  filterSport(event: Event): void {
+    const data = (<HTMLInputElement>event.target).value;
+    if (data) {
+      this.filterSportPlayer = data;
+      console.log(this.filterSportPlayer);
+      this.seriesSportsPlayer(this.filterSportPlayer);
+      this.autoFilter.pipe(
+        startWith(''),
+        map((value) => this.mat_filter(value))
+      );
+
+      return;
+    }
+  }
+
   private mat_filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-    return this.Items.filter(
-      (option) => option.toLowerCase().indexOf(filterValue) === 0
+    this.filterValue = value.toLowerCase();
+    return this.seriesBySportPlayerName.filter(
+      (option) => option.toLowerCase().indexOf(this.filterValue) === 0
     );
   }
+
+  private seriesSportsPlayer(data: string): void {
+    this.sportsPlayerService.getSportsPlayerSeries(data).subscribe((result) => {
+      this.sportsplayer = result;
+      // console.log(this.sportsplayer);
+      this.series = this.sportsplayer[0].series;
+      this.seriesBySportPlayerName = this.series.map((serie) => serie.title);
+      console.log(this.seriesBySportPlayerName);
+    });
+    this.autoFilter = this.formControl.valueChanges.pipe(
+      startWith(''),
+      map((value) => this.mat_filter(value))
+    );
+  }
+
+  // private setValue(value: string | null): void {
+  //   if (typeof value === 'string') {
+  //     this.mat_filter = 'a tomar por culo el ejercicio';
+  //   } else {
+  //     this.mat_filter = value;
+  //   }
+  // }
 }
