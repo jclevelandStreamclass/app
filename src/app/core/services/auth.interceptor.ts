@@ -10,28 +10,15 @@ import { AuthService } from './auth.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  readonly excludeUrls = [
-    'login',
-    'landing',
-    'categories',
-    'series',
-    'signup',
-    'category',
-    'contacts',
-    'episodes',
-    'sportsplayer',
-    'home',
-  ];
+  readonly excludeUrls = ['video'];
   constructor(private authService: AuthService) {}
 
   intercept(
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    for (let index = 0; index < this.excludeUrls.length; index++) {
-      if (request.url.toLowerCase().includes(this.excludeUrls[index])) {
-        return next.handle(request);
-      }
+    if (!this.excludeUrls.includes(request.url.toLowerCase())) {
+      return next.handle(request);
     }
 
     const newRequest = request.clone({
