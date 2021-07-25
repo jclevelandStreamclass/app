@@ -45,6 +45,7 @@ import { HeaderLoggedComponent } from './components/header-logged/header-logged.
 import { ProfileComponent } from './views/profile/profile.component';
 import { SharedModule } from '../shared/shared.module';
 import { UserpaymentComponent } from './views/userpayment/userpayment.component';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,6 +93,7 @@ import { UserpaymentComponent } from './views/userpayment/userpayment.component'
     MatSidenavModule,
     FlexLayoutModule,
     SharedModule,
+    MatSelectModule,
   ],
   providers: [],
   exports: [AppComponent],
