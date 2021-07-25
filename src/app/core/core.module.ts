@@ -46,6 +46,7 @@ import { ProfileComponent } from './views/profile/profile.component';
 import { SharedModule } from '../shared/shared.module';
 import { UserpaymentComponent } from './views/userpayment/userpayment.component';
 import { MatSelectModule } from '@angular/material/select';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +70,7 @@ import { MatSelectModule } from '@angular/material/select';
     EpisodesStreamComponent,
     HeaderLoggedComponent,
     ProfileComponent,
-    UserpaymentComponent
+    UserpaymentComponent,
   ],
   imports: [
     CommonModule,
@@ -94,6 +95,7 @@ import { MatSelectModule } from '@angular/material/select';
     FlexLayoutModule,
     SharedModule,
     MatSelectModule,
+    MatAutocompleteModule,
   ],
   providers: [],
   exports: [AppComponent],

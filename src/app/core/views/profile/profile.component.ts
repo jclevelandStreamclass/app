@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { filter, switchMap } from 'rxjs/operators';
 import { UserModel } from 'src/app/models/user';
 import { ModalsService } from 'src/app/shared/modals.service';
 import { UpdateUserService } from 'src/app/shared/services/update-user.service';
@@ -11,32 +12,28 @@ import { HttpClient } from '@angular/common/http';
 import { ServiceProfile } from './service/profile-service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
-
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
 })
-
 export class ProfileComponent implements OnInit {
   user!: UserModel | null;
   roleForm: FormGroup;
   error = false;
 
-
-
-  constructor(route: ActivatedRoute, fb: FormBuilder,
+  constructor(
+    route: ActivatedRoute,
+    fb: FormBuilder,
     private authService: AuthService,
     private modal: ModalsService,
     private updateUser: UpdateUserService,
     private toastService: ToastMessagesService,
-    private profileService: ServiceProfile,
+    private profileService: ServiceProfile
   ) {
-   
-    
     this.roleForm = fb.group({
-    role: [''],
-  });
+      role: [''],
+    });
   }
 
   ngOnInit(): void {
@@ -63,20 +60,15 @@ export class ProfileComponent implements OnInit {
         optionYes: 'Confirmar',
         file: '',
       })
-      .subscribe((file) => {
-        if (file) {
-          this.updateUser.updateAvatar(file).subscribe((user) => {
-            this.authService.storeNewAvatar(user);
-            this.user = user;
-          });
-          return;
-        }
+      .pipe(
+        filter((file) => !!file),
+        switchMap((file) => this.updateUser.updateAvatar(file))
+      )
+      .subscribe((user) => {
+        this.authService.storeNewAvatar(user);
+        this.user = user;
       });
-    
-   
   }
-
- 
 
   saveForm(form: FormGroup) {
     console.log(form.value);
@@ -85,7 +77,6 @@ export class ProfileComponent implements OnInit {
     }
   }
 
- 
   // changeProfile(): boolean {
   //   if (this.user === Premium) {
   //     this.user = this.user
@@ -94,36 +85,33 @@ export class ProfileComponent implements OnInit {
   //   }
   //     return;
   // }
-
- 
 }
 
+// updateAvatar(form: FormRole): Observable<any> {
+//   const userId = this.auth.user?.id;
+//   return this.http.put(`${this.URL}/${userId}`, form).pipe(
+//     map((user) => {
+//       console.log(user);
+//       new UserModel(user);
+//       // this.toastMessages.showSuccessNoTime(`Imagen guardada`);
+//       // this.authService.storeNewAvatar();
+//       // this.authService.logOutUser();
+//       // this.router.navigate(['/login']);
+//       return user;
+//     }),
+//     catchError((e: HttpErrorResponse) => {
+//       if (e.status === HttpStatusCode.InternalServerError) {
+//         this.toastMessages.showError(
+//           'Hubo un error en el servidor' + HttpStatusCode.InternalServerError
+//         );
+//       }
 
-  // updateAvatar(form: FormRole): Observable<any> {
-  //   const userId = this.auth.user?.id;
-  //   return this.http.put(`${this.URL}/${userId}`, form).pipe(
-  //     map((user) => {
-  //       console.log(user);
-  //       new UserModel(user);
-  //       // this.toastMessages.showSuccessNoTime(`Imagen guardada`);
-  //       // this.authService.storeNewAvatar();
-  //       // this.authService.logOutUser();
-  //       // this.router.navigate(['/login']);
-  //       return user;
-  //     }),
-  //     catchError((e: HttpErrorResponse) => {
-  //       if (e.status === HttpStatusCode.InternalServerError) {
-  //         this.toastMessages.showError(
-  //           'Hubo un error en el servidor' + HttpStatusCode.InternalServerError
-  //         );
-  //       }
+//       // if (e.error.message.includes('Invalid image file')) {
+//       //   this.toastMessages.showError('Introduce una imagen correcta');
+//       // }
 
-  //       // if (e.error.message.includes('Invalid image file')) {
-  //       //   this.toastMessages.showError('Introduce una imagen correcta');
-  //       // }
-
-  //       console.log(e.message);
-  //       return of(null);
-  //     })
-  //   );
-  // }
+//       console.log(e.message);
+//       return of(null);
+//     })
+//   );
+// }

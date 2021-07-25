@@ -1,7 +1,22 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import {
+  MatAutocompleteTrigger,
+  MatAutocomplete,
+} from '@angular/material/autocomplete';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import {
+  debounceTime,
+  filter,
+  map,
+  startWith,
+  switchMap,
+  tap,
+} from 'rxjs/operators';
+import { Serie } from 'src/app/series/models/serie';
+import { SportsPlayer } from 'src/app/sportsplayers/models/sportsPlayer';
+import { SportsplayerService } from 'src/app/sportsplayers/services/sportsplayer.service';
 import { AuthService } from '../../services/auth.service';
 import { MenuItem } from './interface/menu-logged';
 
@@ -46,10 +61,36 @@ export class HeaderLoggedComponent implements OnInit {
     },
   ];
 
-  avatar: string | undefined = this.authServiceModel.user?.avatar;
-  constructor(private router: Router, private authServiceModel: AuthService) {}
+  formControl = new FormControl();
+  autoFilter!: Observable<{ name: string; id: string }[]>;
+  sportsplayer!: SportsPlayer[];
+  series: Serie[] = [];
+  seriesBySportPlayerName!: string[];
+  filterSportPlayer!: string;
+  filterValue: string = '';
 
-  ngOnInit(): void {}
+  avatar: string | undefined = this.authServiceModel.user?.avatar;
+  constructor(
+    private router: Router,
+    private authServiceModel: AuthService,
+    private sportsPlayerService: SportsplayerService
+  ) {}
+
+  ngOnInit(): void {
+    this.autoFilter = this.formControl.valueChanges.pipe(
+      filter((value) => !!value),
+      debounceTime(500),
+      switchMap((value) =>
+        this.sportsPlayerService.getSportsPlayerSeries(value)
+      ),
+      map((players) =>
+        players.map(({ name, series }) => ({
+          name,
+          id: series[0]?.id,
+        }))
+      )
+    );
+  }
 
   // checkea para incluir volver
   checkRoute(): boolean {
@@ -67,4 +108,57 @@ export class HeaderLoggedComponent implements OnInit {
   getUserAvatar(): Observable<string | undefined> {
     return this.authServiceModel.getUser$().pipe(map((user) => user?.avatar));
   }
+
+  filterSport(event: Event): void {
+    const data = (<HTMLInputElement>event.target).value;
+    if (data) {
+      this.filterSportPlayer = data;
+      console.log(this.filterSportPlayer);
+      this.seriesSportsPlayer(this.filterSportPlayer);
+    }
+  }
+
+  seriesSportsPlayer(data: string): void {
+    this.sportsPlayerService.getSportsPlayerSeries(data).subscribe((result) => {
+      this.sportsplayer = result;
+      // console.log(this.sportsplayer);
+      this.series = this.sportsplayer[0].series;
+      this.seriesBySportPlayerName = this.series.map((serie) => serie.title);
+      console.log(this.seriesBySportPlayerName);
+      this.formControl.setValue('');
+    });
+    // this.autoFilter = this.formControl.valueChanges.pipe(
+    //   startWith(''),
+    //   map((value) => this.mat_filter(value))
+    // );
+  }
+
+  private mat_filter(value: string): string[] {
+    this.filterValue = value.toLowerCase();
+    return this.seriesBySportPlayerName.filter((option) =>
+      option.toLowerCase().includes(this.filterValue)
+    );
+  }
+
+  resetAutoInput(
+    optVal: string,
+    trigger: MatAutocompleteTrigger,
+    auto: MatAutocomplete
+  ) {
+    setTimeout(() => {
+      auto.options.forEach((item) => {
+        item.deselect();
+      });
+      this.formControl.reset('');
+      trigger.openPanel();
+    }, 100);
+  }
+
+  // private setValue(value: string | null): void {
+  //   if (typeof value === 'string') {
+  //     this.mat_filter = 'a tomar por culo el ejercicio';
+  //   } else {
+  //     this.mat_filter = value;
+  //   }
+  // }
 }

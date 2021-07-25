@@ -1,11 +1,4 @@
-import {
-  Input,
-  Component,
-  OnInit,
-  AfterViewInit,
-  OnChanges,
-  SimpleChanges,
-} from '@angular/core';
+import { Input, Component, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Serie } from '../models/serie';
 
@@ -13,18 +6,17 @@ import { Serie } from '../models/serie';
   selector: 'app-series-grid-landing',
   templateUrl: './series-grid-landing.component.html',
   styleUrls: ['./series-grid-landing.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SeriesGridLandingComponent implements OnInit, OnChanges {
-  @Input() series: Serie[] = [];
+export class SeriesGridLandingComponent {
+  _series!: Serie[];
+  @Input() set series(value: Serie[]) {
+    this._series = value.sort(this.random).slice(0, 4);
+  }
 
   constructor(private router: Router) {}
-  ngOnInit(): void {}
-  random = () => Math.random() - 0.5;
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes.series) {
-    }
-  }
+  random = () => Math.floor(Math.random() - 0.5);
 
   select(serieId: string): void {
     if (serieId) {
