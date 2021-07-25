@@ -33,11 +33,18 @@ export class AuthService {
   }
 
   storeNewAvatar(user: UserModel): void {
-    localStorage.setItem(this.APP_USER, JSON.stringify(user));
     if (this.isUserAuthenticated) {
-      this.userSubject$.next(user);
-      localStorage.setItem(this.APP_USER, JSON.stringify(user));
+      localStorage.setItem(
+        this.APP_USER,
+        JSON.stringify({ ...this.localUser, avatar: user.avatar })
+      );
     }
+    this.userSubject$.next(user);
+  }
+
+  get localUser(): UserModel | null {
+    const user = localStorage.getItem(this.APP_USER);
+    return user ? new UserModel(JSON.parse(user)) : null;
   }
 
   hasUserRole(role: string): boolean {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { filter, switchMap } from 'rxjs/operators';
+import { filter, switchMap, tap } from 'rxjs/operators';
 import { UserModel } from 'src/app/models/user';
 import { ModalsService } from 'src/app/shared/modals.service';
 import { UpdateUserService } from 'src/app/shared/services/update-user.service';
@@ -14,6 +14,7 @@ import { ToastMessagesService } from '../../services/toast-messages.service';
 })
 export class ProfileComponent implements OnInit {
   user!: UserModel | null;
+  spinner: boolean = false;
   constructor(
     private authService: AuthService,
     private modal: ModalsService,
@@ -47,11 +48,13 @@ export class ProfileComponent implements OnInit {
       })
       .pipe(
         filter((file) => !!file),
+        tap(() => (this.spinner = true)),
         switchMap((file) => this.updateUser.updateAvatar(file))
       )
       .subscribe((user) => {
         this.authService.storeNewAvatar(user);
         this.user = user;
+        this.spinner = false;
       });
   }
 }

@@ -29,6 +29,7 @@
                     <button class="btnEdit" mat-flat-button color="accent" type="button"
                         (click)="editUser('phone')">Editar</button>
                 </div>
+                <app-spinner *ngIf="spinner"></app-spinner>
             </div>
 
             <!-- <p>Verificar número de teléfono</p>
