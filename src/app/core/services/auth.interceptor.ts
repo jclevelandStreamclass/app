@@ -10,14 +10,14 @@ import { AuthService } from './auth.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  readonly excludeUrls = ['video'];
+  readonly excludeUrls = ['videos'];
   constructor(private authService: AuthService) {}
 
   intercept(
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    if (!this.excludeUrls.includes(request.url.toLowerCase())) {
+    if (!this.excludeUrls.some((url) => request.url.includes(url))) {
       return next.handle(request);
     }
 
@@ -27,7 +27,6 @@ export class AuthInterceptor implements HttpInterceptor {
         `bearer ${this.authService.bearer}`
       ),
     });
-    console.log(newRequest);
     return next.handle(newRequest);
   }
 }
