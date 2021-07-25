@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
   user!: UserModel | null;
   roleForm: FormGroup;
   error = false;
+  private readonly APP_USER = 'tkn_streamclass';
 
   constructor(
     route: ActivatedRoute,
@@ -71,9 +72,12 @@ export class ProfileComponent implements OnInit {
   }
 
   saveForm(form: FormGroup) {
-    console.log(form.value);
     if (form.valid) {
-      this.profileService.changePlan(form.value).subscribe();
+      this.profileService.changePlan(form.value).subscribe((user) => {
+        this.authService.setTokenChangePlanToken(user);
+        this.user = user;
+        this.authService.storeUser(this.user!);
+      });
     }
   }
 
