@@ -53,18 +53,12 @@ export class ConfirmationModalComponent implements OnInit, OnChanges {
   }
 
   checkPassword() {
-    const password = this.editUser.get('value')?.value;
-    const passwordConfirm = this.editUser.get('rPasswordConfirm')?.value;
-    console.log(password, passwordConfirm);
-    if (password !== passwordConfirm) {
-      this.editUser.setErrors({ rPasswordConfirm: 'Passwords do not match' });
-      console.log('Password error');
-    } else {
-      this.editUser.setErrors(null);
-    }
+    return this.editUser.value.value !== this.editUser.value.rPassword;
   }
 
   saveClick(form: FormGroup) {
+    if (this.checkPassword()) return;
+
     if (form.valid) {
       this.updateUserService.updateUser(form.value).subscribe();
       return;

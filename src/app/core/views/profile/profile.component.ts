@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { filter, switchMap } from 'rxjs/operators';
+import { filter, switchMap, tap } from 'rxjs/operators';
 import { UserModel } from 'src/app/models/user';
 import { ModalsService } from 'src/app/shared/modals.service';
 import { UpdateUserService } from 'src/app/shared/services/update-user.service';
@@ -23,6 +23,7 @@ export class ProfileComponent implements OnInit {
   error = false;
   private readonly APP_USER = 'tkn_streamclass';
 
+  spinner: boolean = false;
   constructor(
     route: ActivatedRoute,
     fb: FormBuilder,
@@ -63,11 +64,13 @@ export class ProfileComponent implements OnInit {
       })
       .pipe(
         filter((file) => !!file),
+        tap(() => (this.spinner = true)),
         switchMap((file) => this.updateUser.updateAvatar(file))
       )
       .subscribe((user) => {
         this.authService.storeNewAvatar(user);
         this.user = user;
+        this.spinner = false;
       });
   }
 

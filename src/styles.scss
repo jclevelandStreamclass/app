@@ -107,14 +107,14 @@ input.mat-input-element {
 /* SPINER */
 .spinner {
   margin: 20px auto 0;
-  width: 70px;
+  width: 100px;
   text-align: center;
 }
 
 .spinner > div {
-  width: 18px;
-  height: 18px;
-  background-color: #3970a8;
+  width: 30px;
+  height: 30px;
+  background-color: #4bb26b;
   border-radius: 100%;
   display: inline-block;
   -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;

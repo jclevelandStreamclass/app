@@ -38,11 +38,13 @@ export class AuthService {
   }
 
   storeNewAvatar(user: UserModel): void {
-    localStorage.setItem(this.APP_USER, JSON.stringify(user));
     if (this.isUserAuthenticated) {
-      this.userSubject$.next(user);
-      localStorage.setItem(this.APP_USER, JSON.stringify(user));
+      localStorage.setItem(
+        this.APP_USER,
+        JSON.stringify({ ...this.localUser, avatar: user.avatar })
+      );
     }
+    this.userSubject$.next(user);
   }
 
   setTokenChangePlanToken(user: UserModel): void {

@@ -3,23 +3,15 @@
   <hr />
   <div class="profile-block">
     <div class="avatar-settings">
-      <div
-        class="avatar"
-        [ngStyle]="{ 'background-image': 'url(' + user?.avatar + ')' }"
-      ></div>
+      <div class="avatar" [ngStyle]="{ 'background-image': 'url(' + user?.avatar + ')' }"></div>
 
-      <button
-        (click)="editAvatar()"
-        mat-flat-button
-        color="accent"
-        type="submit"
-      >
+      <button (click)="editAvatar()" mat-flat-button color="accent" type="submit">
         CAMBIAR
       </button>
     </div>
 
-    <div class="profile-settings">
-      <!-- <p class="cursor" (click)="editUser('email')">Cambiar correo</p> -->
+    <!-- <div class="profile-settings">
+      <p class="cursor" (click)="editUser('email')">Cambiar correo</p> 
       <div class="container-settings">
         <div>
           <p class="user-details">
@@ -64,6 +56,28 @@
             Editar
           </button>
         </div>
+      </div> -->
+
+    <div class="profile-settings">
+      <!-- <p class="cursor" (click)="editUser('email')">Cambiar correo</p> -->
+      <div class="container-settings">
+        <div>
+          <p class="user-details"><span class="color-span">Email:</span> {{user?.email}}</p>
+          <button class="btnEdit" mat-flat-button color="accent" type="button"
+            (click)="editUser('email')">Editar</button>
+        </div>
+        <div>
+          <p class="user-details"><span class="color-span">Contraseña:</span> <span class="pass">*********</span>
+          </p>
+          <button class="btnEdit" mat-flat-button color="accent" type="button"
+            (click)="editUser('password')">Editar</button>
+        </div>
+        <div>
+          <p class="user-details"><span class="color-span">Teléfono:</span> {{user?.phone}}</p>
+          <button class="btnEdit" mat-flat-button color="accent" type="button"
+            (click)="editUser('phone')">Editar</button>
+        </div>
+        <app-spinner *ngIf="spinner"></app-spinner>
       </div>
 
       <!-- <p>Verificar número de teléfono</p>
@@ -86,11 +100,7 @@
     <div class="link">
       <p>Cambiar plan:</p>
       <div class="planFormBox">
-        <form
-          id="roleForm"
-          [formGroup]="roleForm"
-          (ngSubmit)="saveForm(roleForm)"
-        >
+        <form id="roleForm" [formGroup]="roleForm" (ngSubmit)="saveForm(roleForm)">
           <!-- <div class="selectBox"> -->
           <mat-form-field class="green">
             <mat-label>Seleccione</mat-label>

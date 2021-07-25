@@ -38,16 +38,16 @@ export class UploadAvatarModalComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addSpinner() {
-    const spinner = this.renderer.createElement('div');
-    this.renderer.addClass(spinner, 'spinner');
-    spinner.innerHTML = `
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>    
-    `;
-    this.renderer.appendChild(this.spinner.nativeElement, spinner);
-  }
+  // addSpinner() {
+  //   const spinner = this.renderer.createElement('div');
+  //   this.renderer.addClass(spinner, 'spinner');
+  //   spinner.innerHTML = `
+  //       <div class="bounce1"></div>
+  //       <div class="bounce2"></div>
+  //       <div class="bounce3"></div>
+  //   `;
+  //   this.renderer.appendChild(this.spinner.nativeElement, spinner);
+  // }
 
   onFileSelected(event: Event) {
     const file: File = (event.target as HTMLInputElement).files![0];
@@ -62,10 +62,7 @@ export class UploadAvatarModalComponent implements OnInit {
 
   uploadAvatar(): void {
     if (this.fileName) {
-      this.addSpinner();
-      setTimeout(() => {
-        this.dialogRef.close(this.formData);
-      }, 1000);
+      this.dialogRef.close(this.formData);
     }
   }
 }
