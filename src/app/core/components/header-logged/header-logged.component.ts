@@ -6,7 +6,14 @@ import {
 } from '@angular/material/autocomplete';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import {
+  debounceTime,
+  filter,
+  map,
+  startWith,
+  switchMap,
+  tap,
+} from 'rxjs/operators';
 import { Serie } from 'src/app/series/models/serie';
 import { SportsPlayer } from 'src/app/sportsplayers/models/sportsPlayer';
 import { SportsplayerService } from 'src/app/sportsplayers/services/sportsplayer.service';
@@ -55,7 +62,7 @@ export class HeaderLoggedComponent implements OnInit {
   ];
 
   formControl = new FormControl();
-  autoFilter!: Observable<string[]>;
+  autoFilter!: Observable<{ name: string; id: string }[]>;
   sportsplayer!: SportsPlayer[];
   series: Serie[] = [];
   seriesBySportPlayerName!: string[];
@@ -69,7 +76,21 @@ export class HeaderLoggedComponent implements OnInit {
     private sportsPlayerService: SportsplayerService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.autoFilter = this.formControl.valueChanges.pipe(
+      filter((value) => !!value),
+      debounceTime(500),
+      switchMap((value) =>
+        this.sportsPlayerService.getSportsPlayerSeries(value)
+      ),
+      map((players) =>
+        players.map(({ name, series }) => ({
+          name,
+          id: series[0]?.id,
+        }))
+      )
+    );
+  }
 
   // checkea para incluir volver
   checkRoute(): boolean {
@@ -106,10 +127,10 @@ export class HeaderLoggedComponent implements OnInit {
       console.log(this.seriesBySportPlayerName);
       this.formControl.setValue('');
     });
-    this.autoFilter = this.formControl.valueChanges.pipe(
-      startWith(''),
-      map((value) => this.mat_filter(value))
-    );
+    // this.autoFilter = this.formControl.valueChanges.pipe(
+    //   startWith(''),
+    //   map((value) => this.mat_filter(value))
+    // );
   }
 
   private mat_filter(value: string): string[] {
