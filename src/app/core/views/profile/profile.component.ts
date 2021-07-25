@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { filter, switchMap } from 'rxjs/operators';
 import { UserModel } from 'src/app/models/user';
 import { ModalsService } from 'src/app/shared/modals.service';
 import { UpdateUserService } from 'src/app/shared/services/update-user.service';
@@ -44,14 +45,13 @@ export class ProfileComponent implements OnInit {
         optionYes: 'Confirmar',
         file: '',
       })
-      .subscribe((file) => {
-        if (file) {
-          this.updateUser.updateAvatar(file).subscribe((user) => {
-            this.authService.storeNewAvatar(user);
-            this.user = user;
-          });
-          return;
-        }
+      .pipe(
+        filter((file) => !!file),
+        switchMap((file) => this.updateUser.updateAvatar(file))
+      )
+      .subscribe((user) => {
+        this.authService.storeNewAvatar(user);
+        this.user = user;
       });
   }
 }

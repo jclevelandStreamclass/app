@@ -6,7 +6,7 @@
 </div>
 
 <div mat-dialog-content>
-  <div class="login">
+  <div class="login" #login>
     <div class="form">
       <input type="file" class="file-input" hidden requiredFileType="image/png" requiredFileSize="2MB"
         accept="image/png, image/jpeg" (change)="onFileSelected($event)" #fileUpload>
