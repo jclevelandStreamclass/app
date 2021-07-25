@@ -4,24 +4,29 @@
 
 
     <!-- INPUT BUSQUEDA DEPORTISTA -->
-    <input class="miguel" type="text" placeholder="" matInput (change)="filterSport($event)" #matIn>
+    <input class="miguel" type="text" placeholder="" matInput (change)="filterSport($event)" #matIn
+        (click)="matIn.value=''">
 
     <!-- MAT FORM FIELD -->
-    <mat-form-field class="searchToolbar" style="width: 300px; margin: 50px auto; display: block;"
-        *ngIf="seriesBySportPlayerName">
+    <form>
+        <mat-form-field class="searchToolbar" style="width: 300px; margin: 50px auto; display: block;"
+            *ngIf="seriesBySportPlayerName">
 
-        <!-- comentario -->
-        <!-- INPUT FILTRO // OCULTO HASTA QUE RECIBA LOS DATOS DEL INPUT BUSQUEDA DEPORTISTA-->
-        <input type="text" placeholder="Vamos rafa!" matInput [formControl]="formControl" [matAutocomplete]="auto"
-            #matInput>
+            <!-- comentario -->
+            <!-- INPUT FILTRO // OCULTO HASTA QUE RECIBA LOS DATOS DEL INPUT BUSQUEDA DEPORTISTA-->
+            <input type="text" placeholder="" matInput [formControl]="formControl" [matAutocomplete]="auto" #matInput
+                #trigger="matAutocompleteTrigger" [matAutocomplete]="auto">
 
-        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-            <mat-option *ngFor="let item of autoFilter | async" [value]="item" (click)="matIn.value = ''">
-                {{item}}
-            </mat-option>
-        </mat-autocomplete>
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"
+                (optionSelected)="resetAutoInput($event.option.value, trigger, auto)">
 
-    </mat-form-field>
+                <mat-option *ngFor="let option of autoFilter | async" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-autocomplete>
+
+        </mat-form-field>
+    </form>
 
     <div class="items" *ngIf="checkRouteLanding()">
         <button mat-button *ngFor="let item of menuItems" [fxShow]="item.showOnDesktop" [fxShow.xs]="item.showOnMobile"

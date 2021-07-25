@@ -7,7 +7,7 @@
         <div class="cards">
             <!-- .slice() -> indicamos el número de datos que queremos filtrar en la web -->
             <!-- Desordenar el array de series, y cortamos los 4 primeros -->
-            <mat-card class="example-card" *ngFor="let serie of series.sort(random).slice(0,4)">
+            <mat-card class="example-card" *ngFor="let serie of _series">
 
                 <mat-card-content (click)="select(serie.id)"
                     [ngStyle]="{'background-image':' url(' + serie.photo + ')'}">

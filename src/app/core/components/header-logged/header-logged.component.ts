@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import {
+  MatAutocompleteTrigger,
+  MatAutocomplete,
+} from '@angular/material/autocomplete';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
@@ -51,7 +55,7 @@ export class HeaderLoggedComponent implements OnInit {
   ];
 
   formControl = new FormControl();
-  autoFilter!: Observable<any>;
+  autoFilter!: Observable<string[]>;
   sportsplayer!: SportsPlayer[];
   series: Serie[] = [];
   seriesBySportPlayerName!: string[];
@@ -90,34 +94,43 @@ export class HeaderLoggedComponent implements OnInit {
       this.filterSportPlayer = data;
       console.log(this.filterSportPlayer);
       this.seriesSportsPlayer(this.filterSportPlayer);
-      this.autoFilter.pipe(
-        startWith(''),
-        map((value) => this.mat_filter(value))
-      );
-
-      return;
     }
   }
 
-  private mat_filter(value: string): string[] {
-    this.filterValue = value.toLowerCase();
-    return this.seriesBySportPlayerName.filter(
-      (option) => option.toLowerCase().indexOf(this.filterValue) === 0
-    );
-  }
-
-  private seriesSportsPlayer(data: string): void {
+  seriesSportsPlayer(data: string): void {
     this.sportsPlayerService.getSportsPlayerSeries(data).subscribe((result) => {
       this.sportsplayer = result;
       // console.log(this.sportsplayer);
       this.series = this.sportsplayer[0].series;
       this.seriesBySportPlayerName = this.series.map((serie) => serie.title);
       console.log(this.seriesBySportPlayerName);
+      this.formControl.setValue('');
     });
     this.autoFilter = this.formControl.valueChanges.pipe(
       startWith(''),
       map((value) => this.mat_filter(value))
     );
+  }
+
+  private mat_filter(value: string): string[] {
+    this.filterValue = value.toLowerCase();
+    return this.seriesBySportPlayerName.filter((option) =>
+      option.toLowerCase().includes(this.filterValue)
+    );
+  }
+
+  resetAutoInput(
+    optVal: string,
+    trigger: MatAutocompleteTrigger,
+    auto: MatAutocomplete
+  ) {
+    setTimeout(() => {
+      auto.options.forEach((item) => {
+        item.deselect();
+      });
+      this.formControl.reset('');
+      trigger.openPanel();
+    }, 100);
   }
 
   // private setValue(value: string | null): void {
