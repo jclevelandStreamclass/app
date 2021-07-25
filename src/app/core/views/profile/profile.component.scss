@@ -276,9 +276,9 @@
 
 // background-color: $colorGreen !important;
 
-.mat-select-arrow .ng-tns-c147-2 {
-  color: green;
-}
+// .mat-select-arrow .ng-tns-c147-2 {
+//   color: green;
+// }
 
 // .mat-form-field-infix.ng-tns-c113-1 {
 //   background-color: $colorGreen !important;
@@ -287,30 +287,31 @@
 // .mat-form-field-appearance-fill .mat-form-field-flex {
 //   background-color: $colorGreen !important;
 // }
+
 .planFormBox {
   form {
     text-align: end;
-    .mat-form-field {
-      text-align: end;
-      color: #fff;
-      display: grid;
-      width: 3rem;
-    }
+    // .mat-form-field {
+    //   text-align: end;
+    //   color: #fff;
+    //   display: grid;
+    //   width: 3rem;
+    // }
 
-    .mat-select {
-      font-family: $fontMontserrat;
-      background-color: #4caf50;
-      color: #fff;
-      text-align: center;
-      padding: 1rem 2rem;
-      border-radius: 5px;
-    }
+    // .mat-select {
+    //   font-family: $fontMontserrat;
+    //   background-color: #4caf50;
+    //   color: #fff;
+    //   text-align: center;
+    //   padding: 1rem 2rem;
+    //   border-radius: 5px;
+    // }
 
-    .btnEdit {
-      font-family: "Montserrat", sans-serif;
-      margin: 0;
-      padding: 0.1rem 2rem;
-    }
+    // .btnEdit {
+    //   font-family: "Montserrat", sans-serif;
+    //   margin: 0;
+    //   padding: 0.1rem 2rem;
+    // }
   }
 }
 
@@ -323,21 +324,21 @@
   }
 }
 
-// .mat-form-field {
-//   text-align: end;
-//   color: #fff;
-//   display: grid;
-//   width: 3rem;
-// }
+.mat-form-field {
+  text-align: end;
+  color: #fff;
+  display: grid;
+  width: 3rem;
+}
 
-// .mat-select {
-//   font-family: $fontMontserrat;
-//   background-color: $colorGreen;
-//   color: #fff;
-//   text-align: center;
-//   padding: 1rem 2rem;
-//   border-radius: 5px;
-// }
+.mat-select {
+  font-family: $fontMontserrat;
+  background-color: $colorGreen;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
 
 // .mat-option {
 //   font-family: $fontMontserrat;
@@ -348,11 +349,11 @@
 //   }
 // }
 
-// .btnEdit {
-//   font-family: "Montserrat", sans-serif;
-//   margin: 0;
-//   padding: 0.1rem 2rem;
-// }
+.btnEdit {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0.1rem 2rem;
+}
 
 // .mat-form-field-wrapper.ng-tns-c113-1,
 // .mat-form-field-appearance-fill.mat-form-field-flex {

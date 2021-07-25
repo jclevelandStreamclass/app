@@ -91,15 +91,15 @@
           [formGroup]="roleForm"
           (ngSubmit)="saveForm(roleForm)"
         >
-          <div class="selectBox">
-            <mat-form-field class="green">
-              <mat-label>Seleccione</mat-label>
-              <mat-select formControlName="role">
-                <mat-option value="premium">Premium</mat-option>
-                <mat-option value="user">Básico</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
+          <!-- <div class="selectBox"> -->
+          <mat-form-field class="green">
+            <mat-label>Seleccione</mat-label>
+            <mat-select formControlName="role">
+              <mat-option value="premium">Premium</mat-option>
+              <mat-option value="user">Básico</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!-- </div> -->
 
           <button mat-flat-button class="btnEdit" color="accent" type="submit">
             Enviar
