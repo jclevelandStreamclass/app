@@ -4,24 +4,24 @@
 
 
     <!-- INPUT BUSQUEDA DEPORTISTA -->
-    <input class="miguel" type="text" placeholder="" matInput (change)="filterSport($event)" #matIn
-        (click)="matIn.value=''">
+    <!-- <input  class="miguel" type="text" placeholder="" matInput #matIn
+        (click)="matIn.value=''"> -->
 
     <!-- MAT FORM FIELD -->
     <form>
-        <mat-form-field class="searchToolbar" style="width: 300px; margin: 50px auto; display: block;"
-            *ngIf="seriesBySportPlayerName">
+        <mat-form-field class="searchToolbar" style="width: 300px; margin: 50px auto; display: block;">
 
             <!-- comentario -->
             <!-- INPUT FILTRO // OCULTO HASTA QUE RECIBA LOS DATOS DEL INPUT BUSQUEDA DEPORTISTA-->
-            <input type="text" placeholder="" matInput [formControl]="formControl" [matAutocomplete]="auto" #matInput
+            <input [formControl]="formControl" type="text" placeholder="" matInput [matAutocomplete]="auto" #matInput
                 #trigger="matAutocompleteTrigger" [matAutocomplete]="auto">
 
             <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"
                 (optionSelected)="resetAutoInput($event.option.value, trigger, auto)">
 
-                <mat-option *ngFor="let option of autoFilter | async" [value]="option">
-                    {{option}}
+                <mat-option [routerLink]="'/series/' + option.id" *ngFor="let option of autoFilter | async"
+                    [value]="option.name">
+                    {{option.name}}
                 </mat-option>
             </mat-autocomplete>
 

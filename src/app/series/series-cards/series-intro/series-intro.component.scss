@@ -1,13 +1,15 @@
 @import "../../../../variables";
 @import "../../../../mixins";
-
+* {
+  font-family: $fontMontserrat;
+}
 .intro {
   color: $colorText;
   font-family: $fontMontserrat;
   background-color: $colorBackgroundLight;
   .introImg {
     width: 100%;
-    height: 100vh;
+
     @include bg-cover;
     @include flex-center-column;
     position: relative;
@@ -26,28 +28,34 @@
       z-index: -1;
     }
     .title {
-      width: 100%;
+      margin-top: 22rem;
+      width: 40%;
       font-weight: 700;
       @include flex-center-column;
       h2 {
         font-style: italic;
         text-transform: uppercase;
-        font-size: 4rem;
+        font-size: 6rem;
         font-weight: 700;
         line-height: 1.2;
+        font-family: $fontMontserrat;
+        text-align: center;
       }
       h3 {
         font-size: 2.3rem;
         font-style: italic;
         margin-top: 4rem;
         font-weight: 700;
+        font-family: $fontMontserrat;
+        text-align: center;
       }
     }
     .btnsIntro {
       display: flex;
       flex-wrap: wrap;
-      margin-top: 13rem;
+      margin-top: 4rem;
       justify-content: center;
+
       p {
         font-size: 12px;
         text-align: center;
@@ -107,6 +115,17 @@ hr {
 }
 
 @media (max-width: 1200px) {
+  .intro {
+    .introImg {
+      .title {
+        margin-top: 17rem;
+        h2 {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+
   .episodes-container {
     padding: 3rem;
     .lessonsBox {
@@ -124,8 +143,15 @@ hr {
 }
 
 @media (max-width: 900px) {
-  h2 {
-    text-align: center;
+  .intro {
+    .introImg {
+      .title {
+        //margin-top: 14rem;
+        h2 {
+          font-size: 3rem;
+        }
+      }
+    }
   }
   .episodes-container {
     padding: 0.5rem 2rem;
@@ -146,6 +172,26 @@ hr {
 }
 
 @media (max-width: 700px) {
+  .intro {
+    .introImg {
+      .title {
+        margin-top: 10rem;
+        h2 {
+          font-size: 2rem;
+          margin: 3rem 0 1rem 0;
+          // text-align: center;
+        }
+        h3 {
+          font-size: 1.5rem;
+          margin: 1rem 0 3rem 0;
+        }
+      }
+      .btnsIntro {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
   .episodes-container {
     .lessonsBox {
       grid-template-rows: 1fr 3fr;
@@ -161,14 +207,16 @@ hr {
   .bioSportPlayr {
     font-size: 17px;
     padding: 1.7rem 0 1.2rem 0;
+    text-align: justify;
   }
 }
 
 @media (max-width: 550px) {
   .intro {
     .introImg {
-      height: 80vh;
+      // height: 80vh;
       .title {
+        margin-top: 5rem;
         h2 {
           font-size: 2rem;
           margin: 3rem 0 1rem 0;
@@ -176,7 +224,7 @@ hr {
         }
         h3 {
           font-size: 1rem;
-          margin-top: 3rem;
+          margin: 1rem 0 3rem 0;
         }
       }
       .btnsIntro {
