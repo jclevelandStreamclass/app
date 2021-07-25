@@ -1,3 +1,5 @@
+import { Serie } from 'src/app/series/models/serie';
+
 export class SportsPlayer {
   id: string;
   name: string;
@@ -5,7 +7,7 @@ export class SportsPlayer {
   job: string;
   photo: string;
   // implementacion serie
-  series: [];
+  series: Serie[];
 
   constructor(item?: any) {
     this.id = item?.id ?? '';
