@@ -77,7 +77,6 @@ export class SignupComponent implements OnInit {
         if (user) {
           console.log(user);
           this.signUpForm.reset();
-          this.avatar = '';
           this.toastMessages.showSuccess(
             `${user.name} Has sido dado de alta correctamente. Revisa tu correo y activa tu cuenta`
           );
