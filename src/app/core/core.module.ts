@@ -45,6 +45,7 @@ import { HeaderLoggedComponent } from './components/header-logged/header-logged.
 import { ProfileComponent } from './views/profile/profile.component';
 import { SharedModule } from '../shared/shared.module';
 import { UserpaymentComponent } from './views/userpayment/userpayment.component';
+import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 @NgModule({
   declarations: [
@@ -93,6 +94,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatSidenavModule,
     FlexLayoutModule,
     SharedModule,
+    MatSelectModule,
     MatAutocompleteModule,
   ],
   providers: [],

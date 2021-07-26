@@ -19,7 +19,7 @@ import { CategoriesService } from '../services/categories.service';
 })
 export class CategoriesSeriesPageComponent implements OnInit, OnChanges {
   categoryId: string = '';
-  @Input() serie: Serie[] = [];
+  serie: Serie[] = [];
   category!: Category;
 
   constructor(
@@ -35,14 +35,14 @@ export class CategoriesSeriesPageComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.serie) {
-      this.serie = [...changes.serie.currentValue];
-    }
+    // if (changes.serie) {
+    //   this.serie = [...changes.serie.currentValue];
+    // }
   }
 
   ngOnInit(): void {
     this.seriesModel.getSeriesByCategoryId(this.categoryId).subscribe((res) => {
-      this.serie = res;
+      this.serie = [...res];
       console.log(this.serie);
     });
     this.categoryModel.getCategoryById(this.categoryId).subscribe((res) => {
@@ -51,7 +51,6 @@ export class CategoriesSeriesPageComponent implements OnInit, OnChanges {
   }
 
   select(serieId: string): void {
-    console.log(serieId);
     if (serieId) {
       this.router.navigate(['/series', serieId]);
     }

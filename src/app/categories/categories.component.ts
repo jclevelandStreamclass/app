@@ -17,7 +17,6 @@ export class CategoriesComponent implements OnInit {
     this.categorySvc.getCategory().subscribe((x) => {
       this.categories = x;
     });
-    // console.log(this.categories)
   }
   checkRoute(): boolean {
     return this.router.url === '/landing';

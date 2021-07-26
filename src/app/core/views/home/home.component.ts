@@ -31,26 +31,19 @@ export class HomeComponent implements OnInit {
       this.featuredSerie = fSerie;
       this.episodes = [...fSerie.episodes];
       this.firstvideo = this.episodes[0].id;
-      console.log(this.firstvideo);
-      console.log(fSerie);
     });
   }
   playFirstVideo(event: Event): void {
-    if (this.authService.hasUserRole('premium')) {
-      event.stopPropagation();
-      console.log('premium');
-      if (this.firstvideo) {
-        const video = this.episodeService
-          .getEpisodeById(this.firstvideo)
-          .subscribe((episode) => {
-            this.router.navigate(['/episodes', episode.video]);
-          });
-        console.log(video);
-      }
-    } else {
-      //TODO redirect to payment page ahora redirige al serie-intro
-      //TODO bubbling
+    if (!this.authService.hasUserRole('premium')) {
       this.router.navigate(['/userPayment']);
+      return;
+    }
+    if (this.firstvideo) {
+      const video = this.episodeService
+        .getEpisodeById(this.firstvideo)
+        .subscribe((episode) => {
+          this.router.navigate(['/episodes', episode.video]);
+        });
     }
   }
 }

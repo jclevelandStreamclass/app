@@ -32,6 +32,11 @@ export class AuthService {
     return bearer ? new UserModel(JSON.parse(bearer)) : null;
   }
 
+  get localUser(): UserModel | null {
+    const user = localStorage.getItem(this.APP_USER);
+    return user ? new UserModel(JSON.parse(user)) : null;
+  }
+
   storeNewAvatar(user: UserModel): void {
     if (this.isUserAuthenticated) {
       localStorage.setItem(
@@ -42,9 +47,18 @@ export class AuthService {
     this.userSubject$.next(user);
   }
 
-  get localUser(): UserModel | null {
-    const user = localStorage.getItem(this.APP_USER);
-    return user ? new UserModel(JSON.parse(user)) : null;
+  setTokenChangePlanToken(user: UserModel): void {
+    if (this.isUserAuthenticated) {
+      localStorage.setItem(
+        this.APP_USER,
+        JSON.stringify({
+          ...this.localUser,
+          bearer: user.bearer,
+          role: user.role,
+        })
+      );
+    }
+    this.userSubject$.next(user);
   }
 
   hasUserRole(role: string): boolean {

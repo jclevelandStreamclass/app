@@ -45,3 +45,16 @@
     }
   }
 }
+@media (max-width: 400px) {
+  .episodes-container {
+    padding: 0.5rem;
+  }
+  .mat-table {
+    .mat-cell {
+      padding: 2px;
+      span {
+        font-size: 10px;
+      }
+    }
+  }
+}

@@ -20,8 +20,8 @@
             <mat-card class="example-card" *ngFor="let serie of series;">
 
                 <mat-card-content (click)="select(serie.id)"
-                    [ngStyle]="{'background-image':' url(' + serie.photo + ')'}">
-                    <h2 class="mg-top">{{serie.sportsPlayer}}</h2>
+                    [ngStyle]="{'background-image':' url(' + serie.sportPlayerPhoto + ')'}">
+                    <h2 class="mg-top">{{serie.sportsPlayerName}}</h2>
                     <h2 class="bt-title">
                         {{serie.title}}
                     </h2>

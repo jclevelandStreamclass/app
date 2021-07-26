@@ -25,6 +25,6 @@ export class EpisodesService {
   }
 
   getEpisodeById(id: string): Observable<Episode> {
-    return this.http.get<Episode>(`${this.url}/episodes/${id}`);
+    return this.http.get<Episode>(`${this.url}/videos/${id}`);
   }
 }
