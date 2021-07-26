@@ -79,7 +79,7 @@ export class ProfileComponent implements OnInit {
       this.profileService.changePlan(form.value).subscribe((user) => {
         console.log(user);
         this.authService.setTokenChangePlanToken(user);
-        // this.user = user;
+        this.user = user;
         // this.authService.storeUser(this.user!);
       });
     }
