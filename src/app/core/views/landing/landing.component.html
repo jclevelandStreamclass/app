@@ -6,7 +6,7 @@
       <form [formGroup]="emailForm" (ngSubmit)="registerEmail(emailForm)">
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Tu email</mat-label>
-          <input matInput placeholder="Email" formControlName="email" value="" />
+          <input matInput autocomplete="off" placeholder="Email" formControlName="email" value="" />
         </mat-form-field>
         <button class="btnGreen" mat-flat-button color="accent" type="submit">ÚNETE</button>
         <section class="example-section">

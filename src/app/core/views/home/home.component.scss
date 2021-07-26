@@ -5,6 +5,7 @@
   font-family: $fontMontserrat;
   .featured-series {
     background-image: url(https://www.sailingworld.com/resizer/I3ALAABetyV2CbnG0afMPvWGKGA=/1000x691/smart/arc-anglerfish-arc2-prod-bonnier.s3.amazonaws.com/public/Y47N7IZLCOOGUZ6FCP4E46LB64.jpg);
+    background-attachment: fixed;
     @include bg-cover;
     position: relative;
     width: 100%;

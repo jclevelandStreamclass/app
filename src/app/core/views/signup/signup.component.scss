@@ -4,7 +4,7 @@
 .login {
   @include flex-center-column;
   text-align: center;
-  background-image: url(https://images.unsplash.com/photo-1593011458096-fcbd150f8b1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2134&q=80);
+  background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1627299928/poseidon/klim-musalimov-PcaAwwL5ef4-unsplash_he5yp1.jpg);
   @include bg-cover;
   background-attachment: fixed;
   height: calc(100vh - 10rem);
