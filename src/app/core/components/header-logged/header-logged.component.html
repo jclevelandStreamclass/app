@@ -8,25 +8,7 @@
         (click)="matIn.value=''"> -->
 
     <!-- MAT FORM FIELD -->
-    <form>
-        <mat-form-field class="searchToolbar" style="width: 300px; margin: 50px auto; display: block;">
 
-            <!-- comentario -->
-            <!-- INPUT FILTRO // OCULTO HASTA QUE RECIBA LOS DATOS DEL INPUT BUSQUEDA DEPORTISTA-->
-            <input [formControl]="formControl" type="text" placeholder="" matInput [matAutocomplete]="auto" #matInput
-                #trigger="matAutocompleteTrigger" [matAutocomplete]="auto">
-
-            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"
-                (optionSelected)="resetAutoInput($event.option.value, trigger, auto)">
-
-                <mat-option [routerLink]="'/series/' + option.id" *ngFor="let option of autoFilter | async"
-                    [value]="option.name">
-                    {{option.name}}
-                </mat-option>
-            </mat-autocomplete>
-
-        </mat-form-field>
-    </form>
 
     <div class="items" *ngIf="checkRouteLanding()">
         <button mat-button *ngFor="let item of menuItems" [fxShow]="item.showOnDesktop" [fxShow.xs]="item.showOnMobile"
@@ -34,6 +16,28 @@
             <mat-icon class="mr">{{item.icon}}</mat-icon>
             {{item.label}}
         </button>
+        <div class="search-bar">
+            <mat-icon class="search">search</mat-icon>
+            <form>
+                <mat-form-field class="searchToolbar" style="width: 300px; margin: 50px auto; display: block;">
+
+                    <!-- comentario -->
+                    <!-- INPUT FILTRO // OCULTO HASTA QUE RECIBA LOS DATOS DEL INPUT BUSQUEDA DEPORTISTA-->
+                    <input [formControl]="formControl" type="text" placeholder="" matInput [matAutocomplete]="auto"
+                        #matInput #trigger="matAutocompleteTrigger" [matAutocomplete]="auto">
+
+                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"
+                        (optionSelected)="resetAutoInput($event.option.value, trigger, auto)">
+
+                        <mat-option [routerLink]="'/series/' + option.id" *ngFor="let option of autoFilter | async"
+                            [value]="option.name">
+                            {{option.name}}
+                        </mat-option>
+                    </mat-autocomplete>
+
+                </mat-form-field>
+            </form>
+        </div>
         <div class="avatar" [routerLink]="['/profile']">
             <img [src]="getUserAvatar() | async" alt="">
         </div>

@@ -51,14 +51,14 @@ export class HeaderLoggedComponent implements OnInit {
       showOnDesktop: true,
       path: 'categories',
     },
-    {
-      label: '',
-      icon: 'search',
-      showOnMobile: false,
-      showOnTablet: true,
-      showOnDesktop: true,
-      path: '#',
-    },
+    // {
+    //   label: '',
+    //   icon: 'search',
+    //   showOnMobile: false,
+    //   showOnTablet: true,
+    //   showOnDesktop: true,
+    //   path: '#',
+    // },
   ];
 
   formControl = new FormControl();
