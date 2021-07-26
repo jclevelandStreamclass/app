@@ -29,7 +29,6 @@ export class HeaderLoggedComponent implements OnInit {
   menuItems: MenuItem[] = [
     {
       label: 'INICIO',
-      icon: '',
       showOnMobile: false,
       showOnTablet: false,
       showOnDesktop: true,
@@ -37,7 +36,6 @@ export class HeaderLoggedComponent implements OnInit {
     },
     {
       label: 'MIS CLASES',
-      icon: '',
       showOnMobile: false,
       showOnTablet: false,
       showOnDesktop: true,
@@ -45,20 +43,11 @@ export class HeaderLoggedComponent implements OnInit {
     },
     {
       label: 'DEPORTES',
-      icon: '',
       showOnMobile: false,
       showOnTablet: false,
       showOnDesktop: true,
       path: 'categories',
     },
-    // {
-    //   label: '',
-    //   icon: 'search',
-    //   showOnMobile: false,
-    //   showOnTablet: true,
-    //   showOnDesktop: true,
-    //   path: '#',
-    // },
   ];
 
   formControl = new FormControl();
