@@ -77,9 +77,10 @@ export class ProfileComponent implements OnInit {
   saveForm(form: FormGroup) {
     if (form.valid) {
       this.profileService.changePlan(form.value).subscribe((user) => {
+        console.log(user);
         this.authService.setTokenChangePlanToken(user);
-        this.user = user;
-        this.authService.storeUser(this.user!);
+        // this.user = user;
+        // this.authService.storeUser(this.user!);
       });
     }
   }

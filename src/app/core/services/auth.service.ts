@@ -51,7 +51,11 @@ export class AuthService {
     if (this.isUserAuthenticated) {
       localStorage.setItem(
         this.APP_USER,
-        JSON.stringify({ ...this.localUser, bearer: user.bearer })
+        JSON.stringify({
+          ...this.localUser,
+          bearer: user.bearer,
+          role: user.role,
+        })
       );
     }
     this.userSubject$.next(user);
