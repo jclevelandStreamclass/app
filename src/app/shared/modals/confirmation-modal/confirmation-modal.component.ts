@@ -6,7 +6,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { ToastMessagesService } from 'src/app/core/services/toast-messages.service';
@@ -33,18 +33,16 @@ export class ConfirmationModalComponent implements OnInit, OnChanges {
     private route: Router,
     private updateUserService: UpdateUserService,
     private toastService: ToastMessagesService,
-    private authService: AuthService
+    private authService: AuthService,
+    private dialogRef: MatDialogRef<ConfirmationModalComponent>
   ) {
     this.editUser = fb.group({
       property: [this.data?.property],
       value: ['', Validators.required],
-      rPassword: ['', Validators.required],
+      rPassword: [''],
     });
   }
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.data && changes.data.currentValue) {
-      this.checkPassword();
-    }
     console.log(changes.data.currentValue);
   }
 
@@ -53,24 +51,23 @@ export class ConfirmationModalComponent implements OnInit, OnChanges {
   }
 
   checkPassword() {
-    return this.editUser.value.value !== this.editUser.value.rPassword;
+    if (this.data.property === 'password') {
+      return this.editUser.value.value !== this.editUser.value.rPassword;
+    }
+    return false;
   }
 
   saveClick(form: FormGroup) {
-    if (this.checkPassword()) return;
+    if (this.checkPassword()) {
+      return;
+    }
 
     if (form.valid) {
-      this.updateUserService.updateUser(form.value).subscribe();
+      console.log(form.value);
+      const value = form.value;
+      this.dialogRef.close(value);
       return;
     }
     this.toastService.showError('Error al guardar');
   }
-
-  // saveAvatar(form: FormGroup) {
-  //   if (form.valid) {
-  //     this.updateUserService.updateAvatar(form.value).subscribe();
-  //     return;
-  //   }
-  //   this.toastService.showError('Error al guardar');
-  // }
 }

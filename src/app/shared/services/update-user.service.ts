@@ -34,9 +34,18 @@ export class UpdateUserService {
       .pipe(
         map((user) => {
           new UserModel(user);
-          this.toastMessages.showSuccessNoTime(`${key} Guardado`);
-          this.authService.logOutUser();
-          this.router.navigate(['/login']);
+
+          if (key === 'password') {
+            this.toastMessages.showSuccessNoTime(
+              `${key} actualizada con éxito. Puedes iniciar sesión con tus nuevos datos`
+            );
+            this.authService.logOutUser();
+            this.router.navigate(['/login']);
+            return user;
+          }
+          if (key) {
+            this.toastMessages.showSuccessNoTime(`${key} Guardado`);
+          }
           return user;
         }),
         catchError((e: HttpErrorResponse) => {
