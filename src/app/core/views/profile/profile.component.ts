@@ -47,13 +47,29 @@ export class ProfileComponent implements OnInit {
 
   editUser(type: string): void {
     console.log(type);
-    this.modal.alert({
-      title: `Editar ${type}`,
-      optionYes: 'Confirmar',
-      optionNo: 'Cancelar',
-      property: type,
-    });
+    this.modal
+      .alert({
+        title: `Editar ${type}`,
+        optionYes: 'Confirmar',
+        optionNo: 'Cancelar',
+        property: type,
+      })
+      .pipe(
+        filter((data) => !!data),
+        tap(() => (this.spinner = true)),
+        switchMap((data) => this.updateUser.updateUser(data))
+      )
+      .subscribe((user) => {
+        this.authService.storeNewUserChanges(user);
+        this.user = user;
+        console.log(user);
+        this.spinner = false;
+      });
   }
+  //   .pipe(
+  //   tap(console.log),
+  //   switchMap((property) => this.updateUser.updateUser(property))
+  // );
 
   editAvatar(): void {
     this.modal

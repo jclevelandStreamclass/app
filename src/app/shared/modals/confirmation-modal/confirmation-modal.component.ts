@@ -6,7 +6,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { ToastMessagesService } from 'src/app/core/services/toast-messages.service';
@@ -33,7 +33,8 @@ export class ConfirmationModalComponent implements OnInit, OnChanges {
     private route: Router,
     private updateUserService: UpdateUserService,
     private toastService: ToastMessagesService,
-    private authService: AuthService
+    private authService: AuthService,
+    private dialogRef: MatDialogRef<ConfirmationModalComponent>
   ) {
     this.editUser = fb.group({
       property: [this.data?.property],
@@ -62,17 +63,11 @@ export class ConfirmationModalComponent implements OnInit, OnChanges {
     }
 
     if (form.valid) {
-      this.updateUserService.updateUser(form.value).subscribe();
+      console.log(form.value);
+      const value = form.value;
+      this.dialogRef.close(value);
       return;
     }
     this.toastService.showError('Error al guardar');
   }
-
-  // saveAvatar(form: FormGroup) {
-  //   if (form.valid) {
-  //     this.updateUserService.updateAvatar(form.value).subscribe();
-  //     return;
-  //   }
-  //   this.toastService.showError('Error al guardar');
-  // }
 }

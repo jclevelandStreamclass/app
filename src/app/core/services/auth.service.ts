@@ -47,6 +47,20 @@ export class AuthService {
     this.userSubject$.next(user);
   }
 
+  storeNewUserChanges(user: UserModel): void {
+    if (this.isUserAuthenticated) {
+      localStorage.setItem(
+        this.APP_USER,
+        JSON.stringify({
+          ...this.localUser,
+          email: user.email,
+          phone: user.phone,
+        })
+      );
+    }
+    this.userSubject$.next(user);
+  }
+
   setTokenChangePlanToken(user: UserModel): void {
     if (this.isUserAuthenticated) {
       localStorage.setItem(
