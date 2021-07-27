@@ -1,26 +1,54 @@
 @import "../../../../variables";
 @import "../../../../mixins";
 
-.miguel {
-  background-color: #181818;
-  color: white !important;
-  width: 200px;
-  border: none;
-  border-radius: 6px;
-  padding: 1rem 0.5rem;
+// .miguel {
+//   background-color: #181818;
+//   color: white !important;
+//   width: 200px;
+//   border: none;
+//   border-radius: 6px;
+//   padding: 1rem 0.5rem;
 
-  &:focus {
-    border-bottom: 1px solid #fff;
-    border-radius: 6px 6px 0 0;
-  }
-}
+//   &:focus {
+//     border-bottom: 1px solid #fff;
+//     border-radius: 6px 6px 0 0;
+//   }
+// }
 
 .mr {
   margin-right: 5px;
 }
 
+.home {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 10%;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#891c1e+0,181818+0,ffffff+100&0.85+0,0+100 */
+  background: -moz-linear-gradient(
+    top,
+    rgba(24, 24, 24, 0.85) 0%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    rgba(24, 24, 24, 0.85) 0%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    rgba(24, 24, 24, 0.85) 0%,
+    rgba(255, 255, 255, 0) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9181818', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+  z-index: 999;
+}
+
 mat-toolbar {
   padding: 55px 34px;
+
   @include flex-just-between-only;
   .mat-icon-button {
     display: none;

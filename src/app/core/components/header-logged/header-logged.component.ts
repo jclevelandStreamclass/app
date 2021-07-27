@@ -86,6 +86,11 @@ export class HeaderLoggedComponent implements OnInit {
     return this.router.url === '/login' || this.router.url.includes('/signup');
   }
 
+  // Header con transparencia
+  checkRouteHome(): boolean {
+    return this.router.url === '/home';
+  }
+
   // checkea para incluir opciones de categorías e inicio de sesión
   checkRouteLanding(): boolean {
     return (
