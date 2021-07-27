@@ -43,8 +43,9 @@ export class UpdateUserService {
             this.router.navigate(['/login']);
             return user;
           }
-
-          this.toastMessages.showSuccessNoTime(`${key} Guardado`);
+          if (key) {
+            this.toastMessages.showSuccessNoTime(`${key} Guardado`);
+          }
           return user;
         }),
         catchError((e: HttpErrorResponse) => {

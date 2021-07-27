@@ -60,6 +60,10 @@ export class ProfileComponent implements OnInit {
         switchMap((data) => this.updateUser.updateUser(data))
       )
       .subscribe((user) => {
+        if (!user) {
+          this.spinner = false;
+          return;
+        }
         this.authService.storeNewUserChanges(user);
         this.user = user;
         console.log(user);
