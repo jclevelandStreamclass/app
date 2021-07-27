@@ -10,7 +10,7 @@ import { AuthService } from './auth.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  readonly excludeUrls = ['videos'];
+  readonly excludeUrls = ['private'];
   constructor(private authService: AuthService) {}
 
   intercept(
