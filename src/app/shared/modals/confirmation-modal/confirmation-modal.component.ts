@@ -38,13 +38,10 @@ export class ConfirmationModalComponent implements OnInit, OnChanges {
     this.editUser = fb.group({
       property: [this.data?.property],
       value: ['', Validators.required],
-      rPassword: ['', Validators.required],
+      rPassword: [''],
     });
   }
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.data && changes.data.currentValue) {
-      this.checkPassword();
-    }
     console.log(changes.data.currentValue);
   }
 
@@ -53,11 +50,16 @@ export class ConfirmationModalComponent implements OnInit, OnChanges {
   }
 
   checkPassword() {
-    return this.editUser.value.value !== this.editUser.value.rPassword;
+    if (this.data.property === 'password') {
+      return this.editUser.value.value !== this.editUser.value.rPassword;
+    }
+    return false;
   }
 
   saveClick(form: FormGroup) {
-    if (this.checkPassword()) return;
+    if (this.checkPassword()) {
+      return;
+    }
 
     if (form.valid) {
       this.updateUserService.updateUser(form.value).subscribe();

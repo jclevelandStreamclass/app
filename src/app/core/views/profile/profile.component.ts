@@ -46,6 +46,7 @@ export class ProfileComponent implements OnInit {
   }
 
   editUser(type: string): void {
+    console.log(type);
     this.modal.alert({
       title: `Editar ${type}`,
       optionYes: 'Confirmar',

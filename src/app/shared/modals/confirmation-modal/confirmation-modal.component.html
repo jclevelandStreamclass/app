@@ -12,15 +12,13 @@
         <input matInput type="{{data.property}}" [placeholder]="data?.property!" formControlName="value">
         <input *ngIf="data.property === 'password'" matInput type="{{data.property}}" placeholder="Repeat Password"
           formControlName="rPassword">
-        <mat-error
-          *ngIf="data.property === 'password' && editUser.get('value')?.value !== editUser.get('rPassword')?.value">Las
+        <mat-error *ngIf="checkPassword()">Las
           contraseñas tienen que
           coincidir</mat-error>
         <div mat-dialog-actions>
           <button mat-raised-button mat-dialog-close color="primary">{{data?.optionNo ||"No"}}</button>
-          <button
-            [disabled]="data.property === 'password' && editUser.get('value')?.value !== editUser.get('rPassword')?.value"
-            class="btn_color" type="submit" mat-raised-button [mat-dialog-close]="true" color="accent">{{data?.optionYes
+          <button [disabled]="checkPassword()" class="btn_color" type="submit" mat-raised-button
+            [mat-dialog-close]="true" color="accent">{{data?.optionYes
             ||
             'Si'}}</button>
         </div>
