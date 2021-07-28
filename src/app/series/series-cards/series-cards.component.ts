@@ -15,6 +15,10 @@ export class SeriesCardsComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  getLatestSeries(): void {
+    this.router.navigate(['series/latest/update']);
+  }
+
   select(serieId: string): void {
     if (serieId) {
       this.router.navigate(['series', serieId]);

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   HttpClientModule,
@@ -49,6 +49,9 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { AdminComponent } from '../admin/admin.component';
 import { CategoriesListComponent } from '../admin/categories-list/categories-list.component';
 import { SportsPlayerListComponent } from '../admin/sports-player-list/sports-player-list.component';
+import { SeriesLastupdateComponent } from '../series/series-lastupdate/series-lastupdate.component';
+import { CategoriesLatestUpdateComponent } from '../categories/categories-latest-update/categories-latest-update.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +78,8 @@ import { SportsPlayerListComponent } from '../admin/sports-player-list/sports-pl
     AdminComponent,
     CategoriesListComponent,
     SportsPlayerListComponent,
+    SeriesLastupdateComponent,
+    CategoriesLatestUpdateComponent,
   ],
   imports: [
     CommonModule,

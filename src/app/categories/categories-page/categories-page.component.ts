@@ -17,6 +17,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class CategoriesPageComponent implements OnInit, OnChanges {
   @Input() categories: Category[] = [];
+
   constructor(
     private categorySvc: CategoriesService,
     private router: Router,

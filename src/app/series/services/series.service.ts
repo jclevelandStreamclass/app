@@ -19,6 +19,12 @@ export class SeriesService {
       .pipe(map((x) => x.map((s) => new Serie(s))));
   }
 
+  getSeriesUpdate(): Observable<Serie[]> {
+    return this.http
+      .get<Serie[]>(`${this.url}/series/latest/Update`)
+      .pipe(map((x) => x.map((s) => new Serie(s))));
+  }
+
   getSerieById(id: string): Observable<Serie> {
     return this.http
       .get<Serie>(`${this.url}/series/${id}`)

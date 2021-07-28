@@ -1,2 +1,3 @@
-<app-series-cards [series]="series" *ngIf="!checkRoute()"></app-series-cards>
+<app-series-cards [series]="series" *ngIf="!checkRoute() && !checkLastSeries()"></app-series-cards>
 <app-series-grid-landing [series]="series" *ngIf="checkRoute()"></app-series-grid-landing>
+<app-series-lastupdate [seriesUpdate]="seriesUpdate" *ngIf="!checkRoute() && checkLastSeries()"></app-series-lastupdate>

@@ -10,6 +10,7 @@ import { CategoriesService } from './services/categories.service';
 })
 export class CategoriesComponent implements OnInit {
   categories: Category[] = [];
+  categoriesUpdate: Category[] = [];
 
   constructor(private categorySvc: CategoriesService, private router: Router) {}
 
@@ -17,8 +18,14 @@ export class CategoriesComponent implements OnInit {
     this.categorySvc.getCategory().subscribe((x) => {
       this.categories = x;
     });
+    this.categorySvc.getCategoryLatestUpdate().subscribe((x) => {
+      this.categoriesUpdate = x;
+    });
   }
   checkRoute(): boolean {
     return this.router.url === '/landing';
+  }
+  checkRouteCategoriesUpdate(): boolean {
+    return this.router.url === '/categories/latest/update';
   }
 }
