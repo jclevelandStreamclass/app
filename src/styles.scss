@@ -1,0 +1,202 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+@import "./variables";
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$streamClass-primary: mat.define-palette(mat.$grey-palette, 900);
+$streamClass-accent: mat.define-palette(mat.$green-palette, 500, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$streamClass-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$streamClass-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $streamClass-primary,
+      accent: $streamClass-accent,
+      warn: $streamClass-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($streamClass-theme);
+
+/* You can add global styles to this file, and also import other style files */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif !important;
+  background-color: #181818;
+  color: #fff;
+}
+
+.mat-checkbox-inner-container {
+  background-color: #fff;
+  outline: none;
+}
+
+.mat-form-field-label {
+  color: #fff;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  top: unset !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 7px 0 7px 0;
+  width: 100%;
+}
+
+.mat-form-field-flex {
+  background-color: #181818;
+  width: 100%;
+  border-radius: 5px;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: #818181 !important;
+  text-align: center;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  border-radius: 8px !important;
+}
+
+input.mat-input-element {
+  padding-bottom: 10px;
+}
+
+/* SPINNER */
+.spinner {
+  margin: 20px auto 0;
+  width: 100px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 30px;
+  height: 30px;
+  background-color: #4bb26b;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.btnGreen {
+  background-color: $colorGreen !important;
+}
+
+// search
+.search-box {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+.input-search {
+  height: 50px;
+  width: 50px;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 25px;
+  transition: all 0.5s ease-in-out;
+  background-color: transparent;
+  padding-right: 40px;
+  color: #fff;
+}
+.input-search::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+.btn-search {
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  color: #ffffff;
+  background-color: transparent;
+  pointer-events: painted;
+}
+.btn-search:focus ~ .input-search {
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+.input-search:focus {
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}

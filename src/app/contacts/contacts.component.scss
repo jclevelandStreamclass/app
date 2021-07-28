@@ -1,0 +1,375 @@
+@import "../../variables";
+@import "../../mixins";
+
+.contacts {
+  padding: 7rem 5rem 5rem 5rem;
+  p {
+    padding-top: 0.5rem;
+    text-align: end;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  h2 {
+    font-family: $fontAccentBebas;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+  }
+  .contacts-block {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+    .radio-settings {
+      @include flex-align-center-column;
+      .radio {
+        background-image: url(https://blog.osculati.com/wp-content/uploads/2017/09/vhf_blog-1200x675.jpg);
+        width: 364px;
+        height: 250px;
+        @include bg-cover;
+        border-radius: 8%;
+        border: 8px solid $colorBackgroundLight;
+        margin-top: 1rem;
+      }
+    }
+    .contacts-settings {
+      text-align: right;
+      .contact-details {
+        color: #818181;
+        .color-span {
+          color: $colorGreen;
+        }
+      }
+    }
+  }
+  hr {
+    border: 1px solid $colorBackgroundInputLight;
+    margin: 2rem 0;
+  }
+}
+.grid {
+  display: grid;
+  grid-template-columns: 4fr 5fr 3fr;
+  .title {
+    color: $colorBackgroundInputLight;
+    font-family: $fontAccentBebas;
+    font-size: 2.5rem;
+  }
+  .details {
+    text-align: start;
+    .premium {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    p {
+      text-align: start;
+    }
+  }
+  span {
+    color: $colorText;
+    font-weight: 600;
+    &.red {
+      color: red;
+    }
+  }
+}
+
+.form1 {
+  font-family: $fontMontserrat;
+  width: 28rem;
+  padding: 1.5rem 1rem 1rem 1rem;
+}
+
+.labels {
+  margin-bottom: 2rem;
+}
+
+.lb2 {
+  margin-bottom: 30px;
+}
+
+.labels input {
+  width: 12rem;
+  height: 4rem;
+  padding: 0 20px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  margin-bottom: 2rem;
+  font-size: 19px;
+  text-align: left;
+}
+
+.labels input::placeholder {
+  color: #fff;
+}
+
+.pinkForm .labels {
+  width: 25rem;
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pinkMess {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  width: 410px;
+  height: 90px;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+}
+
+textarea::placeholder {
+  font-family: $fontMontserrat;
+  color: #fff;
+}
+
+.btnEdit {
+  width: 50%;
+  font-family: $fontMontserrat;
+  margin: 0;
+  padding: 0.1rem 2rem;
+}
+
+.color-span {
+  color: $colorGreen;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.btn-right {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.mat-flat-button {
+  font-family: $fontMontserrat;
+  margin-top: 2rem;
+  color: $colorText !important;
+  padding: 0.5rem 2rem;
+}
+
+// EDITS PROFILE
+.container-settings {
+  div {
+    @include flex-justify-end;
+    margin: 1rem 0;
+    p {
+      text-align: left;
+      width: 399px;
+      display: flex;
+      gap: 1rem;
+      height: 10px;
+    }
+    .pass {
+      margin-top: 5px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .contacts {
+    padding: 5rem 3rem 3rem 3rem;
+    p {
+      font-size: 1rem;
+    }
+    .contacts-block {
+      .radio-settings {
+        .radio {
+          width: 225px;
+          height: 150px;
+        }
+      }
+    }
+  }
+
+  .labels input {
+    width: 10rem;
+    height: 4rem;
+    padding: 0 20px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    margin-bottom: 2rem;
+    font-size: 16px;
+    text-align: left;
+  }
+  textarea {
+    width: 21rem;
+    height: 5rem;
+    font-size: 16px;
+    &::placeholder {
+      font-size: 16px;
+    }
+  }
+
+  .grid {
+    .title {
+      font-size: 1.8rem;
+    }
+
+    .details {
+      .premium {
+        font-size: 1rem;
+      }
+      p {
+        text-align: start;
+      }
+    }
+  }
+}
+@media (max-width: 700px) {
+  .contacts {
+    padding: 3rem 2rem;
+    p {
+      font-size: 1rem;
+    }
+    .contacts-block {
+      .radio-settings {
+        .radio {
+          width: 125px;
+          height: 125px;
+        }
+      }
+    }
+  }
+
+  .grid {
+    .title {
+      font-size: 1.5rem;
+    }
+  }
+
+  .container-settings {
+    div {
+      @include flex-justify-end;
+      margin: 1rem 0;
+      p {
+        text-align: left;
+        width: 100%;
+        height: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .container-settings {
+    div {
+      @include flex-justify-end;
+      margin: 1rem 0;
+      p {
+        text-align: left;
+        width: 340px;
+        height: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .contacts {
+    p {
+      font-size: 0.8rem;
+    }
+    .contacts-block {
+      display: grid;
+      grid-template-columns: unset;
+      .radio-settings {
+        align-items: flex-start;
+        .radio {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .container-settings {
+    padding: 0 1rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: unset;
+    .title {
+      font-size: 1rem;
+    }
+    .details {
+      .premium {
+        font-size: 1rem;
+      }
+      p {
+        text-align: right;
+      }
+    }
+  }
+
+  .container-settings {
+    div {
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem 0;
+      p {
+        text-align: left;
+        width: auto;
+        height: 10px;
+      }
+    }
+  }
+
+  .labels input {
+    width: 30%;
+    height: 4rem;
+    padding: 0 20px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    margin-bottom: 0;
+    font-size: 12.8px;
+    text-align: left;
+  }
+  textarea {
+    width: 60%;
+    height: 5rem;
+    font-size: 12.8px;
+    &::placeholder {
+      font-size: 12.8px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .labels input {
+    width: 25%;
+    height: 4rem;
+    padding: 0 20px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    margin-bottom: 0;
+    font-size: 12.8px;
+    text-align: left;
+  }
+  textarea {
+    width: 50%;
+    height: 5rem;
+    font-size: 12.8px;
+    &::placeholder {
+      font-size: 12.8px;
+    }
+  }
+  .mat-flat-button {
+    width: 32%;
+  }
+}

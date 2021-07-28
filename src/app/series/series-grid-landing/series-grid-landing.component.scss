@@ -1,0 +1,107 @@
+@import "../../../variables";
+@import "../../../mixins";
+
+.container {
+  color: $colorText;
+  width: 100%;
+  font-family: $fontMontserrat;
+  text-align: center;
+  .title {
+    width: 100%;
+    h1 {
+      font-style: italic;
+      font-weight: 600;
+      font-size: 2rem;
+    }
+  }
+  .sugerencias-title {
+    text-align: start;
+    font-family: $fontMontserrat;
+  }
+  .mat-stroked-button {
+    border-color: $colorGreen;
+    padding: 0.6rem 9rem;
+    border-radius: 8px;
+    @include Montserrat500;
+  }
+  .cards {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    .mat-card {
+      width: 100%;
+      aspect-ratio: 7 / 9;
+      border-radius: 10px;
+      background-color: $backgroundMatCard;
+      color: $colorText;
+      padding: 0;
+      margin: 4rem 0;
+    }
+    .mat-card-content {
+      height: 100%;
+      @include flex-center;
+      flex-direction: column;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      position: relative;
+      transition: all 0.3s;
+      .mg-top {
+        text-align: center;
+        margin-top: 12rem;
+        font-family: $fontMontserrat;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        line-height: 2.5rem;
+        padding: 0 10%;
+        font-style: italic;
+      }
+      .bt-title {
+        font-weight: 550;
+      }
+      h2 {
+        text-align: center;
+      }
+      &:hover {
+        transform: scale(1.005);
+      }
+      .gradient {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        transition: 0.3s;
+        &:hover {
+          background: linear-gradient(
+            transparent 0%,
+            rgba(255, 255, 255, 0.062) 65%,
+            rgba(255, 255, 255, 0.281) 100%
+          );
+          opacity: 1;
+          cursor: pointer;
+        }
+      }
+      h2 {
+        font-style: italic;
+      }
+    }
+  }
+}
+
+// small screen
+@media (max-width: 500px) {
+  .container {
+    .sugerencias-title {
+      text-align: unset;
+    }
+    .mat-stroked-button {
+      padding: 0.6rem;
+      width: 100%;
+    }
+    .cards {
+      display: unset;
+    }
+  }
+}

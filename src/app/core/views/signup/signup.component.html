@@ -1,0 +1,33 @@
+<div class="login">
+  <h3>VIVE LA EXPERIENCIA</h3>
+  <div class="form">
+    <form id="loginForm" [formGroup]="signUpForm" (ngSubmit)="saveClick(signUpForm)">
+
+
+      <mat-form-field class="example-full-width" appearance="outline">
+
+        <input matInput autocomplete="disable" type="text" placeholder="Tu nombre" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+
+        <input matInput autocomplete="disable" t ype="tel" placeholder="Tu Teléfono" formControlName="phone">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+
+        <input matInput autocomplete="disable" type="email" placeholder="Email" formControlName="email">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+
+        <input matInput type="password" autocomplete="disable" placeholder="Password" formControlName="password">
+        <mat-error *ngIf="signUpForm.controls.password">Introduce al menos una letra mayuscula y
+          un minimo de 6 caracteres</mat-error>
+      </mat-form-field>
+      <button mat-flat-button color="accent" type="submit">ÚNETE</button>
+      <p class="member">¿Ya eres miembro? <a [routerLink]="['/login']">Inicia Sesión</a> </p>
+    </form>
+  </div>
+
+</div>

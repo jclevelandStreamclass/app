@@ -1,0 +1,2 @@
+<app-categories-grid [categories]="categories" *ngIf="checkRoute()"></app-categories-grid>
+<app-categories-page [categories]="categories" *ngIf="!checkRoute()"></app-categories-page>

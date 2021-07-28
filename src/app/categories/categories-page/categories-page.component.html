@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="title">
+        <h1>Deportes</h1>
+    </div>
+    <div class="ofert" *ngIf="!isPremiumUser()">
+        <h2>CONSIGUE TODAS LAS CLASES</h2>
+        <div class="right-ofert">
+            <h3>4,99€ al mes, pago anual</h3>
+            <button mat-flat-button color="accent" [routerLink]="['/signup']">ÚNETE</button>
+        </div>
+    </div>
+
+    <div class="filter">
+        <div class="filter-functions">
+            <h3 [routerLink]="['/series']">Todas las clases</h3>
+            <h3>Recién añadido</h3>
+        </div>
+        <div class="cards">
+            <mat-card class="example-card" *ngFor="let category of categories">
+                <mat-card-content (click)="select(category.id)" [style.backgroundImage]="'url('+category.photo+')'">
+
+                    <h2 class="bt-title">
+                        {{category.name}}
+                    </h2>
+                    <div class="gradient"></div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

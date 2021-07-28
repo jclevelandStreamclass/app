@@ -1,0 +1,51 @@
+@import "../../../../variables";
+@import "../../../../mixins";
+
+.mat-form-field-wrapper {
+  .mat-form-field-flex {
+    background-color: #fffdfd !important;
+  }
+}
+
+.mat-dialog-content {
+  margin: 0 auto;
+  padding: 0 24px;
+  overflow: inherit;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal {
+  position: relative;
+}
+
+.delete {
+  @include pos-absolute-0;
+  cursor: pointer;
+  color: red;
+}
+
+.form {
+  @include flex-center;
+  flex-direction: column;
+  .upload-btn {
+    margin-left: 1rem;
+  }
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid $colorBackgroundLight;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  &::placeholder {
+    text-transform: capitalize;
+  }
+  &:focus {
+    box-shadow: 0 0 0 1px $colorBackgroundLight;
+  }
+}
+
+.btn_color {
+  color: $colorText;
+}

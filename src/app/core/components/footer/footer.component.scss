@@ -1,0 +1,130 @@
+@import "../../../../variables";
+@import "../../../../mixins";
+
+.group {
+  @include flex-center-row;
+  padding: 2rem 6rem;
+  .auxBox {
+    @include flex-row;
+    .langButton {
+      border: 1px solid $colorTextCCC;
+      text-align: center;
+      padding: 0.1rem 0 0.4rem 0.2rem;
+      width: 6rem;
+      a {
+        font-size: 12px;
+        color: $colorTextGrey;
+        text-decoration: none;
+        span {
+          margin: 3px 0 0 18px;
+          font-size: 18px;
+        }
+      }
+    }
+    .list {
+      padding: 0 2rem;
+      h4 {
+        color: $colorText;
+      }
+      ul {
+        padding-left: 0%;
+        list-style: none;
+        p {
+          text-decoration: none;
+          color: $colorTextGrey;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+//large-screen
+@media (max-width: 1080px) {
+  span.phone::before {
+    @include beforePhone;
+  }
+}
+
+//medium-screen
+@media (max-width: 900px) {
+  span.phone::before {
+    @include beforePhone;
+  }
+  span.phoneJump::before {
+    @include beforePhone;
+  }
+}
+
+//medium-small-screen
+@media (max-width: 600px) {
+  .group {
+    padding: 0 1rem 2rem 1rem;
+    flex-wrap: wrap;
+    @include flex-row;
+    padding: 1rem 0;
+    justify-content: center;
+    font-size: 12px;
+    .list {
+      margin-bottom: 13px;
+      padding: 0 1rem !important;
+    }
+    .helpPhone {
+      font-size: 11px;
+      width: 9rem;
+      margin-bottom: 0px;
+      .langButton {
+        margin-top: 5px;
+        span {
+          margin: 3px 0 0 8px;
+        }
+      }
+    }
+  }
+}
+
+//small-screen
+@media (max-width: 450px) {
+  .group {
+    padding: 1rem 0rem;
+    flex-wrap: wrap;
+    @include flex-row;
+    padding: 1rem 0;
+    justify-content: center;
+    font-size: 11px;
+    .list {
+      margin-bottom: 13px;
+    }
+    .helpPhone {
+      padding: 1rem 0rem 2.5rem 0;
+      @include flex-justify-center-column;
+      font-size: 11px;
+      width: 9rem;
+      margin-bottom: 0px;
+      .langButton {
+        margin-top: 5px;
+        span {
+          margin: 3px 0 0 8px;
+        }
+      }
+    }
+  }
+}
+
+//Xtra-small-screen
+@media (max-width: 320px) {
+  .group {
+    font-size: 10px;
+    .helpPhone {
+      text-align: center;
+      align-items: center;
+      padding: 0rem 0 2rem 0;
+      p {
+        margin-bottom: 1px;
+      }
+    }
+    .list {
+      padding: 0 0.2rem !important;
+    }
+  }
+}

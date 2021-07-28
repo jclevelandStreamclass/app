@@ -1,0 +1,18 @@
+<div class="login">
+  <h3>Got what it takes?</h3>
+  <div class="form">
+    <form id="loginForm" [formGroup]="loginForm" (ngSubmit)="saveClick(loginForm)">
+      <mat-form-field class="example-full-width" appearance="outline">
+
+        <input matInput type="email" autocomplete="disabled" placeholder="Email o Teléfono" formControlName="email">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+
+        <input matInput type="password" placeholder="Password" formControlName="password">
+        <mat-error *ngIf="error">Datos incorrectos</mat-error>
+      </mat-form-field>
+      <button mat-flat-button color="accent" type="submit">INICIAR SESIÓN</button>
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,433 @@
+@import "../../../../variables";
+@import "../../../../mixins";
+
+.landing-padding {
+  padding: 5rem;
+}
+//HERO
+.hero {
+  width: 100%;
+  height: 75vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  .register-box {
+    padding: 0 3rem 3rem 3rem;
+    h1 {
+      font-family: $fontAccentBebas;
+      font-size: 5rem;
+      line-height: 5.5rem;
+    }
+    p {
+      color: $colorTextGrey;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      &.terms-conditions {
+        font-size: 10px;
+        text-align: center;
+        margin: 0;
+      }
+    }
+    form {
+      width: 100%;
+      @include flex-column;
+      mat-label,
+      .mat-flat-button {
+        color: $colorTextCCC;
+        font-family: $fontMontserrat;
+        font-weight: 600;
+      }
+      .mat-flat-button {
+        color: $colorText;
+      }
+    }
+  }
+  .register-img {
+    height: 80%;
+    background-image: url(https://estaticos-cdn.prensaiberica.es/clip/e6e270bb-51b0-447d-9ab9-ead50623c852_16-9-aspect-ratio_default_0.jpg);
+    @include bg-cover;
+    border-radius: 16px;
+  }
+}
+.mat-flat-button {
+  color: $colorText;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+.mat-checkbox {
+  margin: 1rem;
+  font-size: 11px;
+}
+.mat-checkbox-inner-container {
+  background-color: $colorText;
+}
+
+//SUBSCRIPTION PLAN
+.subscription-plan {
+  padding: 6.5rem 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: $colorBackgroundLight !important;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: $colorTextGrey;
+  line-height: 2.4;
+  h3 {
+    color: $colorText;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 2.3rem;
+    margin-bottom: 3.2rem;
+  }
+  .device-img {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626195030/pngaaa.com-480692_ulzwrd.png);
+    @include bg-contain-center;
+    border-radius: 24px;
+  }
+  .mat-stroked-button {
+    margin: 2rem 0 1rem;
+    background-color: $colorGreen;
+    padding: 0.6rem 9rem;
+    border-radius: 8px;
+    color: $colorText;
+    font-family: $fontMontserrat;
+    font-weight: 600;
+  }
+  .payment {
+    margin-left: 4rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+// //FAQ SECTION
+// .faq-section {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   padding: 4rem 6rem;
+//   .faqTitle {
+//     text-align: center;
+//     padding: 2rem 0;
+//     font-style: italic;
+//     font-size: 2.5rem;
+//     font-weight: 700;
+//   }
+
+//   ////// FAQ
+// }
+// .mat-textwhite {
+//   // background-color: $colorBackgroundInput;
+//   font-size: 23px;
+//   .questionText {
+//     color: #fff;
+//     padding: 0.6rem 2rem;
+//   }
+
+//   //Pruebas
+//   // .mat-expansion-panel-header-title.mat-textwhite.questionText
+//   #mat-expansion-panel-header-0 {
+//     background-color: $colorBackgroundInput;
+//     box-shadow: none;
+//   }
+// }
+
+// .mat-accordion {
+//   background-color: $colorBackgroundInput;
+//   &:hover {
+//     background-color: $colorBackgroundLight;
+//   }
+//   &:focus {
+//     background-color: $colorBackgroundLight;
+//   }
+// }
+// .mat-expansion-panel-header {
+//   background-color: $colorBackgroundLight;
+//   color: $colorText !important;
+//   &:hover {
+//     background-color: $colorBackgroundLight;
+//   }
+// }
+
+//REMINDER REGISTER
+.reminder-register-box {
+  margin-top: 15rem;
+  width: 100%;
+  @include flex-center;
+  text-align: center;
+  .register-box {
+    width: 70%;
+    @include flex-justify-center-column;
+    h2 {
+      text-transform: uppercase;
+      font-size: 5rem;
+      font-family: $fontAccentBebas;
+      line-height: 1.3;
+      letter-spacing: 1px;
+    }
+    p {
+      color: $colorTextGrey;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      &.mini-title {
+        margin-bottom: 5rem;
+        font-size: 1.5rem;
+      }
+    }
+    .form-box {
+      @include flex-align-center-column;
+      margin-bottom: 3rem;
+    }
+    form {
+      width: 40%;
+      @include flex-justify-center-column;
+      mat-label,
+      .mat-flat-button {
+        color: #ccc;
+        font-family: $fontMontserrat;
+        font-weight: 600;
+      }
+      .mat-flat-button {
+        color: $colorText;
+      }
+    }
+  }
+}
+
+//laptop
+@media (max-width: 1600px) {
+  .hero {
+    height: 100%;
+  }
+}
+
+//large screen
+@media (max-width: 1350px) {
+  .reminder-register-box {
+    margin-top: 10rem;
+  }
+  .landing-padding {
+    padding: 5rem;
+  }
+  .reminder-register-box {
+    .register-box {
+      form {
+        width: 70%;
+      }
+    }
+  }
+  .hero {
+    margin-top: 0;
+    @include flex-column-reverse;
+    height: 100%;
+    .register-box {
+      h1 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+      form {
+        padding: 0 10rem;
+      }
+    }
+    .register-img {
+      height: 100vh;
+      background-position: top;
+    }
+  }
+  .subscription-plan {
+    height: 100%;
+    .subscription-details {
+      h3 {
+        line-height: 1.5;
+      }
+      p {
+        margin-top: 1rem;
+        font-size: 16px;
+        &.payment {
+          font-size: 12px;
+        }
+      }
+      .mat-flat-button {
+        width: 150px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+//medium screen
+@media (max-width: 900px) {
+  .reminder-register-box {
+    margin-top: 8rem;
+  }
+  .landing-padding {
+    padding: 3rem;
+  }
+  .hero {
+    margin-top: 0;
+    width: 100%;
+    height: 100%;
+    @include flex-column-reverse;
+    gap: 2rem;
+    .register-box {
+      padding: 3rem;
+      h1 {
+        margin-top: 0;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+      .mat-checkbox {
+        margin: 0;
+      }
+      form {
+        padding: 0;
+      }
+    }
+    .register-img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .subscription-plan {
+    height: 100vh;
+    @include flex-column-reverse;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: $colorTextGrey;
+    line-height: 3;
+    .subscription-details {
+      @include flex-justify-center-column;
+    }
+    h3 {
+      color: $colorText;
+      font-size: 24px;
+      font-weight: 700;
+      font-style: italic;
+      text-align: center;
+    }
+    p {
+      font-size: 16px;
+      padding-left: 1rem;
+      line-height: 1.5;
+      text-align: center;
+      &.payment {
+        font-size: 12px;
+      }
+    }
+    .button-box {
+      @include flex-justify-center;
+    }
+    .device-img {
+      align-self: center;
+      width: 80%;
+      height: 100%;
+    }
+  }
+  .reminder-register-box {
+    .register-box {
+      h2 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 0.8rem;
+        font-weight: 600;
+        &.mini-title {
+          margin-bottom: 3rem;
+          font-size: 1.5rem;
+        }
+      }
+      .form-box {
+        button {
+          padding: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-padding {
+    padding: 2rem;
+  }
+  .reminder-register-box {
+    .register-box {
+      form {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// small screen
+@media (max-width: 450px) {
+  .landing-padding {
+    padding: 1.5rem;
+  }
+  .hero {
+    margin-top: 0;
+    width: 100%;
+    height: 100%;
+    .register-box {
+      padding: 1rem;
+      h1 {
+        font-size: 48px;
+        line-height: 1;
+      }
+      p {
+        text-align: center;
+      }
+    }
+    .register-img {
+      width: 100%;
+      height: 50%;
+    }
+  }
+  .subscription-plan {
+    padding: 0;
+    height: 100vh;
+    margin-top: 1.5rem;
+    .device-img {
+      align-self: center;
+      width: 80%;
+      height: 30vh;
+      background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626195030/pngaaa.com-480692_ulzwrd.png);
+      @include bg-contain-center;
+      border-radius: 24px;
+    }
+  }
+  .reminder-register-box {
+    .register-box {
+      h2 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 0.8rem;
+        font-weight: 600;
+        &.mini-title {
+          margin-bottom: 1.5rem;
+          font-size: 1rem;
+        }
+      }
+      form {
+        margin-top: 1rem;
+        width: 100%;
+      }
+      .form-box {
+        button {
+          padding: 0rem;
+        }
+      }
+    }
+  }
+}
