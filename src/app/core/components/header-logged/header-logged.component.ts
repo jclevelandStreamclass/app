@@ -7,8 +7,9 @@ import {
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { debounceTime, filter, map, switchMap } from 'rxjs/operators';
-import { SportsPlayer } from 'src/app/sportsplayers/models/sportsPlayer';
-import { SportsplayerService } from 'src/app/sportsplayers/services/sportsplayer.service';
+
+import { SportsPlayer } from '../../../sportsplayers/models/sportsPlayer';
+import { SportsplayerService } from '../../../sportsplayers/services/sportsplayer.service';
 import { AuthService } from '../../services/auth.service';
 import { MenuItem } from './interface/menu-logged';
 
