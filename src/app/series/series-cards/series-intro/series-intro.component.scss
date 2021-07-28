@@ -1,0 +1,244 @@
+@import "../../../../variables";
+@import "../../../../mixins";
+* {
+  font-family: $fontMontserrat;
+}
+.intro {
+  color: $colorText;
+  font-family: $fontMontserrat;
+  background-color: $colorBackgroundLight;
+  .introImg {
+    width: 100%;
+    @include bg-cover;
+    @include flex-center-column;
+    position: relative;
+    z-index: 1;
+    .gradient::after {
+      content: "";
+      @include pos-absolute-0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        transparent 0%,
+        #18181850 80%,
+        $colorBackgroundLight 90%,
+        $colorBackgroundLight 100%
+      );
+      z-index: -1;
+    }
+    .title {
+      margin-top: 22rem;
+      width: 40%;
+      font-weight: 700;
+      @include flex-center-column;
+      h2 {
+        font-style: italic;
+        text-transform: uppercase;
+        font-size: 6rem;
+        font-weight: 700;
+        line-height: 1.2;
+        font-family: $fontMontserrat;
+        text-align: center;
+      }
+      h3 {
+        font-size: 2.3rem;
+        font-style: italic;
+        margin-top: 4rem;
+        font-weight: 700;
+        font-family: $fontMontserrat;
+        text-align: center;
+      }
+    }
+    .btnsIntro {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 4rem;
+      justify-content: center;
+      p {
+        font-size: 12px;
+        text-align: center;
+      }
+      .btnJoin {
+        align-items: center;
+        padding: 0 2.5rem;
+        .mat-flat-button {
+          font-family: $fontMontserrat;
+          padding: 0.5rem 0;
+          color: $colorText;
+          width: 15rem;
+        }
+      }
+    }
+  }
+}
+
+.episodes-container {
+  padding: 5rem;
+  .lessonsBox {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 3fr 1fr;
+    gap: 2rem;
+    .commandBox {
+      grid-row: span 2;
+    }
+    .trailer {
+      height: auto;
+      width: 100%;
+      @include bg-cover;
+    }
+    .lessonsArray {
+      p {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.bioSportPlayr {
+  font-size: 20px;
+  padding: 1rem 0 1.2rem 0;
+}
+.lessonsCont {
+  font-size: 13px;
+  padding-bottom: 3rem;
+  span {
+    color: $colorTextGrey;
+  }
+}
+hr {
+  border: 1px solid $colorTextGrey;
+}
+
+@media (max-width: 1200px) {
+  .intro {
+    .introImg {
+      .title {
+        margin-top: 17rem;
+        h2 {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+  .episodes-container {
+    padding: 3rem;
+    .lessonsBox {
+      height: 100%;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 2rem;
+      .commandBox {
+        grid-row: span 2;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .intro {
+    .introImg {
+      .title {
+        h2 {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+  .episodes-container {
+    padding: 0.5rem 2rem;
+    .lessonsBox {
+      height: 100%;
+      display: grid;
+      grid-template-columns: auto minmax(100px);
+      grid-template-rows: minmax(200px) auto;
+      gap: 2rem;
+      .commandBox {
+        grid-row: span 2;
+      }
+    }
+  }
+  .bioSportPlayr {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 700px) {
+  .intro {
+    .introImg {
+      .title {
+        margin-top: 10rem;
+        h2 {
+          font-size: 2rem;
+          margin: 3rem 0 1rem 0;
+        }
+        h3 {
+          font-size: 1.5rem;
+          margin: 1rem 0 3rem 0;
+        }
+      }
+      .btnsIntro {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  .episodes-container {
+    .lessonsBox {
+      grid-template-rows: 1fr 3fr;
+      .trailer {
+        height: 200px;
+      }
+      gap: 2rem;
+      .commandBox {
+        grid-row: span 2;
+      }
+    }
+  }
+  .bioSportPlayr {
+    font-size: 17px;
+    padding: 1.7rem 0 1.2rem 0;
+    text-align: justify;
+  }
+}
+
+@media (max-width: 550px) {
+  .intro {
+    .introImg {
+      .title {
+        margin-top: 5rem;
+        h2 {
+          font-size: 2rem;
+          margin: 3rem 0 1rem 0;
+          text-align: center;
+        }
+        h3 {
+          font-size: 1rem;
+          margin: 1rem 0 3rem 0;
+        }
+      }
+      .btnsIntro {
+        margin-top: 1rem;
+      }
+    }
+  }
+  .textBox {
+    order: -1;
+    .lessonsCont {
+      padding: 0;
+    }
+  }
+  .bioSportPlayr {
+    text-align: justify;
+    font-size: 13px;
+    padding: 0 0 1.2rem 0;
+  }
+  .episodes-container {
+    .lessonsBox {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

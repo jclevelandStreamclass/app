@@ -1,0 +1,60 @@
+@import "../../variables";
+@import "../../mixins";
+
+.thumbnail {
+  height: 70px;
+  width: 100px;
+  @include bg-cover;
+  position: relative;
+  cursor: pointer;
+  .time-box {
+    position: absolute;
+    right: 3px;
+    bottom: 0;
+    span {
+      font-size: 10px;
+      background-color: rgb(255 255 255);
+      border-radius: 8px;
+      color: #181818;
+      padding: 2px;
+    }
+  }
+}
+.mat-table {
+  font-family: $fontMontserrat;
+  background-color: $colorBackgroundLight;
+  .mat-cell {
+    color: $colorTextGrey;
+    padding: 0.5rem 1rem;
+    background-color: $colorBackgroundLight;
+    span {
+      cursor: pointer;
+      white-space: nowrap;
+    }
+  }
+  .mat-header-cell {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .mat-cell {
+    padding: 0;
+    span {
+      white-space: wrap;
+    }
+  }
+}
+@media (max-width: 400px) {
+  .episodes-container {
+    padding: 0.5rem;
+  }
+  .mat-table {
+    .mat-cell {
+      padding: 2px;
+      span {
+        font-size: 10px;
+      }
+    }
+  }
+}

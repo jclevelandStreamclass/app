@@ -1,0 +1,65 @@
+<div class="intro" *ngIf="viewModel$ | async">
+  <div class="introImg" *ngIf="sportsPlayer" [style.backgroundImage]="'url(' + sportsPlayer?.photo + ')'">
+
+    <div class="title">
+      <h2>
+        {{ sportsPlayer?.name }}
+      </h2>
+      <h3>{{ series?.title }}</h3>
+    </div>
+
+    <div class="btnsIntro">
+      <div class="btnJoin">
+        <!-- unregistered user  -->
+        <ng-container *ngIf="!isLogged()">
+          <button mat-flat-button color="accent" [routerLink]="['/signup']">
+            ÚNETE
+          </button>
+          <p>4,99€ al mes, pago anual</p>
+        </ng-container>
+        <!-- registered user not premium  -->
+        <ng-container *ngIf="isLogged() && !isPremium()">
+          <button mat-flat-button color="accent" [routerLink]="['/userPayment']">
+            SUSCRÍBETE
+          </button>
+          <p>4,99€ al mes, pago anual</p>
+        </ng-container>
+      </div>
+      <!-- user not premium  -->
+      <ng-container *ngIf="!isPremium()">
+        <div class="btnJoin">
+          <button mat-flat-button color="primary" type="button" [routerLink]="['/userPayment']">
+            COMPRAR ESTA CLASE
+          </button>
+          <p>14,99€ al mes, pago único</p>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="gradient"></div>
+
+  </div>
+
+  <div class="episodes-container">
+    <div class="lessonsBox">
+      <div class="trailer" *ngIf="series" [style.backgroundImage]="'url(' + series?.photo + ')'"></div>
+      <div class="commandBox">
+        <div class="lessonsArray">
+          <p>Lecciones:</p>
+          <div class="classes">
+            <app-episodes [episodes]="episodes"></app-episodes>
+          </div>
+        </div>
+      </div>
+      <div class="textBox">
+        <p class="bioSportPlayr">
+          {{ sportsPlayer?.bio }}
+        </p>
+        <p class="lessonsCont">
+          LECCIONES <span>|{{ this.totaltime }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <hr />
+</div>

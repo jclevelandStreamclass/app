@@ -1,0 +1,45 @@
+<mat-toolbar fxLayout="row" color="primary" [ngClass]="checkRouteHome() ? 'home' : ''">
+    <span class="logo" [routerLink]="['/home']"></span>
+
+    <div class="items" *ngIf="checkRouteLanding()">
+        <button mat-button *ngFor="let item of menuItems" [fxShow]="item.showOnDesktop" [fxShow.xs]="item.showOnMobile"
+            [fxShow.sm]="item.showOnTablet" [routerLink]="item.path">
+            {{item.label}}
+        </button>
+
+        <div class="search-box">
+            <button class="btn-search"><i class="fas fa-search"></i></button>
+            <input [formControl]="formControl" type="text" class="input-search" placeholder="" matInput
+                [matAutocomplete]="auto" #matInput #trigger="matAutocompleteTrigger" [matAutocomplete]="auto">
+
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"
+                (optionSelected)="resetAutoInput($event.option.value, trigger, auto)">
+
+                <mat-option [routerLink]="'/series/' + option.id" *ngFor="let option of autoFilter | async"
+                    [value]="option.name">
+                    {{option.name}}
+                </mat-option>
+            </mat-autocomplete>
+        </div>
+
+        <div class="avatar" [routerLink]="['/profile']">
+            <img [src]="getUserAvatar() | async" alt="">
+        </div>
+        <ng-container>
+            <button mat-icon-button [matMenuTriggerFor]="dropMenu">
+                <mat-icon>reorder</mat-icon>
+            </button>
+            <mat-menu #dropMenu="matMenu">
+                <ng-container *ngFor="let item of menuItems">
+                    <div [fxShow]="!item.showOnDesktop" [fxShow.sm]="!item.showOnTablet"
+                        [fxShow.xs]="!item.showOnMobile">
+                        <button mat-menu-item [routerLink]="item.path">
+                            {{item.label}}
+                        </button>
+                    </div>
+                </ng-container>
+            </mat-menu>
+        </ng-container>
+
+    </div>
+</mat-toolbar>
