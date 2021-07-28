@@ -124,6 +124,54 @@
   }
 }
 
+.planFormBox {
+  form {
+    text-align: end;
+    mat-label {
+      color: $colorText !important;
+    }
+  }
+}
+
+.mat-option {
+  font-family: $fontMontserrat;
+  color: #fff;
+  background-color: $colorGreen;
+  &:hover {
+    color: $colorGreen;
+  }
+}
+
+.mat-form-field {
+  text-align: end;
+  color: $colorText;
+  display: grid;
+  width: 3rem;
+}
+
+.mat-select {
+  font-family: $fontMontserrat;
+  background-color: $colorGreen;
+  color: $colorText;
+  text-align: center;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
+
+.btnEdit {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0.1rem 2rem;
+}
+
+.mat-form-field {
+  text-align: end;
+  color: $colorText;
+  display: grid;
+  justify-content: flex-end;
+  width: 100%;
+}
+
 @media (max-width: 900px) {
   .profile {
     padding: 5rem 3rem 3rem 3rem;
@@ -260,41 +308,4 @@
       }
     }
   }
-}
-
-.planFormBox {
-  form {
-    text-align: end;
-  }
-}
-
-.mat-option {
-  font-family: $fontMontserrat;
-  color: #fff;
-  background-color: $colorGreen;
-  &:hover {
-    color: $colorGreen;
-  }
-}
-
-.mat-form-field {
-  text-align: end;
-  color: #fff;
-  display: grid;
-  width: 3rem;
-}
-
-.mat-select {
-  font-family: $fontMontserrat;
-  background-color: $colorGreen;
-  color: #fff;
-  text-align: center;
-  padding: 1rem 2rem;
-  border-radius: 5px;
-}
-
-.btnEdit {
-  font-family: "Montserrat", sans-serif;
-  margin: 0;
-  padding: 0.1rem 2rem;
 }
