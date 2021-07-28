@@ -19,7 +19,6 @@ export class SeriesComponent implements OnInit {
     });
     this.serviceModel.getSeriesUpdate().subscribe((result) => {
       this.seriesUpdate = result;
-      console.log(this.seriesUpdate);
     });
   }
 
