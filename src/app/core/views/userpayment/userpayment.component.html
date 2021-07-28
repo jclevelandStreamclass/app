@@ -1,3 +1,31 @@
-<div class="paymentBox">
-    <h1>Userpayment</h1>
+<div class="container">
+    <div class="payment">
+        <div class="card">
+            <img src="https://res.cloudinary.com/madeleinetestcloud/image/upload/v1627466530/poseidon/chip_ub1yrz.png"
+                alt="chip credit card" class="chip">
+            <div class="logo"></div>
+            <h2 class="backName">Bank Name</h2>
+            <form>
+                <div class="inputBox">
+                    <span>Nº TARJETA</span>
+                    <input type="text" placeholder="0123 4567 8901 2345" maxlength="19">
+                </div>
+                <div class="inputBox">
+                    <span>NOMBRE</span>
+                    <input type="text" placeholder="Jesús Martínez">
+                </div>
+                <div class="group">
+                    <div class="inputBox">
+                        <span>VÁLIDA HASTA</span>
+                        <input type="text" placeholder="MM/YY" maxlength="5">
+                    </div>
+                    <div class="inputBox">
+                        <span>CCV</span>
+                        <input type="password" placeholder="***" maxlength="4">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <button class="btn" [routerLink]="['/home']">Confirmar y pagar</button>
+    </div>
 </div>
