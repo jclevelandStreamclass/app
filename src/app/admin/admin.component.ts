@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { switchMap, tap } from 'rxjs/operators';
 import { Category } from '../categories/interface/category.model';
 import { SportsPlayer } from '../sportsplayers/models/sportsPlayer';
 import { AdminService } from './services/admin.service';
@@ -16,9 +17,18 @@ export class AdminComponent implements OnInit {
   constructor(private adminModel: AdminService) {}
 
   ngOnInit(): void {
-    this.adminModel.getAllSportsPlayers().subscribe((result) => {
-      this.sportsPlayers = result;
+    // this.adminModel.getAllSportsPlayers()
+    //   .pipe(switchMap((sp) => { this.sportsPlayers = [...sp] }),
+    //     switchMap(() => this.adminModel.getAllCategories()), tap((cats) => { this.categories = [...cats] })).subscribe();
+
+    this.adminModel.getAllSportsPlayers().subscribe((sp) => {
+      this.sportsPlayers = [...sp];
       console.log(this.sportsPlayers);
+    });
+
+    this.adminModel.getAllCategories().subscribe((cats) => {
+      this.categories = [...cats];
+      console.log(this.categories);
     });
   }
 

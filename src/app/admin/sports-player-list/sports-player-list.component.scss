@@ -1,5 +1,5 @@
 @import "../../../variables";
-* {
+body {
   font-family: $fontMontserrat;
 }
 h1 {
@@ -16,6 +16,7 @@ table {
     text-transform: uppercase;
   }
   .mat-cell {
+    width: 100%;
     padding-left: 1rem;
     max-width: 500px;
     text-align: left;
@@ -25,6 +26,9 @@ table {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      .mat-icon {
+        color: $colorText;
+      }
     }
   }
   .photo {
@@ -33,12 +37,4 @@ table {
     background-position: center;
     background-size: cover;
   }
-}
-.table-container {
-  //   background: rgb(24, 24, 24);
-  //   background: linear-gradient(
-  //     rgba(24, 24, 24, 1) 0%,
-  //     rgb(136, 135, 135) 50%,
-  //     rgba(24, 24, 24, 1) 100%
-  //   );
 }

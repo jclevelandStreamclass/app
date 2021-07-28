@@ -3,7 +3,8 @@
         <button mat-raised-button color="accent" (click)="categoriesClick()">Deportes</button>
         <button mat-raised-button color="accent" (click)="sportsPlayerClick()">Deportistas</button>
     </div>
-    <app-categories-list *ngIf="showCategories"></app-categories-list>
+    <app-categories-list [categories]="categories" (deleteCategory)="deleteClick($event)"
+        (editCategory)="editClick($event)" *ngIf="showCategories"></app-categories-list>
     <app-sports-player-list [sportsPlayers]="sportsPlayers" (deleteSportsPlayer)="deleteClick($event)"
         (editSportsPlayer)="editClick($event)" *ngIf="showSportsPlayers"></app-sports-player-list>
 </div>
