@@ -46,6 +46,9 @@ import { SharedModule } from '../shared/shared.module';
 import { UserpaymentComponent } from './views/userpayment/userpayment.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { AdminComponent } from '../admin/admin.component';
+import { CategoriesListComponent } from '../admin/categories-list/categories-list.component';
+import { SportsPlayerListComponent } from '../admin/sports-player-list/sports-player-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +72,9 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     HeaderLoggedComponent,
     ProfileComponent,
     UserpaymentComponent,
+    AdminComponent,
+    CategoriesListComponent,
+    SportsPlayerListComponent,
   ],
   imports: [
     CommonModule,

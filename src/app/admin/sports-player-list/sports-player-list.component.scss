@@ -1,0 +1,44 @@
+@import "../../../variables";
+* {
+  font-family: $fontMontserrat;
+}
+h1 {
+  font-family: $fontAccentBebas;
+  font-size: 4rem;
+}
+table {
+  background-color: transparent;
+  width: 100%;
+  .mat-header-cell {
+    padding-left: 1rem;
+    color: $colorText;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+  .mat-cell {
+    padding-left: 1rem;
+    max-width: 500px;
+    text-align: left;
+    color: $colorText;
+    border-bottom: 1px solid $colorText;
+    &.truncate-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  .photo {
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-size: cover;
+  }
+}
+.table-container {
+  //   background: rgb(24, 24, 24);
+  //   background: linear-gradient(
+  //     rgba(24, 24, 24, 1) 0%,
+  //     rgb(136, 135, 135) 50%,
+  //     rgba(24, 24, 24, 1) 100%
+  //   );
+}

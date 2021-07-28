@@ -9,6 +9,11 @@ import { SharedModule } from './shared/shared.module';
 import { ContactsComponent } from './contacts/contacts.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './core/services/auth.interceptor';
+import { AdminComponent } from './admin/admin.component';
+import { CategoriesListComponent } from './admin/categories-list/categories-list.component';
+import { SportsPlayerListComponent } from './admin/sports-player-list/sports-player-list.component';
+import { MatTableModule } from '@angular/material/table';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -17,6 +22,7 @@ import { AuthInterceptor } from './core/services/auth.interceptor';
     CoreModule,
     SharedModule,
     HotToastModule.forRoot(),
+    MatTableModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

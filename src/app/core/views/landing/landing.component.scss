@@ -11,6 +11,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 2rem;
+  margin-bottom: 4rem;
   .register-box {
     padding: 0 3rem 3rem 3rem;
     h1 {
@@ -156,7 +157,7 @@
 
 //REMINDER REGISTER
 .reminder-register-box {
-  margin-top: 15rem;
+  margin-top: 12rem;
   width: 100%;
   @include flex-center;
   text-align: center;
