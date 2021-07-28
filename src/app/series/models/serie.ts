@@ -1,9 +1,11 @@
+import { Episode } from 'src/app/episodes/models/episode';
+
 export class Serie {
   id: string;
   title: string;
   description: string;
   photo: string;
-  episodes: [];
+  episodes: Episode[];
   sportsPlayerId: string;
   categoryId: string;
   sportsPlayerName: string;

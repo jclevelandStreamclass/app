@@ -18,6 +18,13 @@ export class CategoriesService {
       .get<Category[]>(`${this.apiURL}/categories/all`)
       .pipe(map((x) => x.map((s) => new Category(s))));
   }
+
+  getCategoryLatestUpdate(): Observable<Category[]> {
+    return this.http
+      .get<Category[]>(`${this.apiURL}/categories/latest/update`)
+      .pipe(map((x) => x.map((s) => new Category(s))));
+  }
+
   getCategoryById(id: string): Observable<Category> {
     return this.http.get<Category>(`${this.apiURL}/categories/${id}`);
   }

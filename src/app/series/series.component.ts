@@ -9,6 +9,7 @@ import { SeriesService } from './services/series.service';
 })
 export class SeriesComponent implements OnInit {
   series: Serie[] = [];
+  seriesUpdate: Serie[] = [];
 
   constructor(private serviceModel: SeriesService, private router: Router) {}
 
@@ -16,9 +17,17 @@ export class SeriesComponent implements OnInit {
     this.serviceModel.getSeries().subscribe((result) => {
       this.series = result;
     });
+    this.serviceModel.getSeriesUpdate().subscribe((result) => {
+      this.seriesUpdate = result;
+      console.log(this.seriesUpdate);
+    });
   }
 
   checkRoute(): boolean {
     return this.router.url === '/landing' || this.router.url === '/home';
+  }
+
+  checkLastSeries(): boolean {
+    return this.router.url === '/series/latest/update';
   }
 }

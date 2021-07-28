@@ -1,7 +1,8 @@
 <div class="container">
     <div class="title">
-        <h1>Deportes</h1>
+        <h1>DEPORTISTAS</h1>
     </div>
+
     <div class="ofert" *ngIf="!isPremiumUser()">
         <h2>CONSIGUE TODAS LAS CLASES</h2>
         <div class="right-ofert">
@@ -12,15 +13,17 @@
 
     <div class="filter">
         <div class="filter-functions">
-            <h3 [routerLink]="['/categories']">Todas las clases</h3>
-            <h3 [routerLink]="['/categories/latest/update']">Recién añadido</h3>
+            <h3 [routerLink]="['/series']">Todas las clases</h3>
+            <h3 [routerLink]="['series/latest/update']">Recién añadido</h3>
         </div>
         <div class="cards">
-            <mat-card class="example-card" *ngFor="let category of categories">
-                <mat-card-content (click)="select(category.id)" [style.backgroundImage]="'url('+category.photo+')'">
+            <mat-card class="example-card" *ngFor="let serie of seriesUpdate;">
 
+                <mat-card-content (click)="select(serie.id)"
+                    [ngStyle]="{'background-image':' url(' + serie.sportPlayerPhoto + ')'}">
+                    <h2 class="mg-top">{{serie.sportsPlayerName}}</h2>
                     <h2 class="bt-title">
-                        {{category.name}}
+                        {{serie.title}}
                     </h2>
                     <div class="gradient"></div>
                 </mat-card-content>

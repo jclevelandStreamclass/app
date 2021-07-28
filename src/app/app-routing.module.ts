@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoriesPageComponent } from './categories/categories-page/categories-page.component';
 import { CategoriesSeriesPageComponent } from './categories/categories-series-page/categories-series-page.component';
+import { CategoriesComponent } from './categories/categories.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { AuthGuard } from './core/services/auth.guard';
 import { HomeComponent } from './core/views/home/home.component';
@@ -65,8 +66,16 @@ const routes: Routes = [
     component: SeriesIntroComponent,
   },
   {
+    path: 'series/latest/update',
+    component: SeriesComponent,
+  },
+  {
     path: 'category/series/:category',
     component: CategoriesSeriesPageComponent,
+  },
+  {
+    path: 'categories/latest/update',
+    component: CategoriesComponent,
   },
   {
     path: 'profile',

@@ -46,6 +46,9 @@ import { SharedModule } from '../shared/shared.module';
 import { UserpaymentComponent } from './views/userpayment/userpayment.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { SeriesLastupdateComponent } from '../series/series-lastupdate/series-lastupdate.component';
+import { CategoriesLatestUpdateComponent } from '../categories/categories-latest-update/categories-latest-update.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +72,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     HeaderLoggedComponent,
     ProfileComponent,
     UserpaymentComponent,
+    SeriesLastupdateComponent,
+    CategoriesLatestUpdateComponent,
   ],
   imports: [
     CommonModule,
