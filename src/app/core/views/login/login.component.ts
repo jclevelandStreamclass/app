@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
     }
 
     if (this.activate) {
-      console.log(this.activate);
       this.loginModel.activateUser(this.activate).subscribe(() => {
         this.toastService.showSuccess('Tu cuenta ha sido activada');
       });

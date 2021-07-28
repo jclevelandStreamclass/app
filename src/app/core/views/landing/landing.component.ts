@@ -16,7 +16,6 @@ export class LandingComponent implements OnInit {
   categories: Category[] = [];
   emailInfo: string = '';
 
-
   constructor(
     fb: FormBuilder,
     private categorySvc: CategoriesService,
@@ -27,9 +26,7 @@ export class LandingComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-   
-  }
+  ngOnInit(): void {}
 
   registerEmail(form: FormGroup): void {
     if (form.valid) {

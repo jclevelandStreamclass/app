@@ -1,24 +1,11 @@
 <mat-toolbar fxLayout="row" color="primary" [ngClass]="checkRouteHome() ? 'home' : ''">
     <span class="logo" [routerLink]="['/home']"></span>
-    <!-- <span class="list" *ngIf="checkRoute()" [routerLink]="['/landing']">VOLVER</span> -->
-
-
-    <!-- INPUT BUSQUEDA DEPORTISTA -->
-    <!-- <input  class="miguel" type="text" placeholder="" matInput #matIn
-        (click)="matIn.value=''"> -->
-
-    <!-- MAT FORM FIELD -->
-
 
     <div class="items" *ngIf="checkRouteLanding()">
         <button mat-button *ngFor="let item of menuItems" [fxShow]="item.showOnDesktop" [fxShow.xs]="item.showOnMobile"
             [fxShow.sm]="item.showOnTablet" [routerLink]="item.path">
-            <!-- <mat-icon class="mr">{{item.icon}}</mat-icon> -->
             {{item.label}}
         </button>
-
-
-
 
         <div class="search-box">
             <button class="btn-search"><i class="fas fa-search"></i></button>
@@ -35,8 +22,6 @@
             </mat-autocomplete>
         </div>
 
-
-
         <div class="avatar" [routerLink]="['/profile']">
             <img [src]="getUserAvatar() | async" alt="">
         </div>
@@ -49,7 +34,6 @@
                     <div [fxShow]="!item.showOnDesktop" [fxShow.sm]="!item.showOnTablet"
                         [fxShow.xs]="!item.showOnMobile">
                         <button mat-menu-item [routerLink]="item.path">
-                            <!-- <mat-icon class="mr">{{item.icon}}</mat-icon> -->
                             {{item.label}}
                         </button>
                     </div>

@@ -1,20 +1,6 @@
 @import "../../../../variables";
 @import "../../../../mixins";
 
-// .miguel {
-//   background-color: #181818;
-//   color: white !important;
-//   width: 200px;
-//   border: none;
-//   border-radius: 6px;
-//   padding: 1rem 0.5rem;
-
-//   &:focus {
-//     border-bottom: 1px solid #fff;
-//     border-radius: 6px 6px 0 0;
-//   }
-// }
-
 .mr {
   margin-right: 5px;
 }
@@ -48,7 +34,6 @@
 
 mat-toolbar {
   padding: 55px 34px;
-
   @include flex-just-between-only;
   .mat-icon-button {
     display: none;
@@ -67,7 +52,6 @@ mat-toolbar {
     align-self: center;
     cursor: pointer;
   }
-
   .items {
     @include flex-center;
     .mat-button {
@@ -78,7 +62,6 @@ mat-toolbar {
       margin: 0 50px 0 0;
       cursor: pointer;
     }
-
     .search {
       background-color: transparent;
       border: none;
@@ -86,11 +69,9 @@ mat-toolbar {
       margin: 0 5px 6px 0;
       z-index: 9999;
     }
-
     .avatar {
       @include flex-justify-between;
       cursor: pointer;
-      // margin: 0 40px 0 0;
       img {
         width: 45px;
         height: 45px;

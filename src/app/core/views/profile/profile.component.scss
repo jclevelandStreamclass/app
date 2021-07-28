@@ -47,7 +47,6 @@
       }
     }
   }
-
   hr {
     border: 1px solid $colorBackgroundInputLight;
     margin: 2rem 0;
@@ -57,13 +56,11 @@
 .grid {
   display: grid;
   grid-template-columns: 4fr 5fr 3fr;
-
   .title {
     color: $colorBackgroundInputLight;
     font-family: $fontAccentBebas;
     font-size: 2.5rem;
   }
-
   .details {
     text-align: start;
     .premium {
@@ -142,12 +139,10 @@
       }
     }
   }
-
   .grid {
     .title {
       font-size: 1.8rem;
     }
-
     .details {
       .premium {
         font-size: 1rem;
@@ -162,6 +157,7 @@
     padding: 0.2rem 1rem;
   }
 }
+
 @media (max-width: 700px) {
   .profile {
     padding: 3rem 2rem;
@@ -177,13 +173,11 @@
       }
     }
   }
-
   .grid {
     .title {
       font-size: 1.5rem;
     }
   }
-
   .container-settings {
     div {
       @include flex-justify-end;
@@ -193,7 +187,6 @@
         width: 100%;
         height: 10px;
       }
-
       button {
         @include flex-justify-center;
       }
@@ -211,7 +204,6 @@
         width: 340px;
         height: 10px;
       }
-
       button {
         @include flex-justify-center;
       }
@@ -237,7 +229,6 @@
       }
     }
   }
-
   .grid {
     display: grid;
     grid-template-columns: unset;
@@ -264,7 +255,6 @@
         width: auto;
         height: 10px;
       }
-
       button {
         @include flex-justify-center;
       }
@@ -272,47 +262,9 @@
   }
 }
 
-// Propiedades select
-//   cambiar plan
-
-// background-color: $colorGreen !important;
-
-// .mat-select-arrow .ng-tns-c147-2 {
-//   color: green;
-// }
-
-// .mat-form-field-infix.ng-tns-c113-1 {
-//   background-color: $colorGreen !important;
-// }
-
-// .mat-form-field-appearance-fill .mat-form-field-flex {
-//   background-color: $colorGreen !important;
-// }
-
 .planFormBox {
   form {
     text-align: end;
-    // .mat-form-field {
-    //   text-align: end;
-    //   color: #fff;
-    //   display: grid;
-    //   width: 3rem;
-    // }
-
-    // .mat-select {
-    //   font-family: $fontMontserrat;
-    //   background-color: #4caf50;
-    //   color: #fff;
-    //   text-align: center;
-    //   padding: 1rem 2rem;
-    //   border-radius: 5px;
-    // }
-
-    // .btnEdit {
-    //   font-family: "Montserrat", sans-serif;
-    //   margin: 0;
-    //   padding: 0.1rem 2rem;
-    // }
   }
 }
 
@@ -341,37 +293,8 @@
   border-radius: 5px;
 }
 
-// .mat-option {
-//   font-family: $fontMontserrat;
-//   color: #fff;
-//   background-color: $colorGreen;
-//   &:hover {
-//     color: $colorGreen;
-//   }
-// }
-
 .btnEdit {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0.1rem 2rem;
 }
-
-// .mat-form-field-wrapper.ng-tns-c113-1,
-// .mat-form-field-appearance-fill.mat-form-field-flex {
-//   background-color: $colorGreen !important;
-// }
-// .mat-label {
-//   background-color: $colorGreen;
-// }
-// .mat-select {
-//   background-color: $colorGreen;
-// }
-
-// .select {
-//       background: transparent;
-//     color: green;
-//     font-family: 'Montserrat';
-//     border: none;
-//     border-bottom: 2px solid white;
-//     font-size: 16px;
-// }

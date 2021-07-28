@@ -45,25 +45,3 @@ input {
 .btn_color {
   color: $colorText;
 }
-
-/*
- * Modal
- *
- * This is a simple modal that will show up.
- * It will have two buttons, one to confirm or cancel, and one to close the modal.
- *
- * It will have a title, and a body.
- * The body can be any HTML.
- *
- * The modal will be centered by default, and it will be on the top of the page.
- *
- * Example:
- * <confirmation-modal
- *     [title]="'Delete this record?'"
- *     [body]="'Are you sure you want to delete this record?'"
- *     [show-cancel-button]="true"
- *     (confirm)="deleteRecord()"
- *     (cancel)="cancelDelete()"
- *     (close)="closeModal()">
- * </confirmation-modal>
- */

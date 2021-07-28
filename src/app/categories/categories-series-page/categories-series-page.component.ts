@@ -1,10 +1,4 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { Serie } from 'src/app/series/models/serie';
@@ -17,7 +11,7 @@ import { CategoriesService } from '../services/categories.service';
   templateUrl: './categories-series-page.component.html',
   styleUrls: ['./categories-series-page.component.scss'],
 })
-export class CategoriesSeriesPageComponent implements OnInit, OnChanges {
+export class CategoriesSeriesPageComponent implements OnInit {
   categoryId: string = '';
   serie: Serie[] = [];
   category!: Category;
@@ -34,16 +28,9 @@ export class CategoriesSeriesPageComponent implements OnInit, OnChanges {
     });
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    // if (changes.serie) {
-    //   this.serie = [...changes.serie.currentValue];
-    // }
-  }
-
   ngOnInit(): void {
     this.seriesModel.getSeriesByCategoryId(this.categoryId).subscribe((res) => {
       this.serie = [...res];
-      console.log(this.serie);
     });
     this.categoryModel.getCategoryById(this.categoryId).subscribe((res) => {
       this.category = res;

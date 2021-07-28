@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Episode } from '../models/episode';
-import { Totaltime } from '../models/totaltime';
 
 @Injectable({
   providedIn: 'root',

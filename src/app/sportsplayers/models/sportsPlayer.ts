@@ -6,7 +6,6 @@ export class SportsPlayer {
   bio: string;
   job: string;
   photo: string;
-  // implementacion serie
   series: Serie[];
 
   constructor(item?: any) {

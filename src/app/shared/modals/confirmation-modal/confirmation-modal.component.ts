@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { ToastMessagesService } from 'src/app/core/services/toast-messages.service';
 import { UpdateUserService } from '../../services/update-user.service';
@@ -18,7 +18,6 @@ export interface ConfirmationData {
   optionYes: string;
   property: string;
 }
-
 @Component({
   selector: 'app-confirmation-modal',
   templateUrl: './confirmation-modal.component.html',
@@ -46,9 +45,7 @@ export class ConfirmationModalComponent implements OnInit, OnChanges {
     console.log(changes.data.currentValue);
   }
 
-  ngOnInit(): void {
-    console.log(this.data);
-  }
+  ngOnInit(): void {}
 
   checkPassword() {
     if (this.data.property === 'password') {
@@ -63,7 +60,6 @@ export class ConfirmationModalComponent implements OnInit, OnChanges {
     }
 
     if (form.valid) {
-      console.log(form.value);
       const value = form.value;
       this.dialogRef.close(value);
       return;

@@ -6,7 +6,6 @@
 }
 //HERO
 .hero {
-  //margin-top: 5rem;
   width: 100%;
   height: 75vh;
   display: grid;
@@ -90,7 +89,6 @@
     @include bg-contain-center;
     border-radius: 24px;
   }
-
   .mat-stroked-button {
     margin: 2rem 0 1rem;
     background-color: $colorGreen;
@@ -100,7 +98,6 @@
     font-family: $fontMontserrat;
     font-weight: 600;
   }
-
   .payment {
     margin-left: 4rem;
     font-size: 1rem;
@@ -159,6 +156,7 @@
 
 //REMINDER REGISTER
 .reminder-register-box {
+  margin-top: 15rem;
   width: 100%;
   @include flex-center;
   text-align: center;
@@ -201,14 +199,19 @@
     }
   }
 }
+
 //laptop
 @media (max-width: 1600px) {
   .hero {
     height: 100%;
   }
 }
+
 //large screen
 @media (max-width: 1350px) {
+  .reminder-register-box {
+    margin-top: 10rem;
+  }
   .landing-padding {
     padding: 5rem;
   }
@@ -219,12 +222,10 @@
       }
     }
   }
-
   .hero {
     margin-top: 0;
     @include flex-column-reverse;
     height: 100%;
-
     .register-box {
       h1 {
         text-align: center;
@@ -250,7 +251,6 @@
       p {
         margin-top: 1rem;
         font-size: 16px;
-
         &.payment {
           font-size: 12px;
         }
@@ -265,6 +265,9 @@
 
 //medium screen
 @media (max-width: 900px) {
+  .reminder-register-box {
+    margin-top: 8rem;
+  }
   .landing-padding {
     padding: 3rem;
   }
@@ -274,7 +277,6 @@
     height: 100%;
     @include flex-column-reverse;
     gap: 2rem;
-
     .register-box {
       padding: 3rem;
       h1 {
@@ -287,7 +289,6 @@
       .mat-checkbox {
         margin: 0;
       }
-
       form {
         padding: 0;
       }
@@ -333,7 +334,6 @@
       height: 100%;
     }
   }
-
   .reminder-register-box {
     .register-box {
       h2 {
@@ -360,7 +360,6 @@
   .landing-padding {
     padding: 2rem;
   }
-
   .reminder-register-box {
     .register-box {
       form {
@@ -369,6 +368,7 @@
     }
   }
 }
+
 // small screen
 @media (max-width: 450px) {
   .landing-padding {
@@ -378,7 +378,6 @@
     margin-top: 0;
     width: 100%;
     height: 100%;
-
     .register-box {
       padding: 1rem;
       h1 {

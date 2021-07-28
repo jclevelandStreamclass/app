@@ -21,14 +21,12 @@ export class SignupModelService {
   ) {}
 
   insertUser(user: UserModel): Observable<UserModel | null> {
-    console.log(user.avatar);
     // ESTABLECEMOS COMO DEFAULT
     if (user.avatar === '') {
       user.avatar =
         'https://res.cloudinary.com/bermelldev/image/upload/v1627067201/folder/logoStreamClass_cyhq9o.png';
     }
 
-    console.log();
     return this.http
       .post<UserModel>(`${this.URL}`, user, { observe: 'response' })
       .pipe(
@@ -48,7 +46,6 @@ export class SignupModelService {
               'Hubo un error al dar de alta el usuario, el Email esta en uso'
             );
           }
-          console.log(e.message);
           return of(null);
         })
       );

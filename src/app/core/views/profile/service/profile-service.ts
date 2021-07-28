@@ -16,7 +16,6 @@ export class ServiceProfile {
     const userId = this.authService.user?.id;
     return this.http.put<UserModel>(`${this.URL}/${userId}`, form).pipe(
       map((user) => {
-        console.log(user);
         return new UserModel(user);
       })
     );

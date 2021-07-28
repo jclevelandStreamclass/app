@@ -75,12 +75,8 @@ export class UpdateUserService {
     const userId = this.auth.user?.id;
     return this.http.put(`${this.URL}/${userId}`, form).pipe(
       map((user) => {
-        console.log(user);
         new UserModel(user);
         this.toastMessages.showSuccessNoTime(`Imagen guardada`);
-        // this.authService.storeNewAvatar();
-        // this.authService.logOutUser();
-        // this.router.navigate(['/login']);
         return user;
       }),
       catchError((e: HttpErrorResponse) => {

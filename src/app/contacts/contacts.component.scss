@@ -27,17 +27,10 @@
         @include bg-cover;
         border-radius: 8%;
         border: 8px solid $colorBackgroundLight;
-        // box-shadow: 0 0 0 10px $colorGreen;
         margin-top: 1rem;
       }
     }
     .contacts-settings {
-      //Just in case model
-      // .btnEdit {
-      //   font-family: $fontMontserrat;
-      //   margin: 0;
-      //   padding: 0.1rem 2rem;
-      // }
       text-align: right;
       .contact-details {
         color: #818181;
@@ -47,23 +40,19 @@
       }
     }
   }
-
   hr {
     border: 1px solid $colorBackgroundInputLight;
     margin: 2rem 0;
   }
 }
-
 .grid {
   display: grid;
   grid-template-columns: 4fr 5fr 3fr;
-
   .title {
     color: $colorBackgroundInputLight;
     font-family: $fontAccentBebas;
     font-size: 2.5rem;
   }
-
   .details {
     text-align: start;
     .premium {
@@ -82,8 +71,6 @@
     }
   }
 }
-
-//////
 
 .form1 {
   font-family: $fontMontserrat;

@@ -38,9 +38,6 @@ import { SpinnerComponent } from './spinner/spinner.component';
     MoviePromoComponent,
     SpinnerComponent,
   ],
-  providers: [
-    // Definir el elemento de servicio, para poder hacerlo disponible a nivel global
-    ModalsService,
-  ],
+  providers: [ModalsService],
 })
 export class SharedModule {}

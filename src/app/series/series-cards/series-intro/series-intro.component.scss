@@ -9,7 +9,6 @@
   background-color: $colorBackgroundLight;
   .introImg {
     width: 100%;
-
     @include bg-cover;
     @include flex-center-column;
     position: relative;
@@ -55,7 +54,6 @@
       flex-wrap: wrap;
       margin-top: 4rem;
       justify-content: center;
-
       p {
         font-size: 12px;
         text-align: center;
@@ -102,7 +100,6 @@
   font-size: 20px;
   padding: 1rem 0 1.2rem 0;
 }
-
 .lessonsCont {
   font-size: 13px;
   padding-bottom: 3rem;
@@ -125,7 +122,6 @@ hr {
       }
     }
   }
-
   .episodes-container {
     padding: 3rem;
     .lessonsBox {
@@ -133,7 +129,6 @@ hr {
       display: grid;
       grid-template-columns: 2fr 1fr;
       grid-template-rows: 1fr 1fr;
-
       gap: 2rem;
       .commandBox {
         grid-row: span 2;
@@ -146,7 +141,6 @@ hr {
   .intro {
     .introImg {
       .title {
-        //margin-top: 14rem;
         h2 {
           font-size: 3rem;
         }
@@ -179,7 +173,6 @@ hr {
         h2 {
           font-size: 2rem;
           margin: 3rem 0 1rem 0;
-          // text-align: center;
         }
         h3 {
           font-size: 1.5rem;
@@ -214,7 +207,6 @@ hr {
 @media (max-width: 550px) {
   .intro {
     .introImg {
-      // height: 80vh;
       .title {
         margin-top: 5rem;
         h2 {

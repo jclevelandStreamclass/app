@@ -20,7 +20,6 @@ export class SeriesIntroComponent {
   episodes: Episode[] = [];
   sportsPlayer!: SportsPlayer | null;
   totaltime: string = '';
-  //TODO check !
 
   viewModel$ = this.route.params.pipe(
     switchMap((params) => this.seriesModel.getSerieById(params.serieId)),
@@ -34,10 +33,7 @@ export class SeriesIntroComponent {
     tap((sportsPlayer) => (this.sportsPlayer = sportsPlayer)),
     switchMap(() => this.episodesModel.getDuration(this.series.id)),
     tap(([totalTime]) => {
-      let tt2 = new Totaltime(totalTime).total_time;
-      tt2 = tt2.replace(':', 'h ');
-      tt2 = tt2.substring(0, 6) + 'min ';
-      this.totaltime = tt2;
+      this.calculateTotaltime(totalTime);
     })
   );
 
@@ -48,15 +44,18 @@ export class SeriesIntroComponent {
     private authServiceModel: AuthService
   ) {}
 
-  // TAP --> efecto secundario -> rxjs evita tener que hacer un subscribe
-  // Observable --> (SOLO 1 VEZ)
-  // switchMap -> te suscribes detnro de la tubería, y lanza otro observable, mapea lo que hay dentro por otra cosa
-
   isLogged(): boolean {
     return this.authServiceModel.isUserAuthenticated;
   }
 
   isPremium(): boolean {
     return this.authServiceModel.hasUserRole('premium');
+  }
+
+  private calculateTotaltime(totalTimeRaw: { total_time: string }): void {
+    let totaltimeString = new Totaltime(totalTimeRaw).total_time;
+    totaltimeString = totaltimeString.replace(':', 'h ');
+    totaltimeString = totaltimeString.substring(0, 6) + 'min ';
+    this.totaltime = totaltimeString;
   }
 }

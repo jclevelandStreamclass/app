@@ -4,14 +4,11 @@
 .container {
   text-align: center;
   margin-bottom: 3rem;
-  // margin: 2rem 0 5rem;
-
   h1 {
     font-style: italic;
     font-weight: 600;
     font-size: 2rem;
   }
-
   .categoryGrid {
     margin-top: 5%;
     text-align: center;
@@ -23,7 +20,6 @@
       border: 1px solid $colorGreen;
       border-radius: 10px;
       width: 250px;
-
       h2 {
         font-family: $fontMontserrat;
         font-size: 1.5rem;
@@ -33,7 +29,6 @@
       }
     }
   }
-
   .mat-stroked-button {
     margin-top: 5rem;
     border: none;
@@ -59,8 +54,6 @@
 //medium screen
 @media (max-width: 1350px) {
   .container {
-    // margin-top: 10rem;
-
     .categoryGrid {
       grid-template-columns: repeat(auto-fit, minmax(min(335px, 100%), 1fr));
     }

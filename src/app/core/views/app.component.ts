@@ -4,11 +4,10 @@ import { filter, delay } from 'rxjs/operators';
 import { AuthService } from '../services/auth.service';
 import { LoaderService } from '../services/loader.service';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   title = 'streamClass';
@@ -19,13 +18,7 @@ export class AppComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private loaderService: LoaderService
-  ) {
-    // this.router.events
-    //   .pipe(filter((event) => event instanceof NavigationStart))
-    //   .subscribe((ev: any) => {
-    //     this.isLoggedIn = ev?.url.toLowerCase().includes('login');
-    //   });
-  }
+  ) {}
 
   private tokenExpired(token: string) {
     const expiry = JSON.parse(atob(token.split('.')[1])).exp;
@@ -37,14 +30,8 @@ export class AppComponent implements OnInit {
       this.loading = x;
     });
   }
-  cerrarSesion() {
-    this.authService.logOutUser();
-    this.router.navigate(['login']);
-  }
 
   isLogged(): boolean {
     return this.authService.isUserAuthenticated;
-
   }
 }
-

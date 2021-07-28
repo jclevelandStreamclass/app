@@ -1,10 +1,4 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Category } from '../interface/category.model';
 
@@ -16,14 +10,11 @@ import { Category } from '../interface/category.model';
 export class CategoriesGridComponent implements OnInit {
   @Input() categories: Category[] = [];
 
-  constructor(private router : Router) {}
+  constructor(private router: Router) {}
 
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   select(categoryId: string): void {
-    console.log(categoryId)
     if (categoryId) {
       this.router.navigate(['category/series', categoryId]);
     }

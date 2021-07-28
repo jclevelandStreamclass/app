@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import {
   Component,
   ElementRef,
@@ -9,8 +8,6 @@ import {
   ViewChild,
 } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { AuthService } from 'src/app/core/services/auth.service';
-import { UpdateUserService } from '../../services/update-user.service';
 
 export interface ConfirmationDataFile {
   title: string;
@@ -38,24 +35,11 @@ export class UploadAvatarModalComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // addSpinner() {
-  //   const spinner = this.renderer.createElement('div');
-  //   this.renderer.addClass(spinner, 'spinner');
-  //   spinner.innerHTML = `
-  //       <div class="bounce1"></div>
-  //       <div class="bounce2"></div>
-  //       <div class="bounce3"></div>
-  //   `;
-  //   this.renderer.appendChild(this.spinner.nativeElement, spinner);
-  // }
-
   onFileSelected(event: Event) {
     const file: File = (event.target as HTMLInputElement).files![0];
 
     if (file) {
       this.fileName = file.name;
-
-      console.log(file);
       this.formData.append('avatar', file);
     }
   }

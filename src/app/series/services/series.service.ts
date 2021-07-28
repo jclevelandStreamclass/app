@@ -35,8 +35,7 @@ export class SeriesService {
     if (!serie) {
       return of(null);
     }
-
-    // serie.id o serie??
+    //EDITAR SERIE
     if (serie.id) {
       return this.http
         .put<Serie>(`${this.url}/series`, serie)

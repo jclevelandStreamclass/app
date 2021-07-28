@@ -27,7 +27,6 @@ import { SeriesGridLandingComponent } from '../series/series-grid-landing/series
 import { SeriesComponent } from '../series/series.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LandingComponent } from './views/landing/landing.component';
-import { RecoverpasswordComponent } from './views/recoverpassword/recoverpassword.component';
 import { SignupComponent } from './views/signup/signup.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
@@ -56,7 +55,6 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     LandingComponent,
     HomeComponent,
     SignupComponent,
-    RecoverpasswordComponent,
     CategoriesComponent,
     CategoriesGridComponent,
     CategoriesPageComponent,

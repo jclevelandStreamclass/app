@@ -38,19 +38,15 @@ export class EpisodesComponent implements OnInit, OnChanges {
   }
 
   select(id: string): void {
-    // SOLO EN CASO DE SER PREMIUM NAVEGA AL VIDEO
-    if (this.authService.hasUserRole('premium')) {
-      if (id) {
-        this.episodeModel.getEpisodeById(id).subscribe((episode) => {
-          console.log(episode);
-          this.video = episode.video;
-          this.router.navigate(['episodes', this.video]);
-        });
-        console.log(this.video);
-      }
-    } else {
-      // TODO
+    // CHECKEO EN FRONT:SOLO EN CASO DE SER PREMIUM NAVEGA AL VIDEO
+    if (!this.authService.hasUserRole('premium')) {
       this.router.navigate(['userPayment']);
+    }
+    if (id) {
+      this.episodeModel.getEpisodeById(id).subscribe((episode) => {
+        this.video = episode.video;
+        this.router.navigate(['episodes', this.video]);
+      });
     }
   }
 }

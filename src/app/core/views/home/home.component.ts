@@ -12,7 +12,7 @@ import { HomeService } from './services/home.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  //TODO implement a named featured series
+  //implemented a named featured series
   featuredSerieId: string = '1';
   featuredSerie!: Serie;
   episodes: Episode[] = [];

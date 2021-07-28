@@ -12,7 +12,6 @@ export class SeriesComponent implements OnInit {
 
   constructor(private serviceModel: SeriesService, private router: Router) {}
 
-  // Lanzamos las series de la DB al iniciar la ruta
   ngOnInit(): void {
     this.serviceModel.getSeries().subscribe((result) => {
       this.series = result;
