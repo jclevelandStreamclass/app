@@ -45,4 +45,9 @@ export class CategoriesPageComponent implements OnInit, OnChanges {
   isPremiumUser(): boolean {
     return this.authModelService.hasUserRole('premium');
   }
+
+  // check authenticated for choose between 2 buttons
+  checkAuthenticated(): boolean {
+    return this.authModelService.isUserAuthenticated;
+  }
 }
