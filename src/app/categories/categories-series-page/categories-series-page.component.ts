@@ -46,4 +46,9 @@ export class CategoriesSeriesPageComponent implements OnInit {
   isPremiumUser(): boolean {
     return this.authModelService.hasUserRole('premium');
   }
+
+  // check authenticated for choose between 2 buttons
+  checkAuthenticated(): boolean {
+    return this.authModelService.isUserAuthenticated;
+  }
 }

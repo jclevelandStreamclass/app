@@ -8,7 +8,7 @@
             <h3>4,99€ al mes, pago anual</h3>
             <button mat-flat-button color="accent" [routerLink]="['/signup']"
                 *ngIf="!checkAuthenticated()">ÚNETE</button>
-            <button mat-flat-button color="accent" [routerLink]="['/signup']"
+            <button mat-flat-button color="accent" [routerLink]="['/userPayment']"
                 *ngIf="checkAuthenticated()">SUSCRÍBETE</button>
         </div>
     </div>
