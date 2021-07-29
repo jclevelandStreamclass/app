@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './admin/admin.component';
 import { CategoriesPageComponent } from './categories/categories-page/categories-page.component';
 import { CategoriesSeriesPageComponent } from './categories/categories-series-page/categories-series-page.component';
 import { CategoriesComponent } from './categories/categories.component';
@@ -91,11 +90,6 @@ const routes: Routes = [
   {
     path: 'contacts',
     component: ContactsComponent,
-  },
-  {
-    path: 'admin',
-    component: AdminComponent,
-    //canActivate: [AuthGuard],
   },
 ];
 
