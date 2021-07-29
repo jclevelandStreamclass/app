@@ -82,7 +82,6 @@ export class AuthService {
   storeUser(usuario: UserModel) {
     localStorage.setItem(this.APP_USER, JSON.stringify(usuario));
     this.userSubject$.next(usuario);
-    // this.initializeRefreshToken(usuario)
   }
 
   getUser$(): Observable<UserModel | null> {

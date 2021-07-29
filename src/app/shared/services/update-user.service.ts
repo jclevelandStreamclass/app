@@ -65,6 +65,9 @@ export class UpdateUserService {
           if (e.error.message.includes('must be a valid email')) {
             this.toastMessages.showError('Introduce un email correcto');
           }
+          if (e.error.message.includes('This email is already being used')) {
+            this.toastMessages.showError('Este email no está disponible');
+          }
           console.log(e.message);
           return of(null);
         })

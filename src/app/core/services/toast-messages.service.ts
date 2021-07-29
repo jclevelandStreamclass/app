@@ -10,7 +10,7 @@ export class ToastMessagesService {
   showSuccess(text: string): void {
     this.toast.success(text, {
       position: 'top-center',
-      autoClose: false,
+      autoClose: true,
       dismissible: true,
     });
   }
