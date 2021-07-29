@@ -1,4 +1,5 @@
 @import "../../../../variables";
+@import "../../../../mixins";
 
 .profile {
   padding: 7rem 5rem 5rem 5rem;
@@ -19,24 +20,26 @@
     grid-template-columns: 1fr 3fr;
     gap: 2rem;
     .avatar-settings {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      @include flex-align-center-column;
       .avatar {
         width: 175px;
         height: 175px;
-        background-position: center;
-        background-size: cover;
+        @include bg-cover;
         border-radius: 50%;
         border: 8px solid $colorBackgroundLight;
         box-shadow: 0 0 0 10px $colorGreen;
         margin-top: 1rem;
       }
+      .mat-flat-button {
+        font-family: $fontMontserrat;
+      }
     }
     .profile-settings {
       .btnEdit {
+        font-family: $fontMontserrat;
         margin: 0;
         padding: 0.1rem 2rem;
+        background-color: $colorGreen !important;
       }
       text-align: right;
       .user-details {
@@ -44,7 +47,6 @@
       }
     }
   }
-
   hr {
     border: 1px solid $colorBackgroundInputLight;
     margin: 2rem 0;
@@ -54,13 +56,11 @@
 .grid {
   display: grid;
   grid-template-columns: 4fr 5fr 3fr;
-
   .title {
     color: $colorBackgroundInputLight;
     font-family: $fontAccentBebas;
     font-size: 2.5rem;
   }
-
   .details {
     text-align: start;
     .premium {
@@ -95,16 +95,21 @@
   align-items: flex-start;
 }
 .mat-flat-button {
+  font-family: $fontMontserrat;
   margin-top: 2rem;
   color: $colorText !important;
   padding: 0.5rem 2rem;
 }
 
+.premium {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+}
+
 // EDITS PROFILE
 .container-settings {
   div {
-    display: flex;
-    justify-content: flex-end;
+    @include flex-justify-end;
     margin: 1rem 0;
     p {
       text-align: left;
@@ -117,6 +122,54 @@
       margin-top: 5px;
     }
   }
+}
+
+.planFormBox {
+  form {
+    text-align: end;
+    mat-label {
+      color: $colorText !important;
+    }
+  }
+}
+
+.mat-option {
+  font-family: $fontMontserrat;
+  color: #fff;
+  background-color: $colorGreen;
+  &:hover {
+    color: $colorGreen;
+  }
+}
+
+.mat-form-field {
+  text-align: end;
+  color: $colorText;
+  display: grid;
+  width: 3rem;
+}
+
+.mat-select {
+  font-family: $fontMontserrat;
+  background-color: $colorGreen;
+  color: $colorText;
+  text-align: center;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
+
+.btnEdit {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0.1rem 2rem;
+}
+
+.mat-form-field {
+  text-align: end;
+  color: $colorText;
+  display: grid;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 @media (max-width: 900px) {
@@ -134,12 +187,10 @@
       }
     }
   }
-
   .grid {
     .title {
       font-size: 1.8rem;
     }
-
     .details {
       .premium {
         font-size: 1rem;
@@ -154,6 +205,7 @@
     padding: 0.2rem 1rem;
   }
 }
+
 @media (max-width: 700px) {
   .profile {
     padding: 3rem 2rem;
@@ -169,27 +221,22 @@
       }
     }
   }
-
   .grid {
     .title {
       font-size: 1.5rem;
     }
   }
-
   .container-settings {
     div {
-      display: flex;
-      justify-content: flex-end;
+      @include flex-justify-end;
       margin: 1rem 0;
       p {
         text-align: left;
         width: 100%;
         height: 10px;
       }
-
       button {
-        display: flex;
-        justify-content: center;
+        @include flex-justify-center;
       }
     }
   }
@@ -198,18 +245,15 @@
 @media (max-width: 850px) {
   .container-settings {
     div {
-      display: flex;
-      justify-content: flex-end;
+      @include flex-justify-end;
       margin: 1rem 0;
       p {
         text-align: left;
         width: 340px;
         height: 10px;
       }
-
       button {
-        display: flex;
-        justify-content: center;
+        @include flex-justify-center;
       }
     }
   }
@@ -225,15 +269,14 @@
       grid-template-columns: unset;
       .avatar-settings {
         .avatar {
-          width: 70px;
-          height: 70px;
+          width: 100px;
+          height: 100px;
           border: 5px solid $colorBackgroundLight;
           box-shadow: 0 0 0 5px $colorGreen;
         }
       }
     }
   }
-
   .grid {
     display: grid;
     grid-template-columns: unset;
@@ -260,10 +303,8 @@
         width: auto;
         height: 10px;
       }
-
       button {
-        display: flex;
-        justify-content: center;
+        @include flex-justify-center;
       }
     }
   }

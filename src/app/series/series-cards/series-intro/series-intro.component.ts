@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { Episode } from 'src/app/episodes/models/episode';
@@ -15,74 +14,48 @@ import { SeriesService } from '../../services/series.service';
   templateUrl: './series-intro.component.html',
   styleUrls: ['./series-intro.component.scss'],
 })
-export class SeriesIntroComponent implements OnInit {
+export class SeriesIntroComponent {
   serieId: string = '';
   series!: Serie;
   episodes: Episode[] = [];
   sportsPlayer!: SportsPlayer | null;
   totaltime: string = '';
-  //TODO check !
-  viewModel$!: Observable<{ total_time: string }[]>;
+
+  viewModel$ = this.route.params.pipe(
+    switchMap((params) => this.seriesModel.getSerieById(params.serieId)),
+    tap((serie) => {
+      this.series = serie;
+      this.episodes = [...serie.episodes];
+    }),
+    switchMap((serie) =>
+      this.seriesModel.getSportsPlayerById(serie.sportsPlayerId)
+    ),
+    tap((sportsPlayer) => (this.sportsPlayer = sportsPlayer)),
+    switchMap(() => this.episodesModel.getDuration(this.series.id)),
+    tap(([totalTime]) => {
+      this.calculateTotaltime(totalTime);
+    })
+  );
 
   constructor(
     private route: ActivatedRoute,
     private seriesModel: SeriesService,
     private episodesModel: EpisodesService,
     private authServiceModel: AuthService
-  ) {
-    route.params.subscribe((params) => {
-      this.serieId = params.serieId || '';
-    });
-  }
-
-  ngOnChanges(): void {}
-
-  ngOnInit(): void {
-    if (!this.serieId) {
-      // PONER UN GUARDA
-      return;
-    }
-
-    // TAP --> efecto secundario -> rxjs evita tener que hacer un subscribe
-    // switchMap -> te suscribes detnro de la tubería, y lanza otro observable, mapea lo que hay dentro por otra cosa(SOLO 1 VEZ)
-    this.viewModel$ = this.seriesModel.getSerieById(this.serieId).pipe(
-      tap((serie) => {
-        this.series = serie;
-        this.episodes = [...serie.episodes];
-      }),
-      switchMap((serie) =>
-        this.seriesModel.getSportsPlayerById(serie.sportsPlayerId)
-      ),
-      tap((sportsPlayer) => (this.sportsPlayer = sportsPlayer)),
-      switchMap(() => this.episodesModel.getDuration(this.serieId)),
-      tap(([totalTime]) => {
-        let tt2 = new Totaltime(totalTime).total_time;
-        tt2 = tt2.replace(':', 'h ');
-        tt2 = tt2.substring(0, 6) + 'min ';
-        this.totaltime = tt2;
-      })
-    );
-
-    // this.seriesModel.getSerieById(this.serieId).subscribe((s) => {
-    //   this.series = s;
-    //   this.episodes = [...s.episodes];
-
-    //   this.seriesModel
-    //     .getSportsPlayerById(s.sportsPlayerId)
-    //     .subscribe((sp) => {
-    //       this.sportsPlayer = sp;
-    //     });
-
-    //   this.episodesModel.getDuration(this.serieId).subscribe((tt) => {
-    //     let tt2 = new Totaltime(tt[0]).total_time;
-    //     tt2 = tt2.replace(':', 'h ');
-    //     tt2 = tt2.substring(0, 6) + 'min ';
-    //     this.totaltime = tt2;
-    //   });
-    // });
-  }
+  ) {}
 
   isLogged(): boolean {
     return this.authServiceModel.isUserAuthenticated;
+  }
+
+  isPremium(): boolean {
+    return this.authServiceModel.hasUserRole('premium');
+  }
+
+  private calculateTotaltime(totalTimeRaw: { total_time: string }): void {
+    let totaltimeString = new Totaltime(totalTimeRaw).total_time;
+    totaltimeString = totaltimeString.replace(':', 'h ');
+    totaltimeString = totaltimeString.substring(0, 6) + 'min ';
+    this.totaltime = totaltimeString;
   }
 }

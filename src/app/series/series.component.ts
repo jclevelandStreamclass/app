@@ -9,17 +9,24 @@ import { SeriesService } from './services/series.service';
 })
 export class SeriesComponent implements OnInit {
   series: Serie[] = [];
+  seriesUpdate: Serie[] = [];
 
   constructor(private serviceModel: SeriesService, private router: Router) {}
 
-  // Lanzamos las series de la DB al iniciar la ruta
   ngOnInit(): void {
     this.serviceModel.getSeries().subscribe((result) => {
       this.series = result;
+    });
+    this.serviceModel.getSeriesUpdate().subscribe((result) => {
+      this.seriesUpdate = result;
     });
   }
 
   checkRoute(): boolean {
     return this.router.url === '/landing' || this.router.url === '/home';
+  }
+
+  checkLastSeries(): boolean {
+    return this.router.url === '/series/latest/update';
   }
 }

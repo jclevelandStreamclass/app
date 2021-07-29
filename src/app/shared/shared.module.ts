@@ -8,8 +8,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ModalsService } from './modals.service';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MoviePromoComponent } from './movie-promo/movie-promo.component';
+import { UploadAvatarModalComponent } from './modals/upload-avatar-modal/upload-avatar-modal.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 @NgModule({
-  declarations: [ConfirmationModalComponent],
+  declarations: [
+    ConfirmationModalComponent,
+    MoviePromoComponent,
+    UploadAvatarModalComponent,
+    SpinnerComponent,
+  ],
   imports: [
     CommonModule,
     MatIconModule,
@@ -27,10 +35,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MoviePromoComponent,
+    SpinnerComponent,
   ],
-  providers: [
-    // Definir el elemento de servicio, para poder hacerlo disponible a nivel global
-    ModalsService,
-  ],
+  providers: [ModalsService],
 })
 export class SharedModule {}

@@ -1,11 +1,13 @@
+@import "../../../../variables";
+@import "../../../../mixins";
+
 .mr {
   margin-right: 5px;
 }
 
 mat-toolbar {
   padding: 55px 34px;
-  display: flex;
-  justify-content: space-between;
+  @include flex-just-between-only;
   .mat-icon-button {
     display: none;
     mat-icon {
@@ -19,12 +21,10 @@ mat-toolbar {
     background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1626270088/poseidon/streamclass2_hp2muh.png);
     width: 250px;
     height: 60px;
-    background-size: contain;
-    background-repeat: no-repeat;
+    @include bg-contain;
     align-self: center;
     cursor: pointer;
   }
-
   .items {
     button {
       font-weight: 500;

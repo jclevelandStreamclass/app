@@ -52,17 +52,11 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  // ngAfterViewInit(): void {
-  //   this.signUpForm
-  //     .get('avatar')
-  //     ?.valueChanges.subscribe((data) => (this.avatar = data.slice(12)));
-  // }
   ngOnInit(): void {
     if (this.userEmail) {
       this.signUpForm.controls.email.setValue(this.userEmail);
     }
     this.avatar = this.signUpForm.controls.avatar.value;
-    console.log(this.avatar);
   }
 
   onFilePic(e: Event): void {
@@ -75,9 +69,7 @@ export class SignupComponent implements OnInit {
       user.avatar = user.avatar.slice(12);
       this.signUpModel.insertUser(user).subscribe((user) => {
         if (user) {
-          console.log(user);
           this.signUpForm.reset();
-          this.avatar = '';
           this.toastMessages.showSuccess(
             `${user.name} Has sido dado de alta correctamente. Revisa tu correo y activa tu cuenta`
           );

@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Episode } from '../models/episode';
-import { Totaltime } from '../models/totaltime';
 
 @Injectable({
   providedIn: 'root',
@@ -22,12 +21,9 @@ export class EpisodesService {
     return this.http.get<any[]>(
       `${this.url}/episodes/totaltime/${searchserieId}`
     );
-    // .pipe(
-    //   map(ar => {
-    //     ar.map((ob) => {
-    //       new Totaltime(ob);
-    //     });
-    //   })
-    // );
+  }
+
+  getEpisodeById(id: string): Observable<Episode> {
+    return this.http.get<Episode>(`${this.url}/episodes/private/${id}`);
   }
 }

@@ -1,0 +1,38 @@
+<div>
+    <h1>
+        Deportes
+    </h1>
+    <div class="table-container">
+        <table mat-table [dataSource]="dataSource" class="mi-tabla">
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="photo">
+                <th mat-header-cell *matHeaderCellDef> Photo </th>
+                <td mat-cell *matCellDef="let element">
+                    <div class="photo" *ngIf="dataSource" [style.backgroundImage]="'url(' + element?.photo + ')'"></div>
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-icon-button>
+                        <mat-icon color="warn" (click)="deleteCategory.emit(element.id)"><span
+                                class="material-icons-outlined">
+                                delete_outline
+                            </span>
+                        </mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon color="accent" (click)="editCategory.emit(element.id)">edit</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+    </div>
+</div>

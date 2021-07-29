@@ -19,22 +19,29 @@ export class SeriesService {
       .pipe(map((x) => x.map((s) => new Serie(s))));
   }
 
+  getSeriesUpdate(): Observable<Serie[]> {
+    return this.http
+      .get<Serie[]>(`${this.url}/series/latest/Update`)
+      .pipe(map((x) => x.map((s) => new Serie(s))));
+  }
+
   getSerieById(id: string): Observable<Serie> {
     return this.http
       .get<Serie>(`${this.url}/series/${id}`)
       .pipe(map((x) => new Serie(x)));
   }
-  
-  getSeriesByCategoryId(id:string):Observable<Serie[]>{
-    return this.http.get<Serie[]>(`${this.url}/series/find?categoryId=${id}`)
+
+  getSeriesByCategoryId(id: string): Observable<Serie[]> {
+    return this.http
+      .get<Serie[]>(`${this.url}/series/find?categoryId=${id}`)
+      .pipe(map((x) => x.map((s) => new Serie(s))));
   }
 
   guardar(serie: Serie): Observable<Serie | null> {
     if (!serie) {
       return of(null);
     }
-
-    // serie.id o serie??
+    //EDITAR SERIE
     if (serie.id) {
       return this.http
         .put<Serie>(`${this.url}/series`, serie)

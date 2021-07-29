@@ -1,11 +1,15 @@
+import { Episode } from 'src/app/episodes/models/episode';
+
 export class Serie {
   id: string;
   title: string;
   description: string;
   photo: string;
-  episodes: [];
+  episodes: Episode[];
   sportsPlayerId: string;
   categoryId: string;
+  sportsPlayerName: string;
+  sportPlayerPhoto: string;
 
   constructor(item?: any) {
     this.id = item?.id ?? '';
@@ -15,5 +19,7 @@ export class Serie {
     this.episodes = item?.episodes ?? [];
     this.sportsPlayerId = item?.sportsPlayerId ?? '';
     this.categoryId = item?.categoryId ?? '';
+    this.sportsPlayerName = item?.sportsPlayer?.name ?? '';
+    this.sportPlayerPhoto = item?.sportsPlayer?.photo ?? '';
   }
 }

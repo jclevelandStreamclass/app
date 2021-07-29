@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './admin/admin.component';
 import { CategoriesPageComponent } from './categories/categories-page/categories-page.component';
 import { CategoriesSeriesPageComponent } from './categories/categories-series-page/categories-series-page.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { ContactsComponent } from './contacts/contacts.component';
 import { AuthGuard } from './core/services/auth.guard';
 import { HomeComponent } from './core/views/home/home.component';
 import { LandingComponent } from './core/views/landing/landing.component';
 import { LoginComponent } from './core/views/login/login.component';
 import { ProfileComponent } from './core/views/profile/profile.component';
 import { SignupComponent } from './core/views/signup/signup.component';
+import { UserpaymentComponent } from './core/views/userpayment/userpayment.component';
 import { EpisodesStreamComponent } from './episodes/episodes-stream/episodes-stream.component';
-import { EpisodesComponent } from './episodes/episodes.component';
-import { SeriesCardsComponent } from './series/series-cards/series-cards.component';
 import { SeriesIntroComponent } from './series/series-cards/series-intro/series-intro.component';
 import { SeriesComponent } from './series/series.component';
-import { ConfirmationModalComponent } from './shared/modals/confirmation-modal/confirmation-modal.component';
 
 const routes: Routes = [
   {
@@ -46,7 +47,6 @@ const routes: Routes = [
 
   {
     path: 'series',
-    // padre
     component: SeriesComponent,
   },
   {
@@ -60,22 +60,42 @@ const routes: Routes = [
   {
     path: 'episodes/:video',
     component: EpisodesStreamComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'series/:serieId',
     component: SeriesIntroComponent,
   },
   {
+    path: 'series/latest/update',
+    component: SeriesComponent,
+  },
+  {
     path: 'category/series/:category',
     component: CategoriesSeriesPageComponent,
   },
   {
-    path: 'home',
-    component: HomeComponent,
+    path: 'categories/latest/update',
+    component: CategoriesComponent,
   },
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'userPayment',
+    component: UserpaymentComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'contacts',
+    component: ContactsComponent,
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    //canActivate: [AuthGuard],
   },
 ];
 

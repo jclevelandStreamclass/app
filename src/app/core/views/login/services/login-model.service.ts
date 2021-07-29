@@ -21,7 +21,6 @@ export class LoginModelService {
   ) {}
 
   login(values: { email: string; password: string }): Observable<any> {
-    console.log(values);
     return this.http
       .post<UserModel>(this.URL, values, { observe: 'response' })
       .pipe(
@@ -43,7 +42,6 @@ export class LoginModelService {
             this.toastMessages.showError('Usuario no encontrado');
           }
 
-          console.log(e.message);
           return of(null);
         })
       );

@@ -1,12 +1,11 @@
+@import "../../../../variables";
+@import "../../../../mixins";
+
 .login {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center-column;
   text-align: center;
-  flex-direction: column;
-  background-image: url(https://images.unsplash.com/photo-1593011458096-fcbd150f8b1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2134&q=80);
-  background-size: cover;
-  background-position: center;
+  background-image: url(https://res.cloudinary.com/madeleinetestcloud/image/upload/v1627299928/poseidon/klim-musalimov-PcaAwwL5ef4-unsplash_he5yp1.jpg);
+  @include bg-cover;
   background-attachment: fixed;
   height: calc(100vh - 10rem);
   .form {
@@ -16,8 +15,7 @@
   }
   form {
     margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     width: 100%;
   }
   h3 {
@@ -30,7 +28,6 @@
     color: #fff;
     padding-left: 1rem;
   }
-
   input {
     caret-color: #fff;
   }
@@ -62,9 +59,7 @@
   border-radius: 5px;
 }
 .input-file {
-  position: absolute;
-  top: 0;
-  left: 0;
+  @include pos-absolute-0;
   opacity: 0;
   padding: 14px 0;
   cursor: pointer;
@@ -89,7 +84,6 @@
   }
 }
 
-// Media queries
 @media (max-width: 1200px) {
   .form {
     max-width: 300px;

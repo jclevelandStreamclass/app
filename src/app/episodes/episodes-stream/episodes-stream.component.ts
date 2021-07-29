@@ -12,18 +12,19 @@ export class EpisodesStreamComponent implements OnInit {
   video: string = '';
   urlVideo: SafeResourceUrl = '';
 
-  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer, private authModelService: AuthService) {
+  constructor(
+    private route: ActivatedRoute,
+    private sanitizer: DomSanitizer,
+    private authModelService: AuthService
+  ) {
     route.params.subscribe((params) => {
       this.video = params.video || '';
     });
   }
 
   ngOnInit(): void {
-    // console.log(this.authModelService.user?.role);
-      if (this.video) {
+    if (this.video) {
       this.urlVideo = this.sanitizer.bypassSecurityTrustResourceUrl(this.video);
     }
-    
   }
-
 }

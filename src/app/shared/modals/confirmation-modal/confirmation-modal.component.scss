@@ -1,3 +1,6 @@
+@import "../../../../variables";
+@import "../../../../mixins";
+
 .mat-form-field-wrapper {
   .mat-form-field-flex {
     background-color: #fffdfd !important;
@@ -7,7 +10,6 @@
 .mat-dialog-content {
   margin: 0 auto;
   padding: 0 24px;
-  /* max-height: 65vh; */
   overflow: inherit;
   -webkit-overflow-scrolling: touch;
 }
@@ -17,54 +19,29 @@
 }
 
 .delete {
-  position: absolute;
-  top: 0;
-  right: 0;
+  @include pos-absolute-0;
   cursor: pointer;
   color: red;
 }
 
 .form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
 }
 
 input {
   width: 100%;
   padding: 8px;
-  border: 1px solid #181818;
+  border: 1px solid $colorBackgroundLight;
   border-radius: 4px;
+  margin-bottom: 1rem;
   &::placeholder {
     text-transform: capitalize;
   }
   &:focus {
-    box-shadow: 0 0 0 1px #181818;
+    box-shadow: 0 0 0 1px $colorBackgroundLight;
   }
 }
 
 .btn_color {
-  color: #fff;
+  color: $colorText;
 }
-
-/*
- * Modal
- *
- * This is a simple modal that will show up.
- * It will have two buttons, one to confirm or cancel, and one to close the modal.
- *
- * It will have a title, and a body.
- * The body can be any HTML.
- *
- * The modal will be centered by default, and it will be on the top of the page.
- *
- * Example:
- * <confirmation-modal
- *     [title]="'Delete this record?'"
- *     [body]="'Are you sure you want to delete this record?'"
- *     [show-cancel-button]="true"
- *     (confirm)="deleteRecord()"
- *     (cancel)="cancelDelete()"
- *     (close)="closeModal()">
- * </confirmation-modal>
- */

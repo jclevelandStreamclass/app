@@ -27,7 +27,6 @@ import { SeriesGridLandingComponent } from '../series/series-grid-landing/series
 import { SeriesComponent } from '../series/series.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LandingComponent } from './views/landing/landing.component';
-import { RecoverpasswordComponent } from './views/recoverpassword/recoverpassword.component';
 import { SignupComponent } from './views/signup/signup.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
@@ -44,6 +43,15 @@ import { EpisodesStreamComponent } from '../episodes/episodes-stream/episodes-st
 import { HeaderLoggedComponent } from './components/header-logged/header-logged.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { SharedModule } from '../shared/shared.module';
+import { UserpaymentComponent } from './views/userpayment/userpayment.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { AdminComponent } from '../admin/admin.component';
+import { CategoriesListComponent } from '../admin/categories-list/categories-list.component';
+import { SportsPlayerListComponent } from '../admin/sports-player-list/sports-player-list.component';
+import { SeriesLastupdateComponent } from '../series/series-lastupdate/series-lastupdate.component';
+import { CategoriesLatestUpdateComponent } from '../categories/categories-latest-update/categories-latest-update.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +61,6 @@ import { SharedModule } from '../shared/shared.module';
     LandingComponent,
     HomeComponent,
     SignupComponent,
-    RecoverpasswordComponent,
     CategoriesComponent,
     CategoriesGridComponent,
     CategoriesPageComponent,
@@ -67,6 +74,12 @@ import { SharedModule } from '../shared/shared.module';
     EpisodesStreamComponent,
     HeaderLoggedComponent,
     ProfileComponent,
+    UserpaymentComponent,
+    AdminComponent,
+    CategoriesListComponent,
+    SportsPlayerListComponent,
+    SeriesLastupdateComponent,
+    CategoriesLatestUpdateComponent,
   ],
   imports: [
     CommonModule,
@@ -90,6 +103,8 @@ import { SharedModule } from '../shared/shared.module';
     MatSidenavModule,
     FlexLayoutModule,
     SharedModule,
+    MatSelectModule,
+    MatAutocompleteModule,
   ],
   providers: [],
   exports: [AppComponent],
