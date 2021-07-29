@@ -22,6 +22,7 @@ export class EpisodesComponent implements OnInit, OnChanges {
   displayedColumns: string[] = ['photo', 'title'];
   video: string = '';
   @Input() episodes: Episode[] = [];
+  errors!: Error;
 
   constructor(
     private episodeModel: EpisodesService,
@@ -45,10 +46,20 @@ export class EpisodesComponent implements OnInit, OnChanges {
       this.router.navigate(['userPayment']);
       this.toastMessage.showInfo('Únete a nuestro servicio Premium');
     } else if (id) {
-      this.episodeModel.getEpisodeById(id).subscribe((episode) => {
-        this.video = episode.video;
-        this.router.navigate(['episodes', this.video]);
-      });
+      this.episodeModel.getEpisodeById(id).subscribe(
+        (episode) => {
+          if (episode) {
+            this.video = episode.video;
+            this.router.navigate(['episodes', this.video]);
+          }
+        },
+        (error) => {
+          this.errors = error;
+        },
+        () => {
+          this.router.navigate(['/userPayment']);
+        }
+      );
     }
   }
 }

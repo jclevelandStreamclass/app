@@ -4,6 +4,7 @@ import {
   HttpStatusCode,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { ToastMessagesService } from 'src/app/core/services/toast-messages.service';
@@ -16,7 +17,8 @@ export class EpisodesService {
   url = 'http://localhost:3000';
   constructor(
     private http: HttpClient,
-    private toastMessages: ToastMessagesService
+    private toastMessages: ToastMessagesService,
+    private router: Router
   ) {}
 
   getAll(): Observable<Episode[]> {
@@ -41,9 +43,10 @@ export class EpisodesService {
           console.log(episodeById.body);
           return new Episode(episodeById.body);
         }),
-        catchError((e: HttpErrorResponse) => {
-          if (e.status === HttpStatusCode.Unauthorized) {
+        catchError((error: HttpErrorResponse) => {
+          if (error.status === HttpStatusCode.Unauthorized) {
             this.toastMessages.showInfo('Únete a nuestro servicio Premium');
+            this.router.navigate(['/userPayment']);
           }
           return of(null);
         })
