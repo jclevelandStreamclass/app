@@ -30,4 +30,12 @@ export class ToastMessagesService {
       dismissible: true,
     });
   }
+
+  showInfo(text: string): void {
+    this.toast.show(text, {
+      position: 'top-center',
+      autoClose: true,
+      dismissible: true,
+    });
+  }
 }
