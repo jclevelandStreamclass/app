@@ -6,7 +6,10 @@
         <h2>CONSIGUE TODAS LAS CLASES</h2>
         <div class="right-ofert">
             <h3>4,99€ al mes, pago anual</h3>
-            <button mat-flat-button color="accent" [routerLink]="['/signup']">ÚNETE</button>
+            <button mat-flat-button color="accent" [routerLink]="['/signup']"
+                *ngIf="!checkAuthenticated()">ÚNETE</button>
+            <button mat-flat-button color="accent" [routerLink]="['/userPayment']"
+                *ngIf="checkAuthenticated()">SUSCRÍBETE</button>
         </div>
     </div>
 
