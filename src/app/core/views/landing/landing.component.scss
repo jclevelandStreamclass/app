@@ -122,12 +122,8 @@
 }
 
 //   ////// FAQ
-.faqBox {
-  margin-bottom: 6rem;
-}
 
 .mat-textwhite {
-  // background-color: $colorBackgroundInput;
   font-size: 23px;
   padding: 1rem 0;
   .questionText {
@@ -145,19 +141,13 @@
 .mat-accordion {
   background-color: $colorBackgroundLight;
   color: $colorText;
-  &:hover {
-    background-color: $colorBackgroundLight;
-  }
-  &:focus {
-    background-color: $colorBackgroundLight;
-  }
+  font-family: $fontMontserrat;
 }
+
 .mat-expansion-panel-header {
   background-color: $colorBackgroundInput;
   color: $colorText !important;
-  &:hover {
-    background-color: $colorBackgroundLight;
-  }
+  font-family: $fontMontserrat;
 }
 
 //REMINDER REGISTER
@@ -382,12 +372,15 @@
 
 //Tablet-Small screen
 @media (max-width: 600px) {
-  .mat-panel-title {
-    text-align: center;
-    font-size: 17px;
-  }
-  .mat-textwhite {
-    font-size: 17px;
+  .faq-section {
+    padding: 3rem 4rem;
+    .mat-panel-title {
+      text-align: center;
+      font-size: 17px;
+    }
+    .mat-textwhite {
+      font-size: 17px;
+    }
   }
   .faq-section {
     padding: 0;
@@ -433,6 +426,11 @@
   }
   .faq-section {
     // padding: 4rem 2rem;
+    padding: 0 4rem 2rem;
+    .faqTitle {
+      font-size: 32px;
+      margin-bottom: 0;
+    }
     .mat-panel-title {
       text-align: center;
       font-size: 16px;
