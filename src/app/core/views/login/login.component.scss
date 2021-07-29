@@ -47,6 +47,11 @@
   font-weight: 600;
   font-size: 15px;
 }
+p {
+  font-weight: 600;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
 
 @media (max-width: 1200px) {
   .form {
