@@ -122,9 +122,6 @@
 }
 
 //   ////// FAQ
-.faqBox {
-  margin-bottom: 6rem;
-}
 
 .mat-textwhite {
   font-size: 23px;
@@ -368,12 +365,15 @@
 
 //Tablet-Small screen
 @media (max-width: 600px) {
-  .mat-panel-title {
-    text-align: center;
-    font-size: 17px;
-  }
-  .mat-textwhite {
-    font-size: 17px;
+  .faq-section {
+    padding: 3rem 4rem;
+    .mat-panel-title {
+      text-align: center;
+      font-size: 17px;
+    }
+    .mat-textwhite {
+      font-size: 17px;
+    }
   }
 }
 
@@ -415,7 +415,11 @@
     }
   }
   .faq-section {
-    padding: 4rem 2rem;
+    padding: 0 4rem 2rem;
+    .faqTitle {
+      font-size: 32px;
+      margin-bottom: 0;
+    }
     .mat-panel-title {
       text-align: center;
       font-size: 16px;
