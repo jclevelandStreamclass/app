@@ -61,14 +61,18 @@
       .btnJoin {
         align-items: center;
         padding: 0 2.5rem;
-        .greenBtn {
-          background-color: $colorGreen;
-        }
+
         .mat-flat-button {
           font-family: $fontMontserrat;
           padding: 0.5rem 0;
           color: $colorText;
           width: 15rem;
+        }
+        .mat-flat-button.mat-accent,
+        .mat-raised-button.mat-accent,
+        .mat-fab.mat-accent,
+        .mat-mini-fab.mat-accent {
+          background-color: $colorGreen;
         }
       }
     }
