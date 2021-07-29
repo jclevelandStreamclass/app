@@ -127,7 +127,6 @@
 }
 
 .mat-textwhite {
-  // background-color: $colorBackgroundInput;
   font-size: 23px;
   padding: 1rem 0;
   .questionText {
@@ -145,19 +144,13 @@
 .mat-accordion {
   background-color: $colorBackgroundLight;
   color: $colorText;
-  &:hover {
-    background-color: $colorBackgroundLight;
-  }
-  &:focus {
-    background-color: $colorBackgroundLight;
-  }
+  font-family: $fontMontserrat;
 }
+
 .mat-expansion-panel-header {
   background-color: $colorBackgroundInput;
   color: $colorText !important;
-  &:hover {
-    background-color: $colorBackgroundLight;
-  }
+  font-family: $fontMontserrat;
 }
 
 //REMINDER REGISTER
