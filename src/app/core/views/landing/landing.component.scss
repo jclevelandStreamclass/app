@@ -76,6 +76,7 @@
   color: $colorTextGrey;
   line-height: 2.4;
   h3 {
+    font-family: $fontMontserrat;
     color: $colorText;
     font-size: 32px;
     font-weight: 700;
@@ -113,6 +114,7 @@
   justify-content: center;
   padding: 4rem 6rem;
   .faqTitle {
+    font-family: $fontMontserrat;
     text-align: center;
     padding: 2rem 0;
     font-style: italic;
