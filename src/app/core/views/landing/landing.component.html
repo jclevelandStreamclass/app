@@ -85,26 +85,26 @@
         </mat-expansion-panel>
       </mat-accordion>
     </div>
-
-    <div class="reminder-register-box">
-      <div class="register-box">
-        <h2>accede a la experiencia de los mejores deportistas del mundo</h2>
-        <p class="mini-title">Disfruta donde y cuando quieras</p>
-        <p>
-          ¿Quieres empezar a disfrutar de StreamClass? Escribe tu email para
-          empezar o reactivar tu cuenta.
-        </p>
-        <div class="form-box">
-          <form [formGroup]="emailForm" (ngSubmit)="registerEmail(emailForm)">
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Tu email</mat-label>
-              <input matInput placeholder="Email" formControlName="email" value="" />
-            </mat-form-field>
-            <button class="btnGreen" mat-flat-button color="accent" type="submit">ÚNETE</button>
-          </form>
-        </div>
-      </div>
-      <div class="register-img"></div>
-    </div>
   </div>
+  <div class="reminder-register-box">
+    <div class="register-box">
+      <h2>accede a la experiencia de los mejores deportistas del mundo</h2>
+      <p class="mini-title">Disfruta donde y cuando quieras</p>
+      <p>
+        ¿Quieres empezar a disfrutar de StreamClass? Escribe tu email para
+        empezar o reactivar tu cuenta.
+      </p>
+      <div class="form-box">
+        <form [formGroup]="emailForm" (ngSubmit)="registerEmail(emailForm)">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Tu email</mat-label>
+            <input matInput placeholder="Email" formControlName="email" value="" />
+          </mat-form-field>
+          <button class="btnGreen" mat-flat-button color="accent" type="submit">ÚNETE</button>
+        </form>
+      </div>
+    </div>
+    <div class="register-img"></div>
+  </div>
+
 </div>
