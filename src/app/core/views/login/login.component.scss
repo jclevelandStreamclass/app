@@ -26,11 +26,15 @@
     line-height: 1;
   }
   input::placeholder {
-    color: #fff;
+    color: $colorText;
     padding-left: 1rem;
   }
   input {
-    caret-color: #fff;
+    caret-color: $colorText;
+  }
+
+  .botonGreen {
+    background-color: $colorGreen;
   }
 }
 
@@ -39,7 +43,7 @@
 .mat-fab.mat-accent,
 .mat-mini-fab.mat-accent {
   padding: 0.5rem;
-  color: #fff;
+  color: $colorText;
   font-weight: 600;
   font-size: 15px;
 }
