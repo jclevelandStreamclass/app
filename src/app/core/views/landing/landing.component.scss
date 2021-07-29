@@ -107,53 +107,58 @@
 }
 
 // //FAQ SECTION
-// .faq-section {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   padding: 4rem 6rem;
-//   .faqTitle {
-//     text-align: center;
-//     padding: 2rem 0;
-//     font-style: italic;
-//     font-size: 2.5rem;
-//     font-weight: 700;
-//   }
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 6rem;
+  .faqTitle {
+    text-align: center;
+    padding: 2rem 0;
+    font-style: italic;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+}
 
 //   ////// FAQ
-// }
-// .mat-textwhite {
-//   // background-color: $colorBackgroundInput;
-//   font-size: 23px;
-//   .questionText {
-//     color: #fff;
-//     padding: 0.6rem 2rem;
-//   }
+.faqBox {
+  margin-bottom: 6rem;
+}
 
-//   //Pruebas
-//   // .mat-expansion-panel-header-title.mat-textwhite.questionText
-//   #mat-expansion-panel-header-0 {
-//     background-color: $colorBackgroundInput;
-//     box-shadow: none;
-//   }
-// }
+.mat-textwhite {
+  // background-color: $colorBackgroundInput;
+  font-size: 23px;
+  padding: 1rem 0;
+  .questionText {
+    color: $colorText;
+    padding: 0.6rem 2rem;
+  }
+}
 
-// .mat-accordion {
-//   background-color: $colorBackgroundInput;
-//   &:hover {
-//     background-color: $colorBackgroundLight;
-//   }
-//   &:focus {
-//     background-color: $colorBackgroundLight;
-//   }
-// }
-// .mat-expansion-panel-header {
-//   background-color: $colorBackgroundLight;
-//   color: $colorText !important;
-//   &:hover {
-//     background-color: $colorBackgroundLight;
-//   }
-// }
+.mat-expansion-panel {
+  background-color: $colorBackgroundInput;
+  color: $colorText;
+  margin-bottom: 1rem;
+}
+
+.mat-accordion {
+  background-color: $colorBackgroundLight;
+  color: $colorText;
+  &:hover {
+    background-color: $colorBackgroundLight;
+  }
+  &:focus {
+    background-color: $colorBackgroundLight;
+  }
+}
+.mat-expansion-panel-header {
+  background-color: $colorBackgroundInput;
+  color: $colorText !important;
+  &:hover {
+    background-color: $colorBackgroundLight;
+  }
+}
 
 //REMINDER REGISTER
 .reminder-register-box {
@@ -357,16 +362,25 @@
   }
 }
 
-@media (max-width: 768px) {
-  .landing-padding {
-    padding: 2rem;
+//tablet screen
+@media (max-width: 750px) {
+  .mat-panel-title {
+    text-align: center;
+    font-size: 20px;
   }
-  .reminder-register-box {
-    .register-box {
-      form {
-        width: 100%;
-      }
-    }
+  .mat-textwhite {
+    font-size: 20px;
+  }
+}
+
+//Tablet-Small screen
+@media (max-width: 600px) {
+  .mat-panel-title {
+    text-align: center;
+    font-size: 17px;
+  }
+  .mat-textwhite {
+    font-size: 17px;
   }
 }
 
@@ -407,6 +421,17 @@
       border-radius: 24px;
     }
   }
+  .faq-section {
+    padding: 4rem 2rem;
+    .mat-panel-title {
+      text-align: center;
+      font-size: 16px;
+    }
+    .mat-textwhite {
+      font-size: 16px;
+    }
+  }
+
   .reminder-register-box {
     .register-box {
       h2 {
