@@ -45,7 +45,8 @@ export class EpisodesComponent implements OnInit, OnChanges {
     if (!this.authService.hasUserRole('premium')) {
       this.router.navigate(['userPayment']);
       this.toastMessage.showInfo('Únete a nuestro servicio Premium');
-    } else if (id) {
+    }
+    if (id) {
       this.episodeModel.getEpisodeById(id).subscribe(
         (episode) => {
           if (episode) {
@@ -56,9 +57,7 @@ export class EpisodesComponent implements OnInit, OnChanges {
         (error) => {
           this.errors = error;
         },
-        () => {
-          this.router.navigate(['/userPayment']);
-        }
+        () => {}
       );
     }
   }

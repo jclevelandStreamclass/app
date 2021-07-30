@@ -45,8 +45,8 @@ export class EpisodesService {
         }),
         catchError((error: HttpErrorResponse) => {
           if (error.status === HttpStatusCode.Unauthorized) {
-            this.toastMessages.showInfo('Únete a nuestro servicio Premium');
-            this.router.navigate(['/userPayment']);
+            //this.toastMessages.showInfo('Únete a nuestro servicio Premium');
+            //this.router.navigate(['/userPayment']);
           }
           return of(null);
         })
