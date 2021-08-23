@@ -5,6 +5,7 @@ import { CategoriesSeriesPageComponent } from './categories/categories-series-pa
 import { CategoriesComponent } from './categories/categories.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { AuthGuard } from './core/services/auth.guard';
+import { AuthGuardAdmin } from './core/services/authAdmin.guard';
 import { HomeComponent } from './core/views/home/home.component';
 import { LandingComponent } from './core/views/landing/landing.component';
 import { LoginComponent } from './core/views/login/login.component';
@@ -14,8 +15,43 @@ import { UserpaymentComponent } from './core/views/userpayment/userpayment.compo
 import { EpisodesStreamComponent } from './episodes/episodes-stream/episodes-stream.component';
 import { SeriesIntroComponent } from './series/series-cards/series-intro/series-intro.component';
 import { SeriesComponent } from './series/series.component';
+import { CategoriaAdminComponent } from './admin/categoria-admin/categoria-admin.component';
+import { UserAdminComponent } from './admin/user-admin/user-admin.component';
+import { UserDetailsComponent } from './admin/user-details/user-details.component';
+import { SportPlayersComponent } from './admin/sport-players/sport-players.component';
+import { SportPlayersDetailComponent } from './admin/sport-players-detail/sport-players-detail.component';
 
 const routes: Routes = [
+  {
+    path: 'admin',
+    canActivate: [AuthGuard,AuthGuardAdmin],
+    children: [
+      {
+        path: '',
+        component: CategoriaAdminComponent,
+      },
+      {
+        path: 'categories',
+        component: CategoriaAdminComponent
+      },
+      {
+        path: 'users',
+        component: UserAdminComponent
+      },
+      {
+        path: 'users/:id',
+        component: UserDetailsComponent
+      },
+      {
+        path: 'players',
+        component: SportPlayersComponent
+      },
+      {
+        path: 'players/:id',
+        component: SportPlayersComponent
+      },
+    ]
+  },
   {
     path: '',
     pathMatch: 'full',
@@ -38,7 +74,6 @@ const routes: Routes = [
     path: 'login/:activate',
     component: LoginComponent,
   },
-
   {
     path: 'categories',
     component: CategoriesPageComponent,
@@ -90,7 +125,7 @@ const routes: Routes = [
   {
     path: 'contacts',
     component: ContactsComponent,
-  },
+  }
 ];
 
 @NgModule({

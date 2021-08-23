@@ -18,6 +18,11 @@ export class AuthService {
     return !!localStorage.getItem(this.APP_USER);
   }
 
+  get isUserAuthenticatedAdmin(): boolean {
+    const user: UserModel = JSON.parse(localStorage.getItem(this.APP_USER)||"");
+    return user.role === "admin";
+  }
+
   get bearer(): string {
     const bearer = localStorage.getItem(this.APP_USER);
     if (bearer) {

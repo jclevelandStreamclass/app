@@ -34,4 +34,8 @@ export class AppComponent implements OnInit {
   isLogged(): boolean {
     return this.authService.isUserAuthenticated;
   }
+
+  isLoggedAdmin(): boolean {
+    return this.authService.hasUserRole('admin');
+  }
 }

@@ -11,6 +11,7 @@ import { AuthInterceptor } from './core/services/auth.interceptor';
 import { AppComponent } from './core/views/app.component';
 import { SharedModule } from './shared/shared.module';
 
+
 @NgModule({
   imports: [
     BrowserModule,

@@ -1,7 +1,8 @@
 <!-- USER HEADER// LANDING -->
 <app-header *ngIf="!isLogged()"></app-header>
 <!-- USER HEADER// TOKEN -->
-<app-header-logged *ngIf="isLogged()"></app-header-logged>
+<app-header-logged *ngIf="isLogged() && !isLoggedAdmin()"></app-header-logged>
+<app-header-admin *ngIf="isLogged() && isLoggedAdmin()"></app-header-admin>
 
 <div class="main">
   <router-outlet></router-outlet>

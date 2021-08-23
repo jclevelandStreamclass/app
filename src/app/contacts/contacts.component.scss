@@ -7,11 +7,11 @@
     padding-top: 0.5rem;
     text-align: end;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   h2 {
     font-family: $fontAccentBebas;
-    font-size: 3.5rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
   }
   .contacts-block {
@@ -51,12 +51,12 @@
   .title {
     color: $colorBackgroundInputLight;
     font-family: $fontAccentBebas;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .details {
     text-align: start;
     .premium {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: 600;
     }
     p {
@@ -95,7 +95,7 @@
   border-bottom: 1px solid #fff;
   color: #fff;
   margin-bottom: 2rem;
-  font-size: 19px;
+  font-size: 15px;
   text-align: left;
 }
 
@@ -118,7 +118,7 @@
 textarea {
   width: 410px;
   height: 90px;
-  font-size: 16px;
+  font-size: 15px;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #fff;
@@ -200,26 +200,26 @@ textarea::placeholder {
     border-bottom: 1px solid #fff;
     color: #fff;
     margin-bottom: 2rem;
-    font-size: 16px;
+    font-size: 14px;
     text-align: left;
   }
   textarea {
     width: 21rem;
     height: 5rem;
-    font-size: 16px;
+    font-size: 14px;
     &::placeholder {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 
   .grid {
     .title {
-      font-size: 1.8rem;
+      font-size: 1.2rem;
     }
 
     .details {
       .premium {
-        font-size: 1rem;
+        font-size: 0.8rem;
       }
       p {
         text-align: start;

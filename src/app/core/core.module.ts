@@ -7,6 +7,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -35,6 +36,7 @@ import { SeriesComponent } from '../series/series.component';
 import { SharedModule } from '../shared/shared.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderLoggedComponent } from './components/header-logged/header-logged.component';
+import { HeaderLoggedAdminComponent } from './components/header-admin/header-admin.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AppComponent } from './views/app.component';
 import { HomeComponent } from './views/home/home.component';
@@ -43,6 +45,13 @@ import { LoginComponent } from './views/login/login.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { SignupComponent } from './views/signup/signup.component';
 import { UserpaymentComponent } from './views/userpayment/userpayment.component';
+import { CategoriaAdminComponent } from '../admin/categoria-admin/categoria-admin.component';
+import { UserAdminComponent } from '../admin/user-admin/user-admin.component';
+import { UserDetailsComponent } from '../admin/user-details/user-details.component';
+import { SportPlayersComponent } from '../admin/sport-players/sport-players.component';
+import { SportPlayersDetailComponent } from '../admin/sport-players-detail/sport-players-detail.component';
+
+
 
 @NgModule({
   declarations: [
@@ -65,10 +74,16 @@ import { UserpaymentComponent } from './views/userpayment/userpayment.component'
     SafePipePipe,
     EpisodesStreamComponent,
     HeaderLoggedComponent,
+    HeaderLoggedAdminComponent,
     ProfileComponent,
     UserpaymentComponent,
     SeriesLastupdateComponent,
     CategoriesLatestUpdateComponent,
+    CategoriaAdminComponent, 
+    UserAdminComponent, 
+    UserDetailsComponent, 
+    SportPlayersComponent, 
+    SportPlayersDetailComponent
   ],
   imports: [
     CommonModule,
@@ -94,6 +109,7 @@ import { UserpaymentComponent } from './views/userpayment/userpayment.component'
     SharedModule,
     MatSelectModule,
     MatAutocompleteModule,
+    MatPaginatorModule
   ],
   providers: [],
   exports: [AppComponent],
