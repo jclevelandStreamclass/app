@@ -41,7 +41,6 @@ export class EpisodesComponent implements OnInit, OnChanges {
   }
 
   select(id: string): void {
-    // CHECKEO EN FRONT:SOLO EN CASO DE SER PREMIUM NAVEGA AL VIDEO
     if (!this.authService.hasUserRole('premium')) {
       this.router.navigate(['userPayment']);
       this.toastMessage.showInfo('Únete a nuestro servicio Premium');

@@ -8,12 +8,14 @@ import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { ToastMessagesService } from 'src/app/core/services/toast-messages.service';
 import { UserModel } from 'src/app/models/user';
+import { environment } from '../../../../../environments/environment';
+
 @Injectable({
   providedIn: 'root',
 })
 export class LoginModelService {
-  private URL = 'http://localhost:3000/users/login';
-  private ACTIVATE = 'http://localhost:3000/users';
+  private URL = environment.url+ '/users/login';
+  private ACTIVATE = environment.url + '/users';
 
   constructor(
     private http: HttpClient,

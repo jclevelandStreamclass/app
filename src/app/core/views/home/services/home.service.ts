@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Serie } from 'src/app/series/models/serie';
+import { environment } from '../../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HomeService {
-  private url = 'http://localhost:3000';
-
+  private url = environment.url;
+  
   constructor(private http: HttpClient) {}
 
   getSerieById(id: string): Observable<Serie> {

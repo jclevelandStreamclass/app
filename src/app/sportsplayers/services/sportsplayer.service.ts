@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { SportsPlayer } from '../models/sportsPlayer';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SportsplayerService {
-  private url = 'http://localhost:3000';
+  private url = environment.url;
 
   constructor(private http: HttpClient) {}
 

@@ -1,8 +1,24 @@
 <div class="container">
+
+
+
+      
     <div class="payment">
         <div class="bg"></div>
         <div class="card">
-            <img src="https://res.cloudinary.com/madeleinetestcloud/image/upload/v1627466530/poseidon/chip_ub1yrz.png"
+
+            <h2 class="mt-12 mb-12">¿Tienes lo que hay que tener?</h2>
+
+            <h4 class="mt-12 mb-12">
+                Por solo $$$$ puedes vivir la experiencia de los mejores
+            </h4>
+            <br/>
+            <p class="mt-12 mb-12">
+                $$$$
+            </p>
+
+
+            <!--img src="https://res.cloudinary.com/madeleinetestcloud/image/upload/v1627466530/poseidon/chip_ub1yrz.png"
                 alt="chip credit card" class="chip">
             <div class="logo"></div>
             <h2 class="backName">Bank Name</h2>
@@ -25,8 +41,9 @@
                         <input type="password" placeholder="***" maxlength="4">
                     </div>
                 </div>
-            </form>
+            </form-->
         </div>
-        <button class="btn" [routerLink]="['/home']">Confirmar y pagar</button>
+        <button class="btn" (click)="makePayment()">Confirmar y pagar</button>
     </div>
+    
 </div>

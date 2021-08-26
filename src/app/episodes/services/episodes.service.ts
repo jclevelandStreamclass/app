@@ -9,12 +9,13 @@ import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { ToastMessagesService } from 'src/app/core/services/toast-messages.service';
 import { Episode } from '../models/episode';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EpisodesService {
-  url = 'http://localhost:3000';
+  url = environment.url;
   constructor(
     private http: HttpClient,
     private toastMessages: ToastMessagesService,

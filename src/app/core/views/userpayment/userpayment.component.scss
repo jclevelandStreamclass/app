@@ -28,6 +28,9 @@
       z-index: 1000;
       overflow: hidden;
       // colocar circulo gris tarjeta
+
+
+
       &::before {
         content: "";
         position: absolute;
@@ -58,11 +61,28 @@
         box-shadow: -40px 0 0 rgba(255, 164, 36, 0.5);
       }
       h2 {
-        color: #999 !important;
-        text-align: end;
+        color: black !important;
+        text-align: center;
+        font-weight: bold;
+        font-family: "Bebas Neue", cursive;
+        text-transform: uppercase !important;
         outline: none;
         width: 100%;
-        font-size: 1.5em;
+        font-size: 2.5em !important;
+      }
+
+      h4{
+        color: grey !important;
+        text-align: center;
+        font-size: 1.5em !important;
+      }
+      
+      p{
+        font-size: 4em;
+        text-align: center;
+        font-weight: bold;
+        color: #4bb26b;
+        margin-top: 15px;
       }
 
       form {

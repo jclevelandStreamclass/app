@@ -8,12 +8,13 @@ import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { ToastMessagesService } from 'src/app/core/services/toast-messages.service';
 import { UserModel } from 'src/app/models/user';
+import { environment } from '../../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SignupModelService {
-  private URL = 'http://localhost:3000/users/signup';
+  private URL = environment.url + '/users/signup';
 
   constructor(
     private http: HttpClient,
@@ -23,8 +24,7 @@ export class SignupModelService {
   insertUser(user: UserModel): Observable<UserModel | null> {
     // ESTABLECEMOS COMO DEFAULT
     if (user.avatar === '') {
-      user.avatar =
-        'https://res.cloudinary.com/bermelldev/image/upload/v1627067201/folder/logoStreamClass_cyhq9o.png';
+      user.avatar = environment.avatar;
     }
 
     return this.http

@@ -4,12 +4,13 @@ import { Observable, of } from 'rxjs';
 import { Serie } from '../models/serie';
 import { map } from 'rxjs/operators';
 import { SportsPlayer } from 'src/app/sportsplayers/models/sportsPlayer';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SeriesService {
-  private url = 'http://localhost:3000';
+  private url = environment.url;
 
   constructor(private http: HttpClient) {}
 

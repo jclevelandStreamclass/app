@@ -9,14 +9,18 @@ import { environment } from '../../../../../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class ServiceProfile {
-  private URL = environment.url + '/users/plan';
-  constructor(private http: HttpClient, private authService: AuthService) {}
+export class UserPaymentModelService {
 
-  changePlan(form: FormData): Observable<any> {
+  private URL = environment.url + '/users/plan';
+  constructor(
+    private http: HttpClient, 
+    private authService: AuthService
+  ) {}
+
+  changePlan(form: any): Observable<any> {
+
     const userId = this.authService.user?.id;
-    
-    return this.http.put<UserModel>(`${this.URL}/${userId}`, form).pipe(
+    return this.http.put(`${this.URL}/${userId}`, form).pipe(
       map((user) => {
         return new UserModel(user);
       })
