@@ -86,12 +86,12 @@ export class ProfileComponent implements OnInit {
       });
   }
 
-  saveForm(form: FormGroup) {
+  /*saveForm(form: FormGroup) {
     if (form.valid) {
       this.profileService.changePlan(form.value).subscribe((user) => {
         this.authService.setTokenChangePlanToken(user);
         this.user = user;
       });
     }
-  }
+  }*/
 }

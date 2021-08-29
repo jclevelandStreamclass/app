@@ -41,13 +41,12 @@ export class EpisodesService {
       })
       .pipe(
         map((episodeById) => {
-          console.log(episodeById.body);
           return new Episode(episodeById.body);
         }),
         catchError((error: HttpErrorResponse) => {
           if (error.status === HttpStatusCode.Unauthorized) {
-            //this.toastMessages.showInfo('Únete a nuestro servicio Premium');
-            //this.router.navigate(['/userPayment']);
+            this.toastMessages.showInfo('Únete a nuestro servicio Premium');
+            this.router.navigate(['/userPayment']);
           }
           return of(null);
         })

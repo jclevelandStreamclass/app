@@ -90,6 +90,35 @@ input.mat-input-element {
   padding-bottom: 10px;
 }
 
+.adminTables .mat-paginator-page-size-label, .adminTables .mat-paginator-range-label{
+  color: white !important;
+}
+
+.addNew{
+  border-radius: 25px !important;
+  color: white !important;
+  font-size: 35px;
+  line-height: 40px !important;
+}
+
+.adminTables button[mat-icon-button]{
+  color: white !important;
+}
+
+.adminTables .mat-form-field-flex{
+  background-color: rgb(44, 44, 44);
+  color: white;
+  label{
+    color: white !important;
+  }
+}
+
+.adminTables .mat-header-cell{
+ color: #fff;
+ font-weight: bold;
+ font-size: 15px;
+}
+
 /* SPINNER */
 .spinner {
   margin: 20px auto 0;

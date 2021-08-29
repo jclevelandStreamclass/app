@@ -10,7 +10,7 @@ import { AuthService } from './auth.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  readonly excludeUrls = ['private'];
+  readonly excludeUrls = ['private','admin'];
   constructor(private authService: AuthService) {}
 
   intercept(
@@ -27,6 +27,7 @@ export class AuthInterceptor implements HttpInterceptor {
         `bearer ${this.authService.bearer}`
       ),
     });
+    
     return next.handle(newRequest);
   }
 }

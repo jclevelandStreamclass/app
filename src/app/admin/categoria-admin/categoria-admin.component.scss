@@ -1,3 +1,12 @@
+h1{
+  font-size: 3em;
+  margin-bottom: 5%;
+}
+
+.addNew{
+  margin: 5px;
+}
+
 table,
 mat-paginator,
 mat-form-field {
@@ -5,18 +14,32 @@ mat-form-field {
   margin: auto;
 }
 
+.mat-table{
+  background-color: transparent !important;
+  *{
+    color: white !important;
+  } 
+}
+.editButtons button{
+  margin: 3px;
+  width: 100px;
+}
+
+.mat-paginator{
+  background-color: transparent !important;
+  *{
+    color: white !important;
+  } 
+}
+
 .mat-elevation-z8{
-  background-color: white;
+  background-color: transparent !important;
   padding: 20px;
 }
 
 .mat-form-field {
   font-size: 14px;
   width: 30%;
-  margin: auto;
+  margin-left:10%
 }
 
-td,
-th {
-  width: 25%;
-}

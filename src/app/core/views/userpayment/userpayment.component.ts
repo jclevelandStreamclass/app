@@ -18,7 +18,7 @@ export class UserpaymentComponent implements OnInit {
     private userPaymentModelService: UserPaymentModelService,
     private authService: AuthService,
     private router: Router,
-    private http: HttpClient,
+    //private http: HttpClient,
     private toastMessage: ToastMessagesService
   ) { }
 
@@ -32,13 +32,11 @@ export class UserpaymentComponent implements OnInit {
 
   async updateUser(stripeToken: any, comp: UserpaymentComponent) {
     let data = {"result": JSON.stringify(stripeToken),"role":"premium"};
-    
     comp.userPaymentModelService.changePlan(data).subscribe((user) => {
       comp.authService.setTokenChangePlanToken(user);
       comp.toastMessage.showSuccess('Servicio Premium Activado');
       this.router.navigate(['home']);
     });
-
   }
 
   async makePayment() {
