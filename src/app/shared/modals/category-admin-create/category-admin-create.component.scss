@@ -1,0 +1,101 @@
+@import "../../../../variables";
+@import "../../../../mixins";
+
+.guardar {
+  color: white;
+}
+
+.formDialog {
+  width: 50% !important;
+}
+
+.login {
+  @include flex-center-column;
+  text-align: center;
+
+  .form {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  form {
+    margin-top: 2rem;
+    @include flex-column;
+    width: 100%;
+  }
+
+  .imageTable {
+    text-align: left;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+  }
+
+  h3 {
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1;
+  }
+  input::placeholder {
+    color: #fff;
+    padding-left: 1rem;
+  }
+  input {
+    caret-color: #fff;
+    color: #fff;
+  }
+}
+
+.mat-flat-button.mat-accent,
+.mat-raised-button.mat-accent,
+.mat-fab.mat-accent,
+.mat-mini-fab.mat-accent {
+  padding: 0.5rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  background-color: $colorGreen;
+}
+
+.input-file-container {
+  position: relative;
+  margin-bottom: 3.3px;
+  text-align: left;
+}
+.input-file-trigger {
+  display: block;
+  padding: 14px 27px;
+  background: #181818;
+  color: #fff;
+  font-size: 1em;
+  transition: all 0.4s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.input-file {
+  @include pos-absolute-0;
+  opacity: 0;
+  padding: 14px 0;
+  cursor: pointer;
+}
+.input-file:hover + .input-file-trigger,
+.input-file:focus + .input-file-trigger,
+.input-file-trigger:hover,
+.input-file-trigger:focus {
+  background: #4bb26b;
+  color: #fff;
+}
+
+.profilePic {
+  cursor: pointer;
+}
+
+.member {
+  margin-top: 2rem;
+  font-weight: 600;
+  a {
+    color: #fff;
+  }
+}

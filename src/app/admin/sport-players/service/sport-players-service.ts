@@ -28,7 +28,7 @@ class Category {
 @Injectable({
   providedIn: 'root',
 })
-export class ServiceCategoryAdmin {
+export class ServiceSportPlayer {
   private URL = environment.url + '/admin/categories';
   constructor(
     private http: HttpClient,
@@ -69,24 +69,6 @@ export class ServiceCategoryAdmin {
 
           return of(null);
         }));
-  }
-
-  updateCategory(id: string, form: FormData): Observable<any> {
-    return this.http.put(`${this.URL}/${id}`, form).pipe(
-      map((data) => {       
-        this.toastMessages.showSuccessNoTime(`Información Actualizada`);
-        return data;
-      }),
-      catchError((e: HttpErrorResponse) => {
-        if (e.status === HttpStatusCode.InternalServerError) {
-          this.toastMessages.showError(
-            'Hubo un error en el servidor' + HttpStatusCode.InternalServerError
-          );
-        }
-        console.log(e.message);
-        return of(null);
-      })
-    );
   }
 
 }

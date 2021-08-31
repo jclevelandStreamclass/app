@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Crear Categoria</h2>
+<mat-dialog-content class="mat-typography login">
+  <form [formGroup]="createCategory" (ngSubmit)="saveClick(createCategory)">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <input matInput autocomplete="disable" type="text" placeholder="Tu nombre" formControlName="name">
+    </mat-form-field>
+    <div class="file-upload">
+      <img *ngIf="photoUrl" [src]="photoUrl" alt="" class="imageTable">
+      {{fileName || "Aún no se ha subido ningún archivo."}}
+      <a mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+        <mat-icon>attach_file</mat-icon>
+      </a>
+    </div>
+    <input formControlName="photo" type="file" class="file-input" hidden requiredFileType="image/png" requiredFileSize="2MB" accept="image/png, image/jpeg" (change)="onFileSelected($event)" #fileUpload>
+    <br/>
+    <button type="submit" class="guardar" color="accent" mat-flat-button [mat-dialog-close]="false">Guardar</button>
+    <button mat-button mat-dialog-close>Cancelar</button>
+  </form>
+</mat-dialog-content>

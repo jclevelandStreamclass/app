@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConfirmationModalComponent } from './modals/confirmation-modal/confirmation-modal.component';
+import { CategoryAdminCreateModalComponent } from './modals/category-admin-create/category-admin-create.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -14,6 +15,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 @NgModule({
   declarations: [
     ConfirmationModalComponent,
+    CategoryAdminCreateModalComponent,
     MoviePromoComponent,
     UploadAvatarModalComponent,
     SpinnerComponent,
