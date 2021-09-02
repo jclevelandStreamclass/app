@@ -1,8 +1,14 @@
-<h2 mat-dialog-title>Crear Categoría</h2>
+<h2 mat-dialog-title>Crear Deportistas</h2>
 <mat-dialog-content class="mat-typography login">
   <form [formGroup]="createCategory" (ngSubmit)="saveClick(createCategory)">
     <mat-form-field class="example-full-width" appearance="outline">
-      <input matInput autocomplete="disable" type="text" placeholder="Tu nombre" formControlName="name">
+      <input matInput autocomplete="disable" type="text" placeholder="Nombre" formControlName="name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <input matInput autocomplete="disable" type="text" placeholder="Trabajo" formControlName="job">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <textarea matInput autocomplete="disable" type="text" placeholder="Biografía" formControlName="bio"></textarea>
     </mat-form-field>
     <div class="file-upload">
       <img *ngIf="photoUrl" [src]="photoUrl" alt="" class="imageTable">

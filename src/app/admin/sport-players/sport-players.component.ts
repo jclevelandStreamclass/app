@@ -4,12 +4,22 @@ import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { ServiceSportPlayer } from './service/sport-players-service';
-import { CategoryAdminCreateModalComponent } from '../../shared/modals/category-admin-create/category-admin-create.component';
+import { PlayerAdminCreateModalComponent } from '../../shared/modals/players-admin-create/players-admin-create.component';
 
-export interface CategoryData {
+export interface PlayerData {
   id: string;
   name: string;
   photo: string;
+  bio: string;
+  job: string;
+}
+
+export interface PlayerData {
+  id: string;
+  name: string;
+  photo: string;
+  bio: string;
+  job: string;
 }
 
 @Component({
@@ -19,9 +29,10 @@ export interface CategoryData {
 })
 export class SportPlayersComponent implements OnInit, AfterViewInit {
 
-  displayedColumns: string[] = ['id', 'name', 'photo', 'Editar'];
-  dataSource: MatTableDataSource<CategoryData>;
+  displayedColumns: string[] = [ 'name', 'photo', 'Editar'];
+  dataSource: MatTableDataSource<PlayerData>;
   data: any;
+  dataPlayer:any;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -35,27 +46,32 @@ export class SportPlayersComponent implements OnInit, AfterViewInit {
   ngOnInit() { }
 
   openDialog() {
-    const dialogRef = this.dialog.open(CategoryAdminCreateModalComponent).addPanelClass('formDialog');
+    const dialogRef = this.dialog.open(PlayerAdminCreateModalComponent).addPanelClass('formDialog');
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.sportPlayerSvc.insertCategory(result).subscribe((x) => {
+        this.sportPlayerSvc.insertPlayer(result).subscribe((x) => {
           this.ngAfterViewInit();
         });
       }
     });
   }
 
-  openEditDialog(data: any) {
-    const dialogRef = this.dialog.open(CategoryAdminCreateModalComponent, { data }).addPanelClass('formDialog');
-    dialogRef.afterClosed().subscribe(result => {
-      //this.categorySvc.insertCategory(result).subscribe((x) => {        
-      this.ngAfterViewInit();
-      // });
+
+  retrivePlayer(data:any) {
+    this.dataPlayer=data;
+  }
+
+  openEditDialog(data: any) {    
+    const dialogRef = this.dialog.open(PlayerAdminCreateModalComponent, { data }).addPanelClass('formDialog');
+    dialogRef.afterClosed().subscribe(result => {     
+      this.sportPlayerSvc.updateplayer(result.get('id'),result).subscribe((x) => {        
+        this.ngAfterViewInit();
+      });
     });
   }
 
   deleteCategory(id) {
-    var r = confirm("¿Esta seguro de eliminar la categoría?");
+    var r = confirm("¿Esta seguro de eliminar al deportista?");
     if (r) {
       this.sportPlayerSvc.deleteCategories(id).subscribe((x) => {
         this.ngAfterViewInit();
@@ -64,7 +80,9 @@ export class SportPlayersComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.sportPlayerSvc.getCategories().subscribe((x) => {
+    this.sportPlayerSvc.getPlayers().subscribe((x) => {
+    console.log("🚀 ~ file: sport-players.component.ts ~ line 78 ~ SportPlayersComponent ~ this.sportPlayerSvc.getPlayers ~ x", x)
+      
       this.dataSource = new MatTableDataSource(x);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;

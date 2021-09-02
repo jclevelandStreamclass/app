@@ -20,6 +20,12 @@
   flex-direction: column;
 }
 
+@mixin flex-justify-center-column {
+  display: table-cell;
+  justify-content: center;
+  flex-direction: column;
+}
+
 @mixin flex-align-center-column {
   display: flex;
   align-items: center;

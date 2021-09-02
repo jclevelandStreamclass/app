@@ -52,9 +52,7 @@ export class CategoriaAdminComponent implements OnInit, AfterViewInit {
     const dialogRef = this.dialog.open(CategoryAdminCreateModalComponent, { data }).addPanelClass('formDialog');
 
     dialogRef.afterClosed().subscribe(result => {     
-      this.categorySvc.updateCategory(result.get('id'),result).subscribe((x) => {
-      console.log("🚀 ~ file: categoria-admin.component.ts ~ line 56 ~ CategoriaAdminComponent ~ this.categorySvc.updateCategory ~ x", x)
-        
+      this.categorySvc.updateCategory(result.get('id'),result).subscribe((x) => {        
         this.ngAfterViewInit();
       });
     });

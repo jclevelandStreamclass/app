@@ -12,16 +12,18 @@ import { environment } from '../../../../environments/environment';
 
 //import { Category } from '../interface/category.model';
 
-class Category {
+class Player {
   id: string;
   name: string;
   photo: string;
-  series: [];
+  bio: string;
+  job: string;
   constructor(item?: any) {
     this.id = item?.id ?? '';
     this.name = item?.name ?? '';
     this.photo = item?.photo ?? '';
-    this.series = item?.serie ?? [];
+    this.job = item?.job ?? '';
+    this.bio = item?.bio ?? '';
   }
 }
 
@@ -29,23 +31,28 @@ class Category {
   providedIn: 'root',
 })
 export class ServiceSportPlayer {
-  private URL = environment.url + '/admin/categories';
+  private URL = environment.url + '/admin/players';
   constructor(
     private http: HttpClient,
     private toastMessages: ToastMessagesService
   ) {
   }
 
-  getCategories(): Observable<Category[]> {
+  getPlayers(): Observable<Player[]> {
     return this.http.get<[]>(`${this.URL}`)
       .pipe(map((x) => x.map((s) => s)));
   }
 
-  insertCategory(category: Category): Observable<Category | null> {
+  getPlayer(): Observable<Player[]> {
+    return this.http.get<[]>(`${this.URL}`)
+      .pipe(map((x) => x.map((s) => s)));
+  }
+
+  insertPlayer(player: Player): Observable<Player | null> {
     return this.http
-      .post<Category>(`${this.URL}`, category, { observe: 'response' })
+      .post<Player>(`${this.URL}`, player, { observe: 'response' })
       .pipe(
-        map((x) => new Category(x)),
+        map((x) => new Player(x)),
         catchError((e: HttpErrorResponse) => {
           if (e.status === HttpStatusCode.InternalServerError) {
             this.toastMessages.showError('Hubo un error en el servidor');
@@ -55,8 +62,8 @@ export class ServiceSportPlayer {
       );
   }
 
-  deleteCategories(id: string): Observable<Category[]> {
-    return this.http.delete<Category>(`${this.URL}/${id}`)
+  deleteCategories(id: string): Observable<Player[]> {
+    return this.http.delete<Player>(`${this.URL}/${id}`)
       .pipe(
         catchError((e: HttpErrorResponse) => {
           if (e.status === HttpStatusCode.InternalServerError) {
@@ -69,6 +76,26 @@ export class ServiceSportPlayer {
 
           return of(null);
         }));
+  }
+
+  updateplayer(id: string, form: FormData): Observable<any> {
+  console.log("🚀 ~ file: sport-players-service.ts ~ line 82 ~ ServiceSportPlayer ~ updateplayer ~ form", form.get('name'))
+    
+    return this.http.put(`${this.URL}/${id}`, form).pipe(
+      map((data) => {       
+        this.toastMessages.showSuccessNoTime(`Información Actualizada`);
+        return data;
+      }),
+      catchError((e: HttpErrorResponse) => {
+        if (e.status === HttpStatusCode.InternalServerError) {
+          this.toastMessages.showError(
+            'Hubo un error en el servidor' + HttpStatusCode.InternalServerError
+          );
+        }
+        console.log(e.message);
+        return of(null);
+      })
+    );
   }
 
 }

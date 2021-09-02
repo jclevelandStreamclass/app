@@ -1,45 +1,81 @@
 <div class="mat-elevation-z8 adminTables">
 
-    <h1>Categorías <button mat-flat-button color="accent" class="addNew" (click)="openDialog()">+</button> 
+    <h1>
+        Deportistas 
+        <button mat-flat-button color="accent" class="addNew" (click)="openDialog()">+</button> 
     </h1>
-    <mat-form-field appearance="outline" class="input_serach">
-        <mat-label>Buscar</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
-    </mat-form-field>
 
+    <div class="columns w40">
+        <mat-form-field appearance="outline" class="input_serach">
+            <mat-label>Buscar</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
+        </mat-form-field>
     
-    <table mat-table [dataSource]="dataSource" matSort>
-        <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-            <td mat-cell *matCellDef="let row"> {{row.id}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
-            <td mat-cell *matCellDef="let row"> {{row.name}}</td>
-        </ng-container>
+        <table mat-table [dataSource]="dataSource" matSort>
+            <!--ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container-->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+                <td mat-cell *matCellDef="let row"> {{row.name}}</td>
+            </ng-container>
+            <ng-container matColumnDef="photo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Imagen </th>
+                <img *matCellDef="let row" [src]="row.photo" alt="" class="imageTable">
+            </ng-container>
+            <ng-container matColumnDef="Editar">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Editar </th>
+                <td mat-cell *matCellDef="let row" class="editButtons">
+                    <button mat-flat-button color="accent" (click)="openEditDialog(row)">Editar</button> 
+                    <button mat-flat-button color="warn"  (click)="deleteCategory(row.id)" >Eliminar</button>
+                    <button mat-flat-button color="primary"  (click)="retrivePlayer(row)" >Ver Datos</button>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of Player"></mat-paginator>
+    </div>
+    
+    <div class="columns w60">
+        <h2>Datos de Deportista: {{dataPlayer?.name}}</h2>
+        <h4>Biografía:</h4>
+        <p>{{dataPlayer?.bio}}</p>
+        <h4>Trabajo:</h4>
+        <p>{{dataPlayer?.job}}</p>
         
-
-        <ng-container matColumnDef="photo">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Imagen </th>
-            <img *matCellDef="let row" [src]="row.photo" alt="" class="imageTable">
-        </ng-container>
-
-        <ng-container matColumnDef="Editar">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Editar </th>
-            <td mat-cell *matCellDef="let row" class="editButtons">
-                <button mat-flat-button color="accent" type="submit" (click)="openEditDialog(row)">Editar</button> 
-                <button mat-flat-button color="warn" type="submit" (click)="deleteCategory(row.id)" >Eliminar</button>
-            </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-        <tr class="mat-row" *matNoDataRow>
-            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
-        </tr>
-    </table>
-
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        <h4>Clases de Deportista:</h4>
+        <table mat-table [dataSource]="dataSource" matSort>
+            <!--ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+            </ng-container-->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+                <td mat-cell *matCellDef="let row"> {{row.name}}</td>
+            </ng-container>
+            <ng-container matColumnDef="photo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Imagen </th>
+                <img *matCellDef="let row" [src]="row.photo" alt="" class="imageTable">
+            </ng-container>
+            <ng-container matColumnDef="Editar">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Editar </th>
+                <td mat-cell *matCellDef="let row" class="editButtons">
+                    <button mat-flat-button color="accent" (click)="openEditDialog(row)">Editar</button> 
+                    <button mat-flat-button color="warn"  (click)="deleteCategory(row.id)" >Eliminar</button>
+                    <button mat-flat-button color="primary"  (click)="retrivePlayer(row)" >Ver Datos</button>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of Player"></mat-paginator>
+    </div>
 </div>

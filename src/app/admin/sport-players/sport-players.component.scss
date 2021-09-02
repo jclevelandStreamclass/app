@@ -1,52 +1,71 @@
-h1{
-    font-size: 3em;
-    margin-bottom: 5%;
-  }
+@import "../../../mixins";
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 2%;
+}
+
+.columns{
+  display: table-cell;
   
-  .addNew{
-    margin: 5px;
+  padding: 15px;
+}
+
+h4{
+  font-weight: bold;
+}
+
+.w40{
+  width: 50%;
+}
+
+.w60{
+  width: 50%;
+  background-color: rgb(59, 59, 59);
+  border-radius: 10px;
+}
+
+
+.addNew {
+  margin: 5px;
+}
+
+table {
+  width: 100%;
+}
+
+.imageTable {
+  width: 100px;
+  height: 150px;
+  margin: 5px;
+}
+
+.mat-table {
+  background-color: transparent !important;
+  * {
+    color: white !important;
   }
-  
-  table,
-  mat-paginator,
-  mat-form-field {
-    width: 80%;
-    margin: auto;
+}
+
+.editButtons button {
+  margin: 3px;
+  width: 100px;
+}
+
+.mat-paginator {
+  background-color: transparent !important;
+  * {
+    color: white !important;
   }
-  
-  .imageTable{
-    width: 100px;
-    height: 150px;
-    margin: 5px;
-  }
-  
-  .mat-table{
-    background-color: transparent !important;
-    *{
-      color: white !important;
-    } 
-  }
-  .editButtons button{
-    margin: 3px;
-    width: 100px;
-  }
-  
-  .mat-paginator{
-    background-color: transparent !important;
-    *{
-      color: white !important;
-    } 
-  }
-  
-  .mat-elevation-z8{
-    background-color: transparent !important;
-    padding: 20px;
-  }
-  
-  .mat-form-field {
-    font-size: 14px;
-    width: 30%;
-    margin-left:10%
-  }
-  
-  
+}
+
+.mat-elevation-z8 {
+  background-color: transparent !important;
+  padding: 20px;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 50%;
+  //margin-left:10%
+}
